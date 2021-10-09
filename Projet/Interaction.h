@@ -1,6 +1,15 @@
 #ifndef INTERACTION_H
 #define INTERACTION_H
+
+/*!
+ * \file Interaction.h
+ * \brief Enregistre une interaction avec un contact
+ * \author Pinon Alexandre
+ * \version 0.1
+ */
+
 #include <string>
+#include <Date.h>
 
 using namespace std;
 
@@ -13,7 +22,7 @@ public:
     void setDateinteraction(const string &newDateinteraction);
 
 private:
-    Date dateinteraction;
+    Date dateInteraction;
 };
 
 #endif // INTERACTION_H

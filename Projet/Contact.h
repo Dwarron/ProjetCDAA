@@ -1,9 +1,16 @@
 #ifndef CONTACT_H
 #define CONTACT_H
+
+/*!
+ * \file Contact.h
+ * \brief Contact representant une personne
+ * \author Pinon Alexandre, Perion Maxence
+ * \version 0.1
+ */
+
 #include "Interaction.h"
 #include <string>
 #include <list>
-
 
 using namespace std;
 
@@ -11,6 +18,7 @@ class Contact
 {
 public:
     Contact();
+    Contact(const string&, const string&, const string&, const string&, const string&, const string&, const Date&);
 
     const string &getNom() const;
 
@@ -33,7 +41,7 @@ private:
     string entreprise;
     string telephone;
     string mail;
-    string urlphoto;
+    string uriPhoto;
     Date dateCreation;
 
 };
