@@ -4,7 +4,9 @@
  * \author Pinon Alexandre
  * \version 0.1
  */
+
 #include "Interaction.h"
+#include "Date.h"
 #include <string>
 
 using namespace std;
@@ -14,12 +16,12 @@ Interaction::Interaction()
 
 }
 
-const string &Interaction::getDateinteraction() const
+const Date Interaction::getDateInteraction() const
 {
-    return dateinteraction;
+    return dateInteraction;
 }
 
-void Interaction::setDateinteraction(const string &newDateinteraction)
+void Interaction::setDateInteraction(const Date &newDateinteraction)
 {
-    dateinteraction = newDateinteraction;
+    dateInteraction = newDateinteraction;
 }

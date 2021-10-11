@@ -18,8 +18,8 @@ class Interaction
 public:
     Interaction();
 
-    const string &getDateinteraction() const;
-    void setDateinteraction(const string &newDateinteraction);
+    const Date getDateInteraction() const;
+    void setDateInteraction(const Date &newDateinteraction);
 
 private:
     Date dateInteraction;

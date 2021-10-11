@@ -30,8 +30,7 @@ public:
     const string &getTelephone() const;
     void setTelephone(const string &newTelephone);
 
-    list<Interaction>li;
-    addInteraction(Interaction&);
+    list<Interaction>li; /*!< Liste des interactions*/
 
     friend ostream operator << (ostream &o, const Contact&);
 
