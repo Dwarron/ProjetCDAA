@@ -1,8 +1,9 @@
 #ifndef INTERACTION_H
 #define INTERACTION_H
 
-/*!
+/**
  * \file Interaction.h
+ * \class Interaction Interaction.h
  * \brief Enregistre une interaction avec un contact
  * \author Pinon Alexandre
  * \version 0.1

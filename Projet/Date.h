@@ -1,8 +1,9 @@
 #ifndef DATE_H
 #define DATE_H
 
-/*!
+/**
  * \file Date.h
+ * \class Date Date.h
  * \brief Stocke une date
  * \author Perion Maxence
  * \version 0.1

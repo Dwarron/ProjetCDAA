@@ -1,8 +1,9 @@
 #ifndef CONTACT_H
 #define CONTACT_H
 
-/*!
+/**
  * \file Contact.h
+ * \class Contact Contact.h
  * \brief Contact representant une personne
  * \author Pinon Alexandre, Perion Maxence
  * \version 0.1
@@ -18,7 +19,7 @@ class Contact
 {
 public:
     Contact();
-    Contact(const string&, const string&, const string&, const string&, const string&, const string&, const Date&);
+    Contact(const string&, const string&, const string&, const string&, const string&, const string&);
 
     const string &getNom() const;
 
@@ -30,7 +31,7 @@ public:
     const string &getTelephone() const;
     void setTelephone(const string &newTelephone);
 
-    list<Interaction>li; /*!< Liste des interactions*/
+    list<Interaction>li; /**< Liste des interactions*/
 
     friend ostream operator << (ostream &o, const Contact&);
 

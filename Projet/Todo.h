@@ -1,8 +1,9 @@
 #ifndef TODO_H
 #define TODO_H
 
-/*!
+/**
  * \file Todo.h
+ * \class Todo Todo.h
  * \brief Permets de décrire les choses à faire (todo), des interactions pour un contact.
  * \author Perion Maxence, Pinon Alexandre
  * \version 0.1
