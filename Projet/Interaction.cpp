@@ -27,7 +27,7 @@ Interaction::Interaction()
  *
  *  Constructeur avec parametre de la classe Interaction
  */
-Interaction::Interaction(Date& date, string inter)
+Interaction::Interaction(Date date, string inter)
 {
     dateInteraction = date;
     interaction = inter;

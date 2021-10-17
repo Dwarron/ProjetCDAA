@@ -10,6 +10,7 @@
 #include "Interaction.h"
 #include <string.h>
 #include <Date.h>
+#include <stdexcept>
 
 using namespace std;
 
@@ -61,13 +62,13 @@ const string &Contact::getNom() const
 /**
   *  \brief Mutateur de nom
   *
-  *  Methode qui permet de modifier le nom du contact
+  *  Methode qui permet de modifier le nom du contact et ajouter une nouvelle interaction horodate
   *
   *  \param newNom : le nouveau nom
   */
 void Contact::setNom(const string &newNom)
 {
-    nom = newNom;
+    nom = verifInfo(newNom);
     Interaction i(Date(), "modification du nom");
     addInteraction(i);
 }
@@ -87,13 +88,13 @@ const string &Contact::getPrenom() const
 /**
   *  \brief Mutateur de prenom
   *
-  *  Methode qui permet de modifier le prenom du contact
+  *  Methode qui permet de modifier le prenom du contactet ajouter une nouvelle interaction horodate
   *
   *  \param newPrenom : le nouveau prenom
   */
 void Contact::setPrenom(const string &newPrenom)
 {
-    prenom = newPrenom;
+    prenom = verifInfo(newPrenom);
     Interaction i(Date(), "modification du prenom");
     addInteraction(i);
 }
@@ -120,6 +121,8 @@ const string &Contact::getEntreprise() const
 void Contact::setEntreprise(const string &newEntreprise)
 {
     entreprise = newEntreprise;
+    Interaction i(Date(), "modification de l'entreprise");
+    addInteraction(i);
 }
 
 /**
@@ -144,6 +147,34 @@ const string &Contact::getTelephone() const
 void Contact::setTelephone(const string &newTelephone)
 {
     telephone = newTelephone;
+    Interaction i(Date(), "modification du numero de telephone");
+    addInteraction(i);
+}
+
+/**
+  *  \brief Accesseur de mail
+  *
+  *  Methode qui permet d'acceder au telephone du contact
+  *
+  *  \return mail
+  */
+const string &Contact::getMail() const
+{
+    return mail;
+}
+
+/**
+  *  \brief Mutateur de mail
+  *
+  *  Methode qui permet de modifier le mail du contact
+  *
+  *  \param newMail : le nouveau mail
+  */
+void Contact::setMail(const string &newMail)
+{
+    mail = newMail;
+    Interaction i(Date(), "modification du mail");
+    addInteraction(i);
 }
 
 /**
@@ -153,10 +184,9 @@ void Contact::setTelephone(const string &newTelephone)
   *
   *  \param Interaction & : la liste d'interaction du contact
   */
-void Contact::addInteraction(Interaction &)
+void Contact::addInteraction(Interaction &inter)
 {
-    //to do...
-    //ajouter une interaction d'un contact avec push_back(const T& x); qui ajoute un element en fin de liste
+    li.push_back(inter);
 }
 
 /**
@@ -185,7 +215,7 @@ string Contact::verifInfo(string chaine)
     }
 
     return newChaine;
-    //garder le meme principe mais plutot utiliser des interruption
+    //garder le meme principe mais utiliser des interruption
 }
 
 /**
@@ -197,6 +227,38 @@ string Contact::verifInfo(string chaine)
   */
 string Contact::verifMail(string chaine)
 {
-    //to do...
-    //avec des interruption
+    int count = 0;
+
+    for(int i = 0; i < chaine.size(); i++)
+    {
+        if(chaine[i] == '@')
+            count++;
+    }
+
+    if(count > 1)
+        throw invalid_argument("format mail incorrect");
+    else
+        return chaine;
+}
+
+/**
+  *  \brief Methode verifUri
+  *
+  *  Methode qui permet de verifier si l'uri de la photo d'un contact est bien une photo png ou jpg
+  *
+  *  \param chaine : la chaine a verifier
+  */
+string Contact::verifUri(string chaine)
+{
+    string chainetmp;
+    int i = chaine.size()-1;
+
+    chainetmp = chaine[i-2];
+    chainetmp += chaine[i-1];
+    chainetmp += chaine[i];
+
+    if(chainetmp != "jpg" && chainetmp != "png")
+        throw invalid_argument("format photo incorrect");
+    else
+        return chaine;
 }

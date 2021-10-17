@@ -18,7 +18,7 @@ class Interaction
 {
 public:
     Interaction();
-    Interaction(Date& date, string inter);
+    Interaction(Date date, string inter);
 
     const Date getDateInteraction() const;
     void setDateInteraction(const Date &newDateinteraction);

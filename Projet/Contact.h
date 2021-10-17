@@ -33,14 +33,18 @@ public:
     const string &getTelephone() const;
     void setTelephone(const string &newTelephone);
 
+    const string &getMail() const;
+    void setMail(const string &newMail);
+
     list<Interaction>li; /**< Liste des interactions*/
 
     friend ostream operator << (ostream &o, const Contact&);
 
-    void addInteraction(Interaction &);
+    void addInteraction(Interaction &inter);
 
     string verifInfo(string chaine);
     string verifMail(string chaine);
+    string verifUri(string chaine);
 
 private:
     string nom;
