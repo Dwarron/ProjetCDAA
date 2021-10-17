@@ -22,8 +22,10 @@ public:
     Contact(const string&, const string&, const string&, const string&, const string&, const string&);
 
     const string &getNom() const;
+    void setNom(const string &newNom);
 
     const string &getPrenom() const;
+    void setPrenom(const string &newPrenom);
 
     const string &getEntreprise() const;
     void setEntreprise(const string &newEntreprise);
@@ -34,6 +36,11 @@ public:
     list<Interaction>li; /**< Liste des interactions*/
 
     friend ostream operator << (ostream &o, const Contact&);
+
+    void addInteraction(Interaction &);
+
+    string verifInfo(string chaine);
+    string verifMail(string chaine);
 
 private:
     string nom;

@@ -19,7 +19,18 @@ using namespace std;
  */
 Interaction::Interaction()
 {
+    dateInteraction = Date();
+}
 
+/**
+ *  \brief Constructeur de la class Interaction
+ *
+ *  Constructeur avec parametre de la classe Interaction
+ */
+Interaction::Interaction(Date& date, string inter)
+{
+    dateInteraction = date;
+    interaction = inter;
 }
 
 /**
