@@ -20,7 +20,6 @@ using namespace std;
  */
 Contact::Contact() : Contact("Jean", "Dupont", "Carrefour", "0123456789", "jean.dupont@mail.com", "")
 {
-
 }
 
 /**
@@ -44,6 +43,10 @@ Contact::Contact(const string& n, const string& p, const string& e, const string
     mail = verifMail(m);
     uriPhoto = uri;
     dateCreation = Date();
+    interactions = list<Interaction>();
+
+    Interaction i = Interaction("Creation de la fiche");
+    addInteraction(i);
 }
 
 /**
@@ -67,8 +70,8 @@ const string &Contact::getNom() const
   */
 void Contact::setNom(const string &newNom)
 {
+    Interaction i("modification du nom (" + nom + " -> " + newNom + ")");
     nom = newNom;
-    Interaction i(Date(), "modification du nom");
     addInteraction(i);
 }
 
@@ -93,8 +96,8 @@ const string &Contact::getPrenom() const
   */
 void Contact::setPrenom(const string &newPrenom)
 {
+    Interaction i("modification du prenom (" + prenom + " -> " + newPrenom + ")");
     prenom = newPrenom;
-    Interaction i(Date(), "modification du prenom");
     addInteraction(i);
 }
 
@@ -119,7 +122,9 @@ const string &Contact::getEntreprise() const
   */
 void Contact::setEntreprise(const string &newEntreprise)
 {
+    Interaction i("modification de l'entreprise (" + entreprise + " -> " + newEntreprise + ")");
     entreprise = newEntreprise;
+    addInteraction(i);
 }
 
 /**
@@ -143,20 +148,21 @@ const string &Contact::getTelephone() const
   */
 void Contact::setTelephone(const string &newTelephone)
 {
+    Interaction i("modification du telephone (" + telephone + " -> " + newTelephone + ")");
     telephone = newTelephone;
+    addInteraction(i);
 }
 
 /**
-  *  \brief Methode addInteraction
+  *  \brief Ajout d'une interaction
   *
   *  Methode qui permet d'ajouter une interaction a la liste d'interaction d'un contact
   *
-  *  \param Interaction & : la liste d'interaction du contact
+  *  \param Interaction i : l'interaction a ajouter
   */
-void Contact::addInteraction(Interaction &)
+void Contact::addInteraction(const Interaction &i)
 {
-    //to do...
-    //ajouter une interaction d'un contact avec push_back(const T& x); qui ajoute un element en fin de liste
+    interactions.push_back(i);
 }
 
 /**
@@ -199,4 +205,57 @@ string Contact::verifMail(string chaine)
 {
     //to do...
     //avec des interruption
+    return chaine;
+}
+
+/**
+  *  \brief Fonction amie d'affichage via cout
+  *
+  *  Fonction surchargeant l'operateur << pour afficher le contact avec un cout
+  *
+  *  \param o : le stream a surcharger
+  *  \param c : le contact a afficher dans le stream
+  *  \return operateur surchage
+  */
+ostream& operator<< (ostream &o, const Contact& c)
+{
+    o << c.toString();
+    return o;
+}
+
+/**
+  *  \brief Representation en string
+  *
+  *  Methode qui renvoie la representation textuel du contact
+  *
+  *  \return prenom nom de (entreprise) telephone ou mail
+  */
+const string Contact::toString() const
+{
+    string result = prenom + " " + nom;
+
+    if(entreprise != "")
+    {
+        result += " de " + entreprise;
+    }
+
+    result += " tel: " + telephone + " ou mail: " + mail;
+
+    return result;
+}
+
+const string Contact::interactionsToString()
+{
+    interactions.sort();
+    string res = "Interactions de " + prenom + " " + nom + " : ";
+
+    for(auto it = interactions.begin(); it != interactions.end(); it++)
+    {
+        if(it != interactions.begin())
+            res += ", ";
+
+        res += (*it).toString();
+    }
+
+    return res;
 }

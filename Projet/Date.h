@@ -18,15 +18,23 @@ class Date
 public:
     Date();
     Date(const int, const int, const int);
+    Date(const string&);
+
+    ~Date();
 
     int getJour() const;
     int getMois() const;
     int getAnnee() const;
 
+    void addDelay(const int);
+    void addDelay(const int, const int);
+    void addDelay(const int, const int, const int);
+
+    friend ostream& operator << (ostream&, const Date&);
     const string toString() const;
 
 private:
-    const struct tm *d;
+    struct tm *d;
 
 };
 

@@ -5,7 +5,7 @@
  * \file Interaction.h
  * \class Interaction Interaction.h
  * \brief Enregistre une interaction avec un contact
- * \author Pinon Alexandre
+ * \author Pinon Alexandre, Perion Maxence
  * \version 0.1
  */
 
@@ -18,14 +18,19 @@ class Interaction
 {
 public:
     Interaction();
-    Interaction(Date& date, string inter);
+    Interaction(const string&);
 
-    const Date getDateInteraction() const;
-    void setDateInteraction(const Date &newDateinteraction);
+    const Date getDate() const;
+    void setDate(const Date&);
+
+    const string &getResume() const;
+
+    friend ostream& operator << (ostream&, const Interaction&);
+    const string toString() const;
 
 private:
-    Date dateInteraction;
-    string interaction;
+    Date date;
+    string resume;
 };
 
 #endif // INTERACTION_H
