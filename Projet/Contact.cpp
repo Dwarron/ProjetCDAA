@@ -43,7 +43,7 @@ Contact::Contact(const string& n, const string& p, const string& e, const string
     entreprise = e;
     telephone = tel;
     mail = verifMail(m);
-    uriPhoto = uri;
+    uriPhoto = verifUri(uri);
     dateCreation = Date();
 }
 
@@ -182,7 +182,7 @@ void Contact::setMail(const string &newMail)
   *
   *  Methode qui permet d'ajouter une interaction a la liste d'interaction d'un contact
   *
-  *  \param Interaction & : la liste d'interaction du contact
+  *  \param Interaction &interr : l'interaction a ajouter a la liste
   */
 void Contact::addInteraction(Interaction &inter)
 {
