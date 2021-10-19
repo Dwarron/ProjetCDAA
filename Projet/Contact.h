@@ -12,6 +12,7 @@
 #include "Interaction.h"
 #include <string>
 #include <list>
+#include "Todo.h"
 
 using namespace std;
 
@@ -38,6 +39,7 @@ public:
     const string interactionsToString();
 
     void addInteraction(const Interaction&);
+    void addTodo(const Todo&);
 
     string verifInfo(string);
     string verifMail(string);
@@ -54,6 +56,7 @@ private:
     Date dateCreation;
 
     list<Interaction> interactions;
+    list<Todo> todos;
 };
 
 #endif // CONTACT_H

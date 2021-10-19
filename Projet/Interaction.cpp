@@ -2,7 +2,7 @@
  * \file Interaction.cpp
  * \class Interaction Interaction.h
  * \brief Enregistre une interaction avec un contact
- * \author Pinon Alexandre
+ * \author Pinon Alexandre, Perion Maxence
  * \version 0.1
  */
 

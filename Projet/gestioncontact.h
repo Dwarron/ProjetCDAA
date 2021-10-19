@@ -1,6 +1,14 @@
 #ifndef GESTIONCONTACT_H
 #define GESTIONCONTACT_H
 
+/**
+ * \file gestioncontact.h
+ * \class GestionContact GestionContact.h
+ * \brief Class de gestion des contacts: ajout, suppressions, requetes, ...
+ * \author Perion Maxence
+ * \version 0.1
+ */
+
 #include <list>
 #include "Contact.h"
 #include "Date.h"
@@ -20,7 +28,6 @@ public:
 
 private:
     list<Contact> contacts;
-    list<Todo> todos;
     Date dateDerniereSuppression;
 };
 

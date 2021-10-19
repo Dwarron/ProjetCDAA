@@ -249,6 +249,48 @@ bool operator<(const Date& a, const Date& b)
 }
 
 /**
+  *  \brief Surcharge de l'operateur +
+  *
+  *  Surdefinition de l'operateur + de concatenation avec un string
+  *  \param a : premiere operande
+  *  \param b : deuxieme operande
+  *
+  *  \return s + d.toString()
+  */
+string operator+(const string& s, const Date& d)
+{
+    return s + d.toString();
+}
+
+/**
+  *  \brief Surcharge de l'operateur -
+  *
+  *  Surdefinition de l'operateur - de difference, renvoie le nombre de jours dans l'intervalle entre a et b
+  *  Positif si a > b (a est plus loin dans le futur que b), negatif si a < b et 0 si a = b (a et b representent la meme date)
+  *  \param a : premiere operande
+  *  \param b : deuxieme operande
+  *
+  *  \return s + d.toString()
+  */
+int operator-(const Date& a, const Date& b)
+{
+    return (a.getAnnee() - b.getAnnee()) * 365 + (a.getMois() - b.getMois()) * 31 + (a.getJour() - b.getJour());
+}
+
+/**
+  *  \brief Surcharge de l'operateur de test d'egalite
+  *
+  *  Methode qui surcharge l'operateur ==, compare semantiquement deux dates
+  *
+  *  \param a : operande de gauche
+  *  \param b : operande de droite
+  *  \return vrai si les dates sont semantiquement egales, faux sinon
+  */
+bool operator==(const Date& a, const Date& b)
+{
+    return a.getAnnee() == b.getAnnee() && a.getMois() == b.getMois() && a.getJour() == b.getJour();
+}
+/**
   *  \brief L'instance de date est-elle dans le passe ?
   *
   *  Utilise une comparaison avec la date actuelle: renvoie vrai si la date est plus ancienne que la date courante, sinon faux

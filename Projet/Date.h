@@ -36,6 +36,9 @@ public:
     const string toString() const;
 
     friend bool operator<(const Date&, const Date&);
+    friend string operator+(const string&, const Date&);
+    friend int operator-(const Date&, const Date&);
+    friend bool operator==(const Date&, const Date&);
 
 private:
     struct tm *d;

@@ -44,8 +44,11 @@ Contact::Contact(const string& n, const string& p, const string& e, const string
     uriPhoto = uri;
     dateCreation = Date();
     interactions = list<Interaction>();
+    todos = list<Todo>();
 
-    Interaction i = Interaction("Creation de la fiche");
+    Date dateBienvenue = Date();
+    dateBienvenue.addDelay(3);
+    Interaction i = Interaction("Creation de la fiche\n@todo Souhaiter la bienvenue @date " + dateBienvenue);
     addInteraction(i);
 }
 
@@ -166,6 +169,18 @@ void Contact::addInteraction(const Interaction &i)
 }
 
 /**
+  *  \brief Ajout d'un Todo
+  *
+  *  Methode qui permet d'ajouter un todo a la liste des todos d'un contact
+  *
+  *  \param Todo t : le todo a ajouter
+  */
+void Contact::addTodo(const Todo &t)
+{
+    todos.push_back(t);
+}
+
+/**
   *  \brief Methode verifInfo
   *
   *  Methode qui permet de retirer tous les chiffres ainsi que caracteres speciaux
@@ -244,6 +259,13 @@ const string Contact::toString() const
     return result;
 }
 
+/**
+  *  \brief Representation en string de la liste des interactions
+  *
+  *  Methode qui renvoie la representation textuel de la liste des interactions, triee par ordre de date
+  *
+  *  \return concatenation de representations textuelles de chaque interaction
+  */
 const string Contact::interactionsToString()
 {
     interactions.sort();
@@ -260,11 +282,20 @@ const string Contact::interactionsToString()
     return res;
 }
 
+/**
+  *  \brief Surcharge de l'operateur de test d'egalite
+  *
+  *  Methode qui surcharge l'operateur ==, compare semantiquement deux contacts, utilise par exemple pour supprimer des instances
+  *  de la liste des contacts
+  *
+  *  \param a : operande de gauche
+  *  \param b : operande de droite
+  *  \return vrai si les contacts sont semantiquement egales, faux sinon
+  */
 bool operator==(const Contact& a, const Contact& b)
 {
     return a.getPrenom() == b.getPrenom()
             && a.getNom() == b.getNom()
             && a.getEntreprise() == b.getEntreprise()
             ;
-
 }
