@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "Contact.h"
-#include "Interaction.cpp"
-
+#include "Date.h"
+#include "Interaction.h"
 #include <QApplication>
 #include <iostream>
 

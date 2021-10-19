@@ -30,8 +30,12 @@ public:
     void addDelay(const int, const int);
     void addDelay(const int, const int, const int);
 
+    bool depassee() const;
+
     friend ostream& operator << (ostream&, const Date&);
     const string toString() const;
+
+    friend bool operator<(const Date&, const Date&);
 
 private:
     struct tm *d;

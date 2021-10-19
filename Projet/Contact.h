@@ -42,6 +42,8 @@ public:
     string verifInfo(string);
     string verifMail(string);
 
+    friend bool operator==(const Contact&, const Contact&);
+
 private:
     string nom;
     string prenom;

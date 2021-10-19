@@ -13,6 +13,7 @@ SOURCES += \
     Date.cpp \
     Interaction.cpp \
     Todo.cpp \
+    gestioncontact.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -21,6 +22,7 @@ HEADERS += \
     Date.h \
     Interaction.h \
     Todo.h \
+    gestioncontact.h \
     mainwindow.h
 
 FORMS += \

@@ -249,6 +249,19 @@ bool operator<(const Date& a, const Date& b)
 }
 
 /**
+  *  \brief L'instance de date est-elle dans le passe ?
+  *
+  *  Utilise une comparaison avec la date actuelle: renvoie vrai si la date est plus ancienne que la date courante, sinon faux
+  *
+  *  \return instance de Date < date actuelle
+  */
+bool Date::depassee() const
+{
+    Date now = Date();
+    return (*this) < now;
+}
+
+/**
   *  \brief Destructeur de Date
   *
   *  Detruis une instance de Date precedemment construite

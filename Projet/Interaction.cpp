@@ -8,7 +8,6 @@
 
 #include "Interaction.h"
 #include "Date.h"
-#include "Date.cpp"
 #include <string>
 
 using namespace std;
@@ -45,18 +44,6 @@ Interaction::Interaction(const string& r)
 const Date Interaction::getDate() const
 {
     return date;
-}
-
-/**
-  *  \brief Mutateur de date
-  *
-  *  Methode qui permet de modifier la date de l'interaction
-  *
-  *  \param newDateinteraction : la nouvelle date d'interaction
-  */
-void Interaction::setDate(const Date &newDateinteraction)
-{
-    date = newDateinteraction;
 }
 
 /**

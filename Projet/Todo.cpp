@@ -13,9 +13,21 @@
  *
  *  Constructeur par defaut de la classe Todo
  */
-Todo::Todo()
+Todo::Todo(Interaction* i)
 {
 
+}
+
+/**
+  *  \brief Accesseur d'echeance
+  *
+  *  Methode qui permet d'acceder a la date d'echeance du todo
+  *
+  *  \return echeance
+  */
+const Date &Todo::getEcheance() const
+{
+    return echeance;
 }
 
 /**
@@ -23,45 +35,9 @@ Todo::Todo()
   *
   *  Methode qui permet d'acceder au contenu du todo
   *
-  *  \return contenueTodo
+  *  \return contenue
   */
-const string &Todo::getContenueTodo() const
+const string &Todo::getContenue() const
 {
-    return contenueTodo;
-}
-
-/**
-  *  \brief Mutateur de contenu
-  *
-  *  Methode qui permet de modifier le contenu du todo
-  *
-  *  \param newContenueTodo : le nouveau contenu
-  */
-void Todo::setContenueTodo(const string &newContenueTodo)
-{
-    contenueTodo = newContenueTodo;
-}
-
-/**
-  *  \brief Accesseur de date
-  *
-  *  Methode qui permet d'acceder a la date du todo
-  *
-  *  \return dateTodo
-  */
-const Date &Todo::getDateTodo() const
-{
-    return dateTodo;
-}
-
-/**
-  *  \brief Mutateur de date
-  *
-  *  Methode qui permet de modifier la date du todo
-  *
-  *  \param newDateTodo : la nouvelle date
-  */
-void Todo::setDateTodo(const Date &newDateTodo)
-{
-    dateTodo = newDateTodo;
+    return contenue;
 }

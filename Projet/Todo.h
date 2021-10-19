@@ -11,24 +11,26 @@
 
 #include "Date.h"
 #include <string>
+#include "Interaction.h"
+#include "Contact.h"
 
 using namespace std;
 
 class Todo
 {
 public:
-    Todo();
+    Todo(Interaction*);
+    ~Todo();
 
-    const string &getContenueTodo() const;
-    void setContenueTodo(const string &newContenueTodo);
+    const Date &getEcheance() const;
 
-    const Date &getDateTodo() const;
-    void setDateTodo(const Date &newDateTodo);
+    const string &getContenue() const;
 
 private:
-    Date dateTodo;
-    string contenueTodo; /*!< Liste des morceaux*/
-
+    Date echeance;
+    string contenue;
+    Interaction* interaction;
+    Contact* contact;
 };
 
 #endif // TODO_H

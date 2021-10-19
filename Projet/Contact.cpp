@@ -259,3 +259,12 @@ const string Contact::interactionsToString()
 
     return res;
 }
+
+bool operator==(const Contact& a, const Contact& b)
+{
+    return a.getPrenom() == b.getPrenom()
+            && a.getNom() == b.getNom()
+            && a.getEntreprise() == b.getEntreprise()
+            ;
+
+}

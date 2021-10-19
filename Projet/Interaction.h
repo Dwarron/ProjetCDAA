@@ -21,13 +21,12 @@ public:
     Interaction(const string&);
 
     const Date getDate() const;
-    void setDate(const Date&);
-
     const string &getResume() const;
 
     friend ostream& operator << (ostream&, const Interaction&);
     const string toString() const;
 
+    friend bool operator<(const Interaction&, const Interaction&);
 private:
     Date date;
     string resume;
