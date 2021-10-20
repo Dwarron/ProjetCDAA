@@ -1,5 +1,4 @@
-#ifndef DATE_H
-#define DATE_H
+#pragma once     //probleme d'include, vu avec Monsieur Raffin et pas de meilleur solution trouve
 
 /**
  * \file Date.h
@@ -42,5 +41,3 @@ private:
     struct tm *d;
 
 };
-
-#endif // DATE_H

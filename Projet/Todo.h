@@ -1,5 +1,4 @@
-#ifndef TODO_H
-#define TODO_H
+#pragma once     //probleme d'include, vu avec Monsieur Raffin et pas de meilleur solution trouve
 
 /**
  * \file Todo.h
@@ -12,6 +11,8 @@
 #include <string>
 #include "Interaction.h"
 #include "Date.h"
+
+class Interaction;   //probleme d'include, vu avec Monsieur Raffin et pas de meilleur solution trouve
 
 class Todo
 {
@@ -41,5 +42,3 @@ private:
 
     Interaction* interaction;
 };
-
-#endif // TODO_H

@@ -1,5 +1,4 @@
-#ifndef GESTIONCONTACT_H
-#define GESTIONCONTACT_H
+#pragma once     //probleme d'include, vu avec Monsieur Raffin et pas de meilleur solution trouve
 
 /**
  * \file gestioncontact.h
@@ -31,5 +30,3 @@ private:
     std::list<Contact*> contacts;
     Date dateDerniereSuppression;
 };
-
-#endif // GESTIONCONTACT_H

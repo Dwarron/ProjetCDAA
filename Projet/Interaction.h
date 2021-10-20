@@ -1,5 +1,4 @@
-#ifndef INTERACTION_H
-#define INTERACTION_H
+#pragma once     //probleme d'include, vu avec Monsieur Raffin et pas de meilleur solution trouve
 
 /**
  * \file Interaction.h
@@ -10,9 +9,12 @@
  */
 
 #include <string>
+#include <list>
 #include "Todo.h"
 #include "Contact.h"
 #include "Date.h"
+
+class Contact;   //probleme d'include, vu avec Monsieur Raffin et pas de meilleur solution trouve
 
 class Interaction
 {
@@ -40,5 +42,3 @@ private:
 
     std::list<Todo*> todos;
 };
-
-#endif // INTERACTION_H

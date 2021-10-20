@@ -1,5 +1,4 @@
-#ifndef CONTACT_H
-#define CONTACT_H
+#pragma once    //probleme d'include, vu avec Monsieur Raffin et pas de meilleur solution trouve
 
 /**
  * \file Contact.h
@@ -14,6 +13,9 @@
 #include <list>
 #include "Date.h"
 #include "Todo.h"
+
+class Interaction;   //probleme d'include, vu avec Monsieur Raffin et pas de meilleur solution trouve
+class Todo;
 
 class Contact
 {
@@ -62,5 +64,3 @@ private:
     void addTodo(const Todo&);
 
 };
-
-#endif // CONTACT_H

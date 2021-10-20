@@ -177,7 +177,7 @@ void Contact::addInteraction(const string &interactionTxt)
 
         string todoText = interactionTxt.substr(position, positionEndLine); // on decoupe le texte correspondant au todo
         Date d = Todo::getDateFromTodoLine(todoText);
-        Todo* t = new Todo(todoText, d, &i);
+        Todo* t = new Todo(todoText, d, i);
         i->addTodo(t);  // ajout du todo dans l'interaction
 
         last = position + delimiterLength;
