@@ -18,16 +18,17 @@ class GestionContact
 {
 public:
     GestionContact();
+    ~GestionContact();
 
-    void ajoutContact(const Contact&);
-    void supprimeContact(const Contact&);
+    Contact* creeContact(const std::string&, const std::string&, const std::string&, const std::string&, const std::string&, const std::string&);
+    void supprimeContact(Contact*);
 
     void ajoutInteraction(Contact*, Interaction&);
 
     const Date &getDateDerniereSuppression() const;
 
 private:
-    list<Contact> contacts;
+    std::list<Contact*> contacts;
     Date dateDerniereSuppression;
 };
 

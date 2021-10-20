@@ -9,54 +9,58 @@
  * \version 0.1
  */
 
-#include "Interaction.h"
 #include <string>
+#include "Interaction.h"
 #include <list>
+#include "Date.h"
 #include "Todo.h"
-
-using namespace std;
 
 class Contact
 {
 public:
     Contact();
-    Contact(const string&, const string&, const string&, const string&, const string&, const string&);
+    Contact(const std::string&, const std::string&, const std::string&, const std::string&, const std::string&, const std::string&);
+    ~Contact();
 
-    const string &getNom() const;
-    void setNom(const string&);
+    const std::string &getNom() const;
+    void setNom(const std::string&);
 
-    const string &getPrenom() const;
-    void setPrenom(const string&);
+    const std::string &getPrenom() const;
+    void setPrenom(const std::string&);
 
-    const string &getEntreprise() const;
-    void setEntreprise(const string&);
+    const std::string &getEntreprise() const;
+    void setEntreprise(const std::string&);
 
-    const string &getTelephone() const;
-    void setTelephone(const string&);
+    const std::string &getTelephone() const;
+    void setTelephone(const std::string&);
 
-    friend ostream& operator << (ostream&, const Contact&);
-    const string toString() const;
-    const string interactionsToString();
+    friend std::ostream& operator << (std::ostream&, const Contact&);
+    const std::string toString() const;
+    const std::string interactionsToString();
 
-    void addInteraction(const Interaction&);
-    void addTodo(const Todo&);
+    void addInteraction(const std::string&);
 
-    string verifInfo(string);
-    string verifMail(string);
+    std::string verifInfo(std::string);
+    std::string verifMail(std::string);
 
     friend bool operator==(const Contact&, const Contact&);
 
+    const std::list<Interaction*> &getInteractions() const;
+    const std::list<Todo*> getTodos() const;
+
 private:
-    string nom;
-    string prenom;
-    string entreprise;
-    string telephone;
-    string mail;
-    string uriPhoto;
+    std::string nom;
+    std::string prenom;
+    std::string entreprise;
+    std::string telephone;
+    std::string mail;
+    std::string uriPhoto;
     Date dateCreation;
 
-    list<Interaction> interactions;
-    list<Todo> todos;
+    std::list<Interaction*> interactions;
+
+    void addTodo(const Todo&);
+
 };
 
 #endif // CONTACT_H

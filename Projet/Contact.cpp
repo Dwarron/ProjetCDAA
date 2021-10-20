@@ -7,9 +7,7 @@
  */
 
 #include "Contact.h"
-#include "Interaction.h"
 #include <string.h>
-#include <Date.h>
 
 using namespace std;
 
@@ -43,13 +41,11 @@ Contact::Contact(const string& n, const string& p, const string& e, const string
     mail = verifMail(m);
     uriPhoto = uri;
     dateCreation = Date();
-    interactions = list<Interaction>();
-    todos = list<Todo>();
+    interactions = list<Interaction*>();
 
     Date dateBienvenue = Date();
     dateBienvenue.addDelay(3);
-    Interaction i = Interaction("Creation de la fiche\n@todo Souhaiter la bienvenue @date " + dateBienvenue);
-    addInteraction(i);
+    addInteraction("Creation de la fiche\n@todo Souhaiter la bienvenue @date " + dateBienvenue);
 }
 
 /**
@@ -73,9 +69,9 @@ const string &Contact::getNom() const
   */
 void Contact::setNom(const string &newNom)
 {
-    Interaction i("modification du nom (" + nom + " -> " + newNom + ")");
+    const string oldName = nom;
     nom = newNom;
-    addInteraction(i);
+    addInteraction("modification du nom (" + oldName + " -> " + newNom + ")");
 }
 
 /**
@@ -99,9 +95,9 @@ const string &Contact::getPrenom() const
   */
 void Contact::setPrenom(const string &newPrenom)
 {
-    Interaction i("modification du prenom (" + prenom + " -> " + newPrenom + ")");
+    const string oldName = prenom;
     prenom = newPrenom;
-    addInteraction(i);
+    addInteraction("modification du prenom (" + oldName + " -> " + newPrenom + ")");
 }
 
 /**
@@ -125,9 +121,9 @@ const string &Contact::getEntreprise() const
   */
 void Contact::setEntreprise(const string &newEntreprise)
 {
-    Interaction i("modification de l'entreprise (" + entreprise + " -> " + newEntreprise + ")");
+    const string oldCorporation = entreprise;
     entreprise = newEntreprise;
-    addInteraction(i);
+    addInteraction("modification de l'entreprise (" + oldCorporation + " -> " + newEntreprise + ")");
 }
 
 /**
@@ -151,9 +147,9 @@ const string &Contact::getTelephone() const
   */
 void Contact::setTelephone(const string &newTelephone)
 {
-    Interaction i("modification du telephone (" + telephone + " -> " + newTelephone + ")");
+    const string oldTel = telephone;
     telephone = newTelephone;
-    addInteraction(i);
+    addInteraction("modification du telephone (" + oldTel + " -> " + newTelephone + ")");
 }
 
 /**
@@ -163,21 +159,32 @@ void Contact::setTelephone(const string &newTelephone)
   *
   *  \param Interaction i : l'interaction a ajouter
   */
-void Contact::addInteraction(const Interaction &i)
+void Contact::addInteraction(const string &interactionTxt)
 {
-    interactions.push_back(i);
-}
+    Interaction* i = new Interaction(interactionTxt, this);
+    const string delimiter = "@todo ";
+    const int delimiterLength = delimiter.length();
 
-/**
-  *  \brief Ajout d'un Todo
-  *
-  *  Methode qui permet d'ajouter un todo a la liste des todos d'un contact
-  *
-  *  \param Todo t : le todo a ajouter
-  */
-void Contact::addTodo(const Todo &t)
-{
-    todos.push_back(t);
+    size_t position;
+    size_t last = 0;
+
+    position = interactionTxt.find(delimiter, last);
+    while(position != string::npos) // on recherche tous les @ todo
+    {
+        size_t positionEndLine = interactionTxt.find("\n"); // fin de ligne du todo
+        if(positionEndLine == string::npos)
+            positionEndLine = interactionTxt.length();  // fin du todo a la fin du texte si pas de nouvelle ligne
+
+        string todoText = interactionTxt.substr(position, positionEndLine); // on decoupe le texte correspondant au todo
+        Date d = Todo::getDateFromTodoLine(todoText);
+        Todo* t = new Todo(todoText, d, &i);
+        i->addTodo(t);  // ajout du todo dans l'interaction
+
+        last = position + delimiterLength;
+        position = interactionTxt.find(delimiter, last);
+    }
+
+    interactions.push_back(i);
 }
 
 /**
@@ -221,6 +228,40 @@ string Contact::verifMail(string chaine)
     //to do...
     //avec des interruption
     return chaine;
+}
+
+/**
+  *  \brief Accesseur d'interactions
+  *
+  *  Methode qui permet d'acceder a la liste des interactions avec le contact
+  *
+  *  \return interactions
+  */
+const std::list<Interaction*> &Contact::getInteractions() const
+{
+    return interactions;
+}
+
+/**
+  *  \brief Accesseur virtuel de todos
+  *
+  *  Methode qui permet d'acceder a la liste des todos vis a vis du contact (la liste de tous les todos de toutes les interactions)
+  *
+  *  \return liste de tous les todos
+  */
+const std::list<Todo*> Contact::getTodos() const
+{
+    list<Todo*> todos = list<Todo*>();
+    for(auto i = interactions.begin(); i != interactions.end(); i++)
+    {
+        list<Todo*> todosInteraction = (*i)->getTodos();
+        for(auto t = todosInteraction.begin(); t != todosInteraction.end(); t++)
+            todos.push_back(*t);
+    }
+
+    todos.sort();
+
+    return todos;
 }
 
 /**
@@ -276,7 +317,7 @@ const string Contact::interactionsToString()
         if(it != interactions.begin())
             res += ", ";
 
-        res += (*it).toString();
+        res += (*it)->toString();
     }
 
     return res;
@@ -298,4 +339,17 @@ bool operator==(const Contact& a, const Contact& b)
             && a.getNom() == b.getNom()
             && a.getEntreprise() == b.getEntreprise()
             ;
+}
+
+/**
+ *  \brief Destructeur de Contact
+ *
+ *  Detruis en memoire tout ce qui etait utilise par une instance de contact qui va etre supprimee (les instances d'interactions pointees par la liste)
+ */
+Contact::~Contact()
+{
+    for(auto it = interactions.begin(); it != interactions.end(); it++)
+    {
+        delete *it;
+    }
 }

@@ -8,6 +8,8 @@
 
 #include "gestioncontact.h"
 
+using namespace std;
+
 /**
  *  \brief Constructeur par defaut
  *
@@ -15,44 +17,26 @@
  */
 GestionContact::GestionContact()
 {
-    contacts = list<Contact>();
+    contacts = list<Contact*>();
 }
 
 /**
- *  \brief Ajoute un contact
+ *  \brief Cree et ajoute un contact
  *
- *  Ajoute un contact a la liste des contacts
+ *  Ajoute un nouveau contact a la liste des contacts
  *
- *  \param c : le contact a ajouter
+ *  \param n : nom du contact
+ *  \param p : prenom
+ *  \param e : entreprise
+ *  \param tel : telephone
+ *  \param m : mail
+ *  \param uri : chemin vers la photo de profil
  */
-void GestionContact::ajoutContact(const Contact& c)
+Contact* GestionContact::creeContact(const string& n, const string& p, const string& e, const string& tel, const string& m, const string& uri)
 {
+    Contact* c = new Contact(n, p, e, tel, m, uri);
     contacts.push_back(c);
-}
-
-void GestionContact::ajoutInteraction(Contact* c, Interaction& i)
-{
-    const string delimiter = "@todo ";
-    const int delimiterLength = delimiter.length();
-
-    list<Todo> nouveauxTodos = list<Todo>();
-    size_t position;
-    size_t last = 0;
-    string text = i.getResume();
-
-    position = text.find(delimiter, last);
-    while(position != string::npos)
-    {
-        size_t positionEndLine = text.find("\n");
-        if(positionEndLine == string::npos)
-            positionEndLine = text.length();
-
-        string todoText = text.substr(position, positionEndLine);
-        Date d = Todo::getDateFromTodoLine(todoText);
-
-        last = position + delimiterLength;
-        position = text.find(delimiter, last);
-    }
+    return c;
 }
 
 /**
@@ -62,7 +46,7 @@ void GestionContact::ajoutInteraction(Contact* c, Interaction& i)
  *
  *  \param c : le contact a supprimer
  */
-void GestionContact::supprimeContact(const Contact& c)
+void GestionContact::supprimeContact(Contact* c)
 {
     contacts.remove(c);
     dateDerniereSuppression = Date();   //date de la derniere suppression aujourdhui
@@ -78,4 +62,18 @@ void GestionContact::supprimeContact(const Contact& c)
 const Date &GestionContact::getDateDerniereSuppression() const
 {
     return dateDerniereSuppression;
+}
+
+
+/**
+  *  \brief Destructeur de GestionContact
+  *
+  *  Detruis une instance de GestionContact precedemment construite et detruits egalement tous les contacts references dans la liste
+  */
+GestionContact::~GestionContact()
+{
+    for(auto it = contacts.begin(); it != contacts.end(); it++)
+    {
+        delete *it;
+    }
 }

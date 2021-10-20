@@ -18,8 +18,6 @@ int main(int argc, char *argv[])
 
     cout << contact1 << endl;
     cout << contact2 << endl;
-    Interaction i = Interaction();
-    Interaction i2 = Interaction();
     contact1.setEntreprise("Pancakesquad NFT");
     cout << contact1.interactionsToString() << endl;
 

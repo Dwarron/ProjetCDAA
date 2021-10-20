@@ -10,26 +10,35 @@
  */
 
 #include <string>
-#include <Date.h>
-
-using namespace std;
+#include "Todo.h"
+#include "Contact.h"
+#include "Date.h"
 
 class Interaction
 {
 public:
-    Interaction();
-    Interaction(const string&);
+    Interaction(const std::string&, Contact*);
+    ~Interaction();
 
     const Date getDate() const;
-    const string &getResume() const;
+    const std::string &getResume() const;
 
-    friend ostream& operator << (ostream&, const Interaction&);
-    const string toString() const;
+    friend std::ostream& operator << (std::ostream&, const Interaction&);
+    const std::string toString() const;
 
     friend bool operator<(const Interaction&, const Interaction&);
+
+    void addTodo(Todo*);
+    Contact *getContact() const;
+
+    const std::list<Todo *> &getTodos() const;
+
 private:
     Date date;
-    string resume;
+    std::string resume;
+    Contact* contact;
+
+    std::list<Todo*> todos;
 };
 
 #endif // INTERACTION_H

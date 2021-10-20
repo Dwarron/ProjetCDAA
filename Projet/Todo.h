@@ -9,33 +9,37 @@
  * \version 0.1
  */
 
-#include "Date.h"
 #include <string>
 #include "Interaction.h"
-
-using namespace std;
+#include "Date.h"
 
 class Todo
 {
 public:
-    Todo(Interaction*);
+    Todo(const std::string&, const Date&, Interaction*);
    // ~Todo();
 
     const Date &getEcheance() const;
 
-    const string &getContenue() const;
+    const std::string &getContenue() const;
 
-    const string toString() const;
+    const std::string toString() const;
 
-    static const Date getDateFromTodoLine(const string&);
+    static const Date getDateFromTodoLine(const std::string&);
+
+    bool getEffectue() const;
+    void setEffectue(bool newEffectue);
+
+    Interaction *getInteraction() const;
+
+    friend bool operator<(const Todo&, const Todo&);
 
 private:
     Date echeance;
-    string contenue;
+    std::string contenue;
     bool effectue;
 
-   /* Interaction* interaction;
-    Contact* contact;*/
+    Interaction* interaction;
 };
 
 #endif // TODO_H

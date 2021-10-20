@@ -11,14 +11,12 @@
 
 #include <string>
 
-using namespace std;
-
 class Date
 {
 public:
     Date();
     Date(const int, const int, const int);
-    Date(const string&);
+    Date(const std::string&);
 
     ~Date();
 
@@ -32,11 +30,11 @@ public:
 
     bool depassee() const;
 
-    friend ostream& operator << (ostream&, const Date&);
-    const string toString() const;
+    friend std::ostream& operator << (std::ostream&, const Date&);
+    const std::string toString() const;
 
     friend bool operator<(const Date&, const Date&);
-    friend string operator+(const string&, const Date&);
+    friend std::string operator+(const std::string&, const Date&);
     friend int operator-(const Date&, const Date&);
     friend bool operator==(const Date&, const Date&);
 

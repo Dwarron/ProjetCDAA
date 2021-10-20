@@ -1,6 +1,8 @@
 #include "Todo.h"
 #include <stdexcept>
 
+using namespace std;
+
 /**
  * \file Todo.h
  * \class Todo Todo.h
@@ -10,13 +12,21 @@
  */
 
 /**
- *  \brief Constructeur par defaut
+ *  \brief Constructeur
  *
- *  Constructeur par defaut de la classe Todo
+ *  Constructeur de la classe Todo
+ *
+ *  \param txt : le contenu du todo
+ *  \param date : la date d'echeance
+ *  \param i : pointeur vers l'interaction initiale
  */
-Todo::Todo(Interaction* i)
+Todo::Todo(const string& txt, const Date& date, Interaction* i)
 {
+    contenue = txt;
+    echeance = date;
+    interaction = i;
 
+    effectue = false;
 }
 
 /**
@@ -103,4 +113,55 @@ const Date Todo::getDateFromTodoLine(const string& text)
     }
 
     return d;
+}
+
+/**
+  *  \brief Accesseur d'effectue
+  *
+  *  Methode qui permet d'acceder au booleen indiquant si un todo a ete realise ou non
+  *
+  *  \return effectue
+  */
+bool Todo::getEffectue() const
+{
+    return effectue;
+}
+
+/**
+  *  \brief Mutateur d'effectue
+  *
+  *  Methode qui permet d'indiquant si le todo a ete realise ou non
+  *
+  *  \return effectue
+  */
+void Todo::setEffectue(bool e)
+{
+    effectue = e;
+}
+
+/**
+  *  \brief Accesseur d'interaction
+  *
+  *  Methode qui permet d'acceder a l'interaction dans laquelle le todo a ete trouve
+  *
+  *  \return effectue
+  */
+Interaction *Todo::getInteraction() const
+{
+    return interaction;
+}
+
+/**
+  *  \brief Comparaison a < b
+  *
+  *  Surdefinition de l'operateur "<", renvoie vraie si semantiquement a < b
+  *  Les todos sont compares selon leur echeance
+  *  \param a : premiere operande
+  *  \param b : deuxieme operande
+  *
+  *  \return a < b
+  */
+bool operator<(const Todo& a, const Todo& b)
+{
+    return (a.getEcheance() < b.getEcheance());
 }
