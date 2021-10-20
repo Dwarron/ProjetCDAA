@@ -2,6 +2,7 @@
 #include "Contact.h"
 #include "Date.h"
 #include "Interaction.h"
+#include "gestioncontact.h"
 #include <QApplication>
 #include <iostream>
 
@@ -13,13 +14,17 @@ int main(int argc, char *argv[])
   /*  MainWindow w;
     w.show();*/
 
-    Contact contact1("Duportail", "Damien", "Unirex compagnie", "06.73.33.25.57", "damien.duportail@btc.fr", "/home/Directory/Document/Image/duportail.jpg");
-    Contact contact2("14Delafenetrel68", "Jean78-Pierre56", "Btc compagnie", "06.07.48.75.37", "delafenetre.jp@eth.fr", "/home/Directory/Document/Photo/dlf.jpg");
+    GestionContact g;
 
-    cout << contact1 << endl;
-    cout << contact2 << endl;
-    contact1.setEntreprise("Pancakesquad NFT");
-    cout << contact1.interactionsToString() << endl;
+    Contact* contact1 = g.creeContact("Duportail", "Damien", "Unirex compagnie", "06.73.33.25.57", "damien.duportail@btc.fr", "/home/Directory/Document/Image/duportail.jpg");
+    Contact* contact2 = g.creeContact("14Delafenetrel68", "Jean78-Pierre56", "Btc compagnie", "06.07.48.75.37", "delafenetre.jp@eth.fr", "/home/Directory/Document/Photo/dlf.jpg");
+    contact1->addInteraction(new Interaction("rdv tel ras\n@todo rappeler 1 le @date 21/10/2021\n@todo rappeler 2 le @date 22/10/2021"));
+    cout << contact1->todosToString() << endl;
+    // TODO : fonctions pour tester, addinteraction pris en charge par gestioncontact, fix bug sort interactions/todos, manque quelques getters/setters dans contact
+    cout << *contact1 << endl;
+    cout << *contact2 << endl;
+    contact1->setEntreprise("Pancakesquad NFT");
+    cout << contact1->interactionsToString() << endl;
 
     Date d = Date();
     cout << "Date du jour : " << d << endl;

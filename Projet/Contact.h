@@ -1,4 +1,4 @@
-#pragma once    //probleme d'include, vu avec Monsieur Raffin et pas de meilleur solution trouve
+#pragma once    //probleme d'include, vu avec Monsieur Raffin et pas de meilleur solution trouvee
 
 /**
  * \file Contact.h
@@ -14,7 +14,7 @@
 #include "Date.h"
 #include "Todo.h"
 
-class Interaction;   //probleme d'include, vu avec Monsieur Raffin et pas de meilleur solution trouve
+class Interaction;   //probleme d'include, vu avec Monsieur Raffin et pas de meilleur solution trouvee
 class Todo;
 
 class Contact
@@ -39,8 +39,9 @@ public:
     friend std::ostream& operator << (std::ostream&, const Contact&);
     const std::string toString() const;
     const std::string interactionsToString();
+    const std::string todosToString();
 
-    void addInteraction(const std::string&);
+    void addInteraction(Interaction*);
 
     std::string verifInfo(std::string);
     std::string verifMail(std::string);

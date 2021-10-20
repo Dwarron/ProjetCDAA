@@ -1,4 +1,4 @@
-#pragma once     //probleme d'include, vu avec Monsieur Raffin et pas de meilleur solution trouve
+#pragma once     //probleme d'include, vu avec Monsieur Raffin et pas de meilleur solution trouvee
 
 /**
  * \file gestioncontact.h

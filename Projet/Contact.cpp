@@ -45,7 +45,7 @@ Contact::Contact(const string& n, const string& p, const string& e, const string
 
     Date dateBienvenue = Date();
     dateBienvenue.addDelay(3);
-    addInteraction("Creation de la fiche\n@todo Souhaiter la bienvenue @date " + dateBienvenue);
+    addInteraction(new Interaction("Creation de la fiche\n@todo Souhaiter la bienvenue avant le @date " + dateBienvenue));
 }
 
 /**
@@ -69,9 +69,8 @@ const string &Contact::getNom() const
   */
 void Contact::setNom(const string &newNom)
 {
-    const string oldName = nom;
+    addInteraction(new Interaction("modification du nom (" + nom + " -> " + newNom + ")"));
     nom = newNom;
-    addInteraction("modification du nom (" + oldName + " -> " + newNom + ")");
 }
 
 /**
@@ -95,9 +94,8 @@ const string &Contact::getPrenom() const
   */
 void Contact::setPrenom(const string &newPrenom)
 {
-    const string oldName = prenom;
+    addInteraction(new Interaction("modification du prenom (" + prenom + " -> " + newPrenom + ")"));
     prenom = newPrenom;
-    addInteraction("modification du prenom (" + oldName + " -> " + newPrenom + ")");
 }
 
 /**
@@ -121,9 +119,8 @@ const string &Contact::getEntreprise() const
   */
 void Contact::setEntreprise(const string &newEntreprise)
 {
-    const string oldCorporation = entreprise;
+    addInteraction(new Interaction("modification de l'entreprise (" + entreprise + " -> " + newEntreprise + ")"));
     entreprise = newEntreprise;
-    addInteraction("modification de l'entreprise (" + oldCorporation + " -> " + newEntreprise + ")");
 }
 
 /**
@@ -147,9 +144,8 @@ const string &Contact::getTelephone() const
   */
 void Contact::setTelephone(const string &newTelephone)
 {
-    const string oldTel = telephone;
+    addInteraction(new Interaction("modification du telephone (" + telephone + " -> " + newTelephone + ")"));
     telephone = newTelephone;
-    addInteraction("modification du telephone (" + oldTel + " -> " + newTelephone + ")");
 }
 
 /**
@@ -159,31 +155,8 @@ void Contact::setTelephone(const string &newTelephone)
   *
   *  \param Interaction i : l'interaction a ajouter
   */
-void Contact::addInteraction(const string &interactionTxt)
+void Contact::addInteraction(Interaction* i)
 {
-    Interaction* i = new Interaction(interactionTxt, this);
-    const string delimiter = "@todo ";
-    const int delimiterLength = delimiter.length();
-
-    size_t position;
-    size_t last = 0;
-
-    position = interactionTxt.find(delimiter, last);
-    while(position != string::npos) // on recherche tous les @ todo
-    {
-        size_t positionEndLine = interactionTxt.find("\n"); // fin de ligne du todo
-        if(positionEndLine == string::npos)
-            positionEndLine = interactionTxt.length();  // fin du todo a la fin du texte si pas de nouvelle ligne
-
-        string todoText = interactionTxt.substr(position, positionEndLine); // on decoupe le texte correspondant au todo
-        Date d = Todo::getDateFromTodoLine(todoText);
-        Todo* t = new Todo(todoText, d, i);
-        i->addTodo(t);  // ajout du todo dans l'interaction
-
-        last = position + delimiterLength;
-        position = interactionTxt.find(delimiter, last);
-    }
-
     interactions.push_back(i);
 }
 
@@ -315,6 +288,29 @@ const string Contact::interactionsToString()
     for(auto it = interactions.begin(); it != interactions.end(); it++)
     {
         if(it != interactions.begin())
+            res += ", ";
+
+        res += (*it)->toString();
+    }
+
+    return res;
+}
+
+/**
+  *  \brief Representation en string de la liste des todos
+  *
+  *  Methode qui renvoie la representation textuel de la liste des todos, triee par ordre d'echeance
+  *
+  *  \return concatenation de representations textuelles de chaque todo
+  */
+const string Contact::todosToString()
+{
+    list<Todo*> todos = getTodos();
+    string res = "Todos de " + prenom + " " + nom + " : ";
+
+    for(auto it = todos.begin(); it != todos.end(); it++)
+    {
+        if(it != todos.begin())
             res += ", ";
 
         res += (*it)->toString();

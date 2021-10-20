@@ -18,26 +18,47 @@ using namespace std;
  *  Constructeur avec parametre de la classe Interaction
  *
  *  \param r : le resume de l'interaction
- *  \param c : pointeur vers le contact avec qui s'est produit l'interaction
  */
-Interaction::Interaction(const string& r, Contact* c)
+Interaction::Interaction(const string& r)
 {
     date = Date();
     resume = r;
-    contact = c;
     todos = list<Todo*>();
+
+    creerTodos();
 }
 
 /**
-  *  \brief Ajout d'un Todo
-  *
-  *  Methode qui permet d'ajouter un todo a la liste des todos d'une interaction
-  *
-  *  \param Todo t : le todo a ajouter
-  */
-void Interaction::addTodo(Todo* t)
+ *  \brief Creation de la liste des todos concernant cette interaction
+ *
+ *  Analyse le resume/contenu de l'interaction pour creer tous les todos correspondant et les stocker dans la liste
+ */
+void Interaction::creerTodos()
 {
-    todos.push_back(t);
+    const string delimiter = "@todo ";
+    const int delimiterLength = delimiter.length();
+
+    size_t position;
+    size_t last = 0;
+
+    position = resume.find(delimiter, last);
+    while(position != string::npos) // on recherche tous les @ todo
+    {
+        resume = resume.substr(0, position) + resume.substr(position + delimiterLength);    // suppression du @todo dans le texte
+
+        size_t positionEndLine = resume.find("\n", position); // fin de ligne du todo
+        if(positionEndLine == string::npos)
+            positionEndLine = resume.length();  // fin du todo a la fin du texte si pas de nouvelle ligne
+
+        string todoText = resume.substr(position, positionEndLine - position); // on decoupe le texte correspondant au todo
+        Date d = Todo::getDateFromTodoLine(&todoText);
+        Todo* t = new Todo(todoText, d, this);
+        resume = resume.substr(0, position) +  todoText + resume.substr(positionEndLine);   // correction de la ligne du todo avec celle analysee et retournee par l'instance
+        todos.push_back(t);
+
+        last = position;
+        position = resume.find(delimiter, last);
+    }
 }
 
 /**
@@ -89,18 +110,6 @@ ostream& operator<< (ostream &o, const Interaction& i)
 const string Interaction::toString() const
 {
     return date.toString() + " : " + resume;
-}
-
-/**
-  *  \brief Accesseur de contact
-  *
-  *  Methode qui permet d'acceder au contact aupres de qui l'interaction s'est produite
-  *
-  *  \return contact
-  */
-Contact *Interaction::getContact() const
-{
-    return contact;
 }
 
 /**

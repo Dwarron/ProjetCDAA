@@ -73,39 +73,40 @@ const string Todo::toString() const
   *  \param text : le text du todo
   *  \return une date extraite du text, ou la date du jour le cas echeant
   */
-const Date Todo::getDateFromTodoLine(const string& text)
+const Date Todo::getDateFromTodoLine(string* text)
 {
     Date d = Date();
     const string delimiter = "@date ";
     const int delimiterLength = delimiter.length();
 
-    size_t position = text.find(delimiter);
+    size_t position = text->find(delimiter);
 
     if(position != string::npos)    // recherche de @ date, sinon date du jour
     {
         position += delimiterLength;
         size_t last = position;
-        string dateText = text.substr(position);
+        string dateText = text->substr(position);
 
+        *text = text->substr(0, position - delimiterLength) + text->substr(position);
         size_t positionFinDate = 0;
         for(int i = 0; i < 2; i++)  // positions du 'J/M/' pour le debut de la date
         {
-            positionFinDate = dateText.find("/");
+            positionFinDate = dateText.find("/", positionFinDate);
             if(positionFinDate == string::npos)
             {
                 throw invalid_argument("Date mal formee dans un todo");
             }
+            positionFinDate++;
         }
         positionFinDate += 4; //YYYY
-        if(positionFinDate >= dateText.length())
+        if(positionFinDate > dateText.length())
         {
             throw invalid_argument("Date mal formee dans un todo");
         }
-        dateText = dateText.substr(positionFinDate);    // on coupe la fin si @ date ne termine pas la ligne
-
+        dateText = dateText.substr(0, positionFinDate);    // on coupe la fin si @ date ne termine pas la ligne
         d = Date(dateText);
 
-        position = text.find(delimiter, last);
+        position = text->find(delimiter, last);
         if(position != string::npos)
         {
             throw invalid_argument("Plusieurs @date dans une ligne de todo");

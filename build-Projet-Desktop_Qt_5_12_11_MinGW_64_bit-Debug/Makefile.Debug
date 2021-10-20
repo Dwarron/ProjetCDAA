@@ -260,8 +260,8 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 ####### Compile
 
 debug/Contact.o: ../Projet/Contact.cpp ../Projet/Contact.h \
-		../Projet/Todo.h \
 		../Projet/Interaction.h \
+		../Projet/Todo.h \
 		../Projet/Date.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\Contact.o ..\Projet\Contact.cpp
 
@@ -282,8 +282,8 @@ debug/Todo.o: ../Projet/Todo.cpp ../Projet/Todo.h \
 
 debug/gestioncontact.o: ../Projet/gestioncontact.cpp ../Projet/gestioncontact.h \
 		../Projet/Contact.h \
-		../Projet/Todo.h \
 		../Projet/Interaction.h \
+		../Projet/Todo.h \
 		../Projet/Date.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\gestioncontact.o ..\Projet\gestioncontact.cpp
 
@@ -395,9 +395,10 @@ debug/main.o: ../Projet/main.cpp ../Projet/mainwindow.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qtabwidget.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtGui/qicon.h \
 		../Projet/Contact.h \
-		../Projet/Todo.h \
 		../Projet/Interaction.h \
+		../Projet/Todo.h \
 		../Projet/Date.h \
+		../Projet/gestioncontact.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/QApplication \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qapplication.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qcoreapplication.h \

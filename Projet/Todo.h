@@ -1,4 +1,4 @@
-#pragma once     //probleme d'include, vu avec Monsieur Raffin et pas de meilleur solution trouve
+#pragma once     //probleme d'include, vu avec Monsieur Raffin et pas de meilleur solution trouvee
 
 /**
  * \file Todo.h
@@ -12,7 +12,7 @@
 #include "Interaction.h"
 #include "Date.h"
 
-class Interaction;   //probleme d'include, vu avec Monsieur Raffin et pas de meilleur solution trouve
+class Interaction;   //probleme d'include, vu avec Monsieur Raffin et pas de meilleur solution trouvee
 
 class Todo
 {
@@ -26,7 +26,7 @@ public:
 
     const std::string toString() const;
 
-    static const Date getDateFromTodoLine(const std::string&);
+    static const Date getDateFromTodoLine(std::string*);
 
     bool getEffectue() const;
     void setEffectue(bool newEffectue);
