@@ -18,7 +18,6 @@ class Todo
 {
 public:
     Todo(const std::string&, const Date&, Interaction*);
-   // ~Todo();
 
     const Date &getEcheance() const;
 

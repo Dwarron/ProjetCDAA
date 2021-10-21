@@ -210,7 +210,7 @@ string Contact::verifMail(string chaine)
   *
   *  \return interactions
   */
-const std::list<Interaction*> &Contact::getInteractions() const
+const list<Interaction*> &Contact::getInteractions() const
 {
     return interactions;
 }
@@ -222,7 +222,7 @@ const std::list<Interaction*> &Contact::getInteractions() const
   *
   *  \return liste de tous les todos
   */
-const std::list<Todo*> Contact::getTodos() const
+const list<Todo*> Contact::getTodos() const
 {
     list<Todo*> todos = list<Todo*>();
     for(auto i = interactions.begin(); i != interactions.end(); i++)
@@ -232,9 +232,74 @@ const std::list<Todo*> Contact::getTodos() const
             todos.push_back(*t);
     }
 
-    todos.sort();
+    todos.sort([](Todo* a, Todo* b) {return *a < *b;});     // lambda pour trier selon la valeur de l'instance et non le pointeur
 
     return todos;
+}
+
+
+/**
+  *  \brief Accesseur de mail
+  *
+  *  Methode qui permet d'acceder au mail du contact
+  *
+  *  \return mail
+  */
+const string &Contact::getMail() const
+{
+    return mail;
+}
+
+/**
+  *  \brief Mutateur de mail
+  *
+  *  Methode qui permet de modifier le mail du contact
+  *
+  *  \param newMail : le nouveau mail
+  */
+void Contact::setMail(const string &newMail)
+{
+    addInteraction(new Interaction("modification du mail (" + mail + " -> " + newMail + ")"));
+    mail = newMail;
+}
+
+
+/**
+  *  \brief Accesseur de uriPhoto
+  *
+  *  Methode qui permet d'acceder a l'emplacement de la photo du contact
+  *
+  *  \return uriPhoto
+  */
+const std::string &Contact::getUriPhoto() const
+{
+    return uriPhoto;
+}
+
+/**
+  *  \brief Mutateur de uriPhoto
+  *
+  *  Methode qui permet de modifier l'adresse de la photo du contact
+  *
+  *  \param newUriPhoto : le nouveau chemin
+  */
+void Contact::setUriPhoto(const string &newUriPhoto)
+{
+    addInteraction(new Interaction("modification de la photo (" + uriPhoto + " -> " + newUriPhoto + ")"));
+    uriPhoto = newUriPhoto;
+}
+
+
+/**
+  *  \brief Accesseur de dateCreation
+  *
+  *  Methode qui permet d'acceder a la date de creation de la fiche du contact
+  *
+  *  \return dateCreation
+  */
+const Date &Contact::getDateCreation() const
+{
+    return dateCreation;
 }
 
 /**
@@ -268,7 +333,22 @@ const string Contact::toString() const
         result += " de " + entreprise;
     }
 
-    result += " tel: " + telephone + " ou mail: " + mail;
+    if(telephone != "" && mail != "")
+    {
+        result += " tel: " + telephone + " ou mail: " + mail;
+    }
+    else
+    {
+        if(telephone != "")
+        {
+            result += " tel: " + telephone;
+        }
+        else
+        {
+            result += " mail: " + mail;
+        }
+    }
+
 
     return result;
 }
@@ -282,13 +362,14 @@ const string Contact::toString() const
   */
 const string Contact::interactionsToString()
 {
-    interactions.sort();
-    string res = "Interactions de " + prenom + " " + nom + " : ";
+    interactions.sort([](Interaction* a, Interaction* b) {return *a < *b;});   // lambda pour trier selon la valeur de l'instance et non le pointeur
+
+    string res = "Interactions de " + prenom + " " + nom + " :\n";
 
     for(auto it = interactions.begin(); it != interactions.end(); it++)
     {
         if(it != interactions.begin())
-            res += ", ";
+            res += ",\n";
 
         res += (*it)->toString();
     }
@@ -306,12 +387,12 @@ const string Contact::interactionsToString()
 const string Contact::todosToString()
 {
     list<Todo*> todos = getTodos();
-    string res = "Todos de " + prenom + " " + nom + " : ";
+    string res = "Todos de " + prenom + " " + nom + " :\n";
 
     for(auto it = todos.begin(); it != todos.end(); it++)
     {
         if(it != todos.begin())
-            res += ", ";
+            res += "\n";
 
         res += (*it)->toString();
     }

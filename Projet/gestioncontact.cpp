@@ -49,8 +49,39 @@ Contact* GestionContact::creeContact(const string& n, const string& p, const str
 void GestionContact::supprimeContact(Contact* c)
 {
     contacts.remove(c);
-    dateDerniereSuppression = Date();   //date de la derniere suppression aujourdhui
+    dateDerniereSuppression = Date();   //date de la derniere suppression = aujourdhui
 }
+
+/**
+ *  \brief Ajoute une interaction non existante dans un contact
+ *
+ *  Cree une nouvelle interaction avec le text correspondant et l'ajoute au contact
+ *
+ *  \param c : le contact
+ *  \param text : le text de l'interaction
+ */
+Interaction* GestionContact::ajoutInteraction(Contact* c, const string& text)
+{
+    Interaction* i = new Interaction(text);
+    c->addInteraction(i);
+
+    return i;
+}
+
+/**
+ *  \brief Ajoute une interaction existante dans un contact
+ *
+ *  Ajoute au contact une interaction deja existante.
+ *  Utile si on decide d'ajouter une meme interaction a plusieurs contacts differents (un groupe de clients par exemple)
+ *
+ *  \param c : le contact
+ *  \param text : le text de l'interaction
+ */
+void GestionContact::ajoutInteraction(Contact* c, Interaction* i)
+{
+    c->addInteraction(i);
+}
+
 
 /**
   *  \brief Accesseur de dateDerniereSuppression
@@ -76,4 +107,5 @@ GestionContact::~GestionContact()
     {
         delete *it;
     }
+    contacts.clear();
 }

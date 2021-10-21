@@ -24,6 +24,7 @@ public:
 
     const Date getDate() const;
     const std::string &getResume() const;
+    void setResume(const std::string &newResume);
 
     friend std::ostream& operator << (std::ostream&, const Interaction&);
     const std::string toString() const;
@@ -39,4 +40,5 @@ private:
     std::list<Todo*> todos;
 
     void creerTodos();
+    void viderTodos();
 };

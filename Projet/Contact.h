@@ -36,6 +36,17 @@ public:
     const std::string &getTelephone() const;
     void setTelephone(const std::string&);
 
+    const std::string &getMail() const;
+    void setMail(const std::string &newMail);
+
+    const std::string &getUriPhoto() const;
+    void setUriPhoto(const std::string &newUriPhoto);
+
+    const Date &getDateCreation() const;
+
+    const std::list<Interaction*> &getInteractions() const;
+    const std::list<Todo*> getTodos() const;
+
     friend std::ostream& operator << (std::ostream&, const Contact&);
     const std::string toString() const;
     const std::string interactionsToString();
@@ -47,9 +58,6 @@ public:
     std::string verifMail(std::string);
 
     friend bool operator==(const Contact&, const Contact&);
-
-    const std::list<Interaction*> &getInteractions() const;
-    const std::list<Todo*> getTodos() const;
 
 private:
     std::string nom;

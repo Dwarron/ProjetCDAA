@@ -10,17 +10,19 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-  /*  MainWindow w;
+   /* QApplication a(argc, argv);
+    MainWindow w;
     w.show();*/
 
-    GestionContact g;
-
+    GestionContact g = GestionContact();
     Contact* contact1 = g.creeContact("Duportail", "Damien", "Unirex compagnie", "06.73.33.25.57", "damien.duportail@btc.fr", "/home/Directory/Document/Image/duportail.jpg");
     Contact* contact2 = g.creeContact("14Delafenetrel68", "Jean78-Pierre56", "Btc compagnie", "06.07.48.75.37", "delafenetre.jp@eth.fr", "/home/Directory/Document/Photo/dlf.jpg");
-    contact1->addInteraction(new Interaction("rdv tel ras\n@todo rappeler 1 le @date 21/10/2021\n@todo rappeler 2 le @date 22/10/2021"));
+    Interaction* i = g.ajoutInteraction(contact1, "rdv tel ras\n@todo rappeler 1 le @date 21/10/2021\n@todo rappeler 2 le @date 22/10/2021");
+    i->setResume("en fait RAS, @todo rappeler seulement @date 25/10/2021");
     cout << contact1->todosToString() << endl;
-    // TODO : fonctions pour tester, addinteraction pris en charge par gestioncontact, fix bug sort interactions/todos, manque quelques getters/setters dans contact
+
+    // TODO : fonctions pour tester, verifs infos en exceptions, pdf 3 pages maxi, deposer sources
+
     cout << *contact1 << endl;
     cout << *contact2 << endl;
     contact1->setEntreprise("Pancakesquad NFT");
@@ -44,5 +46,7 @@ int main(int argc, char *argv[])
     cout << d4 << " est-il avant " << d2 << " ? " << (d4 < d2) << endl;
     Date d5 = Date(15, 8, 2023);
     cout << d5 << " est-il avant " << d2 << " ? " << (d5 < d2) << endl;
+
     //return a.exec();
+    return 0;
 }

@@ -22,7 +22,8 @@ public:
     Contact* creeContact(const std::string&, const std::string&, const std::string&, const std::string&, const std::string&, const std::string&);
     void supprimeContact(Contact*);
 
-    void ajoutInteraction(Contact*, Interaction&);
+    Interaction* ajoutInteraction(Contact*, const std::string&);
+    void ajoutInteraction(Contact*, Interaction*);
 
     const Date &getDateDerniereSuppression() const;
 

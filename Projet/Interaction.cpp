@@ -125,6 +125,29 @@ const std::list<Todo *> &Interaction::getTodos() const
 }
 
 /**
+  *  \brief Mutateur de resule
+  *
+  *  Methode qui permet de modifier le resume de l'interaction (en cas d'erreur)
+  *  Regenere egalement les todos associes.
+  *
+  */
+void Interaction::setResume(const std::string &newResume)
+{
+    resume = newResume;
+    viderTodos();
+    creerTodos();
+}
+
+void Interaction::viderTodos()
+{
+    for(auto it = todos.begin(); it != todos.end(); it++)
+    {
+        delete *it;
+    }
+    todos.clear();
+}
+
+/**
   *  \brief Comparaison a < b
   *
   *  Surdefinition de l'operateur "<", renvoie vraie si semantiquement a < b
@@ -146,8 +169,5 @@ bool operator<(const Interaction& a, const Interaction& b)
  */
 Interaction::~Interaction()
 {
-    for(auto it = todos.begin(); it != todos.end(); it++)
-    {
-        delete *it;
-    }
+    viderTodos();
 }
