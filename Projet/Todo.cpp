@@ -1,6 +1,6 @@
 #include "Todo.h"
 #include <stdexcept>
-
+#include <iostream>
 using namespace std;
 
 /**
@@ -25,7 +25,6 @@ Todo::Todo(const string& txt, const Date& date, Interaction* i)
     contenue = txt;
     echeance = date;
     interaction = i;
-
     effectue = false;
 }
 
@@ -64,6 +63,22 @@ const string Todo::toString() const
 {
     return "TODO pour le " + echeance.toString() + " : " + contenue;
 }
+
+/**
+  *  \brief Fonction amie d'affichage via cout
+  *
+  *  Fonction surchargeant l'operateur << pour afficher le todo avec un cout
+  *
+  *  \param o : le stream a surcharger
+  *  \param t : le todo a afficher dans le stream
+  *  \return operateur surchage
+  */
+ostream& operator<< (ostream &o, const Todo& t)
+{
+    o << t.toString();
+    return o;
+}
+
 
 /**
   *  \brief Recupere la date d'une ligne de text de todo

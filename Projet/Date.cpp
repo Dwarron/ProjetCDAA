@@ -92,11 +92,11 @@ Date::Date(const string &text)
  */
 Date::Date(const int j, const int m, const int y)
 {
-    if(j > 31 || j < 0)
+    if(j > 31 || j <= 0)
     {
         throw invalid_argument("jour j incorrect");
     }
-    if(m > 12 || m < 0)
+    if(m > 12 || m <= 0)
     {
         throw invalid_argument("mois m incorrect");
     }

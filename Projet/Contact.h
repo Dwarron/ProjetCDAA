@@ -43,6 +43,7 @@ public:
     void setUriPhoto(const std::string &newUriPhoto);
 
     const Date &getDateCreation() const;
+    const Date &getDateDerniereModification() const;
 
     const std::list<Interaction*> &getInteractions() const;
     const std::list<Todo*> getTodos() const;
@@ -67,6 +68,7 @@ private:
     std::string mail;
     std::string uriPhoto;
     Date dateCreation;
+    Date dateModification;
 
     std::list<Interaction*> interactions;
 

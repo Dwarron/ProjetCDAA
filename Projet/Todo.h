@@ -24,6 +24,7 @@ public:
     const std::string &getContenue() const;
 
     const std::string toString() const;
+    friend std::ostream& operator << (std::ostream&, const Todo&);
 
     static const Date getDateFromTodoLine(std::string*);
 

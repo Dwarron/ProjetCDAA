@@ -41,6 +41,7 @@ Contact::Contact(const string& n, const string& p, const string& e, const string
     mail = verifMail(m);
     uriPhoto = uri;
     dateCreation = Date();
+    dateModification = Date();
     interactions = list<Interaction*>();
 
     Date dateBienvenue = Date();
@@ -71,6 +72,7 @@ void Contact::setNom(const string &newNom)
 {
     addInteraction(new Interaction("modification du nom (" + nom + " -> " + newNom + ")"));
     nom = newNom;
+    dateModification = Date();
 }
 
 /**
@@ -96,6 +98,7 @@ void Contact::setPrenom(const string &newPrenom)
 {
     addInteraction(new Interaction("modification du prenom (" + prenom + " -> " + newPrenom + ")"));
     prenom = newPrenom;
+    dateModification = Date();
 }
 
 /**
@@ -121,6 +124,7 @@ void Contact::setEntreprise(const string &newEntreprise)
 {
     addInteraction(new Interaction("modification de l'entreprise (" + entreprise + " -> " + newEntreprise + ")"));
     entreprise = newEntreprise;
+    dateModification = Date();
 }
 
 /**
@@ -146,6 +150,85 @@ void Contact::setTelephone(const string &newTelephone)
 {
     addInteraction(new Interaction("modification du telephone (" + telephone + " -> " + newTelephone + ")"));
     telephone = newTelephone;
+    dateModification = Date();
+}
+
+/**
+  *  \brief Accesseur de mail
+  *
+  *  Methode qui permet d'acceder au mail du contact
+  *
+  *  \return mail
+  */
+const string &Contact::getMail() const
+{
+    return mail;
+}
+
+/**
+  *  \brief Mutateur de mail
+  *
+  *  Methode qui permet de modifier le mail du contact
+  *
+  *  \param newMail : le nouveau mail
+  */
+void Contact::setMail(const string &newMail)
+{
+    addInteraction(new Interaction("modification du mail (" + mail + " -> " + newMail + ")"));
+    mail = newMail;
+    dateModification = Date();
+}
+
+
+/**
+  *  \brief Accesseur de uriPhoto
+  *
+  *  Methode qui permet d'acceder a l'emplacement de la photo du contact
+  *
+  *  \return uriPhoto
+  */
+const std::string &Contact::getUriPhoto() const
+{
+    return uriPhoto;
+}
+
+/**
+  *  \brief Mutateur de uriPhoto
+  *
+  *  Methode qui permet de modifier l'adresse de la photo du contact
+  *
+  *  \param newUriPhoto : le nouveau chemin
+  */
+void Contact::setUriPhoto(const string &newUriPhoto)
+{
+    addInteraction(new Interaction("modification de la photo (" + uriPhoto + " -> " + newUriPhoto + ")"));
+    uriPhoto = newUriPhoto;
+    dateModification = Date();
+}
+
+
+/**
+  *  \brief Accesseur de dateCreation
+  *
+  *  Methode qui permet d'acceder a la date de creation de la fiche du contact
+  *
+  *  \return dateCreation
+  */
+const Date &Contact::getDateCreation() const
+{
+    return dateCreation;
+}
+
+/**
+  *  \brief Accesseur de dateModification
+  *
+  *  Methode qui permet d'acceder a la date de la derniere modification de la fiche du contact
+  *
+  *  \return telephone
+  */
+const Date& Contact::getDateDerniereModification() const
+{
+    return dateModification;
 }
 
 /**
@@ -235,71 +318,6 @@ const list<Todo*> Contact::getTodos() const
     todos.sort([](Todo* a, Todo* b) {return *a < *b;});     // lambda pour trier selon la valeur de l'instance et non le pointeur
 
     return todos;
-}
-
-
-/**
-  *  \brief Accesseur de mail
-  *
-  *  Methode qui permet d'acceder au mail du contact
-  *
-  *  \return mail
-  */
-const string &Contact::getMail() const
-{
-    return mail;
-}
-
-/**
-  *  \brief Mutateur de mail
-  *
-  *  Methode qui permet de modifier le mail du contact
-  *
-  *  \param newMail : le nouveau mail
-  */
-void Contact::setMail(const string &newMail)
-{
-    addInteraction(new Interaction("modification du mail (" + mail + " -> " + newMail + ")"));
-    mail = newMail;
-}
-
-
-/**
-  *  \brief Accesseur de uriPhoto
-  *
-  *  Methode qui permet d'acceder a l'emplacement de la photo du contact
-  *
-  *  \return uriPhoto
-  */
-const std::string &Contact::getUriPhoto() const
-{
-    return uriPhoto;
-}
-
-/**
-  *  \brief Mutateur de uriPhoto
-  *
-  *  Methode qui permet de modifier l'adresse de la photo du contact
-  *
-  *  \param newUriPhoto : le nouveau chemin
-  */
-void Contact::setUriPhoto(const string &newUriPhoto)
-{
-    addInteraction(new Interaction("modification de la photo (" + uriPhoto + " -> " + newUriPhoto + ")"));
-    uriPhoto = newUriPhoto;
-}
-
-
-/**
-  *  \brief Accesseur de dateCreation
-  *
-  *  Methode qui permet d'acceder a la date de creation de la fiche du contact
-  *
-  *  \return dateCreation
-  */
-const Date &Contact::getDateCreation() const
-{
-    return dateCreation;
 }
 
 /**
