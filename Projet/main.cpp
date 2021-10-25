@@ -2,7 +2,7 @@
 #include "Contact.h"
 #include "Date.h"
 #include "Interaction.h"
-#include "gestioncontact.h"
+#include "GestionContact.h"
 #include <QApplication>
 #include <iostream>
 
@@ -80,13 +80,9 @@ void testDate()
 
 int main(int argc, char *argv[])
 {
-   /* QApplication a(argc, argv);
-    MainWindow w;
-    w.show();*/
-
     GestionContact g = GestionContact();    //classe de gestion des contacts
-    Contact* contact1 = g.creeContact("Duportail", "Damien", "Unirex compagnie", "06.73.33.25.57", "damien.duportail@btc.fr", "/home/Directory/Document/Image/duportail.jpg");
-    Contact* contact2 = g.creeContact("14Delafenetrel68", "Jean78-Pierre56", "Btc compagnie", "06.07.48.75.37", "", "/home/Directory/Document/Photo/dlf.jpg");
+    Contact* contact1 = g.creeContact("Duportail", "Damien", "Unirex compagnie", "0673332557", "damien.duportail@btc.fr", "/home/Directory/Document/Image/duportail.jpg");
+    Contact* contact2 = g.creeContact("Delafenetre", "Jean-Pierre", "Btc compagnie", "0607487537", "", "/home/Directory/Document/Photo/dlf.jpg");
 
     cout << "affichage des contacts directement avec <<" << endl << "contact1 : " << *contact1 << endl;
     cout << "contact2 : " << *contact2 << endl;
@@ -117,7 +113,7 @@ int main(int argc, char *argv[])
     cout << "Comparaison de todos : " << endl;
     cout << t1 << " < " << t2 << " ? " << (t1 < t2) << endl;
     cout << endl;
-    // TODO : fonctions pour tester, verifs infos en exceptions, pdf 3 pages maxi, deposer sources
+    // TODO : pdf 3 pages maxi, deposer sources
 
     Date d = Date();
     cout << "Date du jour : " << d << endl;
@@ -140,7 +136,5 @@ int main(int argc, char *argv[])
     cout << endl;
 
     testDate();
-
-    //return a.exec();
     return 0;
 }

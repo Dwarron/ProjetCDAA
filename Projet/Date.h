@@ -17,8 +17,6 @@ public:
     Date(const int, const int, const int);
     Date(const std::string&);
 
-    ~Date();
-
     int getJour() const;
     int getMois() const;
     int getAnnee() const;
@@ -38,6 +36,5 @@ public:
     friend bool operator==(const Date&, const Date&);
 
 private:
-    struct tm *d;
-
+    struct tm d;
 };

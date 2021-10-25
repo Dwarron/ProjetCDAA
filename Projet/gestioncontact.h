@@ -1,7 +1,7 @@
 #pragma once     //probleme d'include, vu avec Monsieur Raffin et pas de meilleur solution trouvee
 
 /**
- * \file gestioncontact.h
+ * \file GestionContact.h
  * \class GestionContact GestionContact.h
  * \brief Class de gestion des contacts: ajout, suppressions, requetes, ...
  * \author Perion Maxence
@@ -26,6 +26,8 @@ public:
     void ajoutInteraction(Contact*, Interaction*);
 
     const Date &getDateDerniereSuppression() const;
+
+    std::list<Interaction*> getAllInteractions() const;
 
 private:
     std::list<Contact*> contacts;

@@ -54,9 +54,13 @@ public:
     const std::string todosToString();
 
     void addInteraction(Interaction*);
+    void clearInteractions();
 
-    std::string verifInfo(std::string);
-    std::string verifMail(std::string);
+    static void checkLettres(const std::string&);
+    static void checkChiffres(const std::string&);
+    static void checkMail(const std::string&);
+
+    static const std::string suggestionNom(std::string&);
 
     friend bool operator==(const Contact&, const Contact&);
 
@@ -71,7 +75,4 @@ private:
     Date dateModification;
 
     std::list<Interaction*> interactions;
-
-    void addTodo(const Todo&);
-
 };

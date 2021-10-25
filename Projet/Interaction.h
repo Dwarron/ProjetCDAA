@@ -31,7 +31,7 @@ public:
 
     friend bool operator<(const Interaction&, const Interaction&);
 
-    const std::list<Todo *> &getTodos() const;
+    const std::list<Todo*> &getTodos() const;
 
 private:
     Date date;

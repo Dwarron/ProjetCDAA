@@ -23,7 +23,7 @@ using namespace std;
 Date::Date()
 {
     time_t n = time(0);     //date courante
-    d = localtime(&n);
+    d = *localtime(&n);
 }
 
 /**
@@ -105,10 +105,10 @@ Date::Date(const int j, const int m, const int y)
         throw invalid_argument("annee y incorrecte");
     }
 
-    d = new tm();
-    d->tm_mday = j;
-    d->tm_mon = m - 1;
-    d->tm_year = y - 1900;
+    d = tm();
+    d.tm_mday = j;
+    d.tm_mon = m - 1;
+    d.tm_year = y - 1900;
 }
 
 /**
@@ -120,7 +120,7 @@ Date::Date(const int j, const int m, const int y)
   */
 int Date::getJour() const
 {
-    return d->tm_mday;
+    return d.tm_mday;
 }
 
 /**
@@ -132,7 +132,7 @@ int Date::getJour() const
   */
 int Date::getMois() const
 {
-    return d->tm_mon + 1;
+    return d.tm_mon + 1;
 }
 
 /**
@@ -144,7 +144,7 @@ int Date::getMois() const
   */
 int Date::getAnnee() const
 {
-    return d->tm_year + 1900;
+    return d.tm_year + 1900;
 }
 
 /**
@@ -183,15 +183,15 @@ void Date::addDelay(const int jours, const int mois)
   */
 void Date::addDelay(const int jours, const int mois, const int annees)
 {
-    int newDay = d->tm_mday + jours;
-    d->tm_mday = newDay % 31;                   //le nombre de jour ne doit pas depasser 31
+    int newDay = d.tm_mday + jours;
+    d.tm_mday = newDay % 31;                   //le nombre de jour ne doit pas depasser 31
     int additionalMonth = newDay / 31;          //si on a plus de 31j, on ajoute des mois
 
-    int newMonth = d->tm_mon + mois + additionalMonth;
-    d->tm_mon = newMonth % 12;                  //le nombre de mois ne doit pas depasser 12
+    int newMonth = d.tm_mon + mois + additionalMonth;
+    d.tm_mon = newMonth % 12;                  //le nombre de mois ne doit pas depasser 12
     int additionalYear = newMonth / 12;         //si on a plus de 12 mois, on ajoute des annees
 
-    d->tm_year += annees + additionalYear;
+    d.tm_year += annees + additionalYear;
 }
 
 /**
@@ -301,14 +301,4 @@ bool Date::depassee() const
 {
     Date now = Date();
     return (*this) < now;
-}
-
-/**
-  *  \brief Destructeur de Date
-  *
-  *  Detruis une instance de Date precedemment construite
-  */
-Date::~Date()
-{
-    delete d;
 }

@@ -1,8 +1,3 @@
-#include "Todo.h"
-#include <stdexcept>
-#include <iostream>
-using namespace std;
-
 /**
  * \file Todo.h
  * \class Todo Todo.h
@@ -10,6 +5,11 @@ using namespace std;
  * \author Perion Maxence, Pinon Alexandre
  * \version 0.1
  */
+
+#include "Todo.h"
+#include <stdexcept>
+
+using namespace std;
 
 /**
  *  \brief Constructeur

@@ -9,7 +9,7 @@
 #include "Interaction.h"
 #include "Date.h"
 #include <string>
-
+#include <iostream>
 using namespace std;
 
 /**
@@ -125,7 +125,7 @@ const std::list<Todo *> &Interaction::getTodos() const
 }
 
 /**
-  *  \brief Mutateur de resule
+  *  \brief Mutateur de resume
   *
   *  Methode qui permet de modifier le resume de l'interaction (en cas d'erreur)
   *  Regenere egalement les todos associes.
@@ -138,6 +138,11 @@ void Interaction::setResume(const std::string &newResume)
     creerTodos();
 }
 
+/**
+  *  \brief Vide la liste des todos stockes dans cette interaction
+  *
+  *   Desalloue les instances de todos references
+  */
 void Interaction::viderTodos()
 {
     for(auto it = todos.begin(); it != todos.end(); it++)

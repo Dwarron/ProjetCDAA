@@ -1,5 +1,5 @@
 /**
- * \file gestioncontact.cpp
+ * \file GestionContact.cpp
  * \class GestionContact GestionContact.h
  * \brief Class de gestion des contacts: ajout, suppressions, requetes, ...
  * \author Perion Maxence
@@ -7,7 +7,7 @@
  */
 
 #include "gestioncontact.h"
-
+#include <iostream>
 using namespace std;
 
 /**
@@ -82,6 +82,25 @@ void GestionContact::ajoutInteraction(Contact* c, Interaction* i)
     c->addInteraction(i);
 }
 
+/**
+ *  \brief Recupere toutes les interactions de tous les contacts
+ *  Trie toutes les interactions et supprime les duplicatas
+ *
+ *  \return la liste de toutes les interactions existantes
+ */
+list<Interaction*> GestionContact::getAllInteractions() const
+{
+    list<Interaction*> li = list<Interaction*>();
+    for(auto it = contacts.begin(); it != contacts.end(); it++)
+    {
+        list<Interaction*> licontact = (*it)->getInteractions();
+        li.insert(li.end(), licontact.begin(), licontact.end());
+    }
+
+    li.sort();
+    li.unique();
+    return li;
+}
 
 /**
   *  \brief Accesseur de dateDerniereSuppression
@@ -103,9 +122,16 @@ const Date &GestionContact::getDateDerniereSuppression() const
   */
 GestionContact::~GestionContact()
 {
-    for(auto it = contacts.begin(); it != contacts.end(); it++)
+    list<Interaction*> interactions = getAllInteractions();     // detruis toutes les interactions depuis ici pour ne pas supprime plusieurs fois
+                                                                // une meme instance references par deux contacts differents (aucun moyen de le savoir depuis contact)
+    for(auto it = interactions.begin(); it != interactions.end(); it++)
     {
         delete *it;
     }
-    contacts.clear();
+
+    for(auto it = contacts.begin(); it != contacts.end(); it++)
+    {
+        (*it)->clearInteractions();
+        delete *it;
+    }
 }

@@ -8,6 +8,7 @@
 
 #include "Contact.h"
 #include <string.h>
+#include <stdexcept>
 
 using namespace std;
 
@@ -34,12 +35,31 @@ Contact::Contact() : Contact("Jean", "Dupont", "Carrefour", "0123456789", "jean.
  */
 Contact::Contact(const string& n, const string& p, const string& e, const string& tel, const string& m, const string& uri)
 {   
-    nom = verifInfo(n);
-    prenom = verifInfo(p);
+    checkLettres(n);    // nom et prenom doivent uniquement contenir des lettres
+    nom = n;
+    checkLettres(p);
+    prenom = p;
+
     entreprise = e;
+
+    if(tel != "")
+    {
+        checkChiffres(tel);     // telephone doit etre compose uniquement de chiffres
+        if(tel.length() != 10)
+        {
+            throw invalid_argument("Telephone errone (doit avoir 10 chiffres)");
+        }
+    }
     telephone = tel;
-    mail = verifMail(m);
+
+    if(m != "")
+    {
+        checkMail(m);
+    }
+    mail = m;
+
     uriPhoto = uri;
+
     dateCreation = Date();
     dateModification = Date();
     interactions = list<Interaction*>();
@@ -47,6 +67,69 @@ Contact::Contact(const string& n, const string& p, const string& e, const string
     Date dateBienvenue = Date();
     dateBienvenue.addDelay(3);
     addInteraction(new Interaction("Creation de la fiche\n@todo Souhaiter la bienvenue avant le @date " + dateBienvenue));
+}
+
+/**
+  *  \brief Test si la chaine entree est conforme
+  *
+  *  Methode qui renvoie une exception si la chaine contient autre chose que des lettres, un espace ou un tiret
+  *
+  *  \param chaine : la chaine a tester
+  */
+void Contact::checkLettres(const std::string& chaine)
+{
+    size_t position = chaine.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ -");
+    if(position != string::npos)
+    {
+        throw invalid_argument("Chaine mal formee (doit contenir uniquement des lettres)");
+    }
+}
+
+/**
+  *  \brief Test si la chaine entree est conforme
+  *
+  *  Methode qui renvoie une exception si la chaine contient autre chose que des chiffres
+  *
+  *  \param chaine : la chaine a tester
+  */
+void Contact::checkChiffres(const std::string& chaine)
+{
+    size_t position = chaine.find_first_not_of("0123456789");
+    if(position != string::npos)
+    {
+        throw invalid_argument("Chaine mal formee (doit contenir uniquement des chiffres)");
+    }
+}
+
+/**
+  *  \brief Test si la chaine entree est conforme
+  *
+  *  Methode qui renvoie une exception si la chaine ne decrit pas un mail
+  *
+  *  \param chaine : la chaine a tester
+  */
+void Contact::checkMail(const std::string& chaine)
+{
+    size_t positionArobase = chaine.find("@");
+
+    if(positionArobase == string::npos)
+    {
+        throw invalid_argument("Mail mal forme : doit contenir exactement 1 @");
+    }
+    else
+    {
+        size_t positionArobase2 = chaine.find("@", positionArobase + 1);
+        if(positionArobase2 != string::npos)
+        {
+            throw invalid_argument("Mail mal forme : doit contenir exactement 1 @");
+        }
+    }
+
+    size_t positionPoint = chaine.find(".", positionArobase);
+    if(positionPoint == string::npos)
+    {
+        throw invalid_argument("Mail mal forme : doit contenir au moins un point apres @");
+    }
 }
 
 /**
@@ -70,6 +153,7 @@ const string &Contact::getNom() const
   */
 void Contact::setNom(const string &newNom)
 {
+    checkLettres(newNom);    // le nom doit uniquement contenir des lettres
     addInteraction(new Interaction("modification du nom (" + nom + " -> " + newNom + ")"));
     nom = newNom;
     dateModification = Date();
@@ -96,6 +180,7 @@ const string &Contact::getPrenom() const
   */
 void Contact::setPrenom(const string &newPrenom)
 {
+    checkLettres(newPrenom);    // le prenom doit uniquement contenir des lettres
     addInteraction(new Interaction("modification du prenom (" + prenom + " -> " + newPrenom + ")"));
     prenom = newPrenom;
     dateModification = Date();
@@ -148,6 +233,11 @@ const string &Contact::getTelephone() const
   */
 void Contact::setTelephone(const string &newTelephone)
 {
+    checkChiffres(newTelephone);     // le telephone doit etre compose uniquement de chiffres
+    if(newTelephone.length() != 10)
+    {
+        throw invalid_argument("Telephone errone (doit avoir 10 chiffres)");
+    }
     addInteraction(new Interaction("modification du telephone (" + telephone + " -> " + newTelephone + ")"));
     telephone = newTelephone;
     dateModification = Date();
@@ -174,6 +264,8 @@ const string &Contact::getMail() const
   */
 void Contact::setMail(const string &newMail)
 {
+    checkMail(newMail);     // format mail
+
     addInteraction(new Interaction("modification du mail (" + mail + " -> " + newMail + ")"));
     mail = newMail;
     dateModification = Date();
@@ -244,45 +336,21 @@ void Contact::addInteraction(Interaction* i)
 }
 
 /**
-  *  \brief Methode verifInfo
+  *  \brief Propose une suggestion de nom pour une chaine entree ne correspondant pas a ce qui est attendu
   *
-  *  Methode qui permet de retirer tous les chiffres ainsi que caracteres speciaux
+  *  Methode qui retire tous les chiffres et caracteres speciaux
   *
   *  \param chaine : la chaine a verifier
   */
-string Contact::verifInfo(string chaine)
+const std::string Contact::suggestionNom(std::string& chaine)
 {
-    char delimitation[] = "1,2,3,4,5,6,7,8,9,0,&,#";
-
-    char tabTest[chaine.length() + 1];
-    string newChaine;
-    char *result = NULL ;
-
-    strcpy(tabTest, chaine.c_str()); //on copie le nom qui est un string, en tableau de char pour utiliser strtok()
-
-    result = strtok (tabTest, delimitation); //pour que result soit != de NULL
-
-    while( result != NULL )
+    size_t position = chaine.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ -");
+    while(position != string::npos)
     {
-       newChaine += string(result);
-       result = strtok( NULL , delimitation );
+        chaine = chaine.substr(0, position) + chaine.substr(position + 1);
+        position = chaine.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ -");
     }
 
-    return newChaine;
-    //garder le meme principe mais plutot utiliser des interruption
-}
-
-/**
-  *  \brief Methode verifMail
-  *
-  *  Methode qui permet de verifier si le mail est corectement inscrit
-  *
-  *  \param chaine : la chaine a verifier
-  */
-string Contact::verifMail(string chaine)
-{
-    //to do...
-    //avec des interruption
     return chaine;
 }
 
@@ -437,12 +505,24 @@ bool operator==(const Contact& a, const Contact& b)
 }
 
 /**
+ *  \brief vide la liste des interactions
+ *  /!\ ne detruis pas les instances pointees, utilise par le destructeur de gestioncontact qui detruis lui meme les instances d'interactions
+ *  pour ne pas avoir de probleme de duplicata et supprimer plusieurs fois une meme instance d'interaction
+ */
+void Contact::clearInteractions()
+{
+    interactions.clear();
+}
+
+/**
  *  \brief Destructeur de Contact
  *
  *  Detruis en memoire tout ce qui etait utilise par une instance de contact qui va etre supprimee (les instances d'interactions pointees par la liste)
  */
 Contact::~Contact()
 {
+    // detruis les interactions referencees (si ca a deja ete fais par le destructeur de gestionContact, la liste aura ete videe via clearInteractions)
+    // dans le cas ou une instance n'aurait pas ete cree via gestionContact
     for(auto it = interactions.begin(); it != interactions.end(); it++)
     {
         delete *it;
