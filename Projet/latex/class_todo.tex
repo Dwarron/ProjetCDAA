@@ -1,0 +1,265 @@
+\hypertarget{class_todo}{}\doxysection{Référence de la classe Todo}
+\label{class_todo}\index{Todo@{Todo}}
+
+
+Permets de décrire les choses à faire (todo), des \mbox{\hyperlink{class_interaction}{Interaction}} pour un \mbox{\hyperlink{class_contact}{Contact}}.  
+
+
+
+
+{\ttfamily \#include $<$Todo.\+h$>$}
+
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_todo_af04d7306089100e0a51ab46785a498d2}{Todo}} (const std\+::string \&, const \mbox{\hyperlink{class_date}{Date}} \&, \mbox{\hyperlink{class_interaction}{Interaction}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_date}{Date}} \& \mbox{\hyperlink{class_todo_a7ddd44f1f13bf214a8228c9155ab3088}{get\+Echeance}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur d\textquotesingle{}echeance. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_todo_a7dd180e17c9dc94d0cf391276bdc70ae}{get\+Contenue}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur du contenu. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{class_todo_ac4fb53b124cfb2fa78bcd1b237ded07e}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em Representation en string. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_todo_ab7e641a5a3a226cf86b3254ead670969}{get\+Effectue}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur d\textquotesingle{}effectue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_todo_a75517b48771cddb23fa570bc37c45a35}{set\+Effectue}} (bool new\+Effectue)
+\begin{DoxyCompactList}\small\item\em Mutateur d\textquotesingle{}effectue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$ \mbox{\hyperlink{class_todo_a9bfba13fc6744ea2136b89dffcb48b3c}{get\+Interaction}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur d\textquotesingle{}interaction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres publiques statiques}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{class_date}{Date}} \mbox{\hyperlink{class_todo_a2102105e171d46523202c8ab34155bc3}{get\+Date\+From\+Todo\+Line}} (std\+::string $\ast$)
+\begin{DoxyCompactList}\small\item\em Recupere la date d\textquotesingle{}une ligne de text de todo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Amis}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_todo_adbad530f8aaeb15de3c96ab898a08efb}{operator$<$$<$}} (std\+::ostream \&, const \mbox{\hyperlink{class_todo}{Todo}} \&)
+\item 
+bool \mbox{\hyperlink{class_todo_a3c937b94a9b85f9d053982d715e69ee4}{operator$<$}} (const \mbox{\hyperlink{class_todo}{Todo}} \&, const \mbox{\hyperlink{class_todo}{Todo}} \&)
+\begin{DoxyCompactList}\small\item\em Comparaison a $<$ b. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Permets de décrire les choses à faire (todo), des \mbox{\hyperlink{class_interaction}{Interaction}} pour un \mbox{\hyperlink{class_contact}{Contact}}. 
+
+Permets de décrire les choses à faire (todo), des interactions pour un contact.
+
+\begin{DoxyAuthor}{Auteur}
+Perion Maxence, Pinon Alexandre 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+
+
+Définition à la ligne 17 du fichier Todo.\+h.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_todo_af04d7306089100e0a51ab46785a498d2}\label{class_todo_af04d7306089100e0a51ab46785a498d2}} 
+\index{Todo@{Todo}!Todo@{Todo}}
+\index{Todo@{Todo}!Todo@{Todo}}
+\doxysubsubsection{\texorpdfstring{Todo()}{Todo()}}
+{\footnotesize\ttfamily Todo\+::\+Todo (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{,  }\item[{\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur. 
+
+Constructeur de la classe \mbox{\hyperlink{class_todo}{Todo}}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em txt} & \+: le contenu du todo \\
+\hline
+{\em date} & \+: la date d\textquotesingle{}echeance \\
+\hline
+{\em i} & \+: pointeur vers l\textquotesingle{}interaction initiale \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 23 du fichier Todo.\+cpp.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_todo_a7dd180e17c9dc94d0cf391276bdc70ae}\label{class_todo_a7dd180e17c9dc94d0cf391276bdc70ae}} 
+\index{Todo@{Todo}!getContenue@{getContenue}}
+\index{getContenue@{getContenue}!Todo@{Todo}}
+\doxysubsubsection{\texorpdfstring{getContenue()}{getContenue()}}
+{\footnotesize\ttfamily const string \& Todo\+::get\+Contenue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur du contenu. 
+
+Methode qui permet d\textquotesingle{}acceder au contenu du todo
+
+\begin{DoxyReturn}{Renvoie}
+contenue 
+\end{DoxyReturn}
+
+
+Définition à la ligne 50 du fichier Todo.\+cpp.
+
+\mbox{\Hypertarget{class_todo_a2102105e171d46523202c8ab34155bc3}\label{class_todo_a2102105e171d46523202c8ab34155bc3}} 
+\index{Todo@{Todo}!getDateFromTodoLine@{getDateFromTodoLine}}
+\index{getDateFromTodoLine@{getDateFromTodoLine}!Todo@{Todo}}
+\doxysubsubsection{\texorpdfstring{getDateFromTodoLine()}{getDateFromTodoLine()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_date}{Date}} Todo\+::get\+Date\+From\+Todo\+Line (\begin{DoxyParamCaption}\item[{std\+::string $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Recupere la date d\textquotesingle{}une ligne de text de todo. 
+
+Methode statique qui recupere une date valide apres un @ date (ou la date du jour) a partir d\textquotesingle{}un text ayant debute par @ todo
+
+
+\begin{DoxyParams}{Paramètres}
+{\em text} & \+: le text du todo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+une date extraite du text, ou la date du jour le cas echeant 
+\end{DoxyReturn}
+
+
+Définition à la ligne 91 du fichier Todo.\+cpp.
+
+\mbox{\Hypertarget{class_todo_a7ddd44f1f13bf214a8228c9155ab3088}\label{class_todo_a7ddd44f1f13bf214a8228c9155ab3088}} 
+\index{Todo@{Todo}!getEcheance@{getEcheance}}
+\index{getEcheance@{getEcheance}!Todo@{Todo}}
+\doxysubsubsection{\texorpdfstring{getEcheance()}{getEcheance()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_date}{Date}} \& Todo\+::get\+Echeance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur d\textquotesingle{}echeance. 
+
+Methode qui permet d\textquotesingle{}acceder a la date d\textquotesingle{}echeance du todo
+
+\begin{DoxyReturn}{Renvoie}
+echeance 
+\end{DoxyReturn}
+
+
+Définition à la ligne 38 du fichier Todo.\+cpp.
+
+\mbox{\Hypertarget{class_todo_ab7e641a5a3a226cf86b3254ead670969}\label{class_todo_ab7e641a5a3a226cf86b3254ead670969}} 
+\index{Todo@{Todo}!getEffectue@{getEffectue}}
+\index{getEffectue@{getEffectue}!Todo@{Todo}}
+\doxysubsubsection{\texorpdfstring{getEffectue()}{getEffectue()}}
+{\footnotesize\ttfamily bool Todo\+::get\+Effectue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur d\textquotesingle{}effectue. 
+
+Methode qui permet d\textquotesingle{}acceder au booleen indiquant si un todo a ete realise ou non
+
+\begin{DoxyReturn}{Renvoie}
+effectue 
+\end{DoxyReturn}
+
+
+Définition à la ligne 141 du fichier Todo.\+cpp.
+
+\mbox{\Hypertarget{class_todo_a9bfba13fc6744ea2136b89dffcb48b3c}\label{class_todo_a9bfba13fc6744ea2136b89dffcb48b3c}} 
+\index{Todo@{Todo}!getInteraction@{getInteraction}}
+\index{getInteraction@{getInteraction}!Todo@{Todo}}
+\doxysubsubsection{\texorpdfstring{getInteraction()}{getInteraction()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_interaction}{Interaction}} $\ast$ Todo\+::get\+Interaction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur d\textquotesingle{}interaction. 
+
+Methode qui permet d\textquotesingle{}acceder a l\textquotesingle{}interaction dans laquelle le todo a ete trouve
+
+\begin{DoxyReturn}{Renvoie}
+effectue 
+\end{DoxyReturn}
+
+
+Définition à la ligne 165 du fichier Todo.\+cpp.
+
+\mbox{\Hypertarget{class_todo_a75517b48771cddb23fa570bc37c45a35}\label{class_todo_a75517b48771cddb23fa570bc37c45a35}} 
+\index{Todo@{Todo}!setEffectue@{setEffectue}}
+\index{setEffectue@{setEffectue}!Todo@{Todo}}
+\doxysubsubsection{\texorpdfstring{setEffectue()}{setEffectue()}}
+{\footnotesize\ttfamily void Todo\+::set\+Effectue (\begin{DoxyParamCaption}\item[{bool}]{e }\end{DoxyParamCaption})}
+
+
+
+Mutateur d\textquotesingle{}effectue. 
+
+Methode qui permet d\textquotesingle{}indiquant si le todo a ete realise ou non
+
+\begin{DoxyReturn}{Renvoie}
+effectue 
+\end{DoxyReturn}
+
+
+Définition à la ligne 153 du fichier Todo.\+cpp.
+
+\mbox{\Hypertarget{class_todo_ac4fb53b124cfb2fa78bcd1b237ded07e}\label{class_todo_ac4fb53b124cfb2fa78bcd1b237ded07e}} 
+\index{Todo@{Todo}!toString@{toString}}
+\index{toString@{toString}!Todo@{Todo}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily const string Todo\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Representation en string. 
+
+Methode qui renvoie la representation textuelle du todo
+
+\begin{DoxyReturn}{Renvoie}
+\mbox{\hyperlink{class_todo}{Todo}} pour le (J/\+M/A) \+: contenue 
+\end{DoxyReturn}
+
+
+Définition à la ligne 62 du fichier Todo.\+cpp.
+
+
+
+\doxysubsection{Documentation des fonctions amies et associées}
+\mbox{\Hypertarget{class_todo_a3c937b94a9b85f9d053982d715e69ee4}\label{class_todo_a3c937b94a9b85f9d053982d715e69ee4}} 
+\index{Todo@{Todo}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Todo@{Todo}}
+\doxysubsubsection{\texorpdfstring{operator$<$}{operator<}}
+{\footnotesize\ttfamily bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_todo}{Todo}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_todo}{Todo}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Comparaison a $<$ b. 
+
+Surdefinition de l\textquotesingle{}operateur \char`\"{}$<$\char`\"{}, renvoie vraie si semantiquement a $<$ b Les todos sont compares selon leur echeance 
+\begin{DoxyParams}{Paramètres}
+{\em a} & \+: premiere operande \\
+\hline
+{\em b} & \+: deuxieme operande\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+a $<$ b 
+\end{DoxyReturn}
+
+
+Définition à la ligne 180 du fichier Todo.\+cpp.
+
+\mbox{\Hypertarget{class_todo_adbad530f8aaeb15de3c96ab898a08efb}\label{class_todo_adbad530f8aaeb15de3c96ab898a08efb}} 
+\index{Todo@{Todo}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Todo@{Todo}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{,  }\item[{const \mbox{\hyperlink{class_todo}{Todo}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_todo_8h}{Todo.\+h}}\item 
+\mbox{\hyperlink{_todo_8cpp}{Todo.\+cpp}}\end{DoxyCompactItemize}

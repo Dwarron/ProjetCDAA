@@ -1,7 +1,7 @@
 /**
  * \file Interaction.cpp
  * \class Interaction Interaction.h
- * \brief Enregistre une interaction avec un contact
+ * \brief Enregistre une interaction avec un Contact
  * \author Pinon Alexandre, Perion Maxence
  * \version 0.1
  */
@@ -29,9 +29,9 @@ Interaction::Interaction(const string& r)
 }
 
 /**
- *  \brief Creation de la liste des todos concernant cette interaction
+ *  \brief Creation de la liste des Todo concernant cette Interaction
  *
- *  Analyse le resume/contenu de l'interaction pour creer tous les todos correspondant et les stocker dans la liste
+ *  Analyse le resume/contenu de l'interaction pour creer tous les Todo correspondant et les stocker dans la liste
  */
 void Interaction::creerTodos()
 {
@@ -76,7 +76,7 @@ const Date Interaction::getDate() const
 /**
   *  \brief Accesseur de resume
   *
-  *  Methode qui permet d'acceder au resume de l'interaction
+  *  Methode qui permet d'acceder au resume de l'Interaction
   *
   *  \return resume
   */
@@ -88,7 +88,7 @@ const string& Interaction::getResume() const
 /**
   *  \brief Fonction amie d'affichage via cout
   *
-  *  Fonction surchargeant l'operateur << pour afficher l'interaction avec un cout
+  *  Fonction surchargeant l'operateur << pour afficher l'Interaction avec un cout
   *
   *  \param o : le stream a surcharger
   *  \param i : l'interaction a afficher dans le stream

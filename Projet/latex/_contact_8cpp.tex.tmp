@@ -1,0 +1,61 @@
+\hypertarget{_contact_8cpp}{}\doxysection{Référence du fichier Contact.\+cpp}
+\label{_contact_8cpp}\index{Contact.cpp@{Contact.cpp}}
+{\ttfamily \#include \char`\"{}Contact.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+Graphe des dépendances par inclusion de Contact.\+cpp\+:
+% FIG 0
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{_contact_8cpp_a81cdf561dee1edecf2fa11837693f389}{operator$<$$<$}} (ostream \&o, const \mbox{\hyperlink{class_contact}{Contact}} \&c)
+\begin{DoxyCompactList}\small\item\em Fonction amie d\textquotesingle{}affichage via cout. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_contact_8cpp_ad1bb37781a45838d0dca96a4328ca7f5}{operator==}} (const \mbox{\hyperlink{class_contact}{Contact}} \&a, const \mbox{\hyperlink{class_contact}{Contact}} \&b)
+\begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}operateur de test d\textquotesingle{}egalite. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{_contact_8cpp_a81cdf561dee1edecf2fa11837693f389}\label{_contact_8cpp_a81cdf561dee1edecf2fa11837693f389}} 
+\index{Contact.cpp@{Contact.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Contact.cpp@{Contact.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{o,  }\item[{const \mbox{\hyperlink{class_contact}{Contact}} \&}]{c }\end{DoxyParamCaption})}
+
+
+
+Fonction amie d\textquotesingle{}affichage via cout. 
+
+Fonction surchargeant l\textquotesingle{}operateur $<$$<$ pour afficher le contact avec un cout
+
+
+\begin{DoxyParams}{Paramètres}
+{\em o} & \+: le stream a surcharger \\
+\hline
+{\em c} & \+: le contact a afficher dans le stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+operateur surchage 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_contact_8cpp_ad1bb37781a45838d0dca96a4328ca7f5}\label{_contact_8cpp_ad1bb37781a45838d0dca96a4328ca7f5}} 
+\index{Contact.cpp@{Contact.cpp}!operator==@{operator==}}
+\index{operator==@{operator==}!Contact.cpp@{Contact.cpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_contact}{Contact}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_contact}{Contact}} \&}]{b }\end{DoxyParamCaption})}
+
+
+
+Surcharge de l\textquotesingle{}operateur de test d\textquotesingle{}egalite. 
+
+Methode qui surcharge l\textquotesingle{}operateur ==, compare semantiquement deux contacts, utilise par exemple pour supprimer des instances de la liste des contacts
+
+
+\begin{DoxyParams}{Paramètres}
+{\em a} & \+: operande de gauche \\
+\hline
+{\em b} & \+: operande de droite \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+vrai si les contacts sont semantiquement egales, faux sinon 
+\end{DoxyReturn}

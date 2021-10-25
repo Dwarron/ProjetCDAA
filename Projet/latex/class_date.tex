@@ -1,0 +1,372 @@
+\hypertarget{class_date}{}\doxysection{Référence de la classe Date}
+\label{class_date}\index{Date@{Date}}
+
+
+Stocke une date.  
+
+
+
+
+{\ttfamily \#include $<$Date.\+h$>$}
+
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_date_a4e59ed4ba66eec61c27460c5d09fa1bd}{Date}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur standard de \mbox{\hyperlink{class_date}{Date}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_date_af3efa227a00ac2ae993c424ca62c340c}{Date}} (const int, const int, const int)
+\begin{DoxyCompactList}\small\item\em Constructeur de \mbox{\hyperlink{class_date}{Date}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_date_aab4cb9b61d7810de427e55b297689297}{Date}} (const std\+::string \&)
+\item 
+int \mbox{\hyperlink{class_date_a1b38f44aaa8c9035149b188be5650af4}{get\+Jour}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur virtuel du jour. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_date_a72aade20bcf0954935efea32bee0b244}{get\+Mois}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur virtuel du mois. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_date_a8ab72441def94864f14a6c7d37fc7880}{get\+Annee}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur virtuel de l\textquotesingle{}annee. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_date_a671148de3667b6a72604ba00ad383747}{add\+Delay}} (const int)
+\begin{DoxyCompactList}\small\item\em Ajout d\textquotesingle{}un delai a une date. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_date_a0cb7c104ebc235e273857f41053102c2}{add\+Delay}} (const int, const int)
+\begin{DoxyCompactList}\small\item\em Ajout d\textquotesingle{}un delai a une date. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_date_ab4ce807cb1a7b75b435c35d968b0f13f}{add\+Delay}} (const int, const int, const int)
+\begin{DoxyCompactList}\small\item\em Ajout d\textquotesingle{}un delai a une date. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_date_a3ea8d40e0439a241341dcfd433fe638f}{depassee}} () const
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}instance de date est-\/elle dans le passe ? \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{class_date_aafe8a781392a49bb10af5856ccc52cb5}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em Representation en string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Amis}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_date_a191ee8989894d19ac4c9a71e359210a1}{operator$<$$<$}} (std\+::ostream \&, const \mbox{\hyperlink{class_date}{Date}} \&)
+\item 
+bool \mbox{\hyperlink{class_date_acbc7a012dc46ebcd65dfd2887e3a3ad4}{operator$<$}} (const \mbox{\hyperlink{class_date}{Date}} \&, const \mbox{\hyperlink{class_date}{Date}} \&)
+\begin{DoxyCompactList}\small\item\em Comparaison a $<$ b. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_date_a19fd196890cd19eb9f3e31a793dc7fe6}{operator+}} (const std\+::string \&, const \mbox{\hyperlink{class_date}{Date}} \&)
+\item 
+int \mbox{\hyperlink{class_date_a1fe1c8f9582dbfe2ee08ed2066ebca74}{operator-\/}} (const \mbox{\hyperlink{class_date}{Date}} \&, const \mbox{\hyperlink{class_date}{Date}} \&)
+\begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}operateur -\/. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_date_ad51822da99f2cc001b6326ac28bd49d6}{operator==}} (const \mbox{\hyperlink{class_date}{Date}} \&, const \mbox{\hyperlink{class_date}{Date}} \&)
+\begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}operateur de test d\textquotesingle{}egalite. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Stocke une date. 
+
+\begin{DoxyAuthor}{Auteur}
+Perion Maxence 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+
+
+Définition à la ligne 13 du fichier Date.\+h.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_date_a4e59ed4ba66eec61c27460c5d09fa1bd}\label{class_date_a4e59ed4ba66eec61c27460c5d09fa1bd}} 
+\index{Date@{Date}!Date@{Date}}
+\index{Date@{Date}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{Date()}{Date()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Date\+::\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur standard de \mbox{\hyperlink{class_date}{Date}}. 
+
+Constructeur standard de la classe \mbox{\hyperlink{class_date}{Date}}, represente la date courante lors de son initialisation 
+
+Définition à la ligne 23 du fichier Date.\+cpp.
+
+\mbox{\Hypertarget{class_date_af3efa227a00ac2ae993c424ca62c340c}\label{class_date_af3efa227a00ac2ae993c424ca62c340c}} 
+\index{Date@{Date}!Date@{Date}}
+\index{Date@{Date}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{Date()}{Date()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Date\+::\+Date (\begin{DoxyParamCaption}\item[{const int}]{j,  }\item[{const int}]{m,  }\item[{const int}]{y }\end{DoxyParamCaption})}
+
+
+
+Constructeur de \mbox{\hyperlink{class_date}{Date}}. 
+
+Constructeur standard de la classe \mbox{\hyperlink{class_date}{Date}}, represente la date correspondante a un jour, un mois et une annee donnees 
+\begin{DoxyParams}{Paramètres}
+{\em j} & \+: jour \\
+\hline
+{\em m} & \+: mois \\
+\hline
+{\em y} & \+: annee \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 93 du fichier Date.\+cpp.
+
+\mbox{\Hypertarget{class_date_aab4cb9b61d7810de427e55b297689297}\label{class_date_aab4cb9b61d7810de427e55b297689297}} 
+\index{Date@{Date}!Date@{Date}}
+\index{Date@{Date}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{Date()}{Date()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Date\+::\+Date (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_date_a671148de3667b6a72604ba00ad383747}\label{class_date_a671148de3667b6a72604ba00ad383747}} 
+\index{Date@{Date}!addDelay@{addDelay}}
+\index{addDelay@{addDelay}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{addDelay()}{addDelay()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Date\+::add\+Delay (\begin{DoxyParamCaption}\item[{const int}]{jours }\end{DoxyParamCaption})}
+
+
+
+Ajout d\textquotesingle{}un delai a une date. 
+
+Methode qui permet de decaler la date selon un delai
+
+
+\begin{DoxyParams}{Paramètres}
+{\em jours} & \+: le nombre de jours a ajouter \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 157 du fichier Date.\+cpp.
+
+\mbox{\Hypertarget{class_date_a0cb7c104ebc235e273857f41053102c2}\label{class_date_a0cb7c104ebc235e273857f41053102c2}} 
+\index{Date@{Date}!addDelay@{addDelay}}
+\index{addDelay@{addDelay}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{addDelay()}{addDelay()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Date\+::add\+Delay (\begin{DoxyParamCaption}\item[{const int}]{jours,  }\item[{const int}]{mois }\end{DoxyParamCaption})}
+
+
+
+Ajout d\textquotesingle{}un delai a une date. 
+
+Methode qui permet de decaler la date selon un delai
+
+
+\begin{DoxyParams}{Paramètres}
+{\em jours} & \+: le nombre de jours a ajouter \\
+\hline
+{\em mois} & \+: le nombre de mois a ajouter \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 170 du fichier Date.\+cpp.
+
+\mbox{\Hypertarget{class_date_ab4ce807cb1a7b75b435c35d968b0f13f}\label{class_date_ab4ce807cb1a7b75b435c35d968b0f13f}} 
+\index{Date@{Date}!addDelay@{addDelay}}
+\index{addDelay@{addDelay}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{addDelay()}{addDelay()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Date\+::add\+Delay (\begin{DoxyParamCaption}\item[{const int}]{jours,  }\item[{const int}]{mois,  }\item[{const int}]{annees }\end{DoxyParamCaption})}
+
+
+
+Ajout d\textquotesingle{}un delai a une date. 
+
+Methode qui permet de decaler la date selon un delai
+
+
+\begin{DoxyParams}{Paramètres}
+{\em jours} & \+: le nombre de jours a ajouter \\
+\hline
+{\em mois} & \+: le nombre de mois a ajouter \\
+\hline
+{\em annee} & \+: le nombre d\textquotesingle{}annees a ajouter \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 184 du fichier Date.\+cpp.
+
+\mbox{\Hypertarget{class_date_a3ea8d40e0439a241341dcfd433fe638f}\label{class_date_a3ea8d40e0439a241341dcfd433fe638f}} 
+\index{Date@{Date}!depassee@{depassee}}
+\index{depassee@{depassee}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{depassee()}{depassee()}}
+{\footnotesize\ttfamily bool Date\+::depassee (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+L\textquotesingle{}instance de date est-\/elle dans le passe ? 
+
+Utilise une comparaison avec la date actuelle\+: renvoie vrai si la date est plus ancienne que la date courante, sinon faux
+
+\begin{DoxyReturn}{Renvoie}
+instance de \mbox{\hyperlink{class_date}{Date}} $<$ date actuelle 
+\end{DoxyReturn}
+
+
+Définition à la ligne 300 du fichier Date.\+cpp.
+
+\mbox{\Hypertarget{class_date_a8ab72441def94864f14a6c7d37fc7880}\label{class_date_a8ab72441def94864f14a6c7d37fc7880}} 
+\index{Date@{Date}!getAnnee@{getAnnee}}
+\index{getAnnee@{getAnnee}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{getAnnee()}{getAnnee()}}
+{\footnotesize\ttfamily int Date\+::get\+Annee (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur virtuel de l\textquotesingle{}annee. 
+
+Methode qui renvoie l\textquotesingle{}annee de la date
+
+\begin{DoxyReturn}{Renvoie}
+annee 
+\end{DoxyReturn}
+
+
+Définition à la ligne 145 du fichier Date.\+cpp.
+
+\mbox{\Hypertarget{class_date_a1b38f44aaa8c9035149b188be5650af4}\label{class_date_a1b38f44aaa8c9035149b188be5650af4}} 
+\index{Date@{Date}!getJour@{getJour}}
+\index{getJour@{getJour}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{getJour()}{getJour()}}
+{\footnotesize\ttfamily int Date\+::get\+Jour (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur virtuel du jour. 
+
+Methode qui renvoie le jour de la date
+
+\begin{DoxyReturn}{Renvoie}
+jour 
+\end{DoxyReturn}
+
+
+Définition à la ligne 121 du fichier Date.\+cpp.
+
+\mbox{\Hypertarget{class_date_a72aade20bcf0954935efea32bee0b244}\label{class_date_a72aade20bcf0954935efea32bee0b244}} 
+\index{Date@{Date}!getMois@{getMois}}
+\index{getMois@{getMois}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{getMois()}{getMois()}}
+{\footnotesize\ttfamily int Date\+::get\+Mois (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur virtuel du mois. 
+
+Methode qui renvoie le mois de la date
+
+\begin{DoxyReturn}{Renvoie}
+mois 
+\end{DoxyReturn}
+
+
+Définition à la ligne 133 du fichier Date.\+cpp.
+
+\mbox{\Hypertarget{class_date_aafe8a781392a49bb10af5856ccc52cb5}\label{class_date_aafe8a781392a49bb10af5856ccc52cb5}} 
+\index{Date@{Date}!toString@{toString}}
+\index{toString@{toString}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily const string Date\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Representation en string. 
+
+Methode qui renvoie la representation textuel de la date
+
+\begin{DoxyReturn}{Renvoie}
+(J/\+M/A) 
+\end{DoxyReturn}
+
+
+Définition à la ligne 204 du fichier Date.\+cpp.
+
+
+
+\doxysubsection{Documentation des fonctions amies et associées}
+\mbox{\Hypertarget{class_date_a19fd196890cd19eb9f3e31a793dc7fe6}\label{class_date_a19fd196890cd19eb9f3e31a793dc7fe6}} 
+\index{Date@{Date}!operator+@{operator+}}
+\index{operator+@{operator+}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator+}{operator+}}
+{\footnotesize\ttfamily std\+::string operator+ (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_date_a1fe1c8f9582dbfe2ee08ed2066ebca74}\label{class_date_a1fe1c8f9582dbfe2ee08ed2066ebca74}} 
+\index{Date@{Date}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator-\/}{operator-}}
+{\footnotesize\ttfamily int operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Surcharge de l\textquotesingle{}operateur -\/. 
+
+Surdefinition de l\textquotesingle{}operateur -\/ de difference, renvoie le nombre de jours dans l\textquotesingle{}intervalle entre a et b Positif si a $>$ b (a est plus loin dans le futur que b), negatif si a $<$ b et 0 si a = b (a et b representent la meme date) 
+\begin{DoxyParams}{Paramètres}
+{\em a} & \+: premiere operande \\
+\hline
+{\em b} & \+: deuxieme operande\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+s + d.\+to\+String() 
+\end{DoxyReturn}
+
+
+Définition à la ligne 275 du fichier Date.\+cpp.
+
+\mbox{\Hypertarget{class_date_acbc7a012dc46ebcd65dfd2887e3a3ad4}\label{class_date_acbc7a012dc46ebcd65dfd2887e3a3ad4}} 
+\index{Date@{Date}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator$<$}{operator<}}
+{\footnotesize\ttfamily bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Comparaison a $<$ b. 
+
+Surdefinition de l\textquotesingle{}operateur \char`\"{}$<$\char`\"{}, renvoie vraie si semantiquement a $<$ b 
+\begin{DoxyParams}{Paramètres}
+{\em a} & \+: premiere operande \\
+\hline
+{\em b} & \+: deuxieme operande\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+a $<$ b 
+\end{DoxyReturn}
+
+
+Définition à la ligne 233 du fichier Date.\+cpp.
+
+\mbox{\Hypertarget{class_date_a191ee8989894d19ac4c9a71e359210a1}\label{class_date_a191ee8989894d19ac4c9a71e359210a1}} 
+\index{Date@{Date}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_date_ad51822da99f2cc001b6326ac28bd49d6}\label{class_date_ad51822da99f2cc001b6326ac28bd49d6}} 
+\index{Date@{Date}!operator==@{operator==}}
+\index{operator==@{operator==}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Surcharge de l\textquotesingle{}operateur de test d\textquotesingle{}egalite. 
+
+Methode qui surcharge l\textquotesingle{}operateur ==, compare semantiquement deux dates
+
+
+\begin{DoxyParams}{Paramètres}
+{\em a} & \+: operande de gauche \\
+\hline
+{\em b} & \+: operande de droite \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+vrai si les dates sont semantiquement egales, faux sinon 
+\end{DoxyReturn}
+
+
+Définition à la ligne 289 du fichier Date.\+cpp.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_date_8h}{Date.\+h}}\item 
+\mbox{\hyperlink{_date_8cpp}{Date.\+cpp}}\end{DoxyCompactItemize}

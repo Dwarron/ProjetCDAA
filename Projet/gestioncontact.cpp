@@ -1,12 +1,12 @@
 /**
  * \file GestionContact.cpp
  * \class GestionContact GestionContact.h
- * \brief Class de gestion des contacts: ajout, suppressions, requetes, ...
+ * \brief Class de gestion des Contact: ajout, suppressions, requetes, ...
  * \author Perion Maxence
  * \version 0.1
  */
 
-#include "gestioncontact.h"
+#include "GestionContact.h"
 #include <iostream>
 using namespace std;
 

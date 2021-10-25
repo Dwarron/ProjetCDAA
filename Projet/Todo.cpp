@@ -1,7 +1,7 @@
 /**
  * \file Todo.h
  * \class Todo Todo.h
- * \brief Permets de décrire les choses à faire (todo), des interactions pour un contact.
+ * \brief Permets de décrire les choses à faire (todo), des Interaction pour un Contact.
  * \author Perion Maxence, Pinon Alexandre
  * \version 0.1
  */

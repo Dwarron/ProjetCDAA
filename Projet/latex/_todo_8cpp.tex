@@ -1,0 +1,64 @@
+\hypertarget{_todo_8cpp}{}\doxysection{Référence du fichier Todo.\+cpp}
+\label{_todo_8cpp}\index{Todo.cpp@{Todo.cpp}}
+{\ttfamily \#include \char`\"{}Todo.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{_todo_8cpp_ad423b648e5036c0e231b98101ef7d706}{operator$<$$<$}} (ostream \&o, const \mbox{\hyperlink{class_todo}{Todo}} \&t)
+\begin{DoxyCompactList}\small\item\em Fonction amie d\textquotesingle{}affichage via cout. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_todo_8cpp_a19b4bd2331b7216c24b2e0cc0d2dbd60}{operator$<$}} (const \mbox{\hyperlink{class_todo}{Todo}} \&a, const \mbox{\hyperlink{class_todo}{Todo}} \&b)
+\begin{DoxyCompactList}\small\item\em Comparaison a $<$ b. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{_todo_8cpp_a19b4bd2331b7216c24b2e0cc0d2dbd60}\label{_todo_8cpp_a19b4bd2331b7216c24b2e0cc0d2dbd60}} 
+\index{Todo.cpp@{Todo.cpp}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Todo.cpp@{Todo.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_todo}{Todo}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_todo}{Todo}} \&}]{b }\end{DoxyParamCaption})}
+
+
+
+Comparaison a $<$ b. 
+
+Surdefinition de l\textquotesingle{}operateur \char`\"{}$<$\char`\"{}, renvoie vraie si semantiquement a $<$ b Les todos sont compares selon leur echeance 
+\begin{DoxyParams}{Paramètres}
+{\em a} & \+: premiere operande \\
+\hline
+{\em b} & \+: deuxieme operande\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+a $<$ b 
+\end{DoxyReturn}
+
+
+Définition à la ligne 180 du fichier Todo.\+cpp.
+
+\mbox{\Hypertarget{_todo_8cpp_ad423b648e5036c0e231b98101ef7d706}\label{_todo_8cpp_ad423b648e5036c0e231b98101ef7d706}} 
+\index{Todo.cpp@{Todo.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Todo.cpp@{Todo.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{o,  }\item[{const \mbox{\hyperlink{class_todo}{Todo}} \&}]{t }\end{DoxyParamCaption})}
+
+
+
+Fonction amie d\textquotesingle{}affichage via cout. 
+
+Fonction surchargeant l\textquotesingle{}operateur $<$$<$ pour afficher le todo avec un cout
+
+
+\begin{DoxyParams}{Paramètres}
+{\em o} & \+: le stream a surcharger \\
+\hline
+{\em t} & \+: le todo a afficher dans le stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+operateur surchage 
+\end{DoxyReturn}
+
+
+Définition à la ligne 76 du fichier Todo.\+cpp.
+

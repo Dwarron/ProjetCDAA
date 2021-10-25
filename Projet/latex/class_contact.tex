@@ -1,0 +1,668 @@
+\hypertarget{class_contact}{}\doxysection{Référence de la classe Contact}
+\label{class_contact}\index{Contact@{Contact}}
+
+
+\mbox{\hyperlink{class_contact}{Contact}} representant une personne.  
+
+
+
+
+{\ttfamily \#include $<$Contact.\+h$>$}
+
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_contact_ae39444f378e6de7fd6c3e60981949af5}{Contact}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par defaut. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_contact_a793d8e392aacfcd6556b31341a1233d9}{Contact}} (const std\+::string \&, const std\+::string \&, const std\+::string \&, const std\+::string \&, const std\+::string \&, const std\+::string \&)
+\item 
+\mbox{\hyperlink{class_contact_ab68013cc59e3d640735c573e52c35219}{$\sim$\+Contact}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de \mbox{\hyperlink{class_contact}{Contact}}. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_contact_afae52eacfbe597c6dfcc226654a75819}{get\+Nom}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur de nom. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_contact_a0837af372d75a5d85ab296c6104a3232}{set\+Nom}} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Mutateur de nom. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_contact_a62980364c568e7f38b8f2e0892672416}{get\+Prenom}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur de prenom. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_contact_ac31195d758df58ee327cc05b6276aace}{set\+Prenom}} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Mutateur de prenom. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_contact_a2074cf9b55c1066344f9068d2f7064d1}{get\+Entreprise}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur d\textquotesingle{}entreprise. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_contact_a1237b826b80e3ead402d0c26cc3c2ace}{set\+Entreprise}} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Mutateur d\textquotesingle{}entreprise. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_contact_a98aa91a89fd83578686227826c2eea6b}{get\+Telephone}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur de telephone. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_contact_a54c863b3045a9255d75f1ad876ecb7de}{set\+Telephone}} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Mutateur de telephone. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_contact_a6b9044988b8ec70fbf1c6d620844d707}{get\+Mail}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur de mail. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_contact_aa30355f8ccb75c3c8981e110848c0266}{set\+Mail}} (const std\+::string \&new\+Mail)
+\begin{DoxyCompactList}\small\item\em Mutateur de mail. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_contact_afbf8f3c920221656f59702d0f5a6367b}{get\+Uri\+Photo}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur de uri\+Photo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_contact_a1d221a1b28d375d0135d5c52589ec27b}{set\+Uri\+Photo}} (const std\+::string \&new\+Uri\+Photo)
+\begin{DoxyCompactList}\small\item\em Mutateur de uri\+Photo. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_date}{Date}} \& \mbox{\hyperlink{class_contact_a793c9bb8d467146f3da824b954b3d414}{get\+Date\+Creation}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur de date\+Creation. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_date}{Date}} \& \mbox{\hyperlink{class_contact_a75dedfa3ee66c6c49bf8123d9ec59f34}{get\+Date\+Derniere\+Modification}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur de date\+Modification. \end{DoxyCompactList}\item 
+const std\+::list$<$ \mbox{\hyperlink{class_interaction}{Interaction}} $\ast$ $>$ \& \mbox{\hyperlink{class_contact_afbce249b53d8dd8b3554efffc09fdbd5}{get\+Interactions}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur d\textquotesingle{}interactions. \end{DoxyCompactList}\item 
+const std\+::list$<$ \mbox{\hyperlink{class_todo}{Todo}} $\ast$ $>$ \mbox{\hyperlink{class_contact_a5abf6c96ebe67d2fcb8c5d924d647477}{get\+Todos}} () const
+\begin{DoxyCompactList}\small\item\em Accesseur virtuel de todos. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{class_contact_a8c548da2f7375842f44df45c38132add}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em Representation en string. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{class_contact_a3f9a0ea233dc69ff944fc5aba075d92b}{interactions\+To\+String}} ()
+\begin{DoxyCompactList}\small\item\em Representation en string de la liste des interactions. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{class_contact_aba2053b48fbf5e978be695eec3ee879f}{todos\+To\+String}} ()
+\begin{DoxyCompactList}\small\item\em Representation en string de la liste des todos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_contact_a78ad44e085d55393e0d8951a83770f4f}{add\+Interaction}} (\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Ajout d\textquotesingle{}une interaction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_contact_a49207934b910c6397ecae8cfb77e97fc}{clear\+Interactions}} ()
+\begin{DoxyCompactList}\small\item\em vide la liste des interactions /!\textbackslash{} ne detruis pas les instances pointees, utilise par le destructeur de gestioncontact qui detruis lui meme les instances d\textquotesingle{}interactions pour ne pas avoir de probleme de duplicata et supprimer plusieurs fois une meme instance d\textquotesingle{}interaction \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres publiques statiques}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_contact_a204358c2e4b7fcb1e11bc09616a404d6}{check\+Lettres}} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Test si la chaine entree est conforme. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_contact_a0701aa657fa35ab398696650af31ce5f}{check\+Chiffres}} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Test si la chaine entree est conforme. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_contact_a28ceb373a5597ae9fd3c095003982041}{check\+Mail}} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Test si la chaine entree est conforme. \end{DoxyCompactList}\item 
+static const std\+::string \mbox{\hyperlink{class_contact_a77cb96e1aad6119cc085add81bea3ea6}{suggestion\+Nom}} (std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Propose une suggestion de nom pour une chaine entree ne correspondant pas a ce qui est attendu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Amis}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_contact_a24f9fcd32bd68e5d5af1a6f2a61a1948}{operator$<$$<$}} (std\+::ostream \&, const \mbox{\hyperlink{class_contact}{Contact}} \&)
+\item 
+bool \mbox{\hyperlink{class_contact_a0dc1f88cb1e8070f3d66c1064d1c9c6b}{operator==}} (const \mbox{\hyperlink{class_contact}{Contact}} \&, const \mbox{\hyperlink{class_contact}{Contact}} \&)
+\begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}operateur de test d\textquotesingle{}egalite. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+\mbox{\hyperlink{class_contact}{Contact}} representant une personne. 
+
+\begin{DoxyAuthor}{Auteur}
+Pinon Alexandre, Perion Maxence 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+
+
+Définition à la ligne 20 du fichier Contact.\+h.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_contact_ae39444f378e6de7fd6c3e60981949af5}\label{class_contact_ae39444f378e6de7fd6c3e60981949af5}} 
+\index{Contact@{Contact}!Contact@{Contact}}
+\index{Contact@{Contact}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{Contact()}{Contact()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Contact\+::\+Contact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur par defaut. 
+
+Constructeur par defaut de la classe \mbox{\hyperlink{class_contact}{Contact}} 
+
+Définition à la ligne 20 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_a793d8e392aacfcd6556b31341a1233d9}\label{class_contact_a793d8e392aacfcd6556b31341a1233d9}} 
+\index{Contact@{Contact}!Contact@{Contact}}
+\index{Contact@{Contact}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{Contact()}{Contact()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Contact\+::\+Contact (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_contact_ab68013cc59e3d640735c573e52c35219}\label{class_contact_ab68013cc59e3d640735c573e52c35219}} 
+\index{Contact@{Contact}!````~Contact@{$\sim$Contact}}
+\index{````~Contact@{$\sim$Contact}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{$\sim$Contact()}{~Contact()}}
+{\footnotesize\ttfamily Contact\+::$\sim$\+Contact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur de \mbox{\hyperlink{class_contact}{Contact}}. 
+
+Detruis en memoire tout ce qui etait utilise par une instance de contact qui va etre supprimee (les instances d\textquotesingle{}interactions pointees par la liste) 
+
+Définition à la ligne 522 du fichier Contact.\+cpp.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_contact_a78ad44e085d55393e0d8951a83770f4f}\label{class_contact_a78ad44e085d55393e0d8951a83770f4f}} 
+\index{Contact@{Contact}!addInteraction@{addInteraction}}
+\index{addInteraction@{addInteraction}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{addInteraction()}{addInteraction()}}
+{\footnotesize\ttfamily void Contact\+::add\+Interaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$}]{i }\end{DoxyParamCaption})}
+
+
+
+Ajout d\textquotesingle{}une interaction. 
+
+Methode qui permet d\textquotesingle{}ajouter une interaction a la liste d\textquotesingle{}interaction d\textquotesingle{}un contact
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \mbox{\hyperlink{class_interaction}{Interaction}}} & i \+: l\textquotesingle{}interaction a ajouter \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 333 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_a0701aa657fa35ab398696650af31ce5f}\label{class_contact_a0701aa657fa35ab398696650af31ce5f}} 
+\index{Contact@{Contact}!checkChiffres@{checkChiffres}}
+\index{checkChiffres@{checkChiffres}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{checkChiffres()}{checkChiffres()}}
+{\footnotesize\ttfamily void Contact\+::check\+Chiffres (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{chaine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Test si la chaine entree est conforme. 
+
+Methode qui renvoie une exception si la chaine contient autre chose que des chiffres
+
+
+\begin{DoxyParams}{Paramètres}
+{\em chaine} & \+: la chaine a tester \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 95 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_a204358c2e4b7fcb1e11bc09616a404d6}\label{class_contact_a204358c2e4b7fcb1e11bc09616a404d6}} 
+\index{Contact@{Contact}!checkLettres@{checkLettres}}
+\index{checkLettres@{checkLettres}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{checkLettres()}{checkLettres()}}
+{\footnotesize\ttfamily void Contact\+::check\+Lettres (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{chaine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Test si la chaine entree est conforme. 
+
+Methode qui renvoie une exception si la chaine contient autre chose que des lettres, un espace ou un tiret
+
+
+\begin{DoxyParams}{Paramètres}
+{\em chaine} & \+: la chaine a tester \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 79 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_a28ceb373a5597ae9fd3c095003982041}\label{class_contact_a28ceb373a5597ae9fd3c095003982041}} 
+\index{Contact@{Contact}!checkMail@{checkMail}}
+\index{checkMail@{checkMail}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{checkMail()}{checkMail()}}
+{\footnotesize\ttfamily void Contact\+::check\+Mail (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{chaine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Test si la chaine entree est conforme. 
+
+Methode qui renvoie une exception si la chaine ne decrit pas un mail
+
+
+\begin{DoxyParams}{Paramètres}
+{\em chaine} & \+: la chaine a tester \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 111 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_a49207934b910c6397ecae8cfb77e97fc}\label{class_contact_a49207934b910c6397ecae8cfb77e97fc}} 
+\index{Contact@{Contact}!clearInteractions@{clearInteractions}}
+\index{clearInteractions@{clearInteractions}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{clearInteractions()}{clearInteractions()}}
+{\footnotesize\ttfamily void Contact\+::clear\+Interactions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+vide la liste des interactions /!\textbackslash{} ne detruis pas les instances pointees, utilise par le destructeur de gestioncontact qui detruis lui meme les instances d\textquotesingle{}interactions pour ne pas avoir de probleme de duplicata et supprimer plusieurs fois une meme instance d\textquotesingle{}interaction 
+
+
+
+Définition à la ligne 512 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_a793c9bb8d467146f3da824b954b3d414}\label{class_contact_a793c9bb8d467146f3da824b954b3d414}} 
+\index{Contact@{Contact}!getDateCreation@{getDateCreation}}
+\index{getDateCreation@{getDateCreation}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{getDateCreation()}{getDateCreation()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_date}{Date}} \& Contact\+::get\+Date\+Creation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur de date\+Creation. 
+
+Methode qui permet d\textquotesingle{}acceder a la date de creation de la fiche du contact
+
+\begin{DoxyReturn}{Renvoie}
+date\+Creation 
+\end{DoxyReturn}
+
+
+Définition à la ligne 309 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_a75dedfa3ee66c6c49bf8123d9ec59f34}\label{class_contact_a75dedfa3ee66c6c49bf8123d9ec59f34}} 
+\index{Contact@{Contact}!getDateDerniereModification@{getDateDerniereModification}}
+\index{getDateDerniereModification@{getDateDerniereModification}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{getDateDerniereModification()}{getDateDerniereModification()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_date}{Date}} \& Contact\+::get\+Date\+Derniere\+Modification (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur de date\+Modification. 
+
+Methode qui permet d\textquotesingle{}acceder a la date de la derniere modification de la fiche du contact
+
+\begin{DoxyReturn}{Renvoie}
+telephone 
+\end{DoxyReturn}
+
+
+Définition à la ligne 321 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_a2074cf9b55c1066344f9068d2f7064d1}\label{class_contact_a2074cf9b55c1066344f9068d2f7064d1}} 
+\index{Contact@{Contact}!getEntreprise@{getEntreprise}}
+\index{getEntreprise@{getEntreprise}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{getEntreprise()}{getEntreprise()}}
+{\footnotesize\ttfamily const string \& Contact\+::get\+Entreprise (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur d\textquotesingle{}entreprise. 
+
+Methode qui permet d\textquotesingle{}acceder a l\textquotesingle{}entreprise du contact
+
+\begin{DoxyReturn}{Renvoie}
+entreprise 
+\end{DoxyReturn}
+
+
+Définition à la ligne 196 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_afbce249b53d8dd8b3554efffc09fdbd5}\label{class_contact_afbce249b53d8dd8b3554efffc09fdbd5}} 
+\index{Contact@{Contact}!getInteractions@{getInteractions}}
+\index{getInteractions@{getInteractions}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{getInteractions()}{getInteractions()}}
+{\footnotesize\ttfamily const list$<$ \mbox{\hyperlink{class_interaction}{Interaction}} $\ast$ $>$ \& Contact\+::get\+Interactions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur d\textquotesingle{}interactions. 
+
+Methode qui permet d\textquotesingle{}acceder a la liste des interactions avec le contact
+
+\begin{DoxyReturn}{Renvoie}
+interactions 
+\end{DoxyReturn}
+
+
+Définition à la ligne 364 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_a6b9044988b8ec70fbf1c6d620844d707}\label{class_contact_a6b9044988b8ec70fbf1c6d620844d707}} 
+\index{Contact@{Contact}!getMail@{getMail}}
+\index{getMail@{getMail}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{getMail()}{getMail()}}
+{\footnotesize\ttfamily const string \& Contact\+::get\+Mail (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur de mail. 
+
+Methode qui permet d\textquotesingle{}acceder au mail du contact
+
+\begin{DoxyReturn}{Renvoie}
+mail 
+\end{DoxyReturn}
+
+
+Définition à la ligne 253 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_afae52eacfbe597c6dfcc226654a75819}\label{class_contact_afae52eacfbe597c6dfcc226654a75819}} 
+\index{Contact@{Contact}!getNom@{getNom}}
+\index{getNom@{getNom}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{getNom()}{getNom()}}
+{\footnotesize\ttfamily const string \& Contact\+::get\+Nom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur de nom. 
+
+Methode qui permet d\textquotesingle{}acceder au nom du contact
+
+\begin{DoxyReturn}{Renvoie}
+nom 
+\end{DoxyReturn}
+
+
+Définition à la ligne 142 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_a62980364c568e7f38b8f2e0892672416}\label{class_contact_a62980364c568e7f38b8f2e0892672416}} 
+\index{Contact@{Contact}!getPrenom@{getPrenom}}
+\index{getPrenom@{getPrenom}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{getPrenom()}{getPrenom()}}
+{\footnotesize\ttfamily const string \& Contact\+::get\+Prenom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur de prenom. 
+
+Methode qui permet d\textquotesingle{}acceder au prenom du contact
+
+\begin{DoxyReturn}{Renvoie}
+prenom 
+\end{DoxyReturn}
+
+
+Définition à la ligne 169 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_a98aa91a89fd83578686227826c2eea6b}\label{class_contact_a98aa91a89fd83578686227826c2eea6b}} 
+\index{Contact@{Contact}!getTelephone@{getTelephone}}
+\index{getTelephone@{getTelephone}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{getTelephone()}{getTelephone()}}
+{\footnotesize\ttfamily const string \& Contact\+::get\+Telephone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur de telephone. 
+
+Methode qui permet d\textquotesingle{}acceder au telephone du contact
+
+\begin{DoxyReturn}{Renvoie}
+telephone 
+\end{DoxyReturn}
+
+
+Définition à la ligne 222 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_a5abf6c96ebe67d2fcb8c5d924d647477}\label{class_contact_a5abf6c96ebe67d2fcb8c5d924d647477}} 
+\index{Contact@{Contact}!getTodos@{getTodos}}
+\index{getTodos@{getTodos}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{getTodos()}{getTodos()}}
+{\footnotesize\ttfamily const list$<$ \mbox{\hyperlink{class_todo}{Todo}} $\ast$ $>$ Contact\+::get\+Todos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur virtuel de todos. 
+
+Methode qui permet d\textquotesingle{}acceder a la liste des todos vis a vis du contact (la liste de tous les todos de toutes les interactions)
+
+\begin{DoxyReturn}{Renvoie}
+liste de tous les todos 
+\end{DoxyReturn}
+
+
+Définition à la ligne 376 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_afbf8f3c920221656f59702d0f5a6367b}\label{class_contact_afbf8f3c920221656f59702d0f5a6367b}} 
+\index{Contact@{Contact}!getUriPhoto@{getUriPhoto}}
+\index{getUriPhoto@{getUriPhoto}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{getUriPhoto()}{getUriPhoto()}}
+{\footnotesize\ttfamily const std\+::string \& Contact\+::get\+Uri\+Photo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accesseur de uri\+Photo. 
+
+Methode qui permet d\textquotesingle{}acceder a l\textquotesingle{}emplacement de la photo du contact
+
+\begin{DoxyReturn}{Renvoie}
+uri\+Photo 
+\end{DoxyReturn}
+
+
+Définition à la ligne 282 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_a3f9a0ea233dc69ff944fc5aba075d92b}\label{class_contact_a3f9a0ea233dc69ff944fc5aba075d92b}} 
+\index{Contact@{Contact}!interactionsToString@{interactionsToString}}
+\index{interactionsToString@{interactionsToString}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{interactionsToString()}{interactionsToString()}}
+{\footnotesize\ttfamily const string Contact\+::interactions\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Representation en string de la liste des interactions. 
+
+Methode qui renvoie la representation textuel de la liste des interactions, triee par ordre de date
+
+\begin{DoxyReturn}{Renvoie}
+concatenation de representations textuelles de chaque interaction 
+\end{DoxyReturn}
+
+
+Définition à la ligne 449 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_a1237b826b80e3ead402d0c26cc3c2ace}\label{class_contact_a1237b826b80e3ead402d0c26cc3c2ace}} 
+\index{Contact@{Contact}!setEntreprise@{setEntreprise}}
+\index{setEntreprise@{setEntreprise}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{setEntreprise()}{setEntreprise()}}
+{\footnotesize\ttfamily void Contact\+::set\+Entreprise (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ }\end{DoxyParamCaption})}
+
+
+
+Mutateur d\textquotesingle{}entreprise. 
+
+Methode qui permet de modifier l\textquotesingle{}entreprise du contact
+
+
+\begin{DoxyParams}{Paramètres}
+{\em new\+Entreprise} & \+: la nouvelle entreprise \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 208 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_aa30355f8ccb75c3c8981e110848c0266}\label{class_contact_aa30355f8ccb75c3c8981e110848c0266}} 
+\index{Contact@{Contact}!setMail@{setMail}}
+\index{setMail@{setMail}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{setMail()}{setMail()}}
+{\footnotesize\ttfamily void Contact\+::set\+Mail (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{new\+Mail }\end{DoxyParamCaption})}
+
+
+
+Mutateur de mail. 
+
+Methode qui permet de modifier le mail du contact
+
+
+\begin{DoxyParams}{Paramètres}
+{\em new\+Mail} & \+: le nouveau mail \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 265 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_a0837af372d75a5d85ab296c6104a3232}\label{class_contact_a0837af372d75a5d85ab296c6104a3232}} 
+\index{Contact@{Contact}!setNom@{setNom}}
+\index{setNom@{setNom}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{setNom()}{setNom()}}
+{\footnotesize\ttfamily void Contact\+::set\+Nom (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ }\end{DoxyParamCaption})}
+
+
+
+Mutateur de nom. 
+
+Methode qui permet de modifier le nom du contact
+
+
+\begin{DoxyParams}{Paramètres}
+{\em new\+Nom} & \+: le nouveau nom \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 154 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_ac31195d758df58ee327cc05b6276aace}\label{class_contact_ac31195d758df58ee327cc05b6276aace}} 
+\index{Contact@{Contact}!setPrenom@{setPrenom}}
+\index{setPrenom@{setPrenom}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{setPrenom()}{setPrenom()}}
+{\footnotesize\ttfamily void Contact\+::set\+Prenom (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ }\end{DoxyParamCaption})}
+
+
+
+Mutateur de prenom. 
+
+Methode qui permet de modifier le prenom du contact
+
+
+\begin{DoxyParams}{Paramètres}
+{\em new\+Prenom} & \+: le nouveau prenom \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 181 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_a54c863b3045a9255d75f1ad876ecb7de}\label{class_contact_a54c863b3045a9255d75f1ad876ecb7de}} 
+\index{Contact@{Contact}!setTelephone@{setTelephone}}
+\index{setTelephone@{setTelephone}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{setTelephone()}{setTelephone()}}
+{\footnotesize\ttfamily void Contact\+::set\+Telephone (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ }\end{DoxyParamCaption})}
+
+
+
+Mutateur de telephone. 
+
+Methode qui permet de modifier le telephone du contact
+
+
+\begin{DoxyParams}{Paramètres}
+{\em new\+Telephone} & \+: le nouveau telephone \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 234 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_a1d221a1b28d375d0135d5c52589ec27b}\label{class_contact_a1d221a1b28d375d0135d5c52589ec27b}} 
+\index{Contact@{Contact}!setUriPhoto@{setUriPhoto}}
+\index{setUriPhoto@{setUriPhoto}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{setUriPhoto()}{setUriPhoto()}}
+{\footnotesize\ttfamily void Contact\+::set\+Uri\+Photo (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{new\+Uri\+Photo }\end{DoxyParamCaption})}
+
+
+
+Mutateur de uri\+Photo. 
+
+Methode qui permet de modifier l\textquotesingle{}adresse de la photo du contact
+
+
+\begin{DoxyParams}{Paramètres}
+{\em new\+Uri\+Photo} & \+: le nouveau chemin \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 294 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_a77cb96e1aad6119cc085add81bea3ea6}\label{class_contact_a77cb96e1aad6119cc085add81bea3ea6}} 
+\index{Contact@{Contact}!suggestionNom@{suggestionNom}}
+\index{suggestionNom@{suggestionNom}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{suggestionNom()}{suggestionNom()}}
+{\footnotesize\ttfamily const std\+::string Contact\+::suggestion\+Nom (\begin{DoxyParamCaption}\item[{std\+::string \&}]{chaine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Propose une suggestion de nom pour une chaine entree ne correspondant pas a ce qui est attendu. 
+
+Methode qui retire tous les chiffres et caracteres speciaux
+
+
+\begin{DoxyParams}{Paramètres}
+{\em chaine} & \+: la chaine a verifier \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 345 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_aba2053b48fbf5e978be695eec3ee879f}\label{class_contact_aba2053b48fbf5e978be695eec3ee879f}} 
+\index{Contact@{Contact}!todosToString@{todosToString}}
+\index{todosToString@{todosToString}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{todosToString()}{todosToString()}}
+{\footnotesize\ttfamily const string Contact\+::todos\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Representation en string de la liste des todos. 
+
+Methode qui renvoie la representation textuel de la liste des todos, triee par ordre d\textquotesingle{}echeance
+
+\begin{DoxyReturn}{Renvoie}
+concatenation de representations textuelles de chaque todo 
+\end{DoxyReturn}
+
+
+Définition à la ligne 473 du fichier Contact.\+cpp.
+
+\mbox{\Hypertarget{class_contact_a8c548da2f7375842f44df45c38132add}\label{class_contact_a8c548da2f7375842f44df45c38132add}} 
+\index{Contact@{Contact}!toString@{toString}}
+\index{toString@{toString}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily const string Contact\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Representation en string. 
+
+Methode qui renvoie la representation textuel du contact
+
+\begin{DoxyReturn}{Renvoie}
+prenom nom de (entreprise) telephone ou mail 
+\end{DoxyReturn}
+
+
+Définition à la ligne 413 du fichier Contact.\+cpp.
+
+
+
+\doxysubsection{Documentation des fonctions amies et associées}
+\mbox{\Hypertarget{class_contact_a24f9fcd32bd68e5d5af1a6f2a61a1948}\label{class_contact_a24f9fcd32bd68e5d5af1a6f2a61a1948}} 
+\index{Contact@{Contact}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{,  }\item[{const \mbox{\hyperlink{class_contact}{Contact}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_contact_a0dc1f88cb1e8070f3d66c1064d1c9c6b}\label{class_contact_a0dc1f88cb1e8070f3d66c1064d1c9c6b}} 
+\index{Contact@{Contact}!operator==@{operator==}}
+\index{operator==@{operator==}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_contact}{Contact}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_contact}{Contact}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Surcharge de l\textquotesingle{}operateur de test d\textquotesingle{}egalite. 
+
+Methode qui surcharge l\textquotesingle{}operateur ==, compare semantiquement deux contacts, utilise par exemple pour supprimer des instances de la liste des contacts
+
+
+\begin{DoxyParams}{Paramètres}
+{\em a} & \+: operande de gauche \\
+\hline
+{\em b} & \+: operande de droite \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+vrai si les contacts sont semantiquement egales, faux sinon 
+\end{DoxyReturn}
+
+
+Définition à la ligne 499 du fichier Contact.\+cpp.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_contact_8h}{Contact.\+h}}\item 
+\mbox{\hyperlink{_contact_8cpp}{Contact.\+cpp}}\end{DoxyCompactItemize}

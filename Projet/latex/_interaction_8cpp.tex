@@ -1,0 +1,66 @@
+\hypertarget{_interaction_8cpp}{}\doxysection{Référence du fichier Interaction.\+cpp}
+\label{_interaction_8cpp}\index{Interaction.cpp@{Interaction.cpp}}
+{\ttfamily \#include \char`\"{}Interaction.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Date.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{_interaction_8cpp_a3af42df57edfe498e9f2b83bb2133747}{operator$<$$<$}} (ostream \&o, const \mbox{\hyperlink{class_interaction}{Interaction}} \&i)
+\begin{DoxyCompactList}\small\item\em Fonction amie d\textquotesingle{}affichage via cout. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_interaction_8cpp_aa45395267e71c7f48e20fc05f00f66b2}{operator$<$}} (const \mbox{\hyperlink{class_interaction}{Interaction}} \&a, const \mbox{\hyperlink{class_interaction}{Interaction}} \&b)
+\begin{DoxyCompactList}\small\item\em Comparaison a $<$ b. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{_interaction_8cpp_aa45395267e71c7f48e20fc05f00f66b2}\label{_interaction_8cpp_aa45395267e71c7f48e20fc05f00f66b2}} 
+\index{Interaction.cpp@{Interaction.cpp}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Interaction.cpp@{Interaction.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_interaction}{Interaction}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_interaction}{Interaction}} \&}]{b }\end{DoxyParamCaption})}
+
+
+
+Comparaison a $<$ b. 
+
+Surdefinition de l\textquotesingle{}operateur \char`\"{}$<$\char`\"{}, renvoie vraie si semantiquement a $<$ b Les interactions sont comparees selon leurs dates 
+\begin{DoxyParams}{Paramètres}
+{\em a} & \+: premiere operande \\
+\hline
+{\em b} & \+: deuxieme operande\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+a $<$ b 
+\end{DoxyReturn}
+
+
+Définition à la ligne 165 du fichier Interaction.\+cpp.
+
+\mbox{\Hypertarget{_interaction_8cpp_a3af42df57edfe498e9f2b83bb2133747}\label{_interaction_8cpp_a3af42df57edfe498e9f2b83bb2133747}} 
+\index{Interaction.cpp@{Interaction.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Interaction.cpp@{Interaction.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{o,  }\item[{const \mbox{\hyperlink{class_interaction}{Interaction}} \&}]{i }\end{DoxyParamCaption})}
+
+
+
+Fonction amie d\textquotesingle{}affichage via cout. 
+
+Fonction surchargeant l\textquotesingle{}operateur $<$$<$ pour afficher l\textquotesingle{}\mbox{\hyperlink{class_interaction}{Interaction}} avec un cout
+
+
+\begin{DoxyParams}{Paramètres}
+{\em o} & \+: le stream a surcharger \\
+\hline
+{\em i} & \+: l\textquotesingle{}interaction a afficher dans le stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+operateur surchage 
+\end{DoxyReturn}
+
+
+Définition à la ligne 97 du fichier Interaction.\+cpp.
+
