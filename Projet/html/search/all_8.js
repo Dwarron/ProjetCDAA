@@ -1,9 +1,13 @@
 var searchData=
 [
-  ['testdate_69',['testDate',['../main_8cpp.html#a003aea2910a5f618f50b78082934186f',1,'main.cpp']]],
-  ['todo_70',['Todo',['../class_todo.html',1,'Todo'],['../class_todo.html#af04d7306089100e0a51ab46785a498d2',1,'Todo::Todo()']]],
-  ['todo_2ecpp_71',['Todo.cpp',['../_todo_8cpp.html',1,'']]],
-  ['todo_2eh_72',['Todo.h',['../_todo_8h.html',1,'']]],
-  ['todostostring_73',['todosToString',['../class_contact.html#aba2053b48fbf5e978be695eec3ee879f',1,'Contact']]],
-  ['tostring_74',['toString',['../class_contact.html#a8c548da2f7375842f44df45c38132add',1,'Contact::toString()'],['../class_date.html#aafe8a781392a49bb10af5856ccc52cb5',1,'Date::toString()'],['../class_interaction.html#a4fb2d8d19d9e499a0ab76e6996d2f058',1,'Interaction::toString()'],['../class_todo.html#ac4fb53b124cfb2fa78bcd1b237ded07e',1,'Todo::toString()']]]
+  ['seteffectue_60',['setEffectue',['../class_todo.html#a75517b48771cddb23fa570bc37c45a35',1,'Todo']]],
+  ['setentreprise_61',['setEntreprise',['../class_contact.html#a1237b826b80e3ead402d0c26cc3c2ace',1,'Contact']]],
+  ['setmail_62',['setMail',['../class_contact.html#aa30355f8ccb75c3c8981e110848c0266',1,'Contact']]],
+  ['setnom_63',['setNom',['../class_contact.html#a0837af372d75a5d85ab296c6104a3232',1,'Contact']]],
+  ['setprenom_64',['setPrenom',['../class_contact.html#ac31195d758df58ee327cc05b6276aace',1,'Contact']]],
+  ['setresume_65',['setResume',['../class_interaction.html#a7b904695469d24331aa10a7cbd14ea32',1,'Interaction']]],
+  ['settelephone_66',['setTelephone',['../class_contact.html#a54c863b3045a9255d75f1ad876ecb7de',1,'Contact']]],
+  ['seturiphoto_67',['setUriPhoto',['../class_contact.html#a1d221a1b28d375d0135d5c52589ec27b',1,'Contact']]],
+  ['suggestionnom_68',['suggestionNom',['../class_contact.html#a77cb96e1aad6119cc085add81bea3ea6',1,'Contact']]],
+  ['supprimecontact_69',['supprimeContact',['../class_gestion_contact.html#a627aeba03d0893e273e482b30418e499',1,'GestionContact']]]
 ];

@@ -25,6 +25,14 @@
 var NAVTREE =
 [
   [ "Projet CDAA", "index.html", [
+    [ "Projet de CDAA : Logiciel de gestion de relations clients (CRM)", "index.html", [
+      [ "Introduction", "index.html#intro_sec", null ],
+      [ "Programmation en 3 parties", "index.html#prog_sec", [
+        [ "Partie Programmation Orientée Object", "index.html#poo_subsec", null ],
+        [ "Partie Interface Graphique", "index.html#ihm_subsec", null ],
+        [ "Partie Persistence des données", "index.html#persistence_subsec", null ]
+      ] ]
+    ] ],
     [ "Espaces de nommage", "namespaces.html", [
       [ "Liste des espaces de nommage", "namespaces.html", "namespaces_dup" ]
     ] ],

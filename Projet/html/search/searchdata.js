@@ -1,11 +1,12 @@
 var indexSectionsWithContent =
 {
-  0: "acdgimostu~",
+  0: "acdgimopstu~",
   1: "cdgimt",
   2: "u",
   3: "cdgimt",
   4: "acdgimost~",
-  5: "o"
+  5: "o",
+  6: "p"
 };
 
 var indexSectionNames =
@@ -15,7 +16,8 @@ var indexSectionNames =
   2: "namespaces",
   3: "files",
   4: "functions",
-  5: "related"
+  5: "related",
+  6: "pages"
 };
 
 var indexSectionLabels =
@@ -25,6 +27,7 @@ var indexSectionLabels =
   2: "Espaces de nommage",
   3: "Fichiers",
   4: "Fonctions",
-  5: "Amis"
+  5: "Amis",
+  6: "Pages"
 };
 
