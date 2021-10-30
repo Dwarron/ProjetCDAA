@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     Contact.cpp \
+    CreationFicheWindow.cpp \
     Date.cpp \
     Interaction.cpp \
     Todo.cpp \
@@ -19,6 +20,7 @@ SOURCES += \
 
 HEADERS += \
     Contact.h \
+    CreationFicheWindow.h \
     Date.h \
     Interaction.h \
     Todo.h \
@@ -26,6 +28,7 @@ HEADERS += \
     mainwindow.h
 
 FORMS += \
+    CreationFicheWindow.ui \
     mainwindow.ui
 
 # Default rules for deployment.

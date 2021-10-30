@@ -2,10 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <CreationFicheWindow.h>
 
-QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
@@ -17,5 +16,10 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    CreationFicheWindow *creatfich;
+
+private slots:
+    void openWindow();
+
 };
 #endif // MAINWINDOW_H
