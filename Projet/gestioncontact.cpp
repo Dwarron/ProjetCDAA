@@ -103,6 +103,18 @@ list<Interaction*> GestionContact::getAllInteractions() const
 }
 
 /**
+  *  \brief Accesseur de Contacts
+  *
+  *  Methode qui permet d'acceder a liste des contacts
+  *
+  *  \return contacts
+  */
+const std::list<Contact *> &GestionContact::getContacts() const
+{
+    return contacts;
+}
+
+/**
   *  \brief Accesseur de dateDerniereSuppression
   *
   *  Methode qui permet d'acceder a la date de la derniere suppression

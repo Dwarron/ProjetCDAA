@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>CreationFicheWindow</class>
- <widget class="QWidget" name="CreationFicheWindow">
+ <class>ModificationContactWindow</class>
+ <widget class="QWidget" name="ModificationContactWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>282</height>
+    <width>394</width>
+    <height>337</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Crée un contact</string>
+   <string>Modifier un contact</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
@@ -19,9 +19,12 @@
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>Crée la fiche d'un Contact :</string>
+        <string>Choisissez le contact a modifier :</string>
        </property>
       </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboContacts"/>
      </item>
      <item>
       <layout class="QFormLayout" name="formLayout">
@@ -36,14 +39,14 @@
         <widget class="QLineEdit" name="nomLineEdit"/>
        </item>
        <item row="1" column="0">
-        <widget class="QLabel" name="prenomLabel">
+        <widget class="QLabel" name="prNomLabel">
          <property name="text">
           <string>Prénom</string>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLineEdit" name="prenomLineEdit"/>
+        <widget class="QLineEdit" name="prNomLineEdit"/>
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="entrepriseLabel">
@@ -63,7 +66,7 @@
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QLineEdit" name="telLineEdit"/>
+        <widget class="QLineEdit" name="tLPhoneLineEdit"/>
        </item>
        <item row="4" column="0">
         <widget class="QLabel" name="mailLabel">
@@ -76,7 +79,7 @@
         <widget class="QLineEdit" name="mailLineEdit"/>
        </item>
        <item row="5" column="0">
-        <widget class="QLabel" name="photoLabel_2">
+        <widget class="QLabel" name="photoLabel">
          <property name="text">
           <string>Photo</string>
          </property>

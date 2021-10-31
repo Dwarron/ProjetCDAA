@@ -13,6 +13,7 @@ SOURCES += \
     CreationFicheWindow.cpp \
     Date.cpp \
     Interaction.cpp \
+    ModificationContactWindow.cpp \
     Todo.cpp \
     GestionContact.cpp \
     main.cpp \
@@ -23,12 +24,14 @@ HEADERS += \
     CreationFicheWindow.h \
     Date.h \
     Interaction.h \
+    ModificationContactWindow.h \
     Todo.h \
     GestionContact.h \
     mainwindow.h
 
 FORMS += \
     CreationFicheWindow.ui \
+    ModificationContactWindow.ui \
     mainwindow.ui
 
 # Default rules for deployment.

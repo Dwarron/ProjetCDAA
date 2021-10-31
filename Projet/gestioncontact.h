@@ -29,7 +29,9 @@ public:
 
     std::list<Interaction*> getAllInteractions() const;
 
+    const std::list<Contact *> &getContacts() const;
+
 private:
-    std::list<Contact*> contacts;
     Date dateDerniereSuppression;
+    std::list<Contact*> contacts;
 };

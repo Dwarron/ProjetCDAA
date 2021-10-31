@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <CreationFicheWindow.h>
+#include <ModificationContactWindow.h>
 
 namespace Ui { class MainWindow; }
 
@@ -17,9 +18,11 @@ public:
 private:
     Ui::MainWindow *ui;
     CreationFicheWindow *creatfich;
+    ModificationContactWindow *modiffich;
 
 private slots:
-    void openWindow();
+    void openWindowCreeFiche();
+    void openWindowModifFiche();
 
 };
 #endif // MAINWINDOW_H
