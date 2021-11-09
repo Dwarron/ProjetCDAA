@@ -1,21 +1,21 @@
 #pragma once //probleme d'include, vu avec Monsieur Raffin et pas de meilleur solution trouvee
 
-#include <QDialog>
+#include <QWidget>
 #include "gestioncontact.h"
 
 namespace Ui { class CreationFicheWindow; }
 
-class CreationFicheWindow : public QDialog
+class CreationFicheWindow : public QWidget
 {
     Q_OBJECT
 
 public:
-    CreationFicheWindow(QWidget *parent = nullptr);
+    CreationFicheWindow(GestionContact *g, QWidget *parent = nullptr);
     ~CreationFicheWindow();
-    GestionContact *g;
 
 private:
     Ui::CreationFicheWindow *ui;
+    GestionContact *gestCont;
 
 private slots:
     void CreationFiche();

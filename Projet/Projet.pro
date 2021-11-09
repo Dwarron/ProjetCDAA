@@ -14,6 +14,7 @@ SOURCES += \
     Date.cpp \
     Interaction.cpp \
     ModificationContactWindow.cpp \
+    RechercheContactWindow.cpp \
     Todo.cpp \
     GestionContact.cpp \
     main.cpp \
@@ -25,6 +26,7 @@ HEADERS += \
     Date.h \
     Interaction.h \
     ModificationContactWindow.h \
+    RechercheContactWindow.h \
     Todo.h \
     GestionContact.h \
     mainwindow.h
@@ -32,6 +34,7 @@ HEADERS += \
 FORMS += \
     CreationFicheWindow.ui \
     ModificationContactWindow.ui \
+    RechercheContactWindow.ui \
     mainwindow.ui
 
 # Default rules for deployment.

@@ -5,14 +5,19 @@
 
 #include <QObject>
 
-MainWindow::MainWindow(QWidget *parent)
+#include <QDebug>
+
+MainWindow::MainWindow(GestionContact *g, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
+    gestCont = g;
+
     connect(ui->ButtonCreerFiche, SIGNAL(clicked()), this, SLOT(openWindowCreeFiche()));
     connect(ui->ButtonModifContact, SIGNAL(clicked()), this, SLOT(openWindowModifFiche()));
+    connect(ui->ButtonRechercherContact, SIGNAL(clicked()), this, SLOT(openWindowRechercheContact()));
 }
 
 MainWindow::~MainWindow()
@@ -22,12 +27,19 @@ MainWindow::~MainWindow()
 
 void MainWindow::openWindowCreeFiche()
 {
-    creatfich = new CreationFicheWindow();
+    creatfich = new CreationFicheWindow(gestCont);
     creatfich->show();
 }
 
 void MainWindow::openWindowModifFiche()
 {
-    modiffich = new ModificationContactWindow();
+    modiffich = new ModificationContactWindow(gestCont);
     modiffich->show();
 }
+
+void MainWindow::openWindowRechercheContact()
+{
+    rechcontact = new RechercheContactWindow(gestCont);
+    rechcontact->show();
+}
+

@@ -163,7 +163,7 @@ int main(int argc, char *argv[])
     testDate();
 
     QApplication a(argc, argv);
-    MainWindow w;
+    MainWindow w(&g);
     w.show();
     return a.exec();
 }

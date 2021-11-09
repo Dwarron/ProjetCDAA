@@ -39,14 +39,14 @@
         <widget class="QLineEdit" name="nomLineEdit"/>
        </item>
        <item row="1" column="0">
-        <widget class="QLabel" name="prNomLabel">
+        <widget class="QLabel" name="prenomLabel">
          <property name="text">
           <string>Prénom</string>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLineEdit" name="prNomLineEdit"/>
+        <widget class="QLineEdit" name="prenomLineEdit"/>
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="entrepriseLabel">
@@ -59,14 +59,14 @@
         <widget class="QLineEdit" name="entrepriseLineEdit"/>
        </item>
        <item row="3" column="0">
-        <widget class="QLabel" name="tLPhoneLabel">
+        <widget class="QLabel" name="telLabel">
          <property name="text">
           <string>Téléphone</string>
          </property>
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QLineEdit" name="tLPhoneLineEdit"/>
+        <widget class="QLineEdit" name="telLineEdit"/>
        </item>
        <item row="4" column="0">
         <widget class="QLabel" name="mailLabel">

@@ -147,3 +147,15 @@ GestionContact::~GestionContact()
         delete *it;
     }
 }
+
+
+void GestionContact::AjoutFicheContacts(const std::string& nom, const std::string& prenom, const std::string& entreprise, const std::string& tel, const std::string& mail, const std::string& uri)
+{
+    creeContact(nom, prenom, entreprise, tel, mail, uri);
+
+    for(auto it = getContacts().begin(); it != getContacts().end(); it++)
+    {
+        cout << "Contact cree : " << (*it)->getNom() << endl;
+    }
+
+}

@@ -48,7 +48,7 @@
       <item row="4" column="0">
        <widget class="QPushButton" name="ButtonRechercherContact">
         <property name="text">
-         <string>Rechercher un contact</string>
+         <string>Chercher un contact</string>
         </property>
        </widget>
       </item>
