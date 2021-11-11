@@ -1,4 +1,13 @@
-#pragma once //probleme d'include, vu avec Monsieur Raffin et pas de meilleur solution trouvee
+#ifndef CREATIONFICHEWINDOW_H
+#define CREATIONFICHEWINDOW_H
+
+/**
+ * \file CreationFicheWindow.h
+ * \class CreationFicheWindow CreationFicheWindow.h
+ * \brief Fenetre qui permet de creer la fiche d'un contact
+ * \author Perion Maxence, Pinon Alexandre
+ * \version 0.1
+ */
 
 #include <QWidget>
 #include "gestioncontact.h"
@@ -20,3 +29,5 @@ private:
 private slots:
     void CreationFiche();
 };
+
+#endif // CREATIONFICHEWINDOW_H

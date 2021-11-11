@@ -42,13 +42,14 @@ public:
     const std::string &getUriPhoto() const;
     void setUriPhoto(const std::string &newUriPhoto);
 
-    const Date &getDateCreation() const;
+    Date &getDateCreation();
     const Date &getDateDerniereModification() const;
 
     const std::list<Interaction*> &getInteractions() const;
     const std::list<Todo*> getTodos() const;
 
     friend std::ostream& operator << (std::ostream&, const Contact&);
+    friend bool operator<(const Contact&, const Contact&);
     const std::string toString() const;
     const std::string interactionsToString();
     const std::string todosToString();

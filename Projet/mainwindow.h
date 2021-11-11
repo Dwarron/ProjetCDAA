@@ -5,6 +5,9 @@
 #include <CreationFicheWindow.h>
 #include <ModificationContactWindow.h>
 #include <RechercheContactWindow.h>
+#include <AjoutEvenementWindow.h>
+#include <ModificationEvenementWindow.h>
+#include <RequeteWindow.h>
 #include <gestioncontact.h>
 
 namespace Ui { class MainWindow; }
@@ -23,11 +26,17 @@ private:
     CreationFicheWindow *creatfich;
     ModificationContactWindow *modiffich;
     RechercheContactWindow *rechcontact;
+    AjoutEvenementWindow *ajoutinter;
+    ModificationEvenementWindow *modifevent;
+    RequeteWindow *requete;
 
 private slots:
     void openWindowCreeFiche();
     void openWindowModifFiche();
     void openWindowRechercheContact();
+    void openWindowAjoutInteraction();
+    void openWindowModifEvent();
+    void openWindowRequete();
 
 };
 #endif // MAINWINDOW_H

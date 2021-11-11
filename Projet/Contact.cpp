@@ -306,7 +306,7 @@ void Contact::setUriPhoto(const string &newUriPhoto)
   *
   *  \return dateCreation
   */
-const Date &Contact::getDateCreation() const
+Date &Contact::getDateCreation()
 {
     return dateCreation;
 }
@@ -401,6 +401,21 @@ ostream& operator<< (ostream &o, const Contact& c)
 {
     o << c.toString();
     return o;
+}
+
+/**
+  *  \brief Comparaison a < b
+  *
+  *  Surdefinition de l'operateur "<", renvoie vraie si semantiquement a < b
+  *  Les contacts sont compares selon leurs nom
+  *  \param a : premiere operande
+  *  \param b : deuxieme operande
+  *
+  *  \return a < b
+  */
+bool operator<(const Contact& a, const Contact& b)
+{
+    return a < b;
 }
 
 /**

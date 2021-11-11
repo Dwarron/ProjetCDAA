@@ -109,7 +109,7 @@ list<Interaction*> GestionContact::getAllInteractions() const
   *
   *  \return contacts
   */
-const std::list<Contact *> &GestionContact::getContacts() const
+std::list<Contact *> &GestionContact::getContacts()
 {
     return contacts;
 }
@@ -146,16 +146,4 @@ GestionContact::~GestionContact()
         (*it)->clearInteractions();
         delete *it;
     }
-}
-
-
-void GestionContact::AjoutFicheContacts(const std::string& nom, const std::string& prenom, const std::string& entreprise, const std::string& tel, const std::string& mail, const std::string& uri)
-{
-    creeContact(nom, prenom, entreprise, tel, mail, uri);
-
-    for(auto it = getContacts().begin(); it != getContacts().end(); it++)
-    {
-        cout << "Contact cree : " << (*it)->getNom() << endl;
-    }
-
 }

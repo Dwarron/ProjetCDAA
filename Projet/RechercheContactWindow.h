@@ -1,4 +1,13 @@
-#pragma once //probleme d'include, vu avec Monsieur Raffin et pas de meilleur solution trouvee
+#ifndef RECHERCHECONTACTWINDOW_H
+#define RECHERCHECONTACTWINDOW_H
+
+/**
+ * \file RechercheContactWindow.h
+ * \class RechercheContactWindow RechercheContactWindow.h
+ * \brief Fenetre avec laquel on peut rechercher un contact
+ * \author Perion Maxence, Pinon Alexandre
+ * \version 0.1
+ */
 
 #include <QWidget>
 #include "gestioncontact.h"
@@ -12,14 +21,14 @@ class RechercheContactWindow : public QWidget
 public:
     RechercheContactWindow(GestionContact *g, QWidget *parent = nullptr);
     ~RechercheContactWindow();
-    GestionContact *gestCont;
 
 private:
     Ui::RechercheContactWindow *ui;
+    GestionContact *gestCont;
 
 private slots:
-    void rechercheContact(QString infos);
-    void dateContact(QDate &q);
-    void trieContact(QString trie);
+    void rechercheContact();
 
 };
+
+#endif // RECHERCHECONTACTWINDOW_H

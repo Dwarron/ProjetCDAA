@@ -9,32 +9,41 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    AjoutEvenementWindow.cpp \
     Contact.cpp \
     CreationFicheWindow.cpp \
     Date.cpp \
     Interaction.cpp \
     ModificationContactWindow.cpp \
+    ModificationEvenementWindow.cpp \
     RechercheContactWindow.cpp \
+    RequeteWindow.cpp \
     Todo.cpp \
     GestionContact.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    AjoutEvenementWindow.h \
     Contact.h \
     CreationFicheWindow.h \
     Date.h \
     Interaction.h \
     ModificationContactWindow.h \
+    ModificationEvenementWindow.h \
     RechercheContactWindow.h \
+    RequeteWindow.h \
     Todo.h \
     GestionContact.h \
     mainwindow.h
 
 FORMS += \
+    AjoutEvenementWindow.ui \
     CreationFicheWindow.ui \
     ModificationContactWindow.ui \
+    ModificationEvenementWindow.ui \
     RechercheContactWindow.ui \
+    RequeteWindow.ui \
     mainwindow.ui
 
 # Default rules for deployment.

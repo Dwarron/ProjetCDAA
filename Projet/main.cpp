@@ -131,6 +131,8 @@ int main(int argc, char *argv[])
     cout << "contact2->interactionsToString() " << endl << contact2->interactionsToString() << endl;
     cout << endl;
 
+    g.ajoutInteraction(contact1, "Investir en bourse\n@todo rappele 1 le @date 10/11/2021\n@todo rappele 2 le @date 22/10/2021");
+
     Date dateTodo1 = Date(21, 10, 2022);
     Date dateTodo2 = Date(5, 5, 2025);
     Todo t1 = Todo("todo1", dateTodo1, nullptr);
@@ -138,7 +140,6 @@ int main(int argc, char *argv[])
     cout << "Comparaison de todos : " << endl;
     cout << t1 << " < " << t2 << " ? " << (t1 < t2) << endl;
     cout << endl;
-    // TODO : pdf 3 pages maxi, deposer sources
 
     Date d = Date();
     cout << "Date du jour : " << d << endl;

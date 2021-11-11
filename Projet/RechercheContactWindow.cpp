@@ -1,10 +1,14 @@
+/**
+ * \file RechercheContactWindow.cpp
+ * \class RechercheContactWindow RechercheContactWindow.h
+ * \brief Fenetre avec laquel on peut rechercher un contact
+ * \author Perion Maxence, Pinon Alexandre
+ * \version 0.1
+ */
+
 #include "RechercheContactWindow.h"
 #include "ui_RechercheContactWindow.h"
 #include "QDate"
-
-#include "QDebug"
-
-
 
 RechercheContactWindow::RechercheContactWindow(GestionContact *g, QWidget *parent)
     : QWidget(parent)
@@ -21,49 +25,56 @@ RechercheContactWindow::RechercheContactWindow(GestionContact *g, QWidget *paren
    ui->trieListeComboBox->addItem("Ordre alphabétique");
    ui->trieListeComboBox->addItem("Date de création");
 
-   connect(ui->rechercheContactComboBox, SIGNAL(currentTextChanged(QString)), this, SLOT(rechercheContact(QString)));
-   connect(ui->dateEditDebut, SIGNAL(dateChanged(QDate)), this, SLOT(dateContact(QDate)));
-   //connect(ui->dateEditFin, SIGNAL(dateChanged(QDate)), this, SLOT(dateContact(QDate)));
-   connect(ui->rechercheContactComboBox, SIGNAL(currentTextChanged(QString)), this, SLOT(trieContact(QString)));
+   connect(ui->validButton, SIGNAL(clicked()), this, SLOT(rechercheContact()));
    connect(ui->quitButton, SIGNAL(clicked()), this, SLOT(close()));
 }
 
-RechercheContactWindow::~RechercheContactWindow()
+void RechercheContactWindow::rechercheContact()
 {
-    delete ui;
-}
+    ui->listeContactsTextEdit->clear(); //on nettoie la zone de text
 
-void RechercheContactWindow::rechercheContact(QString infos)
-{
-    if( infos == "Nom")
+    QString recherche = ui->rechercheContactComboBox->currentText();
+    QString trie = ui->trieListeComboBox->currentText();
+
+    Date dateDebut(ui->dateEditDebut->dateTime().toString("dd/MM/yyyy").toStdString());
+    Date dateFin(ui->dateEditFin->dateTime().toString("dd/MM/yyyy").toStdString());
+
+    std::list<Contact*> contactstemp;
+
+    if( trie == "Ordre alphabétique")
     {
-        ui->listeContactsTextEdit->clear();
+        gestCont->getContacts().sort([](Contact* a, Contact* b) {return a->getNom() < b->getNom();}); // on trie dans l'ordre alphabetique
+    }
+    else
+    {
+        gestCont->getContacts().sort([](Contact* a, Contact* b) {return a->getDateCreation() < b->getDateCreation();}); // on trie dans l'ordre de dates de création
+    }
 
-        // on affiche tous les nom des contacts
-        for(auto it = gestCont->getContacts().begin(); it != gestCont->getContacts().end(); it++)
+    for(auto it = gestCont->getContacts().begin(); it != gestCont->getContacts().end(); it++)
+    {
+        if( dateDebut < (*it)->getDateCreation() && (*it)->getDateCreation()< dateFin )
+             contactstemp.push_back(*it);
+    }
+
+    if( recherche == "Nom")
+    {
+        // on affiche tous les nom des contacts de la liste temporaire
+        for(auto it = contactstemp.begin(); it != contactstemp.end(); it++)
         {
             ui->listeContactsTextEdit->insertPlainText(QString::fromStdString((*it)->getNom()) + "\n");
         }
     }
     else
     {
-        ui->listeContactsTextEdit->clear();
-
-        // on affiche toutes les entreprises des contacts
-        for(auto it = gestCont->getContacts().begin(); it != gestCont->getContacts().end(); it++)
+        // on affiche toutes les entreprises des contacts de la liste temporaire
+        for(auto it = contactstemp.begin(); it != contactstemp.end(); it++)
         {
             ui->listeContactsTextEdit->insertPlainText(QString::fromStdString((*it)->getEntreprise()) + "\n");
         }
     }
 }
 
-void RechercheContactWindow::trieContact(QString trie)
+RechercheContactWindow::~RechercheContactWindow()
 {
-    //to do
-}
-
-void RechercheContactWindow::dateContact(QDate &q)
-{
-    qDebug() << ui->dateEditDebut->dateTime().toString("dd/MM/yyyy");
-    qDebug() << ui->dateEditFin->dateTime().toString("dd/MM/yyyy");
+    delete ui;
 }

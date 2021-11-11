@@ -14,15 +14,12 @@
    <string>Chercher un contact</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="2" column="0">
+   <item row="3" column="0">
     <widget class="QPushButton" name="quitButton">
      <property name="text">
       <string>Quitter</string>
      </property>
     </widget>
-   </item>
-   <item row="1" column="0">
-    <widget class="QPlainTextEdit" name="listeContactsTextEdit"/>
    </item>
    <item row="0" column="0">
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -50,7 +47,18 @@
         </widget>
        </item>
        <item>
-        <widget class="QDateEdit" name="dateEditDebut"/>
+        <widget class="QDateEdit" name="dateEditDebut">
+         <property name="dateTime">
+          <datetime>
+           <hour>0</hour>
+           <minute>0</minute>
+           <second>0</second>
+           <year>2021</year>
+           <month>1</month>
+           <day>1</day>
+          </datetime>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_3">
@@ -60,7 +68,18 @@
         </widget>
        </item>
        <item>
-        <widget class="QDateEdit" name="dateEditFin"/>
+        <widget class="QDateEdit" name="dateEditFin">
+         <property name="dateTime">
+          <datetime>
+           <hour>0</hour>
+           <minute>0</minute>
+           <second>0</second>
+           <year>2021</year>
+           <month>1</month>
+           <day>1</day>
+          </datetime>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -79,6 +98,16 @@
       </layout>
      </item>
     </layout>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPlainTextEdit" name="listeContactsTextEdit"/>
+   </item>
+   <item row="1" column="0">
+    <widget class="QPushButton" name="validButton">
+     <property name="text">
+      <string>Valider la recherche du contact</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

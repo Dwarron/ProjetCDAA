@@ -1,11 +1,13 @@
+/**
+ * \file ModificationContactWindow.cpp
+ * \class ModificationContactWindow ModificationContactWindow.h
+ * \brief Fenetre qui permet de modifier la fiche d'un contact
+ * \author Perion Maxence, Pinon Alexandre
+ * \version 0.1
+ */
+
 #include "ModificationContactWindow.h"
 #include "ui_ModificationContactWindow.h"
-#include "iostream"
-#include "QString"
-
-#include <QDebug>
-
-using namespace std;
 
 ModificationContactWindow::ModificationContactWindow(GestionContact *g, QWidget *parent)
     : QWidget(parent)
@@ -20,18 +22,10 @@ ModificationContactWindow::ModificationContactWindow(GestionContact *g, QWidget 
     connect(ui->comboContacts, SIGNAL(currentTextChanged(QString)), this, SLOT(LoadContactSelectionner(QString)));
 
     //on remplie la combo box
-    //g.creeContact("Duportail", "Damien", "Unirex compagnie", "0673332557", "damien.duportail@btc.fr", "/home/Directory/Document/Image/duportail.jpg");
-    //g.creeContact("Xeon", "Damien", "Unirex compagnie", "0673332557", "damien.duportail@btc.fr", "/home/Directory/Document/Image/duportail.jpg");
-    //g.creeContact("Voisine", "Damien", "Unirex compagnie", "0673332557", "damien.duportail@btc.fr", "/home/Directory/Document/Image/duportail.jpg");
     for(auto it = gestCont->getContacts().begin(); it != gestCont->getContacts().end(); it++)
     {
         ui->comboContacts->addItem(QString::fromStdString((*it)->toString()));
     }
-}
-
-ModificationContactWindow::~ModificationContactWindow()
-{
-    delete ui;
 }
 
 void ModificationContactWindow::RemplieInfos(Contact *c)
@@ -81,4 +75,9 @@ void ModificationContactWindow::ModifFiche()
 
     //apres avoir modifier le contact avec les informations de la fentre on la ferme
     this->close();
+}
+
+ModificationContactWindow::~ModificationContactWindow()
+{
+    delete ui;
 }

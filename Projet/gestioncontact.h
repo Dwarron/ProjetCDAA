@@ -30,7 +30,7 @@ public:
 
     std::list<Interaction*> getAllInteractions() const;
 
-    const std::list<Contact *> &getContacts() const;
+    std::list<Contact *> &getContacts();
 
 private:
     Date dateDerniereSuppression;
