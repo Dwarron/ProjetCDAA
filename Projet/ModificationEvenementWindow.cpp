@@ -43,11 +43,17 @@ void ModificationEvenementWindow::LoadContactSelectionner(QString contact)
 void ModificationEvenementWindow::FillEventComboBox()
 {
     ui->eventComboBox->clear();
+    int size = 1;
 
     for(auto it = c->getInteractions().begin(); it != c->getInteractions().end(); it++)
     {
         ui->eventComboBox->addItem(QString::fromStdString((*it)->toString()));
+
+        if( static_cast<int>(((*it)->toString().length())) > size)
+            size = static_cast<int>(((*it)->toString().length()));
     }
+
+    ui->eventComboBox->setMinimumHeight(size);
 }
 
 void ModificationEvenementWindow::LoadEvenementSelectionner(QString event)

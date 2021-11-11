@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Fenêtre principale </string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">
+</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">

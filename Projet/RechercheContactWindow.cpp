@@ -8,7 +8,6 @@
 
 #include "RechercheContactWindow.h"
 #include "ui_RechercheContactWindow.h"
-#include "QDate"
 
 RechercheContactWindow::RechercheContactWindow(GestionContact *g, QWidget *parent)
     : QWidget(parent)
@@ -24,6 +23,8 @@ RechercheContactWindow::RechercheContactWindow(GestionContact *g, QWidget *paren
 
    ui->trieListeComboBox->addItem("Ordre alphabétique");
    ui->trieListeComboBox->addItem("Date de création");
+
+   ui->listeContactsTextEdit->setReadOnly(true);
 
    connect(ui->validButton, SIGNAL(clicked()), this, SLOT(rechercheContact()));
    connect(ui->quitButton, SIGNAL(clicked()), this, SLOT(close()));

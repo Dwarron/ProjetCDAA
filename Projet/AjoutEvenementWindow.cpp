@@ -52,14 +52,21 @@ void AjoutEvenementWindow::LoadEvenementSelectionner(QString event)
 void AjoutEvenementWindow::FillEventComboBox()
 {
     ui->eventComboBox->clear();
+    int size = 1;
 
     for(auto it = gestCont->getContacts().begin(); it != gestCont->getContacts().end(); it++)
     {
         for(auto it2 = (*it)->getInteractions().begin(); it2 != (*it)->getInteractions().end(); it2++)
         {
             ui->eventComboBox->addItem(QString::fromStdString((*it2)->toString()));
+
+            //ici la taille de la comboBox est adapté quand une interactions est longue
+            if( static_cast<int>(((*it2)->toString().length())) > size)
+                size = static_cast<int>(((*it2)->toString().length()));
         }
     }
+
+    ui->eventComboBox->setMinimumHeight(size);
 }
 
 void AjoutEvenementWindow::ChoixEvenement()

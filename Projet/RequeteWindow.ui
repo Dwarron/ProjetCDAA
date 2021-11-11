@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>697</width>
-    <height>516</height>
+    <width>1003</width>
+    <height>576</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -69,85 +69,270 @@
          </item>
         </layout>
        </item>
-       <item>
-        <widget class="QStackedWidget" name="stackedWidget">
-         <property name="frameShape">
-          <enum>QFrame::WinPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Plain</enum>
-         </property>
-         <property name="currentIndex">
-          <number>2</number>
-         </property>
-         <widget class="QWidget" name="page"/>
-         <widget class="QWidget" name="page_2">
+      </layout>
+     </item>
+     <item row="1" column="0">
+      <widget class="QStackedWidget" name="stackedWidget">
+       <property name="frameShape">
+        <enum>QFrame::WinPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="currentIndex">
+        <number>4</number>
+       </property>
+       <widget class="QWidget" name="page"/>
+       <widget class="QWidget" name="page_2">
+        <layout class="QGridLayout" name="gridLayout_5">
+         <item row="0" column="0">
           <widget class="QLabel" name="nombreContacts">
-           <property name="geometry">
-            <rect>
-             <x>130</x>
-             <y>70</y>
-             <width>251</width>
-             <height>81</height>
-            </rect>
-           </property>
            <property name="text">
             <string/>
            </property>
           </widget>
-         </widget>
-         <widget class="QWidget" name="page_3">
-          <widget class="QWidget" name="verticalLayoutWidget_3">
-           <property name="geometry">
-            <rect>
-             <x>160</x>
-             <y>40</y>
-             <width>289</width>
-             <height>222</height>
-            </rect>
-           </property>
-           <layout class="QGridLayout" name="gridLayout_3">
-            <item row="0" column="0">
-             <layout class="QHBoxLayout" name="horizontalLayout_2">
-              <item>
-               <widget class="QLabel" name="label_3">
-                <property name="text">
-                 <string>Evénement entre </string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QDateEdit" name="dateDebutDateEdit"/>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_4">
-                <property name="text">
-                 <string> et le </string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QDateEdit" name="dateFinDateEdit"/>
-              </item>
-             </layout>
-            </item>
-            <item row="2" column="0">
-             <widget class="QPlainTextEdit" name="listeEvenementPlainTextEdit"/>
-            </item>
-            <item row="1" column="0">
-             <widget class="QPushButton" name="validIntervalButton">
-              <property name="text">
-               <string>Valider l'intervalle</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </widget>
-         <widget class="QWidget" name="page_4"/>
-        </widget>
-       </item>
-      </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="page_3">
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="0" column="0">
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="0" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>Evénement entre </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDateEdit" name="dateDebutDateEdit">
+               <property name="dateTime">
+                <datetime>
+                 <hour>0</hour>
+                 <minute>0</minute>
+                 <second>0</second>
+                 <year>2020</year>
+                 <month>1</month>
+                 <day>1</day>
+                </datetime>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_4">
+               <property name="text">
+                <string> et le </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDateEdit" name="dateFinDateEdit">
+               <property name="dateTime">
+                <datetime>
+                 <hour>0</hour>
+                 <minute>0</minute>
+                 <second>0</second>
+                 <year>2020</year>
+                 <month>1</month>
+                 <day>1</day>
+                </datetime>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="0">
+            <widget class="QPlainTextEdit" name="listeEvenementPlainTextEdit">
+             <property name="readOnly">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QPushButton" name="validIntervalButton">
+             <property name="text">
+              <string>Valider l'intervalle</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="page_4">
+        <layout class="QGridLayout" name="gridLayout_7">
+         <item row="0" column="0">
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <layout class="QFormLayout" name="formLayout">
+             <item row="0" column="0">
+              <widget class="QLabel" name="selectContactLabel">
+               <property name="text">
+                <string>Selectionner le contact</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="selectContactComboBox"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item>
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string>Intervalles de dates entre le </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDateEdit" name="debutContactDateEdit">
+               <property name="dateTime">
+                <datetime>
+                 <hour>0</hour>
+                 <minute>0</minute>
+                 <second>0</second>
+                 <year>2020</year>
+                 <month>1</month>
+                 <day>1</day>
+                </datetime>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_5">
+               <property name="text">
+                <string>et le</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDateEdit" name="finContactDateEdit">
+               <property name="dateTime">
+                <datetime>
+                 <hour>0</hour>
+                 <minute>0</minute>
+                 <second>0</second>
+                 <year>2020</year>
+                 <month>1</month>
+                 <day>1</day>
+                </datetime>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QFormLayout" name="formLayout_2">
+             <item row="0" column="0">
+              <widget class="QLabel" name="afficherLabel">
+               <property name="text">
+                <string>Afficher </string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="afficherInfosContactComboBox"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QPushButton" name="validInfosContactPushButton">
+             <property name="text">
+              <string>Valider les informations séléctionner</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPlainTextEdit" name="listeInfosContactplainTextEdit"/>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="page_5">
+        <layout class="QGridLayout" name="gridLayout_6">
+         <item row="0" column="0">
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QLabel" name="label_6">
+               <property name="text">
+                <string>Intervalles de dates entre le </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDateEdit" name="debutContactsDateEdit">
+               <property name="dateTime">
+                <datetime>
+                 <hour>0</hour>
+                 <minute>0</minute>
+                 <second>0</second>
+                 <year>2020</year>
+                 <month>1</month>
+                 <day>1</day>
+                </datetime>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_7">
+               <property name="text">
+                <string>et le</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDateEdit" name="finContactsDateEdit">
+               <property name="dateTime">
+                <datetime>
+                 <hour>0</hour>
+                 <minute>0</minute>
+                 <second>0</second>
+                 <year>2020</year>
+                 <month>1</month>
+                 <day>1</day>
+                </datetime>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QFormLayout" name="formLayout_4">
+             <item row="0" column="0">
+              <widget class="QLabel" name="afficherLabel_2">
+               <property name="text">
+                <string>Afficher </string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="afficherInfosContactsComboBox"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QPushButton" name="validInfosContactsPushButton">
+             <property name="text">
+              <string>Valider les informations séléctionner</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPlainTextEdit" name="listeInfosplainTextEdit"/>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
      </item>
     </layout>
    </item>

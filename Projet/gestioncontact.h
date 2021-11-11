@@ -35,7 +35,4 @@ public:
 private:
     Date dateDerniereSuppression;
     std::list<Contact*> contacts;
-
-signals:
-    void AjoutFicheContacts(const std::string& nom, const std::string& prenom, const std::string& entreprise, const std::string& tel, const std::string& mail, const std::string& uri);
 };

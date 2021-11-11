@@ -4,7 +4,7 @@
 /**
  * \file RequeteWindow.h
  * \class RequeteWindow RequeteWindow.h
- * \brief Fenetre avec laquel on peut rechercher un contact
+ * \brief Fenetre qui affiche differente requetes selectionnable
  * \author Perion Maxence, Pinon Alexandre
  * \version 0.1
  */
@@ -25,6 +25,7 @@ public:
 private:
     Ui::RequeteWindow *ui;
     GestionContact *gestCont;
+    Contact *c;
 
 private slots:
     void NombreContacts();
@@ -32,6 +33,8 @@ private slots:
     void ListeTodoDateContact();
     void ListeTodoDateContacts();
     void LoadInfosEvent2Dates();
+    void LoadInfosSelectContact();
+    void LoadInfosContacts();
 
 };
 
