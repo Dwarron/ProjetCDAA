@@ -94,13 +94,11 @@ void ModificationContactWindow::LoadContactSelectionner(QString contact)
   *  \brief Modification de la fiche du contact
   *
   *  Slot qui va recuperer toutes les informations rentrer dans la fenetre par l'utilisateur pour modifier le contact selectionne.
-  *  Si l'utilisateur ecrit son nom avec un caractere special ou un chiffre l'application lui propose de le reecrire correctement.
+  *  Si l'utilisateur ecrit son nom ou prenom avec un caractere special ou un chiffre l'application lui propose de le reecrire correctement.
   */
 void ModificationContactWindow::ModifFiche()
 {  
     QMessageBox messageErreur;
-    messageErreur.setWindowTitle("Nom invalide");
-    messageErreur.setText("Nom invalide vouliez vous écrire : ");
     QPushButton *yesButton = messageErreur.addButton(QMessageBox::Yes);
     messageErreur.addButton(QMessageBox::No);
 
@@ -111,8 +109,10 @@ void ModificationContactWindow::ModifFiche()
     //on va regarder quelle champ sont modifier pour utiliser les setters/mutateur
     if(c->getNom() != nom)
     {
-        if(nomtester!=nom)
+        if(nomtester != nom)
         {
+            messageErreur.setWindowTitle("Nom invalide");
+            messageErreur.setText("Nom invalide vouliez vous écrire : ");
             messageErreur.setInformativeText(QString::fromStdString(nomtester));
             messageErreur.exec();
             if(messageErreur.clickedButton() == yesButton)
@@ -125,8 +125,27 @@ void ModificationContactWindow::ModifFiche()
             c->setNom(nom);
     }
 
-    if(c->getPrenom() != ui->prenomLineEdit->text().toStdString())
-        c->setPrenom(ui->prenomLineEdit->text().toStdString());
+    std::string prenom = ui->prenomLineEdit->text().toStdString();
+    std::string prenomtester = prenom;
+    c->suggestionNom(prenomtester);
+
+    if(c->getPrenom() != prenom)
+    {
+        if(prenomtester != prenom)
+        {
+            messageErreur.setWindowTitle("Prenom invalide");
+            messageErreur.setText("Prenom invalide vouliez vous écrire : ");
+            messageErreur.setInformativeText(QString::fromStdString(prenomtester));
+            messageErreur.exec();
+            if(messageErreur.clickedButton() == yesButton)
+                c->setPrenom(prenomtester);
+            else
+                c->setPrenom(prenom);
+
+        }
+        else
+            c->setPrenom(prenom);
+    }
 
     if(c->getEntreprise() != ui->entrepriseLineEdit->text().toStdString())
         c->setEntreprise(ui->entrepriseLineEdit->text().toStdString());
