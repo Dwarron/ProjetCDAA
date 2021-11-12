@@ -25,9 +25,11 @@ public:
 private:
     Ui::CreationFicheWindow *ui;
     GestionContact *gestCont;
+    QString file_name;
 
 private slots:
     void CreationFiche();
+    void SelectFile();
 };
 
 #endif // CREATIONFICHEWINDOW_H

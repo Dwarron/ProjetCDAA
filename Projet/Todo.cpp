@@ -35,7 +35,7 @@ Todo::Todo(const string& txt, const Date& date, Interaction* i)
   *
   *  \return echeance
   */
-const Date &Todo::getEcheance() const
+Date &Todo::getEcheance()
 {
     return echeance;
 }
@@ -177,7 +177,7 @@ Interaction *Todo::getInteraction() const
   *
   *  \return a < b
   */
-bool operator<(const Todo& a, const Todo& b)
+bool operator<(Todo& a, Todo& b)
 {
     return (a.getEcheance() < b.getEcheance());
 }

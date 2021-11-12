@@ -68,7 +68,7 @@ void Interaction::creerTodos()
   *
   *  \return date
   */
-const Date Interaction::getDate() const
+Date Interaction::getDate()
 {
     return date;
 }
@@ -162,7 +162,7 @@ void Interaction::viderTodos()
   *
   *  \return a < b
   */
-bool operator<(const Interaction& a, const Interaction& b)
+bool operator<(Interaction& a, Interaction& b)
 {
     return (a.getDate() < b.getDate());
 }

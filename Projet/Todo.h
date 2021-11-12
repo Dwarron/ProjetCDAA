@@ -19,7 +19,7 @@ class Todo
 public:
     Todo(const std::string&, const Date&, Interaction*);
 
-    const Date &getEcheance() const;
+    Date &getEcheance();
 
     const std::string &getContenue() const;
 
@@ -33,7 +33,7 @@ public:
 
     Interaction *getInteraction() const;
 
-    friend bool operator<(const Todo&, const Todo&);
+    friend bool operator<(Todo&, Todo&);
 
 private:
     Date echeance;

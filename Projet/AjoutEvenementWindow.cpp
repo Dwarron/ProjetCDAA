@@ -1,7 +1,7 @@
 /**
  * \file AjoutEvenementWindow.cpp
  * \class AjoutEvenementWindow AjoutEvenementWindow.h
- * \brief Fenetre qui permet de creer de nouvelle interactions ou d'en reutiliser des anciennes
+ * \brief Fenetre qui permet de creer de nouvelle interactions ou d'en reutiliser des anciennes. Et de l'ajouter au contact.
  * \author Perion Maxence, Pinon Alexandre
  * \version 0.1
  */
@@ -9,6 +9,16 @@
 #include "AjoutEvenementWindow.h"
 #include <ui_AjoutEvenementWindow.h>
 
+/**
+ *  \brief Constructeur standard
+ *
+ *  Constructeur standard de la classe AjoutEvenementWindow.
+ *  Effectue les connexions entre les differents Widget et evenement a declencher.
+ *  Permet de remplir l'ensemble de la comboBox des contacts.
+ *
+ *  \param g : gestion des contacts
+ *  \param parent : fenetre parent
+ */
 AjoutEvenementWindow::AjoutEvenementWindow(GestionContact *g, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::AjoutEvenementWindow)
@@ -31,6 +41,13 @@ AjoutEvenementWindow::AjoutEvenementWindow(GestionContact *g, QWidget *parent)
     }
 }
 
+/**
+  *  \brief Charge le contact selectionne
+  *
+  *  Methode qui permet de recuperer le contact selectionne dans la comboBox.
+  *
+  *  \param contact : le contact selectionne
+  */
 void AjoutEvenementWindow::LoadContactSelectionner(QString contact)
 {
     for(auto it = gestCont->getContacts().begin(); it != gestCont->getContacts().end(); it++)
@@ -40,6 +57,13 @@ void AjoutEvenementWindow::LoadContactSelectionner(QString contact)
     }
 }
 
+/**
+  *  \brief Charge l'interaction selectionne
+  *
+  *  Methode qui permet de recuperer l'interaction selectionne dans la comboBox.
+  *
+  *  \param event : l'interaction selectionne
+  */
 void AjoutEvenementWindow::LoadEvenementSelectionner(QString event)
 {
     for(auto it = c->getInteractions().begin(); it != c->getInteractions().end(); it++)
@@ -49,6 +73,12 @@ void AjoutEvenementWindow::LoadEvenementSelectionner(QString event)
     }
 }
 
+/**
+  *  \brief Remplie la comboBox des interactions
+  *
+  *  Signal qui permet de remplir la comboBox des interactions deja existante dans la gestion des contacts.
+  *  Permet egalement de redimensionner la comboBox si une interaction est de grande taille.
+  */
 void AjoutEvenementWindow::FillEventComboBox()
 {
     ui->eventComboBox->clear();
@@ -69,6 +99,12 @@ void AjoutEvenementWindow::FillEventComboBox()
     ui->eventComboBox->setMinimumHeight(size);
 }
 
+/**
+  *  \brief Prepare au choix de la nouvelle interaction
+  *
+  *  Slot qui cache le Widget lineEdit, et qui recupere une interaction deja existante.
+  *  Et envoie un signal pour remplir la comboBox des interactions.
+  */
 void AjoutEvenementWindow::ChoixEvenement()
 {
     ui->newEventlineEdit->setVisible(false);
@@ -77,16 +113,25 @@ void AjoutEvenementWindow::ChoixEvenement()
     emit FillEventComboBox();
 }
 
+/**
+  *  \brief Recuperer nouvelle interaction
+  *
+  *  Slot qui permet de cacher la comboBox, et de recupere la chaine de caractere qui sera la nouvelle interaction.
+  */
 void AjoutEvenementWindow::NouvelleEvenement()
 {
     ui->eventComboBox->setVisible(false);
     ui->newEventlineEdit->setVisible(true);
+    interaction = ui->newEventlineEdit->text().toStdString();
 }
 
+/**
+  *  \brief Ajoute l'interaction
+  *
+  *  Slot qui permet d'ajouter au contact l'interation selectionne ou cree.
+  */
 void AjoutEvenementWindow::AjoutEvenement()
 {
-    interaction = ui->newEventlineEdit->text().toStdString();
-
     if( interaction != "")
         gestCont->ajoutInteraction(c, interaction);
     else
@@ -96,6 +141,11 @@ void AjoutEvenementWindow::AjoutEvenement()
     this->close();
 }
 
+/**
+ *  \brief Destructeur de AjoutEvenementWindow
+ *
+ *  Detruis en memoire la fenetre
+ */
 AjoutEvenementWindow::~AjoutEvenementWindow()
 {
     delete ui;

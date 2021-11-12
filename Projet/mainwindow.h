@@ -1,6 +1,14 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+/**
+ * \file MainWindow.h
+ * \class MainWindow MainWindow.h
+ * \brief Fenetre qui permet de gerer l'ensemble des fenetres de cette application
+ * \author Perion Maxence, Pinon Alexandre
+ * \version 0.1
+ */
+
 #include <QMainWindow>
 #include <CreationFicheWindow.h>
 #include <ModificationContactWindow.h>
@@ -17,7 +25,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(GestionContact *g, QWidget *parent = nullptr); // Les arguments avec une valeur par défaut doivent figurer à la fin de la liste des arguments.
+    MainWindow(GestionContact *g, QWidget *parent = nullptr);
     ~MainWindow();
 
 private:
@@ -37,6 +45,7 @@ private slots:
     void openWindowAjoutInteraction();
     void openWindowModifEvent();
     void openWindowRequete();
+    void slot_aPropos();
 
 };
 #endif // MAINWINDOW_H

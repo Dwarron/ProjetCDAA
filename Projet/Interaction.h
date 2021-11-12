@@ -22,14 +22,14 @@ public:
     Interaction(const std::string&);
     ~Interaction();
 
-    const Date getDate() const;
+    Date getDate();
     const std::string &getResume() const;
     void setResume(const std::string &newResume);
 
     friend std::ostream& operator << (std::ostream&, const Interaction&);
     const std::string toString() const;
 
-    friend bool operator<(const Interaction&, const Interaction&);
+    friend bool operator<(Interaction&, Interaction&);
 
     const std::list<Todo*> &getTodos() const;
 

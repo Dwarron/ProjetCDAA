@@ -26,10 +26,12 @@ private:
     Ui::ModificationContactWindow *ui;
     GestionContact *gestCont;
     Contact *c;
+    QString file_name;
 
 private slots:
     void LoadContactSelectionner(QString contact);
     void ModifFiche();
+    void ChangeFile();
 
 signals:
     void RemplieInfos(Contact *c);

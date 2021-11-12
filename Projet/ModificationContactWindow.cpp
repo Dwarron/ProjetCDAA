@@ -8,7 +8,20 @@
 
 #include "ModificationContactWindow.h"
 #include "ui_ModificationContactWindow.h"
+#include <QFileDialog>
+#include <QDir>
+#include <QMessageBox>
 
+/**
+ *  \brief Constructeur standard
+ *
+ *  Constructeur standard de la classe ModificationContactWindow.
+ *  Effectue les connexions entre les differents Widget et evenement a declencher.
+ *  Permet de remplir l'ensemble de la comboBox des contacts.
+ *
+ *  \param g : gestion des contacts
+ *  \param parent : fenetre parent
+ */
 ModificationContactWindow::ModificationContactWindow(GestionContact *g, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::ModificationContactWindow)
@@ -20,6 +33,7 @@ ModificationContactWindow::ModificationContactWindow(GestionContact *g, QWidget 
     connect(ui->validButton, SIGNAL(clicked()), this, SLOT(ModifFiche()));
     connect(ui->quitButton, SIGNAL(clicked()), this, SLOT(close()));
     connect(ui->comboContacts, SIGNAL(currentTextChanged(QString)), this, SLOT(LoadContactSelectionner(QString)));
+    connect(ui->changeFilePushButton, SIGNAL(clicked()), this, SLOT(ChangeFile()));
 
     //on remplie la combo box
     for(auto it = gestCont->getContacts().begin(); it != gestCont->getContacts().end(); it++)
@@ -28,6 +42,25 @@ ModificationContactWindow::ModificationContactWindow(GestionContact *g, QWidget 
     }
 }
 
+/**
+  *  \brief Selection de fichier
+  *
+  *  Slot qui permet de selectionner la photo d'un contacts.
+  *  La photo ne peut seulement etre en format jpg ou png.
+  */
+void ModificationContactWindow::ChangeFile()
+{
+    QString filter = "PNG File (*.png) ;; JPG File (*.jpg)";
+    file_name = QFileDialog::getOpenFileName(this, "Open file", QDir::homePath(), filter);
+}
+
+/**
+  *  \brief Remplir les informations d'un contact
+  *
+  *  Slot qui va remplir tous les champs de la fenetre pour un contact.
+  *
+  *  \param contact : le contact selectionne
+  */
 void ModificationContactWindow::RemplieInfos(Contact *c)
 {
     ui->nomLineEdit->setText(QString::fromStdString(c->getNom()));
@@ -36,8 +69,16 @@ void ModificationContactWindow::RemplieInfos(Contact *c)
     ui->telLineEdit->setText(QString::fromStdString(c->getTelephone()));
     ui->mailLineEdit->setText(QString::fromStdString(c->getMail()));
     ui->photoLineEdit->setText(QString::fromStdString(c->getUriPhoto()));
+    file_name = QString::fromStdString(c->getUriPhoto());
 }
 
+/**
+  *  \brief Charge le contact selectionne
+  *
+  *  Recupere le contact selectionne dans la comboBox.
+  *
+  *  \param contact : le contact selectionne
+  */
 void ModificationContactWindow::LoadContactSelectionner(QString contact)
 {
     for(auto it = gestCont->getContacts().begin(); it != gestCont->getContacts().end(); it++)
@@ -49,11 +90,40 @@ void ModificationContactWindow::LoadContactSelectionner(QString contact)
     emit RemplieInfos(c);
 }
 
+/**
+  *  \brief Modification de la fiche du contact
+  *
+  *  Slot qui va recuperer toutes les informations rentrer dans la fenetre par l'utilisateur pour modifier le contact selectionne.
+  *  Si l'utilisateur ecrit son nom avec un caractere special ou un chiffre l'application lui propose de le reecrire correctement.
+  */
 void ModificationContactWindow::ModifFiche()
-{
+{  
+    QMessageBox messageErreur;
+    messageErreur.setWindowTitle("Nom invalide");
+    messageErreur.setText("Nom invalide vouliez vous écrire : ");
+    QPushButton *yesButton = messageErreur.addButton(QMessageBox::Yes);
+    messageErreur.addButton(QMessageBox::No);
+
+    std::string nom = ui->nomLineEdit->text().toStdString();
+    std::string nomtester = nom;
+    c->suggestionNom(nomtester);
+
     //on va regarder quelle champ sont modifier pour utiliser les setters/mutateur
-    if(c->getNom() != ui->nomLineEdit->text().toStdString())
-        c->setNom(ui->nomLineEdit->text().toStdString());
+    if(c->getNom() != nom)
+    {
+        if(nomtester!=nom)
+        {
+            messageErreur.setInformativeText(QString::fromStdString(nomtester));
+            messageErreur.exec();
+            if(messageErreur.clickedButton() == yesButton)
+                c->setNom(nomtester);
+            else
+                c->setNom(nom);
+
+        }
+        else
+            c->setNom(nom);
+    }
 
     if(c->getPrenom() != ui->prenomLineEdit->text().toStdString())
         c->setPrenom(ui->prenomLineEdit->text().toStdString());
@@ -67,16 +137,18 @@ void ModificationContactWindow::ModifFiche()
     if(c->getMail() != ui->mailLineEdit->text().toStdString())
         c->setMail(ui->mailLineEdit->text().toStdString());
 
-    if(c->getUriPhoto() != ui->photoLineEdit->text().toStdString())
-        c->setUriPhoto(ui->photoLineEdit->text().toStdString());
-
-    //utiliser proposeNom pour le nom et le prénom
-
+    if(c->getUriPhoto() != file_name.toStdString())
+        c->setUriPhoto(file_name.toStdString());
 
     //apres avoir modifier le contact avec les informations de la fentre on la ferme
     this->close();
 }
 
+/**
+ *  \brief Destructeur de ModificationContactWindow
+ *
+ *  Detruis en memoire la fenetre
+ */
 ModificationContactWindow::~ModificationContactWindow()
 {
     delete ui;

@@ -407,7 +407,6 @@ ostream& operator<< (ostream &o, const Contact& c)
   *  \brief Comparaison a < b
   *
   *  Surdefinition de l'operateur "<", renvoie vraie si semantiquement a < b
-  *  Les contacts sont compares selon leurs nom
   *  \param a : premiere operande
   *  \param b : deuxieme operande
   *

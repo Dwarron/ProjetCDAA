@@ -22,8 +22,6 @@ public:
     ModificationEvenementWindow(GestionContact *g, QWidget *parent = nullptr);
     ~ModificationEvenementWindow();
 
-
-
 private:
     Ui::ModificationEvenementWindow *ui;
     GestionContact *gestCont;
@@ -38,7 +36,6 @@ private slots:
     void ModifEvent();
 
 signals:
-    void ContactChoisie(Contact *c);
     void FillEventComboBox();
 };
 

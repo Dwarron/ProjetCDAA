@@ -131,7 +131,7 @@ int main(int argc, char *argv[])
     cout << "contact2->interactionsToString() " << endl << contact2->interactionsToString() << endl;
     cout << endl;
 
-    g.ajoutInteraction(contact1, "Investir en bourse\n@todo rappele 1 le @date 10/11/2021\n@todo rappele 2 le @date 22/10/2021");
+    g.ajoutInteraction(contact1, "Investir en bourse\n @todo acheter btc le @date 25/12/2021\n @todo acheter eth le @date 28/12/2021");
 
     Date dateTodo1 = Date(21, 10, 2022);
     Date dateTodo2 = Date(5, 5, 2025);

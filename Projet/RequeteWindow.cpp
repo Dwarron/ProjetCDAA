@@ -9,8 +9,16 @@
 #include "RequeteWindow.h"
 #include "ui_RequeteWindow.h"
 
-#include <QDebug>
-
+/**
+ *  \brief Constructeur standard
+ *
+ *  Constructeur standard de la classe RequeteWindow.
+ *  Effectue les connexions entre les differents Widget et evenement a declencher.
+ *  Permet de remplir les comboBox pour le trie et pour la recherche d'un contact.
+ *
+ *  \param g : gestion des contacts
+ *  \param parent : fenetre parent
+ */
 RequeteWindow::RequeteWindow(GestionContact *g, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::RequeteWindow)
@@ -31,6 +39,12 @@ RequeteWindow::RequeteWindow(GestionContact *g, QWidget *parent)
     ui->stackedWidget->setCurrentIndex(0);
 }
 
+/**
+  *  \brief Nombre de contact
+  *
+  *  Slot avec lequel on va ouvrir la premiere page du stackedWideg afin d'afficher le nombre de contacts.
+  *
+  */
 void RequeteWindow::NombreContacts()
 {
     ui->stackedWidget->setCurrentIndex(1);
@@ -39,12 +53,25 @@ void RequeteWindow::NombreContacts()
     ui->nombreContacts->setText("Pour le moment il y a : " + QString::fromStdString(nbrContacts) + " fiches de contacts sur l'application.");
 }
 
+/**
+  *  \brief Interactions entre 2 dates
+  *
+  *  Slot qui permet d'ouvrir la second page du stackedWideg.
+  *  Dans celle-ci il est possible d'afficher toutes les interactions entre 2 dates donnees.
+  *
+  */
 void RequeteWindow::EvenementEntre2Dates()
 {
     ui->stackedWidget->setCurrentIndex(2);
     ui->listeEvenementPlainTextEdit->setReadOnly(true);
 }
 
+/**
+  *  \brief Chargement des informations entres 2 dates
+  *
+  *  Slot qui va recuperer les dates et afficher les interactions.
+  *
+  */
 void RequeteWindow::LoadInfosEvent2Dates()
 {
     Date dateDebut(ui->dateDebutDateEdit->dateTime().toString("dd/MM/yyyy").toStdString());
@@ -61,13 +88,22 @@ void RequeteWindow::LoadInfosEvent2Dates()
     }
 }
 
+/**
+  *  \brief Nombre de contact
+  *
+  *  Slot avec lequel on va ouvrir la troisiement page du stackedWideg afin d'afficher les todos ou dates d'un contact.
+  *  Initialise egalement la comboBox des contacts et la comboBox pour le choix de l'utilisateur.
+  *
+  */
 void RequeteWindow::ListeTodoDateContact()
 {
     ui->stackedWidget->setCurrentIndex(3);
 
+    ui->afficherInfosContactComboBox->clear();
     ui->afficherInfosContactComboBox->addItem("la liste des todos pour le contact");
     ui->afficherInfosContactComboBox->addItem("la liste des dates pour le contact");
 
+    ui->selectContactComboBox->clear();
     //on remplie la combo box des contacts
     for(auto it = gestCont->getContacts().begin(); it != gestCont->getContacts().end(); it++)
     {
@@ -75,6 +111,13 @@ void RequeteWindow::ListeTodoDateContact()
     }
 }
 
+/**
+  *  \brief Chargement des informations pour l'affichage
+  *
+  *  Ce slot recupere qu'elle informations l'utilisateur veut afficher (todo/date).
+  *  Et fait l'affichage en fonction pour le contact selectionne.
+  *
+  */
 void RequeteWindow::LoadInfosSelectContact()
 {
     ui->listeInfosContactplainTextEdit->clear();
@@ -105,22 +148,36 @@ void RequeteWindow::LoadInfosSelectContact()
     }
     else
     {
-        for(auto it = c->getInteractions().begin(); it != c->getInteractions().end(); it++)
+        for(auto it = todostemp.begin(); it != todostemp.end(); it++)
         {
-            if( dateDebut < (*it)->getDate() && (*it)->getDate() < dateFin )
-                ui->listeInfosContactplainTextEdit->insertPlainText(QString::fromStdString("Contact " + c->getNom() + " " + c->getPrenom() + " : " + (*it)->getDate().toString()) + "\n");
+            if( dateDebut < (*it)->getEcheance() && (*it)->getEcheance() < dateFin )
+                ui->listeInfosContactplainTextEdit->insertPlainText(QString::fromStdString("Contact " + c->getNom() + " " + c->getPrenom() + " : " + (*it)->getEcheance().toString()) + "\n");
         }
     }
 }
 
+/**
+  *  \brief Nombre de contact
+  *
+  *  Slot avec lequel on va ouvrir la quatrieme et derniere page du stackedWideg afin d'afficher les todos ou dates de tous les contacts.
+  *
+  */
 void RequeteWindow::ListeTodoDateContacts()
 {
     ui->stackedWidget->setCurrentIndex(4);
 
+    ui->afficherInfosContactsComboBox->clear();
     ui->afficherInfosContactsComboBox->addItem("la liste des todos pour le contact");
     ui->afficherInfosContactsComboBox->addItem("la liste des dates pour le contact");
 }
 
+/**
+  *  \brief Chargement des informations pour l'affichage
+  *
+  *  Ce slot recupere qu'elle informations l'utilisateur veut afficher (todo/date).
+  *  Et fait l'affichage en fonction pour tous les contacts.
+  *
+  */
 void RequeteWindow::LoadInfosContacts()
 {
     ui->listeInfosplainTextEdit->clear();
@@ -146,15 +203,20 @@ void RequeteWindow::LoadInfosContacts()
         }
         else
         {
-            for(auto it2 = (*it)->getInteractions().begin(); it2 != (*it)->getInteractions().end(); it2++)
+            for(auto it2 = todostemp.begin(); it2 != todostemp.end(); it2++)
             {
-                if( dateDebut < (*it2)->getDate() && (*it2)->getDate() < dateFin )
-                    ui->listeInfosplainTextEdit->insertPlainText(QString::fromStdString("Contact " + (*it)->getNom() + " " + (*it)->getPrenom() + " : " + (*it2)->getDate().toString()) + "\n");
+                if( dateDebut < (*it2)->getEcheance() && (*it2)->getEcheance() < dateFin )
+                    ui->listeInfosplainTextEdit->insertPlainText(QString::fromStdString("Contact " + (*it)->getNom() + " " + (*it)->getPrenom() + " : " + (*it2)->getEcheance().toString()) + "\n");
             }
         }
     }
 }
 
+/**
+ *  \brief Destructeur de RequeteWindow
+ *
+ *  Detruis en memoire la fenetre
+ */
 RequeteWindow::~RequeteWindow()
 {
     delete ui;

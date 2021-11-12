@@ -9,6 +9,16 @@
 #include "RechercheContactWindow.h"
 #include "ui_RechercheContactWindow.h"
 
+/**
+ *  \brief Constructeur standard
+ *
+ *  Constructeur standard de la classe RechercheContactWindow.
+ *  Effectue les connexions entre les differents Widget et evenement a declencher.
+ *  Permet de remplir les comboBox pour le trie et pour la recherche d'un contact.
+ *
+ *  \param g : gestion des contacts
+ *  \param parent : fenetre parent
+ */
 RechercheContactWindow::RechercheContactWindow(GestionContact *g, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::RechercheContactWindow)
@@ -30,6 +40,13 @@ RechercheContactWindow::RechercheContactWindow(GestionContact *g, QWidget *paren
    connect(ui->quitButton, SIGNAL(clicked()), this, SLOT(close()));
 }
 
+/**
+  *  \brief Recherche le contact
+  *
+  *  Slot qui recherche le contact selectionne dans la comboBox.
+  *  Permet de recherche ce contact entre 2 date et de trier le resultat par date de creation ou par ordre alphabetique.
+  *
+  */
 void RechercheContactWindow::rechercheContact()
 {
     ui->listeContactsTextEdit->clear(); //on nettoie la zone de text
@@ -75,6 +92,11 @@ void RechercheContactWindow::rechercheContact()
     }
 }
 
+/**
+ *  \brief Destructeur de RechercheContactWindow
+ *
+ *  Detruis en memoire la fenetre
+ */
 RechercheContactWindow::~RechercheContactWindow()
 {
     delete ui;
