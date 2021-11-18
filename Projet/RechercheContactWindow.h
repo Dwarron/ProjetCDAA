@@ -10,7 +10,8 @@
  */
 
 #include <QWidget>
-#include "gestioncontact.h"
+#include "GestionContact.h"
+#include <QStringListModel>
 
 namespace Ui { class RechercheContactWindow; }
 
@@ -19,16 +20,24 @@ class RechercheContactWindow : public QWidget
     Q_OBJECT
 
 public:
-    RechercheContactWindow(GestionContact *g, QWidget *parent = nullptr);
+    RechercheContactWindow(GestionContact*, QWidget* parent = nullptr);
     ~RechercheContactWindow();
 
 private:
     Ui::RechercheContactWindow *ui;
     GestionContact *gestCont;
+    std::list<Contact*> contactsAffiches;
+    QStringListModel* listeContactsModel;
 
-private slots:
+public slots:
+    void rechercheContact(QString);
     void rechercheContact();
+    void selectContact(QModelIndex);
+    void updateListContacts();
 
+signals:
+    void contactSelected(Contact*);
+    void listContactsUpdated();
 };
 
 #endif // RECHERCHECONTACTWINDOW_H

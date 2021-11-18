@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>RequeteWindow</class>
  <widget class="QWidget" name="RequeteWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -185,7 +188,7 @@
              <item>
               <widget class="QLabel" name="label_2">
                <property name="text">
-                <string>Intervalles de dates entre le </string>
+                <string>Intervalle de dates entre le </string>
                </property>
               </widget>
              </item>
@@ -243,7 +246,7 @@
            <item>
             <widget class="QPushButton" name="validInfosContactPushButton">
              <property name="text">
-              <string>Valider les informations séléctionner</string>
+              <string>Effectuer la requête</string>
              </property>
             </widget>
            </item>

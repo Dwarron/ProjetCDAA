@@ -9,6 +9,8 @@
 #include "AjoutEvenementWindow.h"
 #include <ui_AjoutEvenementWindow.h>
 
+using namespace std;
+
 /**
  *  \brief Constructeur standard
  *
@@ -28,33 +30,20 @@ AjoutEvenementWindow::AjoutEvenementWindow(GestionContact *g, QWidget *parent)
     gestCont = g;
 
     connect(ui->eventRadionButton, SIGNAL(clicked()), this, SLOT(ChoixEvenement()));
-    connect(ui->newEventRadionButton, SIGNAL(clicked()), this, SLOT(NouvelleEvenement()));
-    connect(ui->contactComboBox, SIGNAL(currentTextChanged(QString)), this, SLOT(LoadContactSelectionner(QString)));
-    connect(ui->eventComboBox, SIGNAL(currentTextChanged(QString)), this, SLOT(LoadEvenementSelectionner(QString)));
+    connect(ui->newEventRadionButton, SIGNAL(clicked()), this, SLOT(NouvelEvenement()));
+    connect(ui->eventComboBox, SIGNAL(currentTextChanged(QString)), this, SLOT(LoadEvenement(QString)));
     connect(ui->validButton, SIGNAL(clicked()), this, SLOT(AjoutEvenement()));
     connect(ui->quitButton, SIGNAL(clicked()), this, SLOT(close()));
-
-    //on remplie la combo box des contacts
-    for(auto it = gestCont->getContacts().begin(); it != gestCont->getContacts().end(); it++)
-    {
-        ui->contactComboBox->addItem(QString::fromStdString((*it)->toString()));
-    }
 }
 
 /**
   *  \brief Charge le contact selectionne
   *
-  *  Methode qui permet de recuperer le contact selectionne dans la comboBox.
-  *
-  *  \param contact : le contact selectionne
+  *  \param c : le contact selectionne
   */
-void AjoutEvenementWindow::LoadContactSelectionner(QString contact)
+void AjoutEvenementWindow::selectContact(Contact* c)
 {
-    for(auto it = gestCont->getContacts().begin(); it != gestCont->getContacts().end(); it++)
-    {
-        if( (*it)->toString() == contact.toStdString() )
-            c = *it;
-    }
+    curContact = c;
 }
 
 /**
@@ -64,9 +53,9 @@ void AjoutEvenementWindow::LoadContactSelectionner(QString contact)
   *
   *  \param event : l'interaction selectionne
   */
-void AjoutEvenementWindow::LoadEvenementSelectionner(QString event)
+void AjoutEvenementWindow::LoadEvenement(QString event)
 {
-    for(auto it = c->getInteractions().begin(); it != c->getInteractions().end(); it++)
+    for(auto it = curContact->getInteractions().begin(); it != curContact->getInteractions().end(); it++)
     {
         if( (*it)->toString() == event.toStdString() )
             i = *it;
@@ -82,21 +71,29 @@ void AjoutEvenementWindow::LoadEvenementSelectionner(QString event)
 void AjoutEvenementWindow::FillEventComboBox()
 {
     ui->eventComboBox->clear();
-    int size = 1;
 
-    for(auto it = gestCont->getContacts().begin(); it != gestCont->getContacts().end(); it++)
+    int maxNbLignes = 1;
+
+    list<Interaction*> interactions = gestCont->getAllInteractions();
+    for(auto it = interactions.begin(); it != interactions.end(); it++)
     {
-        for(auto it2 = (*it)->getInteractions().begin(); it2 != (*it)->getInteractions().end(); it2++)
+        string newElement = (*it)->toString();
+        size_t position = 0;
+        int nbLignes = 1;
+        while((position = newElement.find("\n", position + 1)) != string::npos)
         {
-            ui->eventComboBox->addItem(QString::fromStdString((*it2)->toString()));
-
-            //ici la taille de la comboBox est adapté quand une interactions est longue
-            if( static_cast<int>(((*it2)->toString().length())) > size)
-                size = static_cast<int>(((*it2)->toString().length()));
+            nbLignes++;
         }
+
+        if(nbLignes > maxNbLignes)
+        {
+            maxNbLignes = nbLignes;
+        }
+
+        ui->eventComboBox->addItem(QString::fromStdString(newElement));
     }
 
-    ui->eventComboBox->setMinimumHeight(size);
+   ui->eventComboBox->setMinimumHeight(interactions.size() * maxNbLignes * 4);     // 4 pixels par ligne
 }
 
 /**
@@ -107,10 +104,10 @@ void AjoutEvenementWindow::FillEventComboBox()
   */
 void AjoutEvenementWindow::ChoixEvenement()
 {
-    ui->newEventlineEdit->setVisible(false);
+    ui->newEventText->setVisible(false);
     ui->eventComboBox->setVisible(true);
-
-    emit FillEventComboBox();
+FillEventComboBox();
+   // emit FillEventComboBox();
 }
 
 /**
@@ -118,11 +115,11 @@ void AjoutEvenementWindow::ChoixEvenement()
   *
   *  Slot qui permet de cacher la comboBox, et de recupere la chaine de caractere qui sera la nouvelle interaction.
   */
-void AjoutEvenementWindow::NouvelleEvenement()
+void AjoutEvenementWindow::NouvelEvenement()
 {
     ui->eventComboBox->setVisible(false);
-    ui->newEventlineEdit->setVisible(true);
-    interaction = ui->newEventlineEdit->text().toStdString();
+    ui->newEventText->setVisible(true);
+    interaction = ui->newEventText->toPlainText().toStdString();
 }
 
 /**
@@ -133,11 +130,11 @@ void AjoutEvenementWindow::NouvelleEvenement()
 void AjoutEvenementWindow::AjoutEvenement()
 {
     if( interaction != "")
-        gestCont->ajoutInteraction(c, interaction);
+        gestCont->ajoutInteraction(curContact, interaction);
     else
-        gestCont->ajoutInteraction(c, i);
+        gestCont->ajoutInteraction(curContact, i);
 
-    //apres avoir ajouter l'événement avec les informations de la fentre on la ferme
+    //apres avoir ajouter l'événement avec les informations de la fenetre on la ferme
     this->close();
 }
 

@@ -37,10 +37,10 @@ public:
     void setTelephone(const std::string&);
 
     const std::string &getMail() const;
-    void setMail(const std::string &newMail);
+    void setMail(const std::string&);
 
     const std::string &getUriPhoto() const;
-    void setUriPhoto(const std::string &newUriPhoto);
+    void setUriPhoto(const std::string&);
 
     Date &getDateCreation();
     const Date &getDateDerniereModification() const;

@@ -414,7 +414,10 @@ ostream& operator<< (ostream &o, const Contact& c)
   */
 bool operator<(const Contact& a, const Contact& b)
 {
-    return a < b;
+    if(a.getNom() == b.getNom())
+        return a.getPrenom() < b.getPrenom();
+
+    return a.getNom() < b.getNom();
 }
 
 /**
@@ -426,31 +429,7 @@ bool operator<(const Contact& a, const Contact& b)
   */
 const string Contact::toString() const
 {
-    string result = prenom + " " + nom;
-
-    if(entreprise != "")
-    {
-        result += " de " + entreprise;
-    }
-
-    if(telephone != "" && mail != "")
-    {
-        result += " tel: " + telephone + " ou mail: " + mail;
-    }
-    else
-    {
-        if(telephone != "")
-        {
-            result += " tel: " + telephone;
-        }
-        else
-        {
-            result += " mail: " + mail;
-        }
-    }
-
-
-    return result;
+    return prenom + " " + nom;
 }
 
 /**

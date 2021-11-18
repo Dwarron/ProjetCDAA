@@ -39,6 +39,7 @@ private:
     Date echeance;
     std::string contenue;
     bool effectue;
+    size_t positionDate;
 
     Interaction* interaction;
 };

@@ -34,6 +34,7 @@ public:
     friend std::string operator+(const std::string&, const Date&);
     friend int operator-(const Date&, const Date&);
     friend bool operator==(const Date&, const Date&);
+    friend bool operator!=(const Date&, const Date&);
 
 private:
     struct tm d;

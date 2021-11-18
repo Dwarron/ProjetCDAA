@@ -19,25 +19,24 @@ class AjoutEvenementWindow : public QWidget
     Q_OBJECT
 
 public:
-    AjoutEvenementWindow(GestionContact *g, QWidget *parent = nullptr);
+    AjoutEvenementWindow(GestionContact*, QWidget* parent = nullptr);
     ~AjoutEvenementWindow();
 
 private:
-    Ui::AjoutEvenementWindow *ui;
-    GestionContact *gestCont;
-    Contact *c;
-    Interaction *i;
+    Ui::AjoutEvenementWindow* ui;
+    GestionContact* gestCont;
+    Contact* curContact;
+    Interaction* i;
     std::string interaction;
+    void FillEventComboBox();
 
 private slots:
-    void LoadContactSelectionner(QString contact);
-    void LoadEvenementSelectionner(QString event);
+    void selectContact(Contact*);
+    void LoadEvenement(QString);
     void AjoutEvenement();
     void ChoixEvenement();
-    void NouvelleEvenement();
+    void NouvelEvenement();
 
-signals:
-    void FillEventComboBox();
 };
 
 #endif // AJOUTEVENEMENTWINDOW_H

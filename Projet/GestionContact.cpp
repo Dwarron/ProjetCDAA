@@ -88,7 +88,7 @@ void GestionContact::ajoutInteraction(Contact* c, Interaction* i)
  *
  *  \return la liste de toutes les interactions existantes
  */
-list<Interaction*> GestionContact::getAllInteractions() const
+const list<Interaction*> GestionContact::getAllInteractions() const
 {
     list<Interaction*> li = list<Interaction*>();
     for(auto it = contacts.begin(); it != contacts.end(); it++)
@@ -109,7 +109,7 @@ list<Interaction*> GestionContact::getAllInteractions() const
   *
   *  \return contacts
   */
-std::list<Contact *> &GestionContact::getContacts()
+const list<Contact*> &GestionContact::getContacts()
 {
     return contacts;
 }

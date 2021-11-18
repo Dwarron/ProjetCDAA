@@ -12,6 +12,8 @@
 #include <QDir>
 #include <QMessageBox>
 
+#include <iostream>
+
 /**
  *  \brief Constructeur standard
  *
@@ -20,6 +22,7 @@
  *  Permet de remplir l'ensemble de la comboBox des contacts.
  *
  *  \param g : gestion des contacts
+ *  \param c : le contact a modifier/afficher
  *  \param parent : fenetre parent
  */
 ModificationContactWindow::ModificationContactWindow(GestionContact *g, QWidget *parent)
@@ -31,15 +34,10 @@ ModificationContactWindow::ModificationContactWindow(GestionContact *g, QWidget 
     gestCont = g;
 
     connect(ui->validButton, SIGNAL(clicked()), this, SLOT(ModifFiche()));
+    connect(ui->supprButton, SIGNAL(clicked()), this, SLOT(supprimerContact()));
     connect(ui->quitButton, SIGNAL(clicked()), this, SLOT(close()));
-    connect(ui->comboContacts, SIGNAL(currentTextChanged(QString)), this, SLOT(LoadContactSelectionner(QString)));
     connect(ui->changeFilePushButton, SIGNAL(clicked()), this, SLOT(ChangeFile()));
-
-    //on remplie la combo box
-    for(auto it = gestCont->getContacts().begin(); it != gestCont->getContacts().end(); it++)
-    {
-        ui->comboContacts->addItem(QString::fromStdString((*it)->toString()));
-    }
+    connect(this, SIGNAL(imageSelected(QString)), this, SLOT(showImage(QString)));
 }
 
 /**
@@ -52,7 +50,26 @@ void ModificationContactWindow::ChangeFile()
 {
     QString filter = "PNG File (*.png) ;; JPG File (*.jpg)";
     file_name = QFileDialog::getOpenFileName(this, "Open file", QDir::homePath(), filter);
+    ui->photoLineEdit->setText(file_name);
+
+    emit imageSelected(file_name);
 }
+
+/**
+  *  \brief Suppression du contact
+  *
+  *  Slot qui permet de supprimer la fiche du contact
+  */
+void ModificationContactWindow::supprimerContact()
+{
+    QMessageBox::StandardButton confirmation = QMessageBox::question(this, QString::fromStdString("Suppression du contact : " + curContact->toString()), QString::fromStdString("êtes-vous sûr de vouloir supprimer ce contact ?"));
+    if(confirmation == QMessageBox::Yes)
+    {
+        emit contactDeleted(curContact);
+        this->close();
+    }
+}
+
 
 /**
   *  \brief Remplir les informations d'un contact
@@ -68,8 +85,34 @@ void ModificationContactWindow::RemplieInfos(Contact *c)
     ui->entrepriseLineEdit->setText(QString::fromStdString(c->getEntreprise()));
     ui->telLineEdit->setText(QString::fromStdString(c->getTelephone()));
     ui->mailLineEdit->setText(QString::fromStdString(c->getMail()));
-    ui->photoLineEdit->setText(QString::fromStdString(c->getUriPhoto()));
     file_name = QString::fromStdString(c->getUriPhoto());
+    ui->photoLineEdit->setText(file_name);
+
+    emit imageSelected(file_name);
+}
+
+void ModificationContactWindow::showImage(QString path)
+{
+    if(path != "")
+    {
+        QImage photo = QImage(path);
+        if(!photo.isNull())
+        {
+            QImage photoScaled = photo.scaled(ui->photoView->rect().width(), ui->photoView->rect().height());
+            QGraphicsScene* scene = new QGraphicsScene(this);
+            scene->addPixmap(QPixmap::fromImage(photoScaled));
+            delete ui->photoView->scene();
+            ui->photoView->setScene(scene);
+        }
+        else
+        {
+            ui->photoView->setScene(nullptr);
+        }
+    }
+    else
+    {
+        ui->photoView->setScene(nullptr);
+    }
 }
 
 /**
@@ -77,17 +120,18 @@ void ModificationContactWindow::RemplieInfos(Contact *c)
   *
   *  Recupere le contact selectionne dans la comboBox.
   *
-  *  \param contact : le contact selectionne
+  *  \param c : le contact selectionne
   */
-void ModificationContactWindow::LoadContactSelectionner(QString contact)
+void ModificationContactWindow::loadContact(Contact* c)
 {
-    for(auto it = gestCont->getContacts().begin(); it != gestCont->getContacts().end(); it++)
-    {
-        if( (*it)->toString() == contact.toStdString() )
-            c = *it;
-    }
+    curContact = c;
+    RemplieInfos(curContact);
+  //  emit RemplieInfos(c);
+}
 
-    emit RemplieInfos(c);
+void ModificationContactWindow::resizeEvent(QResizeEvent*)
+{
+    emit imageSelected(file_name);
 }
 
 /**
@@ -99,65 +143,77 @@ void ModificationContactWindow::LoadContactSelectionner(QString contact)
 void ModificationContactWindow::ModifFiche()
 {  
     QMessageBox messageErreur;
-    QPushButton *yesButton = messageErreur.addButton(QMessageBox::Yes);
+    QPushButton* yesButton = messageErreur.addButton(QMessageBox::Yes);
     messageErreur.addButton(QMessageBox::No);
 
     std::string nom = ui->nomLineEdit->text().toStdString();
     std::string nomtester = nom;
-    c->suggestionNom(nomtester);
+    curContact->suggestionNom(nomtester);
 
-    //on va regarder quelle champ sont modifier pour utiliser les setters/mutateur
-    if(c->getNom() != nom)
+    //on va regarder quel champ sont modifies pour utiliser les setters/mutateur
+    if(curContact->getNom() != nom)
     {
         if(nomtester != nom)
         {
             messageErreur.setWindowTitle("Nom invalide");
-            messageErreur.setText("Nom invalide vouliez vous écrire : ");
-            messageErreur.setInformativeText(QString::fromStdString(nomtester));
+            messageErreur.setText(QString::fromStdString("Nom invalide, vouliez-vous écrire : " + nomtester));
+            messageErreur.setInformativeText(QString::fromStdString(nom));
             messageErreur.exec();
             if(messageErreur.clickedButton() == yesButton)
-                c->setNom(nomtester);
+            {
+                ui->nomLineEdit->setText(QString::fromStdString(nomtester));
+                return;
+            }
             else
-                c->setNom(nom);
-
+            {
+                emit nomModified(curContact, nom);
+            }
         }
         else
-            c->setNom(nom);
+        {
+            emit nomModified(curContact, nom);
+        }
     }
 
     std::string prenom = ui->prenomLineEdit->text().toStdString();
     std::string prenomtester = prenom;
-    c->suggestionNom(prenomtester);
+    curContact->suggestionNom(prenomtester);
 
-    if(c->getPrenom() != prenom)
+    if(curContact->getPrenom() != prenom)
     {
         if(prenomtester != prenom)
         {
             messageErreur.setWindowTitle("Prenom invalide");
-            messageErreur.setText("Prenom invalide vouliez vous écrire : ");
-            messageErreur.setInformativeText(QString::fromStdString(prenomtester));
+            messageErreur.setText(QString::fromStdString("Prenom invalide, vouliez-vous écrire : " + prenomtester));
+            messageErreur.setInformativeText(QString::fromStdString(prenom));
             messageErreur.exec();
             if(messageErreur.clickedButton() == yesButton)
-                c->setPrenom(prenomtester);
+            {
+                ui->prenomLineEdit->setText(QString::fromStdString(prenomtester));
+                return;
+            }
             else
-                c->setPrenom(prenom);
-
+            {
+                emit prenomModified(curContact, prenom);
+            }
         }
         else
-            c->setPrenom(prenom);
+        {
+            emit prenomModified(curContact, prenom);
+        }
     }
 
-    if(c->getEntreprise() != ui->entrepriseLineEdit->text().toStdString())
-        c->setEntreprise(ui->entrepriseLineEdit->text().toStdString());
+    if(curContact->getEntreprise() != ui->entrepriseLineEdit->text().toStdString())
+        emit entrepriseModified(curContact, ui->entrepriseLineEdit->text().toStdString());
 
-    if(c->getTelephone() != ui->telLineEdit->text().toStdString())
-        c->setTelephone(ui->telLineEdit->text().toStdString());
+    if(curContact->getTelephone() != ui->telLineEdit->text().toStdString())
+        emit telephoneModified(curContact, ui->telLineEdit->text().toStdString());
 
-    if(c->getMail() != ui->mailLineEdit->text().toStdString())
-        c->setMail(ui->mailLineEdit->text().toStdString());
+    if(curContact->getMail() != ui->mailLineEdit->text().toStdString())
+        emit mailModified(curContact, ui->mailLineEdit->text().toStdString());
 
-    if(c->getUriPhoto() != file_name.toStdString())
-        c->setUriPhoto(file_name.toStdString());
+    if(curContact->getUriPhoto() != file_name.toStdString())
+        emit photoModified(curContact, file_name.toStdString());
 
     //apres avoir modifier le contact avec les informations de la fentre on la ferme
     this->close();

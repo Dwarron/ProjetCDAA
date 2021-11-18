@@ -2,16 +2,19 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>421</width>
-    <height>352</height>
+    <width>546</width>
+    <height>332</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Fenêtre principale </string>
+   <string>Gestionnaire de relations clients</string>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -19,14 +22,7 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>Que souhaiter vous faire :</string>
-        </property>
-       </widget>
-      </item>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
        <widget class="QLabel" name="label">
         <property name="text">
@@ -35,46 +31,81 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="ButtonCreerFiche">
+       <widget class="QLabel" name="label_2">
         <property name="text">
-         <string>Crée la fiche d'un contact</string>
+         <string>Que souhaitez vous faire :</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="ButtonModifContact">
-        <property name="text">
-         <string>Modifier un contact</string>
-        </property>
-       </widget>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="text">
+           <string>Contact sélectionné :</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="contactSelectionneLabel">
+          <property name="text">
+           <string>Aucun</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
       <item>
-       <widget class="QPushButton" name="ButtonRechercherContact">
-        <property name="text">
-         <string>Chercher un contact</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="ButtonAjouterEvenement">
-        <property name="text">
-         <string>Ajouter un événement</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="ButtonModifEvent">
-        <property name="text">
-         <string>Modifier un événement</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="ButtonRequete">
-        <property name="text">
-         <string>Requête sur les contacts</string>
-        </property>
-       </widget>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QPushButton" name="ButtonCreerFiche">
+          <property name="text">
+           <string>Créer la fiche d'un contact</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="ButtonModifContact">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Modifier le contact</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="ButtonRechercherContact">
+          <property name="text">
+           <string>Chercher un contact</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="ButtonAjouterEvenement">
+          <property name="text">
+           <string>Ajouter un événement</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="ButtonModifEvent">
+          <property name="text">
+           <string>Modifier un événement</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="ButtonRequete">
+          <property name="text">
+           <string>Requête sur les contacts</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </item>
@@ -85,14 +116,15 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>421</width>
-     <height>21</height>
+     <width>546</width>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuOptions">
     <property name="title">
      <string>Options</string>
     </property>
+    <addaction name="actionExporter_en_JSON"/>
     <addaction name="actionQuitter"/>
    </widget>
    <widget class="QMenu" name="menuaide">
@@ -113,6 +145,11 @@
   <action name="actionA_propos">
    <property name="text">
     <string>A propos</string>
+   </property>
+  </action>
+  <action name="actionExporter_en_JSON">
+   <property name="text">
+    <string>Exporter en JSON</string>
    </property>
   </action>
  </widget>

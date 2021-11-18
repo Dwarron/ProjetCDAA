@@ -8,6 +8,9 @@
 
 #include "ModificationEvenementWindow.h"
 #include "ui_ModificationEvenementWindow.h"
+#include <list>
+
+using namespace std;
 
 /**
  *  \brief Constructeur standard
@@ -29,8 +32,8 @@ ModificationEvenementWindow::ModificationEvenementWindow(GestionContact *g, QWid
 
     connect(ui->validButton, SIGNAL(clicked()), this, SLOT(ModifEvent()));
     connect(ui->quitButton, SIGNAL(clicked()), this, SLOT(close()));
-    connect(ui->contactComboBox, SIGNAL(currentTextChanged(QString)), this, SLOT(LoadContactSelectionner(QString)));
-    connect(ui->eventComboBox, SIGNAL(currentTextChanged(QString)), this, SLOT(LoadEvenementSelectionner(QString)));
+    connect(ui->contactComboBox, SIGNAL(currentTextChanged(QString)), this, SLOT(LoadContact(QString)));
+    connect(ui->eventComboBox, SIGNAL(currentTextChanged(QString)), this, SLOT(LoadEvenement(QString)));
 
     //on remplie la combo box des contacts
     for(auto it = gestCont->getContacts().begin(); it != gestCont->getContacts().end(); it++)
@@ -46,15 +49,15 @@ ModificationEvenementWindow::ModificationEvenementWindow(GestionContact *g, QWid
   *
   *  \param contact : le contact selectionne
   */
-void ModificationEvenementWindow::LoadContactSelectionner(QString contact)
+void ModificationEvenementWindow::LoadContact(QString contact)
 {
     for(auto it = gestCont->getContacts().begin(); it != gestCont->getContacts().end(); it++)
     {
         if( (*it)->toString() == contact.toStdString() )
             c = *it;
     }
-
-    emit FillEventComboBox();
+FillEventComboBox();
+    //emit FillEventComboBox();
 }
 
 /**
@@ -66,17 +69,28 @@ void ModificationEvenementWindow::LoadContactSelectionner(QString contact)
 void ModificationEvenementWindow::FillEventComboBox()
 {
     ui->eventComboBox->clear();
-    int size = 1;
+    int maxNbLignes = 1;
 
-    for(auto it = c->getInteractions().begin(); it != c->getInteractions().end(); it++)
+    list<Interaction*> interactions = gestCont->getAllInteractions();
+    for(auto it = interactions.begin(); it != interactions.end(); it++)
     {
-        ui->eventComboBox->addItem(QString::fromStdString((*it)->toString()));
+        string newElement = (*it)->toString();
+        size_t position = 0;
+        int nbLignes = 1;
+        while((position = newElement.find("\n", position + 1)) != string::npos)
+        {
+            nbLignes++;
+        }
 
-        if( static_cast<int>(((*it)->toString().length())) > size)
-            size = static_cast<int>(((*it)->toString().length()));
+        if(nbLignes > maxNbLignes)
+        {
+            maxNbLignes = nbLignes;
+        }
+
+        ui->eventComboBox->addItem(QString::fromStdString(newElement));
     }
 
-    ui->eventComboBox->setMinimumHeight(size);
+    ui->eventComboBox->setMinimumHeight(interactions.size() * maxNbLignes * 4);     // 4 pixels par ligne
 }
 
 /**
@@ -86,7 +100,7 @@ void ModificationEvenementWindow::FillEventComboBox()
   *
   *  \param event : l'interaction selectionne
   */
-void ModificationEvenementWindow::LoadEvenementSelectionner(QString event)
+void ModificationEvenementWindow::LoadEvenement(QString event)
 {
     for(auto it = c->getInteractions().begin(); it != c->getInteractions().end(); it++)
     {
@@ -106,7 +120,7 @@ void ModificationEvenementWindow::LoadEvenementSelectionner(QString event)
 void ModificationEvenementWindow::ModifEvent()
 {
     interaction = ui->modifEventLineEdit->text().toStdString();
-    temps = ui->addTimeLineEdit->text().toStdString();
+    temps = ui->addTimeSpinBox->text().toStdString();
 
     if( interaction != "" && temps != "")
     {

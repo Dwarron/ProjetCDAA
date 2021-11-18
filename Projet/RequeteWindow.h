@@ -19,7 +19,7 @@ class RequeteWindow: public QWidget
     Q_OBJECT
 
 public:
-    RequeteWindow(GestionContact *g, QWidget *parent = nullptr);
+    RequeteWindow(GestionContact*, QWidget* parent = nullptr);
     ~RequeteWindow();
 
 private:

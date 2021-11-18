@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>RechercheContactWindow</class>
  <widget class="QWidget" name="RechercheContactWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -14,10 +17,10 @@
    <string>Chercher un contact</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="3" column="0">
-    <widget class="QPushButton" name="quitButton">
+   <item row="4" column="0">
+    <widget class="QPushButton" name="validButton">
      <property name="text">
-      <string>Quitter</string>
+      <string>Rechercher</string>
      </property>
     </widget>
    </item>
@@ -25,6 +28,9 @@
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>15</number>
+       </property>
        <item>
         <widget class="QLabel" name="label">
          <property name="text">
@@ -35,6 +41,19 @@
        <item>
         <widget class="QComboBox" name="rechercheContactComboBox"/>
        </item>
+       <item>
+        <widget class="QLineEdit" name="rechercheLineEdit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="placeholderText">
+          <string>Nom ou Entreprise</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </item>
      <item>
@@ -42,7 +61,7 @@
        <item>
         <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>Créez entre le</string>
+          <string>Créé entre le</string>
          </property>
         </widget>
        </item>
@@ -88,24 +107,34 @@
        <item>
         <widget class="QLabel" name="label_4">
          <property name="text">
-          <string>Triez par :</string>
+          <string>Trier par :</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QComboBox" name="trieListeComboBox"/>
+        <widget class="QComboBox" name="triListeComboBox"/>
        </item>
       </layout>
      </item>
     </layout>
    </item>
-   <item row="2" column="0">
-    <widget class="QPlainTextEdit" name="listeContactsTextEdit"/>
-   </item>
-   <item row="1" column="0">
-    <widget class="QPushButton" name="validButton">
+   <item row="5" column="0">
+    <widget class="QPushButton" name="quitButton">
      <property name="text">
-      <string>Valider la recherche du contact</string>
+      <string>Quitter</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QListView" name="listeContacts">
+     <property name="cursor" stdset="0">
+      <cursorShape>ArrowCursor</cursorShape>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="tabKeyNavigation">
+      <bool>true</bool>
      </property>
     </widget>
    </item>

@@ -20,8 +20,9 @@ SOURCES += \
     RequeteWindow.cpp \
     Todo.cpp \
     GestionContact.cpp \
+    GestionnaireQObject.cpp \
     main.cpp \
-    mainwindow.cpp
+    MainWindow.cpp
 
 HEADERS += \
     AjoutEvenementWindow.h \
@@ -35,6 +36,7 @@ HEADERS += \
     RequeteWindow.h \
     Todo.h \
     GestionContact.h \
+    GestionnaireQObject.h \
     mainwindow.h
 
 FORMS += \
@@ -44,7 +46,7 @@ FORMS += \
     ModificationEvenementWindow.ui \
     RechercheContactWindow.ui \
     RequeteWindow.ui \
-    mainwindow.ui
+    MainWindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

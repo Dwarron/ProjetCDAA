@@ -290,6 +290,21 @@ bool operator==(const Date& a, const Date& b)
 {
     return a.getAnnee() == b.getAnnee() && a.getMois() == b.getMois() && a.getJour() == b.getJour();
 }
+
+/**
+  *  \brief Surcharge de l'operateur de test de difference
+  *
+  *  Methode qui surcharge l'operateur !=, compare semantiquement deux dates
+  *
+  *  \param a : operande de gauche
+  *  \param b : operande de droite
+  *  \return vrai si les dates sont semantiquement egales, faux sinon
+  */
+bool operator!=(const Date& a, const Date& b)
+{
+    return !(a == b);
+}
+
 /**
   *  \brief L'instance de date est-elle dans le passe ?
   *

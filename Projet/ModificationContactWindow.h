@@ -19,22 +19,35 @@ class ModificationContactWindow : public QWidget
     Q_OBJECT
 
 public:
-    ModificationContactWindow(GestionContact *g, QWidget *parent = nullptr);
+    ModificationContactWindow(GestionContact*, QWidget* parent = nullptr);
     ~ModificationContactWindow();
 
-private:
-    Ui::ModificationContactWindow *ui;
-    GestionContact *gestCont;
-    Contact *c;
-    QString file_name;
+protected:
+    void resizeEvent(QResizeEvent*) override;
 
-private slots:
-    void LoadContactSelectionner(QString contact);
+private:
+    Ui::ModificationContactWindow* ui;
+    GestionContact* gestCont;
+    Contact* curContact;
+    QString file_name;
+    void RemplieInfos(Contact*);
+
+public slots:
+    void loadContact(Contact*);
     void ModifFiche();
     void ChangeFile();
+    void supprimerContact();
+    void showImage(QString);
 
 signals:
-    void RemplieInfos(Contact *c);
+    void imageSelected(QString);
+    void contactDeleted(Contact*);
+    void prenomModified(Contact*, std::string);
+    void nomModified(Contact*, std::string);
+    void entrepriseModified(Contact*, std::string);
+    void telephoneModified(Contact*, std::string);
+    void mailModified(Contact*, std::string);
+    void photoModified(Contact*, std::string);
 };
 
 #endif // MODIFICATIONCONTACTWINDOW_H

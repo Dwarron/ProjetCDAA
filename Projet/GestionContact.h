@@ -21,16 +21,18 @@ public:
     ~GestionContact();
 
     Contact* creeContact(const std::string&, const std::string&, const std::string&, const std::string&, const std::string&, const std::string&);
-    void supprimeContact(Contact*);
 
     Interaction* ajoutInteraction(Contact*, const std::string&);
     void ajoutInteraction(Contact*, Interaction*);
 
     const Date &getDateDerniereSuppression() const;
 
-    std::list<Interaction*> getAllInteractions() const;
+    const std::list<Interaction*> getAllInteractions() const;
 
-    std::list<Contact *> &getContacts();
+    const std::list<Contact*> &getContacts();
+
+public slots:
+    void supprimeContact(Contact*);
 
 private:
     Date dateDerniereSuppression;

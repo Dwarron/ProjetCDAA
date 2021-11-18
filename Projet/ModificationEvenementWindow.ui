@@ -2,12 +2,15 @@
 <ui version="4.0">
  <class>ModificationEvenementWindow</class>
  <widget class="QWidget" name="ModificationEvenementWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>435</width>
-    <height>133</height>
+    <height>178</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -58,12 +61,12 @@
        <item row="3" column="0">
         <widget class="QLabel" name="addTimeLabel">
          <property name="text">
-          <string>Rajouter du temps à votre événement</string>
+          <string>Ajouter un délai à une tâche (en jours)</string>
          </property>
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QLineEdit" name="addTimeLineEdit"/>
+        <widget class="QSpinBox" name="addTimeSpinBox"/>
        </item>
       </layout>
      </item>

@@ -19,7 +19,7 @@ class ModificationEvenementWindow: public QWidget
     Q_OBJECT
 
 public:
-    ModificationEvenementWindow(GestionContact *g, QWidget *parent = nullptr);
+    ModificationEvenementWindow(GestionContact*, QWidget* parent = nullptr);
     ~ModificationEvenementWindow();
 
 private:
@@ -29,14 +29,12 @@ private:
     Interaction *i;
     std::string interaction;
     std::string temps;
+    void FillEventComboBox();
 
 private slots:
-    void LoadContactSelectionner(QString contact);
-    void LoadEvenementSelectionner(QString event);
+    void LoadContact(QString);
+    void LoadEvenement(QString);
     void ModifEvent();
-
-signals:
-    void FillEventComboBox();
 };
 
 #endif // MODIFICATIONEVENEMENTWINDOW_H

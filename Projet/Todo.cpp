@@ -104,7 +104,7 @@ const Date Todo::getDateFromTodoLine(string* text)
 
         *text = text->substr(0, position - delimiterLength) + text->substr(position);
         size_t positionFinDate = 0;
-        for(int i = 0; i < 2; i++)  // positions du 'J/M/' pour le debut de la date
+        for(int i = 0; i < 2; i++)  // position du 'J/M/' pour le debut de la date
         {
             positionFinDate = dateText.find("/", positionFinDate);
             if(positionFinDate == string::npos)
