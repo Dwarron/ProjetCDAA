@@ -22,7 +22,8 @@ public:
     Interaction(const std::string&);
     ~Interaction();
 
-    Date getDate();
+    Date getDate() const;
+    void setDate(const Date&);
     const std::string &getResume() const;
     void setResume(const std::string &newResume);
 

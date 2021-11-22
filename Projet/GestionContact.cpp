@@ -7,7 +7,7 @@
  */
 
 #include "GestionContact.h"
-#include <iostream>
+
 using namespace std;
 
 /**
@@ -34,7 +34,26 @@ GestionContact::GestionContact()
  */
 Contact* GestionContact::creeContact(const string& n, const string& p, const string& e, const string& tel, const string& m, const string& uri)
 {
-    Contact* c = new Contact(n, p, e, tel, m, uri);
+    return creeContact(n, p, e, tel, m, uri, Date(), Date());
+}
+
+/**
+ *  \brief Cree et ajoute un contact
+ *
+ *  Ajoute un nouveau contact a la liste des contacts
+ *
+ *  \param n : nom du contact
+ *  \param p : prenom
+ *  \param e : entreprise
+ *  \param tel : telephone
+ *  \param m : mail
+ *  \param uri : chemin vers la photo de profil
+ *  \param dc : la date de creation du contact
+ *  \param dm : la date de derniere modification du contact
+ */
+Contact* GestionContact::creeContact(const string& n, const string& p, const string& e, const string& tel, const string& m, const string& uri, const Date& dc, const Date& dm)
+{
+    Contact* c = new Contact(n, p, e, tel, m, uri, dc, dm);
     contacts.push_back(c);
     return c;
 }

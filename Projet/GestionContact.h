@@ -21,6 +21,7 @@ public:
     ~GestionContact();
 
     Contact* creeContact(const std::string&, const std::string&, const std::string&, const std::string&, const std::string&, const std::string&);
+    Contact* creeContact(const std::string&, const std::string&, const std::string&, const std::string&, const std::string&, const std::string&, const Date&, const Date&);
 
     Interaction* ajoutInteraction(Contact*, const std::string&);
     void ajoutInteraction(Contact*, Interaction*);

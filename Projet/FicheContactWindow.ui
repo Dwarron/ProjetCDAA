@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ModificationContactWindow</class>
- <widget class="QWidget" name="ModificationContactWindow">
+ <class>FicheContactWindow</class>
+ <widget class="QWidget" name="FicheContactWindow">
   <property name="windowModality">
    <enum>Qt::NonModal</enum>
   </property>
@@ -14,7 +14,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Modifier un contact</string>
+   <string>Fiche du contact</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="1" column="1">
@@ -69,6 +69,20 @@
       </layout>
      </item>
      <item>
+      <widget class="QPushButton" name="interactionsButton">
+       <property name="text">
+        <string>Afficher les interactions</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="ButtonAjouterInteraction">
+       <property name="text">
+        <string>Ajouter une interaction</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <layout class="QFormLayout" name="formLayout">
        <item row="1" column="0">
         <widget class="QLabel" name="nomLabel">
@@ -78,7 +92,11 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLineEdit" name="nomLineEdit"/>
+        <widget class="QLineEdit" name="nomLineEdit">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="prenomLabel">
@@ -88,7 +106,11 @@
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QLineEdit" name="prenomLineEdit"/>
+        <widget class="QLineEdit" name="prenomLineEdit">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
        </item>
        <item row="3" column="0">
         <widget class="QLabel" name="entrepriseLabel">
@@ -98,7 +120,11 @@
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QLineEdit" name="entrepriseLineEdit"/>
+        <widget class="QLineEdit" name="entrepriseLineEdit">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
        </item>
        <item row="4" column="0">
         <widget class="QLabel" name="telLabel">
@@ -108,7 +134,11 @@
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="QLineEdit" name="telLineEdit"/>
+        <widget class="QLineEdit" name="telLineEdit">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
        </item>
        <item row="5" column="0">
         <widget class="QLabel" name="mailLabel">
@@ -118,7 +148,11 @@
         </widget>
        </item>
        <item row="5" column="1">
-        <widget class="QLineEdit" name="mailLineEdit"/>
+        <widget class="QLineEdit" name="mailLineEdit">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
        </item>
        <item row="6" column="0">
         <widget class="QLabel" name="photoLabel">
@@ -130,7 +164,11 @@
        <item row="6" column="1">
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
-          <widget class="QLineEdit" name="photoLineEdit"/>
+          <widget class="QLineEdit" name="photoLineEdit">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QPushButton" name="changeFilePushButton">
@@ -140,6 +178,38 @@
           </widget>
          </item>
         </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>&lt;i&gt;Date de création de la fiche :&lt;/i&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelDateCreation">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>&lt;i&gt;Date de dernière modification:&lt;/i&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelDateModif">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>

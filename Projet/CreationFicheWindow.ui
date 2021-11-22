@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>282</height>
+    <height>364</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,7 +22,7 @@
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>Créer la fiche d'un contact :</string>
+        <string>Nouveau contact :</string>
        </property>
       </widget>
      </item>

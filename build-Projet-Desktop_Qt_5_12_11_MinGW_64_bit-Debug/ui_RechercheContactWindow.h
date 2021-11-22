@@ -139,6 +139,7 @@ public:
         listeContacts = new QListView(RechercheContactWindow);
         listeContacts->setObjectName(QString::fromUtf8("listeContacts"));
         listeContacts->viewport()->setProperty("cursor", QVariant(QCursor(Qt::ArrowCursor)));
+        listeContacts->setFocusPolicy(Qt::NoFocus);
         listeContacts->setEditTriggers(QAbstractItemView::NoEditTriggers);
         listeContacts->setTabKeyNavigation(true);
 

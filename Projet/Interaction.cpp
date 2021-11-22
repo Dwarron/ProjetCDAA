@@ -6,10 +6,10 @@
  * \version 0.1
  */
 
+#include <string>
 #include "Interaction.h"
 #include "Date.h"
-#include <string>
-#include <iostream>
+
 using namespace std;
 
 /**
@@ -68,9 +68,22 @@ void Interaction::creerTodos()
   *
   *  \return date
   */
-Date Interaction::getDate()
+Date Interaction::getDate() const
 {
     return date;
+}
+
+
+/**
+  *  \brief Mutateur de date
+  *
+  *  Methode qui permet de modifier la date de l'interaction
+  *
+  *  \param d : la nouvelle date
+  */
+void Interaction::setDate(const Date& d)
+{
+    date = d;
 }
 
 /**

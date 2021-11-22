@@ -56,7 +56,7 @@ public:
         if (CreationFicheWindow->objectName().isEmpty())
             CreationFicheWindow->setObjectName(QString::fromUtf8("CreationFicheWindow"));
         CreationFicheWindow->setWindowModality(Qt::NonModal);
-        CreationFicheWindow->resize(400, 282);
+        CreationFicheWindow->resize(400, 364);
         gridLayout = new QGridLayout(CreationFicheWindow);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         verticalLayout = new QVBoxLayout();
@@ -178,7 +178,7 @@ public:
     void retranslateUi(QWidget *CreationFicheWindow)
     {
         CreationFicheWindow->setWindowTitle(QApplication::translate("CreationFicheWindow", "Cr\303\251er un contact", nullptr));
-        label->setText(QApplication::translate("CreationFicheWindow", "Cr\303\251er la fiche d'un contact :", nullptr));
+        label->setText(QApplication::translate("CreationFicheWindow", "Nouveau contact :", nullptr));
         nomLabel->setText(QApplication::translate("CreationFicheWindow", "Nom", nullptr));
         prenomLabel->setText(QApplication::translate("CreationFicheWindow", "Pr\303\251nom", nullptr));
         entrepriseLabel->setText(QApplication::translate("CreationFicheWindow", "Entreprise", nullptr));

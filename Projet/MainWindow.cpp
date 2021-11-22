@@ -1,15 +1,16 @@
 /**
  * \file MainWindow.cpp
  * \class MainWindow MainWindow.h
- * \brief Fenetre qui permet de gerer l'ensemble des fenetres de cette application
+ * \brief Fenetre principale qui permet de gerer l'ensemble des fenetres
  * \author Perion Maxence, Pinon Alexandre
  * \version 0.1
  */
 
-#include "MainWindow.h"
-#include "ui_mainwindow.h"
-#include "QMessageBox"
+#include <QMessageBox>
 #include <QCloseEvent>
+#include <QDate>
+#include "MainWindow.h"
+#include "ui_MainWindow.h"
 
 using namespace std;
 
@@ -22,132 +23,74 @@ using namespace std;
  *  \param g : gestion des contacts
  *  \param parent : fenetre parent
  */
-MainWindow::MainWindow(GestionContact* g, QWidget* parent)
+MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
-    gestCont = g;
-    creatfich = new CreationFicheWindow(gestCont);
-    rechcontact = new RechercheContactWindow(gestCont);
-    ajoutinter = new AjoutEvenementWindow(gestCont);
-    modifevent = new ModificationEvenementWindow(gestCont);
-    requete = new RequeteWindow(gestCont);
-    modiffich = new ModificationContactWindow(gestCont);
+    creatfich = new CreationFicheWindow();
+    rechcontact = new RechercheContactWindow();
+    //requete = new RequeteWindow();
+    afficheFich = new FicheContactWindow();
 
-    connect(this, SIGNAL(listContactsUpdated()), rechcontact, SLOT(updateListContacts()));
+    connect(this, SIGNAL(listContactsUpdated(std::list<Contact*>)), rechcontact, SLOT(updateListContacts(std::list<Contact*>)));
+    connect(this, SIGNAL(listContactsUpdated(std::list<Contact*>)), afficheFich, SIGNAL(listContactsUpdated(std::list<Contact*>)));
 
     connect(rechcontact, SIGNAL(contactSelected(Contact*)), this, SLOT(selectContact(Contact*)));
-    connect(this, SIGNAL(contactSelected(Contact*)), modiffich, SLOT(loadContact(Contact*)));
-    connect(this, SIGNAL(contactSelected(Contact*)), ajoutinter, SLOT(selectContact(Contact*)));
+    connect(this, SIGNAL(contactSelected(Contact*)), afficheFich, SLOT(loadContact(Contact*)));
+    connect(this, SIGNAL(contactSelected(Contact*)), this, SLOT(updateContactValues()));
+    connect(this, SIGNAL(onEndModifContact()), this, SLOT(updateContactValues()));
+    connect(this, SIGNAL(onEndModifContact()), rechcontact, SLOT(rechercheContact()));
+    connect(this, SIGNAL(onEndModifContact()), afficheFich, SIGNAL(onEndModifContact()));
 
-    connect(modiffich, SIGNAL(contactDeleted(Contact*)), this, SLOT(deleteContact(Contact*)));
-    connect(modiffich, SIGNAL(prenomModified(Contact*,std::string)), this, SLOT(modifPrenom(Contact*,std::string)));
-    connect(modiffich, SIGNAL(nomModified(Contact*,std::string)), this, SLOT(modifNom(Contact*,std::string)));
-    connect(modiffich, SIGNAL(entrepriseModified(Contact*,std::string)), this, SLOT(modifEntreprise(Contact*,std::string)));
-    connect(modiffich, SIGNAL(mailModified(Contact*,std::string)), this, SLOT(modifMail(Contact*,std::string)));
-    connect(modiffich, SIGNAL(telephoneModified(Contact*,std::string)), this, SLOT(modifTelephone(Contact*,std::string)));
-    connect(modiffich, SIGNAL(photoModified(Contact*,std::string)), this, SLOT(modifPhoto(Contact*,std::string)));
+    connect(this, SIGNAL(onInteractionEdited()), afficheFich, SIGNAL(onInteractionEdited()));
+
+    connect(afficheFich, SIGNAL(contactDeleted(Contact*)), this, SIGNAL(contactDeleted(Contact*)));
+    connect(afficheFich, SIGNAL(prenomModified(Contact*,std::string)), this, SIGNAL(prenomModified(Contact*,std::string)));
+    connect(afficheFich, SIGNAL(nomModified(Contact*,std::string)), this, SIGNAL(nomModified(Contact*,std::string)));
+    connect(afficheFich, SIGNAL(entrepriseModified(Contact*,std::string)), this, SIGNAL(entrepriseModified(Contact*,std::string)));
+    connect(afficheFich, SIGNAL(mailModified(Contact*,std::string)), this, SIGNAL(mailModified(Contact*,std::string)));
+    connect(afficheFich, SIGNAL(telephoneModified(Contact*,std::string)), this, SIGNAL(telephoneModified(Contact*,std::string)));
+    connect(afficheFich, SIGNAL(photoModified(Contact*,std::string)), this, SIGNAL(photoModified(Contact*,std::string)));
+
+    connect(afficheFich, SIGNAL(interactionDateEdited(Interaction*,QDate)), this, SIGNAL(interactionDateEdited(Interaction*,QDate)));
+    connect(afficheFich, SIGNAL(interactionResumeEdited(Interaction*,QString)), this, SIGNAL(interactionResumeEdited(Interaction*,QString)));
+
+    connect(afficheFich, SIGNAL(ajoutInteraction(Contact*,QString)), this, SIGNAL(ajoutInteraction(Contact*,QString)));
+    connect(afficheFich, SIGNAL(ajoutInteraction(Contact*,Interaction*)), this, SIGNAL(ajoutInteraction(Contact*,Interaction*)));
 
     connect(creatfich, SIGNAL(contactCreated(std::string,std::string,std::string,std::string,std::string,std::string)),
-            this, SLOT(createContact(std::string,std::string,std::string,std::string,std::string,std::string)));
+            this, SIGNAL(contactCreated(std::string,std::string,std::string,std::string,std::string,std::string)));
 
     connect(ui->actionA_propos, SIGNAL(triggered(bool)), this, SLOT(slot_aPropos()));
-    connect(ui->ButtonCreerFiche, SIGNAL(clicked()), this, SLOT(openWindowCreeFiche()));
-    connect(ui->ButtonModifContact, SIGNAL(clicked()), this, SLOT(openWindowModifFiche()));
-    connect(ui->ButtonRechercherContact, SIGNAL(clicked()), this, SLOT(openWindowRechercheContact()));
-    connect(ui->ButtonAjouterEvenement, SIGNAL(clicked()), this, SLOT(openWindowAjoutInteraction()));
-    connect(ui->ButtonModifEvent, SIGNAL(clicked()), this, SLOT(openWindowModifEvent()));
-    connect(ui->ButtonRequete, SIGNAL(clicked()), this, SLOT(openWindowRequete()));
-}
-
-void MainWindow::updateListContacts()
-{
-    emit listContactsUpdated();
-}
-
-void MainWindow::onContactCreated(Contact* c)
-{
-    selectContact(c);
+    connect(ui->ButtonCreerFiche, SIGNAL(clicked()), creatfich, SLOT(show()));
+    connect(ui->ButtonRechercherContact, SIGNAL(clicked()), rechcontact, SLOT(show()));
+    connect(ui->ButtonFicheContact, SIGNAL(clicked()), afficheFich, SLOT(show()));
+ //   connect(ui->ButtonRequete, SIGNAL(clicked()), requete, SLOT(show()));
 }
 
 
-/**
-  *  \brief Fenetre de creation de la fiche d'un contact
-  *
-  *  Slot qui permet l'ouverture de la fenetre de creation d'une fiche.
-  */
-void MainWindow::openWindowCreeFiche()
+void MainWindow::selectContact()
 {
-    creatfich->show();
-}
-
-/**
-  *  \brief Fenetre de modification de la fiche d'un contact
-  *
-  *  Slot qui permet l'ouverture de la fenetre de modification d'une fiche.
-  */
-void MainWindow::openWindowModifFiche()
-{
-    modiffich->show();
-}
-
-void MainWindow::deleteContact(Contact* c)
-{
-    emit contactDeleted(c);
-}
-
-void MainWindow::modifPrenom(Contact* c, string prenom)
-{
-    emit prenomModified(c, prenom);
-}
-
-void MainWindow::modifNom(Contact* c, string nom)
-{
-    emit nomModified(c, nom);
-}
-
-void MainWindow::modifEntreprise(Contact* c, string entreprise)
-{
-    emit prenomModified(c, entreprise);
-}
-
-void MainWindow::modifTelephone(Contact* c, string telephone)
-{
-    emit prenomModified(c, telephone);
-}
-
-void MainWindow::modifMail(Contact* c, string mail)
-{
-    emit prenomModified(c, mail);
-}
-
-void MainWindow::modifPhoto(Contact* c, string photo)
-{
-    emit prenomModified(c, photo);
-}
-
-/**
-  *  \brief Fenetre de recherche d'un contact
-  *
-  *  Slot qui permet l'ouverture de la fenetre de recherche d'un contact.
-  */
-void MainWindow::openWindowRechercheContact()
-{
-    rechcontact->show();
+    selectContact(nullptr);
 }
 
 void MainWindow::selectContact(Contact* c)
 {
     curContact = c;
 
+    emit contactSelected(c);
+}
+
+void MainWindow::updateContactValues()
+{
     bool contactExistant = curContact != nullptr;
-    ui->ButtonModifContact->setEnabled(contactExistant);
+    ui->ButtonFicheContact->setEnabled(contactExistant);
 
     if(contactExistant)
     {
-        ui->contactSelectionneLabel->setText(QString::fromStdString(c->toString()));
+        ui->contactSelectionneLabel->setText(QString::fromStdString(curContact->toString()));
         ui->ButtonRechercherContact->setText(QString::fromStdString("Chercher un autre contact"));
     }
     else
@@ -155,43 +98,6 @@ void MainWindow::selectContact(Contact* c)
         ui->contactSelectionneLabel->setText(QString::fromStdString("Aucun"));
         ui->ButtonRechercherContact->setText(QString::fromStdString("Chercher un contact"));
     }
-
-    emit contactSelected(c);
-}
-
-void MainWindow::createContact(string nom, string prenom, string entreprise, string tel, string mail, string photo)
-{
-    emit contactCreated(nom, prenom, entreprise, tel, mail, photo);
-}
-
-/**
-  *  \brief Fenetre d'ajout d'interaction a un contact
-  *
-  *  Slot qui permet l'ouverture de la fenetre d'ajout d'interaction a un contact.
-  */
-void MainWindow::openWindowAjoutInteraction()
-{
-    ajoutinter->show();
-}
-
-/**
-  *  \brief Fenetre de modification d'interaction d'un contact
-  *
-  *  Slot qui permet l'ouverture de la fenetre de modification d'interaction d'un contact.
-  */
-void MainWindow::openWindowModifEvent()
-{
-    modifevent->show();
-}
-
-/**
-  *  \brief Fenetre sur les requetes
-  *
-  *  Slot qui permet l'ouverture de la fenetre sur les requetes.
-  */
-void MainWindow::openWindowRequete()
-{
-    requete->show();
 }
 
 /**
@@ -223,9 +129,7 @@ MainWindow::~MainWindow()
 {
     delete ui;
     delete creatfich;
-    delete modiffich;
+    delete afficheFich;
     delete rechcontact;
-    delete ajoutinter;
-    delete modifevent;
     delete requete;
 }

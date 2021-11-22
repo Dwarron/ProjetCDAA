@@ -6,8 +6,8 @@
  * \version 0.1
  */
 
-#include "Todo.h"
 #include <stdexcept>
+#include "Todo.h"
 
 using namespace std;
 

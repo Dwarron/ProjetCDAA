@@ -1,7 +1,7 @@
 /**
  * \file RequeteWindow.cpp
  * \class RequeteWindow RequeteWindow.h
- * \brief Fenetre avec laquel on peut rechercher un contact
+ * \brief Fenetre qui affiche differentes requetes selectionnables
  * \author Perion Maxence, Pinon Alexandre
  * \version 0.1
  */

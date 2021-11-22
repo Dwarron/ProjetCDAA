@@ -10,7 +10,6 @@
  */
 
 #include <QWidget>
-#include "GestionContact.h"
 
 namespace Ui { class CreationFicheWindow; }
 
@@ -19,15 +18,14 @@ class CreationFicheWindow : public QWidget
     Q_OBJECT
 
 public:
-    CreationFicheWindow(GestionContact*, QWidget* parent = nullptr);
+    CreationFicheWindow(QWidget* parent = nullptr);
     ~CreationFicheWindow();
 
 protected:
     void resizeEvent(QResizeEvent*) override;
 
 private:
-    Ui::CreationFicheWindow *ui;
-    GestionContact *gestCont;
+    Ui::CreationFicheWindow* ui;
     QString file_name;
 
 private slots:

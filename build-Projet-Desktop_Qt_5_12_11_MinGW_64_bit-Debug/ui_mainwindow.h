@@ -1,5 +1,5 @@
 /********************************************************************************
-** Form generated from reading UI file 'mainwindow.ui'
+** Form generated from reading UI file 'MainWindow.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.12.11
 **
@@ -41,11 +41,12 @@ public:
     QLabel *contactSelectionneLabel;
     QVBoxLayout *verticalLayout;
     QPushButton *ButtonCreerFiche;
-    QPushButton *ButtonModifContact;
+    QPushButton *ButtonFicheContact;
     QPushButton *ButtonRechercherContact;
-    QPushButton *ButtonAjouterEvenement;
-    QPushButton *ButtonModifEvent;
     QPushButton *ButtonRequete;
+    QHBoxLayout *horizontalLayout_2;
+    QLabel *label_4;
+    QLabel *labelDateSuppression;
     QMenuBar *menubar;
     QMenu *menuOptions;
     QMenu *menuaide;
@@ -103,37 +104,42 @@ public:
 
         verticalLayout->addWidget(ButtonCreerFiche);
 
-        ButtonModifContact = new QPushButton(centralwidget);
-        ButtonModifContact->setObjectName(QString::fromUtf8("ButtonModifContact"));
-        ButtonModifContact->setEnabled(false);
+        ButtonFicheContact = new QPushButton(centralwidget);
+        ButtonFicheContact->setObjectName(QString::fromUtf8("ButtonFicheContact"));
+        ButtonFicheContact->setEnabled(false);
 
-        verticalLayout->addWidget(ButtonModifContact);
+        verticalLayout->addWidget(ButtonFicheContact);
 
         ButtonRechercherContact = new QPushButton(centralwidget);
         ButtonRechercherContact->setObjectName(QString::fromUtf8("ButtonRechercherContact"));
 
         verticalLayout->addWidget(ButtonRechercherContact);
 
-        ButtonAjouterEvenement = new QPushButton(centralwidget);
-        ButtonAjouterEvenement->setObjectName(QString::fromUtf8("ButtonAjouterEvenement"));
-
-        verticalLayout->addWidget(ButtonAjouterEvenement);
-
-        ButtonModifEvent = new QPushButton(centralwidget);
-        ButtonModifEvent->setObjectName(QString::fromUtf8("ButtonModifEvent"));
-
-        verticalLayout->addWidget(ButtonModifEvent);
-
         ButtonRequete = new QPushButton(centralwidget);
         ButtonRequete->setObjectName(QString::fromUtf8("ButtonRequete"));
 
         verticalLayout->addWidget(ButtonRequete);
 
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        label_4 = new QLabel(centralwidget);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+
+        horizontalLayout_2->addWidget(label_4);
+
+        labelDateSuppression = new QLabel(centralwidget);
+        labelDateSuppression->setObjectName(QString::fromUtf8("labelDateSuppression"));
+
+        horizontalLayout_2->addWidget(labelDateSuppression);
+
+
+        verticalLayout->addLayout(horizontalLayout_2);
+
 
         verticalLayout_2->addLayout(verticalLayout);
 
 
-        gridLayout->addLayout(verticalLayout_2, 0, 0, 1, 1);
+        gridLayout->addLayout(verticalLayout_2, 0, 0, 2, 1);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -171,11 +177,11 @@ public:
         label_3->setText(QApplication::translate("MainWindow", "Contact s\303\251lectionn\303\251 :", nullptr));
         contactSelectionneLabel->setText(QApplication::translate("MainWindow", "Aucun", nullptr));
         ButtonCreerFiche->setText(QApplication::translate("MainWindow", "Cr\303\251er la fiche d'un contact", nullptr));
-        ButtonModifContact->setText(QApplication::translate("MainWindow", "Modifier le contact", nullptr));
+        ButtonFicheContact->setText(QApplication::translate("MainWindow", "Afficher la fiche du contact", nullptr));
         ButtonRechercherContact->setText(QApplication::translate("MainWindow", "Chercher un contact", nullptr));
-        ButtonAjouterEvenement->setText(QApplication::translate("MainWindow", "Ajouter un \303\251v\303\251nement", nullptr));
-        ButtonModifEvent->setText(QApplication::translate("MainWindow", "Modifier un \303\251v\303\251nement", nullptr));
         ButtonRequete->setText(QApplication::translate("MainWindow", "Requ\303\252te sur les contacts", nullptr));
+        label_4->setText(QApplication::translate("MainWindow", "<i>Date de la derni\303\250re suppression de fiche : </i>", nullptr));
+        labelDateSuppression->setText(QApplication::translate("MainWindow", "<i>01/01/2021</i>", nullptr));
         menuOptions->setTitle(QApplication::translate("MainWindow", "Options", nullptr));
         menuaide->setTitle(QApplication::translate("MainWindow", "Aide", nullptr));
     } // retranslateUi

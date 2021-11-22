@@ -9,8 +9,8 @@
  */
 
 #include <string>
-#include "Interaction.h"
 #include <list>
+#include "Interaction.h"
 #include "Date.h"
 #include "Todo.h"
 
@@ -21,7 +21,7 @@ class Contact
 {
 public:
     Contact();
-    Contact(const std::string&, const std::string&, const std::string&, const std::string&, const std::string&, const std::string&);
+    Contact(const std::string&, const std::string&, const std::string&, const std::string&, const std::string&, const std::string&, const Date&, const Date&);
     ~Contact();
 
     const std::string &getNom() const;
@@ -45,7 +45,7 @@ public:
     Date &getDateCreation();
     const Date &getDateDerniereModification() const;
 
-    const std::list<Interaction*> &getInteractions() const;
+    const std::list<Interaction*> &getInteractions();
     const std::list<Todo*> getTodos() const;
 
     friend std::ostream& operator << (std::ostream&, const Contact&);
@@ -61,7 +61,7 @@ public:
     static void checkChiffres(const std::string&);
     static void checkMail(const std::string&);
 
-    static const std::string suggestionNom(std::string&);
+    static const std::string suggestionNom(std::string);
 
     friend bool operator==(const Contact&, const Contact&);
 

@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_RechercheContactWindow_t {
-    QByteArrayData data[9];
-    char stringdata0[131];
+    QByteArrayData data[10];
+    char stringdata0[151];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,16 +36,18 @@ QT_MOC_LITERAL(1, 23, 15), // "contactSelected"
 QT_MOC_LITERAL(2, 39, 0), // ""
 QT_MOC_LITERAL(3, 40, 8), // "Contact*"
 QT_MOC_LITERAL(4, 49, 19), // "listContactsUpdated"
-QT_MOC_LITERAL(5, 69, 16), // "rechercheContact"
-QT_MOC_LITERAL(6, 86, 13), // "selectContact"
-QT_MOC_LITERAL(7, 100, 11), // "QModelIndex"
-QT_MOC_LITERAL(8, 112, 18) // "updateListContacts"
+QT_MOC_LITERAL(5, 69, 19), // "std::list<Contact*>"
+QT_MOC_LITERAL(6, 89, 18), // "updateListContacts"
+QT_MOC_LITERAL(7, 108, 16), // "rechercheContact"
+QT_MOC_LITERAL(8, 125, 13), // "selectContact"
+QT_MOC_LITERAL(9, 139, 11) // "QModelIndex"
 
     },
     "RechercheContactWindow\0contactSelected\0"
     "\0Contact*\0listContactsUpdated\0"
+    "std::list<Contact*>\0updateListContacts\0"
     "rechercheContact\0selectContact\0"
-    "QModelIndex\0updateListContacts"
+    "QModelIndex"
 };
 #undef QT_MOC_LITERAL
 
@@ -64,23 +66,23 @@ static const uint qt_meta_data_RechercheContactWindow[] = {
 
  // signals: name, argc, parameters, tag, flags
        1,    1,   44,    2, 0x06 /* Public */,
-       4,    0,   47,    2, 0x06 /* Public */,
+       4,    1,   47,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       5,    1,   48,    2, 0x0a /* Public */,
-       5,    0,   51,    2, 0x0a /* Public */,
-       6,    1,   52,    2, 0x0a /* Public */,
-       8,    0,   55,    2, 0x0a /* Public */,
+       6,    1,   50,    2, 0x0a /* Public */,
+       7,    1,   53,    2, 0x0a /* Public */,
+       7,    0,   56,    2, 0x0a /* Public */,
+       8,    1,   57,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    2,
-    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 5,    2,
 
  // slots: parameters
+    QMetaType::Void, 0x80000000 | 5,    2,
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 7,    2,
-    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 9,    2,
 
        0        // eod
 };
@@ -92,11 +94,11 @@ void RechercheContactWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->contactSelected((*reinterpret_cast< Contact*(*)>(_a[1]))); break;
-        case 1: _t->listContactsUpdated(); break;
-        case 2: _t->rechercheContact((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 3: _t->rechercheContact(); break;
-        case 4: _t->selectContact((*reinterpret_cast< QModelIndex(*)>(_a[1]))); break;
-        case 5: _t->updateListContacts(); break;
+        case 1: _t->listContactsUpdated((*reinterpret_cast< std::list<Contact*>(*)>(_a[1]))); break;
+        case 2: _t->updateListContacts((*reinterpret_cast< std::list<Contact*>(*)>(_a[1]))); break;
+        case 3: _t->rechercheContact((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 4: _t->rechercheContact(); break;
+        case 5: _t->selectContact((*reinterpret_cast< QModelIndex(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -109,7 +111,7 @@ void RechercheContactWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _
             }
         }
         {
-            using _t = void (RechercheContactWindow::*)();
+            using _t = void (RechercheContactWindow::*)(std::list<Contact*> );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&RechercheContactWindow::listContactsUpdated)) {
                 *result = 1;
                 return;
@@ -166,9 +168,10 @@ void RechercheContactWindow::contactSelected(Contact * _t1)
 }
 
 // SIGNAL 1
-void RechercheContactWindow::listContactsUpdated()
+void RechercheContactWindow::listContactsUpdated(std::list<Contact*> _t1)
 {
-    QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

@@ -1,13 +1,5 @@
-#include "mainwindow.h"
-#include "Contact.h"
-#include "Date.h"
-#include "Interaction.h"
-#include "GestionnaireQObject.h"
 #include <QApplication>
-#include <iostream>
-#include <QObject>
-
-using namespace std;
+#include "GestionnaireQObject.h"
 
 /*! \mainpage Projet de CDAA : Logiciel de gestion de relations clients (CRM)
  *

@@ -6,11 +6,15 @@
  * \version 0.1
  */
 
-#include "CreationFicheWindow.h"
-#include <ui_CreationFicheWindow.h>
 #include <QObject>
 #include <QFileDialog>
 #include <QDir>
+#include <QMessageBox>
+#include "CreationFicheWindow.h"
+#include "ui_CreationFicheWindow.h"
+#include "Contact.h"
+
+using namespace std;
 
 /**
  *  \brief Constructeur standard
@@ -21,13 +25,12 @@
  *  \param g : gestion des contacts
  *  \param parent : fenetre parent
  */
-CreationFicheWindow::CreationFicheWindow(GestionContact *g, QWidget *parent)
+CreationFicheWindow::CreationFicheWindow(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::CreationFicheWindow)
 {
     ui->setupUi(this);
 
-    gestCont = g;
     file_name = "";
 
     connect(this, SIGNAL(imageSelected(QString)), this, SLOT(showImage(QString)));
@@ -81,28 +84,99 @@ void CreationFicheWindow::showImage(QString path)
   */
 void CreationFicheWindow::CreationFiche()
 {
-    emit contactCreated(ui->nomLineEdit->text().toStdString(),
-                                ui->prenomLineEdit->text().toStdString(),
-                                ui->entrepriseLineEdit->text().toStdString(),
-                                ui->telLineEdit->text().toStdString(),
-                                ui->mailLineEdit->text().toStdString(),
-                                file_name.toStdString()
-                              );
+    string nom = ui->nomLineEdit->text().toStdString();
+    string nomTest = Contact::suggestionNom(nom);
 
-    ui->nomLineEdit->setText("");
-    ui->prenomLineEdit->setText("");
-    ui->entrepriseLineEdit->setText("");
-    ui->telLineEdit->setText("");
-    ui->mailLineEdit->setText("");
-    file_name = "";
-    emit imageSelected(file_name);
+    if(nom.length() == 0)
+    {
+        QMessageBox::warning(this, "Nom vide", QString::fromStdString("Veuillez entrer un nom"));
+    }
+    else if(nomTest != nom)
+    {
+        QMessageBox::StandardButton confirmation = QMessageBox::question(this, QString::fromStdString("Nom invalide : " + nom), QString::fromStdString("Vouliez-vous écrire : " + nomTest + " ?"));
+        if(confirmation == QMessageBox::Yes)
+        {
+            ui->nomLineEdit->setText(QString::fromStdString(nomTest));
+        }
+    }
+    else
+    {
+        string prenom = ui->prenomLineEdit->text().toStdString();
+        string prenomTest = Contact::suggestionNom(prenom);
 
-    //apres avoir crée le contact avec les informations de la fenetre on la ferme
-    this->close();
+        if(prenom.length() == 0)
+        {
+            QMessageBox::warning(this, "Prenom vide", QString::fromStdString("Veuillez entrer un prenom"));
+        }
+        else if(prenom != prenomTest)
+        {
+            QMessageBox::StandardButton confirmation = QMessageBox::question(this, QString::fromStdString("Prenom invalide : " + prenom), QString::fromStdString("Vouliez-vous écrire : " + prenomTest + " ?"));
+            if(confirmation == QMessageBox::Yes)
+            {
+                ui->prenomLineEdit->setText(QString::fromStdString(prenomTest));
+            }
+        }
+        else
+        {
+            string telephone = ui->telLineEdit->text().toStdString();
+
+            bool badPhone = false;
+            if(telephone.length() > 0)
+            {
+                try {
+                   Contact::checkChiffres(telephone);
+                }
+                catch (const invalid_argument& e) {
+                    badPhone = true;
+                }
+                if(telephone.length() != 10)
+                {
+                    badPhone = true;
+                }
+            }
+
+            if(badPhone)
+            {
+                QMessageBox::warning(this, "Téléphone invalide", QString::fromStdString(telephone + " n'est pas un numéro de téléphone valide"));
+            }
+            else
+            {
+                string mail = ui->mailLineEdit->text().toStdString();
+                bool badMail = false;
+                try {
+                   Contact::checkMail(mail);
+                }
+                catch (const invalid_argument& e) {
+                    badMail = true;
+                }
+
+                if(badMail)
+                {
+                    QMessageBox::warning(this, "Mail invalide", QString::fromStdString(mail + " n'est pas un mail valide"));
+                }
+                else
+                {
+                    emit contactCreated(nom, prenom, ui->entrepriseLineEdit->text().toStdString(), telephone, mail, file_name.toStdString());
+
+                    ui->nomLineEdit->setText("");
+                    ui->prenomLineEdit->setText("");
+                    ui->entrepriseLineEdit->setText("");
+                    ui->telLineEdit->setText("");
+                    ui->mailLineEdit->setText("");
+                    file_name = "";
+                    emit imageSelected(file_name);
+
+                    this->close();
+                }
+            }
+
+        }
+    }
 }
 
-void CreationFicheWindow::resizeEvent(QResizeEvent*)
+void CreationFicheWindow::resizeEvent(QResizeEvent* e)
 {
+    QWidget::resizeEvent(e);
     emit imageSelected(file_name);
 }
 

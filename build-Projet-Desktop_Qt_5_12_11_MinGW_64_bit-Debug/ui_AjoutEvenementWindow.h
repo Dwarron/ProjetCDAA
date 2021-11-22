@@ -11,13 +11,10 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QComboBox>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -30,14 +27,11 @@ public:
     QGridLayout *gridLayout;
     QVBoxLayout *verticalLayout;
     QFormLayout *formLayout;
-    QRadioButton *eventRadionButton;
-    QComboBox *eventComboBox;
-    QRadioButton *newEventRadionButton;
     QTextEdit *newEventText;
+    QPushButton *existingEventButton;
     QHBoxLayout *horizontalLayout;
-    QPushButton *validButton;
+    QPushButton *newEventButton;
     QPushButton *quitButton;
-    QButtonGroup *GroupeInteraction;
 
     void setupUi(QWidget *AjoutEvenementWindow)
     {
@@ -52,41 +46,25 @@ public:
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         formLayout = new QFormLayout();
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
-        eventRadionButton = new QRadioButton(AjoutEvenementWindow);
-        GroupeInteraction = new QButtonGroup(AjoutEvenementWindow);
-        GroupeInteraction->setObjectName(QString::fromUtf8("GroupeInteraction"));
-        GroupeInteraction->addButton(eventRadionButton);
-        eventRadionButton->setObjectName(QString::fromUtf8("eventRadionButton"));
-
-        formLayout->setWidget(0, QFormLayout::LabelRole, eventRadionButton);
-
-        eventComboBox = new QComboBox(AjoutEvenementWindow);
-        eventComboBox->setObjectName(QString::fromUtf8("eventComboBox"));
-        eventComboBox->setSizeIncrement(QSize(0, 0));
-        eventComboBox->setMinimumContentsLength(0);
-
-        formLayout->setWidget(0, QFormLayout::FieldRole, eventComboBox);
-
-        newEventRadionButton = new QRadioButton(AjoutEvenementWindow);
-        GroupeInteraction->addButton(newEventRadionButton);
-        newEventRadionButton->setObjectName(QString::fromUtf8("newEventRadionButton"));
-
-        formLayout->setWidget(1, QFormLayout::LabelRole, newEventRadionButton);
-
         newEventText = new QTextEdit(AjoutEvenementWindow);
         newEventText->setObjectName(QString::fromUtf8("newEventText"));
 
         formLayout->setWidget(1, QFormLayout::FieldRole, newEventText);
+
+        existingEventButton = new QPushButton(AjoutEvenementWindow);
+        existingEventButton->setObjectName(QString::fromUtf8("existingEventButton"));
+
+        formLayout->setWidget(0, QFormLayout::FieldRole, existingEventButton);
 
 
         verticalLayout->addLayout(formLayout);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        validButton = new QPushButton(AjoutEvenementWindow);
-        validButton->setObjectName(QString::fromUtf8("validButton"));
+        newEventButton = new QPushButton(AjoutEvenementWindow);
+        newEventButton->setObjectName(QString::fromUtf8("newEventButton"));
 
-        horizontalLayout->addWidget(validButton);
+        horizontalLayout->addWidget(newEventButton);
 
         quitButton = new QPushButton(AjoutEvenementWindow);
         quitButton->setObjectName(QString::fromUtf8("quitButton"));
@@ -108,9 +86,8 @@ public:
     void retranslateUi(QWidget *AjoutEvenementWindow)
     {
         AjoutEvenementWindow->setWindowTitle(QApplication::translate("AjoutEvenementWindow", "Ajouter un \303\251v\303\251nement", nullptr));
-        eventRadionButton->setText(QApplication::translate("AjoutEvenementWindow", "Ajouter un \303\251v\303\251nement existant", nullptr));
-        newEventRadionButton->setText(QApplication::translate("AjoutEvenementWindow", "Ajouter un nouvel \303\251v\303\251nement ", nullptr));
-        validButton->setText(QApplication::translate("AjoutEvenementWindow", "Valider", nullptr));
+        existingEventButton->setText(QApplication::translate("AjoutEvenementWindow", "Ajouter un \303\251v\303\250nement existant", nullptr));
+        newEventButton->setText(QApplication::translate("AjoutEvenementWindow", "Ajouter un nouvel \303\251v\303\250nement", nullptr));
         quitButton->setText(QApplication::translate("AjoutEvenementWindow", "Quitter", nullptr));
     } // retranslateUi
 

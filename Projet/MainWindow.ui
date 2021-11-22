@@ -21,7 +21,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
+    <item row="0" column="0" rowspan="2">
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
        <widget class="QLabel" name="label">
@@ -68,12 +68,12 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="ButtonModifContact">
+         <widget class="QPushButton" name="ButtonFicheContact">
           <property name="enabled">
            <bool>false</bool>
           </property>
           <property name="text">
-           <string>Modifier le contact</string>
+           <string>Afficher la fiche du contact</string>
           </property>
          </widget>
         </item>
@@ -85,25 +85,29 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="ButtonAjouterEvenement">
-          <property name="text">
-           <string>Ajouter un événement</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="ButtonModifEvent">
-          <property name="text">
-           <string>Modifier un événement</string>
-          </property>
-         </widget>
-        </item>
-        <item>
          <widget class="QPushButton" name="ButtonRequete">
           <property name="text">
            <string>Requête sur les contacts</string>
           </property>
          </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>&lt;i&gt;Date de la dernière suppression de fiche : &lt;/i&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelDateSuppression">
+            <property name="text">
+             <string>&lt;i&gt;01/01/2021&lt;/i&gt;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </item>

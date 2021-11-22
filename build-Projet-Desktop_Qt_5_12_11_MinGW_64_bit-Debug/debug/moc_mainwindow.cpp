@@ -1,16 +1,16 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'mainwindow.h'
+** Meta object code from reading C++ file 'MainWindow.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.12.11)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../Projet/mainwindow.h"
+#include "../../Projet/MainWindow.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'mainwindow.h' doesn't include <QObject>."
+#error "The header file 'MainWindow.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.12.11. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[32];
-    char stringdata0[488];
+    QByteArrayData data[24];
+    char stringdata0[371];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -44,25 +44,17 @@ QT_MOC_LITERAL(9, 110, 17), // "telephoneModified"
 QT_MOC_LITERAL(10, 128, 12), // "mailModified"
 QT_MOC_LITERAL(11, 141, 13), // "photoModified"
 QT_MOC_LITERAL(12, 155, 19), // "listContactsUpdated"
-QT_MOC_LITERAL(13, 175, 14), // "contactCreated"
-QT_MOC_LITERAL(14, 190, 19), // "openWindowCreeFiche"
-QT_MOC_LITERAL(15, 210, 20), // "openWindowModifFiche"
-QT_MOC_LITERAL(16, 231, 26), // "openWindowRechercheContact"
-QT_MOC_LITERAL(17, 258, 26), // "openWindowAjoutInteraction"
-QT_MOC_LITERAL(18, 285, 20), // "openWindowModifEvent"
-QT_MOC_LITERAL(19, 306, 17), // "openWindowRequete"
-QT_MOC_LITERAL(20, 324, 12), // "slot_aPropos"
-QT_MOC_LITERAL(21, 337, 13), // "selectContact"
-QT_MOC_LITERAL(22, 351, 13), // "deleteContact"
-QT_MOC_LITERAL(23, 365, 11), // "modifPrenom"
-QT_MOC_LITERAL(24, 377, 8), // "modifNom"
-QT_MOC_LITERAL(25, 386, 15), // "modifEntreprise"
-QT_MOC_LITERAL(26, 402, 14), // "modifTelephone"
-QT_MOC_LITERAL(27, 417, 9), // "modifMail"
-QT_MOC_LITERAL(28, 427, 10), // "modifPhoto"
-QT_MOC_LITERAL(29, 438, 18), // "updateListContacts"
-QT_MOC_LITERAL(30, 457, 13), // "createContact"
-QT_MOC_LITERAL(31, 471, 16) // "onContactCreated"
+QT_MOC_LITERAL(13, 175, 19), // "std::list<Contact*>"
+QT_MOC_LITERAL(14, 195, 14), // "contactCreated"
+QT_MOC_LITERAL(15, 210, 17), // "onEndModifContact"
+QT_MOC_LITERAL(16, 228, 21), // "interactionDateEdited"
+QT_MOC_LITERAL(17, 250, 12), // "Interaction*"
+QT_MOC_LITERAL(18, 263, 23), // "interactionResumeEdited"
+QT_MOC_LITERAL(19, 287, 19), // "onInteractionEdited"
+QT_MOC_LITERAL(20, 307, 16), // "ajoutInteraction"
+QT_MOC_LITERAL(21, 324, 12), // "slot_aPropos"
+QT_MOC_LITERAL(22, 337, 13), // "selectContact"
+QT_MOC_LITERAL(23, 351, 19) // "updateContactValues"
 
     },
     "MainWindow\0contactDeleted\0\0Contact*\0"
@@ -70,15 +62,12 @@ QT_MOC_LITERAL(31, 471, 16) // "onContactCreated"
     "std::string\0nomModified\0entrepriseModified\0"
     "telephoneModified\0mailModified\0"
     "photoModified\0listContactsUpdated\0"
-    "contactCreated\0openWindowCreeFiche\0"
-    "openWindowModifFiche\0openWindowRechercheContact\0"
-    "openWindowAjoutInteraction\0"
-    "openWindowModifEvent\0openWindowRequete\0"
-    "slot_aPropos\0selectContact\0deleteContact\0"
-    "modifPrenom\0modifNom\0modifEntreprise\0"
-    "modifTelephone\0modifMail\0modifPhoto\0"
-    "updateListContacts\0createContact\0"
-    "onContactCreated"
+    "std::list<Contact*>\0contactCreated\0"
+    "onEndModifContact\0interactionDateEdited\0"
+    "Interaction*\0interactionResumeEdited\0"
+    "onInteractionEdited\0ajoutInteraction\0"
+    "slot_aPropos\0selectContact\0"
+    "updateContactValues"
 };
 #undef QT_MOC_LITERAL
 
@@ -88,44 +77,36 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      28,   14, // methods
+      20,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-      10,       // signalCount
+      16,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  154,    2, 0x06 /* Public */,
-       4,    1,  157,    2, 0x06 /* Public */,
-       5,    2,  160,    2, 0x06 /* Public */,
-       7,    2,  165,    2, 0x06 /* Public */,
-       8,    2,  170,    2, 0x06 /* Public */,
-       9,    2,  175,    2, 0x06 /* Public */,
-      10,    2,  180,    2, 0x06 /* Public */,
-      11,    2,  185,    2, 0x06 /* Public */,
-      12,    0,  190,    2, 0x06 /* Public */,
-      13,    6,  191,    2, 0x06 /* Public */,
+       1,    1,  114,    2, 0x06 /* Public */,
+       4,    1,  117,    2, 0x06 /* Public */,
+       5,    2,  120,    2, 0x06 /* Public */,
+       7,    2,  125,    2, 0x06 /* Public */,
+       8,    2,  130,    2, 0x06 /* Public */,
+       9,    2,  135,    2, 0x06 /* Public */,
+      10,    2,  140,    2, 0x06 /* Public */,
+      11,    2,  145,    2, 0x06 /* Public */,
+      12,    1,  150,    2, 0x06 /* Public */,
+      14,    6,  153,    2, 0x06 /* Public */,
+      15,    0,  166,    2, 0x06 /* Public */,
+      16,    2,  167,    2, 0x06 /* Public */,
+      18,    2,  172,    2, 0x06 /* Public */,
+      19,    0,  177,    2, 0x06 /* Public */,
+      20,    2,  178,    2, 0x06 /* Public */,
+      20,    2,  183,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      14,    0,  204,    2, 0x0a /* Public */,
-      15,    0,  205,    2, 0x0a /* Public */,
-      16,    0,  206,    2, 0x0a /* Public */,
-      17,    0,  207,    2, 0x0a /* Public */,
-      18,    0,  208,    2, 0x0a /* Public */,
-      19,    0,  209,    2, 0x0a /* Public */,
-      20,    0,  210,    2, 0x0a /* Public */,
-      21,    1,  211,    2, 0x0a /* Public */,
-      22,    1,  214,    2, 0x0a /* Public */,
-      23,    2,  217,    2, 0x0a /* Public */,
-      24,    2,  222,    2, 0x0a /* Public */,
-      25,    2,  227,    2, 0x0a /* Public */,
-      26,    2,  232,    2, 0x0a /* Public */,
-      27,    2,  237,    2, 0x0a /* Public */,
-      28,    2,  242,    2, 0x0a /* Public */,
-      29,    0,  247,    2, 0x0a /* Public */,
-      30,    6,  248,    2, 0x0a /* Public */,
-      31,    1,  261,    2, 0x0a /* Public */,
+      21,    0,  188,    2, 0x0a /* Public */,
+      22,    1,  189,    2, 0x0a /* Public */,
+      22,    0,  192,    2, 0x0a /* Public */,
+      23,    0,  193,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    2,
@@ -136,28 +117,20 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void, 0x80000000 | 3, 0x80000000 | 6,    2,    2,
     QMetaType::Void, 0x80000000 | 3, 0x80000000 | 6,    2,    2,
     QMetaType::Void, 0x80000000 | 3, 0x80000000 | 6,    2,    2,
-    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 13,    2,
     QMetaType::Void, 0x80000000 | 6, 0x80000000 | 6, 0x80000000 | 6, 0x80000000 | 6, 0x80000000 | 6, 0x80000000 | 6,    2,    2,    2,    2,    2,    2,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 17, QMetaType::QDate,    2,    2,
+    QMetaType::Void, 0x80000000 | 17, QMetaType::QString,    2,    2,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 3, QMetaType::QString,    2,    2,
+    QMetaType::Void, 0x80000000 | 3, 0x80000000 | 17,    2,    2,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
     QMetaType::Void, 0x80000000 | 3,    2,
-    QMetaType::Void, 0x80000000 | 3,    2,
-    QMetaType::Void, 0x80000000 | 3, 0x80000000 | 6,    2,    2,
-    QMetaType::Void, 0x80000000 | 3, 0x80000000 | 6,    2,    2,
-    QMetaType::Void, 0x80000000 | 3, 0x80000000 | 6,    2,    2,
-    QMetaType::Void, 0x80000000 | 3, 0x80000000 | 6,    2,    2,
-    QMetaType::Void, 0x80000000 | 3, 0x80000000 | 6,    2,    2,
-    QMetaType::Void, 0x80000000 | 3, 0x80000000 | 6,    2,    2,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 6, 0x80000000 | 6, 0x80000000 | 6, 0x80000000 | 6, 0x80000000 | 6, 0x80000000 | 6,    2,    2,    2,    2,    2,    2,
-    QMetaType::Void, 0x80000000 | 3,    2,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -176,26 +149,18 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 5: _t->telephoneModified((*reinterpret_cast< Contact*(*)>(_a[1])),(*reinterpret_cast< std::string(*)>(_a[2]))); break;
         case 6: _t->mailModified((*reinterpret_cast< Contact*(*)>(_a[1])),(*reinterpret_cast< std::string(*)>(_a[2]))); break;
         case 7: _t->photoModified((*reinterpret_cast< Contact*(*)>(_a[1])),(*reinterpret_cast< std::string(*)>(_a[2]))); break;
-        case 8: _t->listContactsUpdated(); break;
+        case 8: _t->listContactsUpdated((*reinterpret_cast< std::list<Contact*>(*)>(_a[1]))); break;
         case 9: _t->contactCreated((*reinterpret_cast< std::string(*)>(_a[1])),(*reinterpret_cast< std::string(*)>(_a[2])),(*reinterpret_cast< std::string(*)>(_a[3])),(*reinterpret_cast< std::string(*)>(_a[4])),(*reinterpret_cast< std::string(*)>(_a[5])),(*reinterpret_cast< std::string(*)>(_a[6]))); break;
-        case 10: _t->openWindowCreeFiche(); break;
-        case 11: _t->openWindowModifFiche(); break;
-        case 12: _t->openWindowRechercheContact(); break;
-        case 13: _t->openWindowAjoutInteraction(); break;
-        case 14: _t->openWindowModifEvent(); break;
-        case 15: _t->openWindowRequete(); break;
+        case 10: _t->onEndModifContact(); break;
+        case 11: _t->interactionDateEdited((*reinterpret_cast< Interaction*(*)>(_a[1])),(*reinterpret_cast< QDate(*)>(_a[2]))); break;
+        case 12: _t->interactionResumeEdited((*reinterpret_cast< Interaction*(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
+        case 13: _t->onInteractionEdited(); break;
+        case 14: _t->ajoutInteraction((*reinterpret_cast< Contact*(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
+        case 15: _t->ajoutInteraction((*reinterpret_cast< Contact*(*)>(_a[1])),(*reinterpret_cast< Interaction*(*)>(_a[2]))); break;
         case 16: _t->slot_aPropos(); break;
         case 17: _t->selectContact((*reinterpret_cast< Contact*(*)>(_a[1]))); break;
-        case 18: _t->deleteContact((*reinterpret_cast< Contact*(*)>(_a[1]))); break;
-        case 19: _t->modifPrenom((*reinterpret_cast< Contact*(*)>(_a[1])),(*reinterpret_cast< std::string(*)>(_a[2]))); break;
-        case 20: _t->modifNom((*reinterpret_cast< Contact*(*)>(_a[1])),(*reinterpret_cast< std::string(*)>(_a[2]))); break;
-        case 21: _t->modifEntreprise((*reinterpret_cast< Contact*(*)>(_a[1])),(*reinterpret_cast< std::string(*)>(_a[2]))); break;
-        case 22: _t->modifTelephone((*reinterpret_cast< Contact*(*)>(_a[1])),(*reinterpret_cast< std::string(*)>(_a[2]))); break;
-        case 23: _t->modifMail((*reinterpret_cast< Contact*(*)>(_a[1])),(*reinterpret_cast< std::string(*)>(_a[2]))); break;
-        case 24: _t->modifPhoto((*reinterpret_cast< Contact*(*)>(_a[1])),(*reinterpret_cast< std::string(*)>(_a[2]))); break;
-        case 25: _t->updateListContacts(); break;
-        case 26: _t->createContact((*reinterpret_cast< std::string(*)>(_a[1])),(*reinterpret_cast< std::string(*)>(_a[2])),(*reinterpret_cast< std::string(*)>(_a[3])),(*reinterpret_cast< std::string(*)>(_a[4])),(*reinterpret_cast< std::string(*)>(_a[5])),(*reinterpret_cast< std::string(*)>(_a[6]))); break;
-        case 27: _t->onContactCreated((*reinterpret_cast< Contact*(*)>(_a[1]))); break;
+        case 18: _t->selectContact(); break;
+        case 19: _t->updateContactValues(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -257,7 +222,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
             }
         }
         {
-            using _t = void (MainWindow::*)();
+            using _t = void (MainWindow::*)(std::list<Contact*> );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::listContactsUpdated)) {
                 *result = 8;
                 return;
@@ -267,6 +232,48 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
             using _t = void (MainWindow::*)(std::string , std::string , std::string , std::string , std::string , std::string );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::contactCreated)) {
                 *result = 9;
+                return;
+            }
+        }
+        {
+            using _t = void (MainWindow::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::onEndModifContact)) {
+                *result = 10;
+                return;
+            }
+        }
+        {
+            using _t = void (MainWindow::*)(Interaction * , QDate );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::interactionDateEdited)) {
+                *result = 11;
+                return;
+            }
+        }
+        {
+            using _t = void (MainWindow::*)(Interaction * , QString );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::interactionResumeEdited)) {
+                *result = 12;
+                return;
+            }
+        }
+        {
+            using _t = void (MainWindow::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::onInteractionEdited)) {
+                *result = 13;
+                return;
+            }
+        }
+        {
+            using _t = void (MainWindow::*)(Contact * , QString );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::ajoutInteraction)) {
+                *result = 14;
+                return;
+            }
+        }
+        {
+            using _t = void (MainWindow::*)(Contact * , Interaction * );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::ajoutInteraction)) {
+                *result = 15;
                 return;
             }
         }
@@ -302,13 +309,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 28)
+        if (_id < 20)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 28;
+        _id -= 20;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 28)
+        if (_id < 20)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 28;
+        _id -= 20;
     }
     return _id;
 }
@@ -370,9 +377,10 @@ void MainWindow::photoModified(Contact * _t1, std::string _t2)
 }
 
 // SIGNAL 8
-void MainWindow::listContactsUpdated()
+void MainWindow::listContactsUpdated(std::list<Contact*> _t1)
 {
-    QMetaObject::activate(this, &staticMetaObject, 8, nullptr);
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 8, _a);
 }
 
 // SIGNAL 9
@@ -380,6 +388,46 @@ void MainWindow::contactCreated(std::string _t1, std::string _t2, std::string _t
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)), const_cast<void*>(reinterpret_cast<const void*>(&_t4)), const_cast<void*>(reinterpret_cast<const void*>(&_t5)), const_cast<void*>(reinterpret_cast<const void*>(&_t6)) };
     QMetaObject::activate(this, &staticMetaObject, 9, _a);
+}
+
+// SIGNAL 10
+void MainWindow::onEndModifContact()
+{
+    QMetaObject::activate(this, &staticMetaObject, 10, nullptr);
+}
+
+// SIGNAL 11
+void MainWindow::interactionDateEdited(Interaction * _t1, QDate _t2)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 11, _a);
+}
+
+// SIGNAL 12
+void MainWindow::interactionResumeEdited(Interaction * _t1, QString _t2)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 12, _a);
+}
+
+// SIGNAL 13
+void MainWindow::onInteractionEdited()
+{
+    QMetaObject::activate(this, &staticMetaObject, 13, nullptr);
+}
+
+// SIGNAL 14
+void MainWindow::ajoutInteraction(Contact * _t1, QString _t2)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 14, _a);
+}
+
+// SIGNAL 15
+void MainWindow::ajoutInteraction(Contact * _t1, Interaction * _t2)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 15, _a);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

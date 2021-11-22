@@ -6,12 +6,12 @@
  * \version 0.1
  */
 
-#include "Date.h"
 #include <time.h>
 #include <string>
 #include <stdexcept>
 #include <stdlib.h>
 #include <ctype.h>
+#include "Date.h"
 
 using namespace std;
 

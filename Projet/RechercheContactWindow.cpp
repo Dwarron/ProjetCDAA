@@ -1,15 +1,14 @@
 /**
  * \file RechercheContactWindow.cpp
  * \class RechercheContactWindow RechercheContactWindow.h
- * \brief Fenetre avec laquel on peut rechercher un contact
+ * \brief Fenetre permettant la recherche et la selection d'un contact
  * \author Perion Maxence, Pinon Alexandre
  * \version 0.1
  */
 
+#include <QStringListModel>
 #include "RechercheContactWindow.h"
 #include "ui_RechercheContactWindow.h"
-#include <QStringListModel>
-#include <iostream>
 
 using namespace std;
 
@@ -23,13 +22,11 @@ using namespace std;
  *  \param g : gestion des contacts
  *  \param parent : fenetre parent
  */
-RechercheContactWindow::RechercheContactWindow(GestionContact *g, QWidget *parent)
+RechercheContactWindow::RechercheContactWindow(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::RechercheContactWindow)
 {
    ui->setupUi(this);
-
-   gestCont = g;
 
    //on remplie les combo box
    ui->rechercheContactComboBox->addItem("Nom");
@@ -42,9 +39,8 @@ RechercheContactWindow::RechercheContactWindow(GestionContact *g, QWidget *paren
    listeContactsModel = new QStringListModel();
    ui->listeContacts->setModel(listeContactsModel);
 
-   rechercheContact("");
+   connect(this, SIGNAL(listContactsUpdated(std::list<Contact*>)), this, SLOT(updateListContacts(std::list<Contact*>)));
 
-   connect(this, SIGNAL(listContactsUpdated()), this, SLOT(rechercheContact()));
    connect(ui->validButton, SIGNAL(clicked()), this, SLOT(rechercheContact()));
    connect(ui->quitButton, SIGNAL(clicked()), this, SLOT(close()));
    connect(ui->rechercheLineEdit, SIGNAL(textEdited(QString)), this, SLOT(rechercheContact(QString)));
@@ -53,9 +49,10 @@ RechercheContactWindow::RechercheContactWindow(GestionContact *g, QWidget *paren
    connect(ui->listeContacts->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)), this, SLOT(selectContact(QModelIndex)));
 }
 
-void RechercheContactWindow::updateListContacts()
+void RechercheContactWindow::updateListContacts(std::list<Contact*> c)
 {
-    emit listContactsUpdated();
+    contacts = c;
+    rechercheContact();
 }
 
 /**
@@ -101,7 +98,6 @@ void RechercheContactWindow::rechercheContact(QString text)
 
     contactsAffiches.clear();
 
-    list<Contact*> contacts = gestCont->getContacts();
     list<Contact*> contactstemp;
 
     if(tri == "Ordre alphabétique")
@@ -143,7 +139,10 @@ void RechercheContactWindow::rechercheContact(QString text)
             if((*it)->getEntreprise().find(text.toStdString()) != string::npos)
             {
                 contactsAffiches.push_back(*it);
-                list << QString::fromStdString((*it)->toString() + " (" + (*it)->getEntreprise() + ")");
+                string nom = (*it)->toString();
+                if((*it)->getEntreprise().length() > 0)
+                    nom += " (" + (*it)->getEntreprise() + ")";
+                list << QString::fromStdString(nom);
             }
         }
     }

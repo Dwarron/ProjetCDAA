@@ -6,9 +6,9 @@
  * \version 0.1
  */
 
-#include "Contact.h"
-#include <string.h>
+#include <string>
 #include <stdexcept>
+#include "Contact.h"
 
 using namespace std;
 
@@ -17,7 +17,7 @@ using namespace std;
  *
  *  Constructeur par defaut de la classe Contact
  */
-Contact::Contact() : Contact("Jean", "Dupont", "Carrefour", "0123456789", "jean.dupont@mail.com", "")
+Contact::Contact() : Contact("Jean", "Dupont", "Carrefour", "0123456789", "jean.dupont@mail.com", "", Date(), Date())
 {
 }
 
@@ -32,8 +32,10 @@ Contact::Contact() : Contact("Jean", "Dupont", "Carrefour", "0123456789", "jean.
  *  \param tel : telephone
  *  \param m : mail
  *  \param uri : chemin vers la photo de profil
+ *  \param dc : la date de creation du contact
+ *  \param dm : la date de derniere modification du contact
  */
-Contact::Contact(const string& n, const string& p, const string& e, const string& tel, const string& m, const string& uri)
+Contact::Contact(const string& n, const string& p, const string& e, const string& tel, const string& m, const string& uri, const Date& dc, const Date& dm)
 {   
     checkLettres(n);    // nom et prenom doivent uniquement contenir des lettres
     nom = n;
@@ -60,13 +62,9 @@ Contact::Contact(const string& n, const string& p, const string& e, const string
 
     uriPhoto = uri;
 
-    dateCreation = Date();
-    dateModification = Date();
+    dateCreation = dc;
+    dateModification = dm;
     interactions = list<Interaction*>();
-
-    Date dateBienvenue = Date();
-    dateBienvenue.addDelay(3);
-    addInteraction(new Interaction("Creation de la fiche\n@todo Souhaiter la bienvenue avant le @date " + dateBienvenue));
 }
 
 /**
@@ -342,13 +340,13 @@ void Contact::addInteraction(Interaction* i)
   *
   *  \param chaine : la chaine a verifier
   */
-const std::string Contact::suggestionNom(std::string& chaine)
+const std::string Contact::suggestionNom(std::string chaine)
 {
-    size_t position = chaine.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ -");
+    size_t position = chaine.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZéèùà -");
     while(position != string::npos)
     {
         chaine = chaine.substr(0, position) + chaine.substr(position + 1);
-        position = chaine.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ -");
+        position = chaine.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZéèùà -");
     }
 
     return chaine;
@@ -361,8 +359,9 @@ const std::string Contact::suggestionNom(std::string& chaine)
   *
   *  \return interactions
   */
-const list<Interaction*> &Contact::getInteractions() const
+const list<Interaction*> &Contact::getInteractions()
 {
+    interactions.sort([](Interaction* a, Interaction* b) {return *a < *b;});
     return interactions;
 }
 

@@ -4,13 +4,13 @@
 /**
  * \file RequeteWindow.h
  * \class RequeteWindow RequeteWindow.h
- * \brief Fenetre qui affiche differente requetes selectionnable
+ * \brief Fenetre qui affiche differentes requetes selectionnables
  * \author Perion Maxence, Pinon Alexandre
  * \version 0.1
  */
 
 #include <QWidget>
-#include "gestioncontact.h"
+#include "GestionContact.h"
 
 namespace Ui { class RequeteWindow; }
 
