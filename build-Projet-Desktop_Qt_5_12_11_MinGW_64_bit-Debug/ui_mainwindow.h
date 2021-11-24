@@ -31,6 +31,7 @@ public:
     QAction *actionQuitter;
     QAction *actionA_propos;
     QAction *actionExporter_en_JSON;
+    QAction *actionImporter_un_fichier_JSON;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QVBoxLayout *verticalLayout_2;
@@ -65,6 +66,8 @@ public:
         actionA_propos->setObjectName(QString::fromUtf8("actionA_propos"));
         actionExporter_en_JSON = new QAction(MainWindow);
         actionExporter_en_JSON->setObjectName(QString::fromUtf8("actionExporter_en_JSON"));
+        actionImporter_un_fichier_JSON = new QAction(MainWindow);
+        actionImporter_un_fichier_JSON->setObjectName(QString::fromUtf8("actionImporter_un_fichier_JSON"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
@@ -157,6 +160,7 @@ public:
         menubar->addAction(menuOptions->menuAction());
         menubar->addAction(menuaide->menuAction());
         menuOptions->addAction(actionExporter_en_JSON);
+        menuOptions->addAction(actionImporter_un_fichier_JSON);
         menuOptions->addAction(actionQuitter);
         menuaide->addAction(actionA_propos);
 
@@ -172,6 +176,7 @@ public:
         actionQuitter->setText(QApplication::translate("MainWindow", "Quitter", nullptr));
         actionA_propos->setText(QApplication::translate("MainWindow", "A propos", nullptr));
         actionExporter_en_JSON->setText(QApplication::translate("MainWindow", "Exporter en JSON", nullptr));
+        actionImporter_un_fichier_JSON->setText(QApplication::translate("MainWindow", "Importer un fichier JSON", nullptr));
         label->setText(QApplication::translate("MainWindow", "Bienvenue sur l'application de gestion de relation.", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "Que souhaitez vous faire :", nullptr));
         label_3->setText(QApplication::translate("MainWindow", "Contact s\303\251lectionn\303\251 :", nullptr));

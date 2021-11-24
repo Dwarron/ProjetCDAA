@@ -9,7 +9,7 @@
 #include <QDate>
 #include "AfficheInteractionsWindow.h"
 #include "ui_AfficheInteractionsWindow.h"
-
+#include <iostream>
 AfficheInteractionsWindow::AfficheInteractionsWindow(QWidget* parent)
     : QWidget(parent)
     , ui(new Ui::AfficheInteractionsWindow)
@@ -79,14 +79,16 @@ void AfficheInteractionsWindow::selectInteraction()
         ui->dateEdit->setDate(QDate::fromString(QString::fromStdString(curInteraction->getDate().toString()), "dd/MM/yyyy"));
 
         ui->textEdit->setEnabled(true);
+        ui->editTextButton->setEnabled(true);
         ui->dateEdit->setEnabled(true);
     }
     else
     {
         ui->textEdit->setText("");
-        ui->dateEdit->setDate(QDate::fromString("01/01/2021"));
+        ui->dateEdit->setDate(QDate::fromString("01/01/2021", "dd/MM/yyyy"));
 
         ui->textEdit->setEnabled(false);
+        ui->editTextButton->setEnabled(false);
         ui->dateEdit->setEnabled(false);
     }
 }

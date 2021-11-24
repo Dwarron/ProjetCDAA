@@ -6,6 +6,7 @@ debug/DatabaseManager.o
 debug/Date.o
 debug/FicheContactWindow.o
 debug/Interaction.o
+debug/JSONSerializer.o
 debug/RechercheContactWindow.o
 debug/RequeteWindow.o
 debug/Todo.o

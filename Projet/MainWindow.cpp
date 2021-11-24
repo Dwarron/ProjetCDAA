@@ -9,6 +9,8 @@
 #include <QMessageBox>
 #include <QCloseEvent>
 #include <QDate>
+#include <QDir>
+#include <QFileDialog>
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 
@@ -23,16 +25,17 @@ using namespace std;
  *  \param g : gestion des contacts
  *  \param parent : fenetre parent
  */
-MainWindow::MainWindow(QWidget* parent)
+MainWindow::MainWindow(string dateDerniereSuppression, list<Contact*> contacts, QWidget* parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    updateDateDerniereSuppression(dateDerniereSuppression);
 
     creatfich = new CreationFicheWindow();
-    rechcontact = new RechercheContactWindow();
-    //requete = new RequeteWindow();
-    afficheFich = new FicheContactWindow();
+    rechcontact = new RechercheContactWindow(contacts);
+    requete = new RequeteWindow(contacts);
+    afficheFich = new FicheContactWindow(contacts);
 
     connect(this, SIGNAL(listContactsUpdated(std::list<Contact*>)), rechcontact, SLOT(updateListContacts(std::list<Contact*>)));
     connect(this, SIGNAL(listContactsUpdated(std::list<Contact*>)), afficheFich, SIGNAL(listContactsUpdated(std::list<Contact*>)));
@@ -67,7 +70,14 @@ MainWindow::MainWindow(QWidget* parent)
     connect(ui->ButtonCreerFiche, SIGNAL(clicked()), creatfich, SLOT(show()));
     connect(ui->ButtonRechercherContact, SIGNAL(clicked()), rechcontact, SLOT(show()));
     connect(ui->ButtonFicheContact, SIGNAL(clicked()), afficheFich, SLOT(show()));
- //   connect(ui->ButtonRequete, SIGNAL(clicked()), requete, SLOT(show()));
+    connect(ui->ButtonRequete, SIGNAL(clicked()), requete, SLOT(show()));
+    connect(ui->actionExporter_en_JSON, SIGNAL(triggered()), SLOT(exportJSON()));
+    connect(ui->actionImporter_un_fichier_JSON, SIGNAL(triggered()), SLOT(importJSON()));
+}
+
+void MainWindow::updateDateDerniereSuppression(string date)
+{
+    ui->labelDateSuppression->setText(QString::fromStdString("<i> " + date + "</i>"));
 }
 
 
@@ -118,6 +128,20 @@ void MainWindow::closeEvent(QCloseEvent *event)
 {
     event->accept();
     QApplication::quit();
+}
+
+void MainWindow::exportJSON()
+{
+    QString file = QFileDialog::getSaveFileName(this, "Save JSON file", QDir::homePath(), "JSON File (*.json)");
+
+    emit exportJSON(file);
+}
+
+void MainWindow::importJSON()
+{
+    QString file = QFileDialog::getOpenFileName(this, "Choose JSON file", QDir::homePath(), "JSON File (*.json)");
+
+    emit importJSON(file);
 }
 
 /**

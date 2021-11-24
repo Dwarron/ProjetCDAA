@@ -17,15 +17,14 @@ using namespace std;
  *
  *  Constructeur avec parametre de la classe Interaction
  *
+ *  \param d : la date de l'interaction
  *  \param r : le resume de l'interaction
  */
-Interaction::Interaction(const string& r)
+Interaction::Interaction(const Date& d, const string& r)
 {
-    date = Date();
+    date = d;
     resume = r;
     todos = list<Todo*>();
-
-    creerTodos();
 }
 
 /**
@@ -44,19 +43,21 @@ void Interaction::creerTodos()
     position = resume.find(delimiter, last);
     while(position != string::npos) // on recherche tous les @ todo
     {
-        resume = resume.substr(0, position) + resume.substr(position + delimiterLength);    // suppression du @todo dans le texte
-
         size_t positionEndLine = resume.find("\n", position); // fin de ligne du todo
         if(positionEndLine == string::npos)
             positionEndLine = resume.length();  // fin du todo a la fin du texte si pas de nouvelle ligne
 
+        size_t positionNextTodo = resume.find(delimiter, position + delimiterLength);   //@todo present sur la meme ligne
+        if(positionNextTodo != string::npos && positionNextTodo < positionEndLine)
+            positionEndLine = positionNextTodo;
+
         string todoText = resume.substr(position, positionEndLine - position); // on decoupe le texte correspondant au todo
-        Date d = Todo::getDateFromTodoLine(&todoText);
-        Todo* t = new Todo(todoText, d, this);
+        Date d = Todo::getDateFromTodoLine(todoText);
+        Todo* t = new Todo(todoText, d, false);
         resume = resume.substr(0, position) +  todoText + resume.substr(positionEndLine);   // correction de la ligne du todo avec celle analysee et retournee par l'instance
         todos.push_back(t);
 
-        last = position;
+        last = position + delimiterLength;
         position = resume.find(delimiter, last);
     }
 }
@@ -126,13 +127,25 @@ const string Interaction::toString() const
 }
 
 /**
+  *  \brief Ajout d'un todo
+  *
+  *  Methode qui ajoute le todo a la liste des todos
+  *
+  *  \param t : le todo a ajouter
+  */
+void Interaction::ajoutTodo(Todo* t)
+{
+    todos.push_back(t);
+}
+
+/**
   *  \brief Accesseur de todos
   *
   *  Methode qui permet d'acceder a la liste des todos lies a l'interaction
   *
   *  \return contact
   */
-const std::list<Todo *> &Interaction::getTodos() const
+const std::list<Todo*> &Interaction::getTodos() const
 {
     return todos;
 }
@@ -147,8 +160,6 @@ const std::list<Todo *> &Interaction::getTodos() const
 void Interaction::setResume(const std::string &newResume)
 {
     resume = newResume;
-    viderTodos();
-    creerTodos();
 }
 
 /**

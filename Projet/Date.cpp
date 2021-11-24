@@ -203,7 +203,19 @@ void Date::addDelay(const int jours, const int mois, const int annees)
   */
 const string Date::toString() const
 {
-    return to_string(getJour()) + "/" + to_string(getMois()) + "/" + to_string(getAnnee());
+    string d = to_string(getJour());
+    if(d.length() == 1)
+        d = "0" + d;
+
+    string m = to_string(getMois());
+    if(m.length() == 1)
+        m = "0" + m;
+
+    string y = to_string(getAnnee());
+    if(y.length() > 4)
+        y = y[0] + y[1] + y[2] + y[3];
+
+    return d + "/" + m + "/" + y;
 }
 
 /**

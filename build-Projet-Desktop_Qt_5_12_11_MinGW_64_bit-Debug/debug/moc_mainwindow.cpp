@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[24];
-    char stringdata0[371];
+    QByteArrayData data[27];
+    char stringdata0[423];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -52,9 +52,12 @@ QT_MOC_LITERAL(17, 250, 12), // "Interaction*"
 QT_MOC_LITERAL(18, 263, 23), // "interactionResumeEdited"
 QT_MOC_LITERAL(19, 287, 19), // "onInteractionEdited"
 QT_MOC_LITERAL(20, 307, 16), // "ajoutInteraction"
-QT_MOC_LITERAL(21, 324, 12), // "slot_aPropos"
-QT_MOC_LITERAL(22, 337, 13), // "selectContact"
-QT_MOC_LITERAL(23, 351, 19) // "updateContactValues"
+QT_MOC_LITERAL(21, 324, 10), // "exportJSON"
+QT_MOC_LITERAL(22, 335, 10), // "importJSON"
+QT_MOC_LITERAL(23, 346, 12), // "slot_aPropos"
+QT_MOC_LITERAL(24, 359, 13), // "selectContact"
+QT_MOC_LITERAL(25, 373, 19), // "updateContactValues"
+QT_MOC_LITERAL(26, 393, 29) // "updateDateDerniereSuppression"
 
     },
     "MainWindow\0contactDeleted\0\0Contact*\0"
@@ -66,8 +69,9 @@ QT_MOC_LITERAL(23, 351, 19) // "updateContactValues"
     "onEndModifContact\0interactionDateEdited\0"
     "Interaction*\0interactionResumeEdited\0"
     "onInteractionEdited\0ajoutInteraction\0"
-    "slot_aPropos\0selectContact\0"
-    "updateContactValues"
+    "exportJSON\0importJSON\0slot_aPropos\0"
+    "selectContact\0updateContactValues\0"
+    "updateDateDerniereSuppression"
 };
 #undef QT_MOC_LITERAL
 
@@ -77,36 +81,41 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      20,   14, // methods
+      25,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-      16,       // signalCount
+      18,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  114,    2, 0x06 /* Public */,
-       4,    1,  117,    2, 0x06 /* Public */,
-       5,    2,  120,    2, 0x06 /* Public */,
-       7,    2,  125,    2, 0x06 /* Public */,
-       8,    2,  130,    2, 0x06 /* Public */,
-       9,    2,  135,    2, 0x06 /* Public */,
-      10,    2,  140,    2, 0x06 /* Public */,
-      11,    2,  145,    2, 0x06 /* Public */,
-      12,    1,  150,    2, 0x06 /* Public */,
-      14,    6,  153,    2, 0x06 /* Public */,
-      15,    0,  166,    2, 0x06 /* Public */,
-      16,    2,  167,    2, 0x06 /* Public */,
-      18,    2,  172,    2, 0x06 /* Public */,
-      19,    0,  177,    2, 0x06 /* Public */,
-      20,    2,  178,    2, 0x06 /* Public */,
-      20,    2,  183,    2, 0x06 /* Public */,
+       1,    1,  139,    2, 0x06 /* Public */,
+       4,    1,  142,    2, 0x06 /* Public */,
+       5,    2,  145,    2, 0x06 /* Public */,
+       7,    2,  150,    2, 0x06 /* Public */,
+       8,    2,  155,    2, 0x06 /* Public */,
+       9,    2,  160,    2, 0x06 /* Public */,
+      10,    2,  165,    2, 0x06 /* Public */,
+      11,    2,  170,    2, 0x06 /* Public */,
+      12,    1,  175,    2, 0x06 /* Public */,
+      14,    6,  178,    2, 0x06 /* Public */,
+      15,    0,  191,    2, 0x06 /* Public */,
+      16,    2,  192,    2, 0x06 /* Public */,
+      18,    2,  197,    2, 0x06 /* Public */,
+      19,    0,  202,    2, 0x06 /* Public */,
+      20,    2,  203,    2, 0x06 /* Public */,
+      20,    2,  208,    2, 0x06 /* Public */,
+      21,    1,  213,    2, 0x06 /* Public */,
+      22,    1,  216,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      21,    0,  188,    2, 0x0a /* Public */,
-      22,    1,  189,    2, 0x0a /* Public */,
-      22,    0,  192,    2, 0x0a /* Public */,
-      23,    0,  193,    2, 0x0a /* Public */,
+      23,    0,  219,    2, 0x0a /* Public */,
+      24,    1,  220,    2, 0x0a /* Public */,
+      24,    0,  223,    2, 0x0a /* Public */,
+      25,    0,  224,    2, 0x0a /* Public */,
+      26,    1,  225,    2, 0x0a /* Public */,
+      21,    0,  228,    2, 0x0a /* Public */,
+      22,    0,  229,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    2,
@@ -125,10 +134,15 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 3, QMetaType::QString,    2,    2,
     QMetaType::Void, 0x80000000 | 3, 0x80000000 | 17,    2,    2,
+    QMetaType::Void, QMetaType::QString,    2,
+    QMetaType::Void, QMetaType::QString,    2,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 3,    2,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 6,    2,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -157,10 +171,15 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 13: _t->onInteractionEdited(); break;
         case 14: _t->ajoutInteraction((*reinterpret_cast< Contact*(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
         case 15: _t->ajoutInteraction((*reinterpret_cast< Contact*(*)>(_a[1])),(*reinterpret_cast< Interaction*(*)>(_a[2]))); break;
-        case 16: _t->slot_aPropos(); break;
-        case 17: _t->selectContact((*reinterpret_cast< Contact*(*)>(_a[1]))); break;
-        case 18: _t->selectContact(); break;
-        case 19: _t->updateContactValues(); break;
+        case 16: _t->exportJSON((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 17: _t->importJSON((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 18: _t->slot_aPropos(); break;
+        case 19: _t->selectContact((*reinterpret_cast< Contact*(*)>(_a[1]))); break;
+        case 20: _t->selectContact(); break;
+        case 21: _t->updateContactValues(); break;
+        case 22: _t->updateDateDerniereSuppression((*reinterpret_cast< std::string(*)>(_a[1]))); break;
+        case 23: _t->exportJSON(); break;
+        case 24: _t->importJSON(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -277,6 +296,20 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
                 return;
             }
         }
+        {
+            using _t = void (MainWindow::*)(QString );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::exportJSON)) {
+                *result = 16;
+                return;
+            }
+        }
+        {
+            using _t = void (MainWindow::*)(QString );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::importJSON)) {
+                *result = 17;
+                return;
+            }
+        }
     }
 }
 
@@ -309,13 +342,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 20)
+        if (_id < 25)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 20;
+        _id -= 25;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 20)
+        if (_id < 25)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 20;
+        _id -= 25;
     }
     return _id;
 }
@@ -428,6 +461,20 @@ void MainWindow::ajoutInteraction(Contact * _t1, Interaction * _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
     QMetaObject::activate(this, &staticMetaObject, 15, _a);
+}
+
+// SIGNAL 16
+void MainWindow::exportJSON(QString _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 16, _a);
+}
+
+// SIGNAL 17
+void MainWindow::importJSON(QString _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 17, _a);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

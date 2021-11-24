@@ -152,7 +152,6 @@ const string &Contact::getNom() const
 void Contact::setNom(const string &newNom)
 {
     checkLettres(newNom);    // le nom doit uniquement contenir des lettres
-    addInteraction(new Interaction("modification du nom (" + nom + " -> " + newNom + ")"));
     nom = newNom;
     dateModification = Date();
 }
@@ -179,7 +178,6 @@ const string &Contact::getPrenom() const
 void Contact::setPrenom(const string &newPrenom)
 {
     checkLettres(newPrenom);    // le prenom doit uniquement contenir des lettres
-    addInteraction(new Interaction("modification du prenom (" + prenom + " -> " + newPrenom + ")"));
     prenom = newPrenom;
     dateModification = Date();
 }
@@ -205,7 +203,6 @@ const string &Contact::getEntreprise() const
   */
 void Contact::setEntreprise(const string &newEntreprise)
 {
-    addInteraction(new Interaction("modification de l'entreprise (" + entreprise + " -> " + newEntreprise + ")"));
     entreprise = newEntreprise;
     dateModification = Date();
 }
@@ -236,7 +233,6 @@ void Contact::setTelephone(const string &newTelephone)
     {
         throw invalid_argument("Telephone errone (doit avoir 10 chiffres)");
     }
-    addInteraction(new Interaction("modification du telephone (" + telephone + " -> " + newTelephone + ")"));
     telephone = newTelephone;
     dateModification = Date();
 }
@@ -264,7 +260,6 @@ void Contact::setMail(const string &newMail)
 {
     checkMail(newMail);     // format mail
 
-    addInteraction(new Interaction("modification du mail (" + mail + " -> " + newMail + ")"));
     mail = newMail;
     dateModification = Date();
 }
@@ -291,7 +286,6 @@ const std::string &Contact::getUriPhoto() const
   */
 void Contact::setUriPhoto(const string &newUriPhoto)
 {
-    addInteraction(new Interaction("modification de la photo (" + uriPhoto + " -> " + newUriPhoto + ")"));
     uriPhoto = newUriPhoto;
     dateModification = Date();
 }

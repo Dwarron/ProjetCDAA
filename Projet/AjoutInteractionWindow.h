@@ -20,7 +20,7 @@ class AjoutInteractionWindow : public QWidget
     Q_OBJECT
 
 public:
-    AjoutInteractionWindow(QWidget* parent = nullptr);
+    AjoutInteractionWindow(std::list<Contact*>, QWidget* parent = nullptr);
     ~AjoutInteractionWindow();
 
 private:

@@ -19,13 +19,13 @@ class RequeteWindow: public QWidget
     Q_OBJECT
 
 public:
-    RequeteWindow(GestionContact*, QWidget* parent = nullptr);
+    RequeteWindow(std::list<Contact*>, QWidget* parent = nullptr);
     ~RequeteWindow();
 
 private:
-    Ui::RequeteWindow *ui;
-    GestionContact *gestCont;
-    Contact *c;
+    Ui::RequeteWindow* ui;
+    std::list<Contact*> contacts;
+    Contact* c;
 
 private slots:
     void NombreContacts();

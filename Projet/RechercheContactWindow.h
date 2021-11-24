@@ -20,7 +20,7 @@ class RechercheContactWindow : public QWidget
     Q_OBJECT
 
 public:
-    RechercheContactWindow(QWidget* parent = nullptr);
+    RechercheContactWindow(std::list<Contact*>, QWidget* parent = nullptr);
     ~RechercheContactWindow();
 
 private:

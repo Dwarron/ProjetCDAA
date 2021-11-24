@@ -17,14 +17,15 @@
 class GestionContact
 {
 public:
-    GestionContact();
+    GestionContact(Date);
     ~GestionContact();
 
     Contact* creeContact(const std::string&, const std::string&, const std::string&, const std::string&, const std::string&, const std::string&);
     Contact* creeContact(const std::string&, const std::string&, const std::string&, const std::string&, const std::string&, const std::string&, const Date&, const Date&);
 
-    Interaction* ajoutInteraction(Contact*, const std::string&);
+    Interaction* ajoutInteraction(Contact*, const Date&, const std::string&);
     void ajoutInteraction(Contact*, Interaction*);
+    void ajoutTodo(Interaction*, const Date&, const std::string&, const bool);
 
     const Date &getDateDerniereSuppression() const;
 

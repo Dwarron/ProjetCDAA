@@ -143,11 +143,15 @@ void CreationFicheWindow::CreationFiche()
             {
                 string mail = ui->mailLineEdit->text().toStdString();
                 bool badMail = false;
-                try {
-                   Contact::checkMail(mail);
-                }
-                catch (const invalid_argument& e) {
-                    badMail = true;
+
+                if(mail.length() > 0)
+                {
+                    try {
+                       Contact::checkMail(mail);
+                    }
+                    catch (const invalid_argument& e) {
+                        badMail = true;
+                    }
                 }
 
                 if(badMail)

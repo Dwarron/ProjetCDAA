@@ -34,19 +34,33 @@ private slots:
     void modifMail(Contact*, std::string);
     void modifPhoto(Contact*, std::string);
     void createContact(std::string, std::string, std::string, std::string, std::string, std::string);
-    void createContact(std::string, std::string, std::string, std::string, std::string, std::string, std::string, std::string);
+    void loadContact(int, std::string, std::string, std::string, std::string, std::string, std::string, std::string, std::string);
     void editInteractionDate(Interaction*, QDate);
     void editInteractionResume(Interaction*, QString);
     void ajoutInteraction(Contact*, QString);
     void ajoutInteraction(Contact*, Interaction*);
+    void loadAndCreateInteraction(int, Contact*, std::string, std::string);
+    void loadInteraction(Interaction*, Contact*);
+    void loadTodo(Interaction*, std::string, std::string, bool);
+    void exportJSON(QString);
+    void importJSON(QString);
+    void clearData();
 
 signals:
     void listContactsUpdated(std::list<Contact*>);
-    void onContactCreated(Contact*);
+    void onContactCreated(Contact*, std::string, std::string);
     void onInteractionEdited();
-    void onEndModifContact();
-    void contactDeleted();
-    void contactCreated(std::string, std::string, std::string, std::string, std::string, std::string, std::string, std::string);
+    void onEndModifContact(Contact*,std::string);
+    void contactDeleted(std::string);
+    void contactLoaded(int, Contact*);
+    void interactionLoaded(int, Interaction*);
+    void onInteractionModifDate(Interaction*, std::string);
+    void onInteractionModifResume(Interaction*, std::string);
+    void onCreateInteraction(Interaction*, Contact*, std::string);
+    void onAddExistingInteraction(Interaction*, Contact*);
+    void onCreateTodos(Interaction*, std::list<Todo*>);
+    void onDeleteTodos(Interaction*);
+    void onLoadJSON();
 };
 
 #endif // GESTIONNAIREQOBJECT_H

@@ -15,9 +15,10 @@ using namespace std;
  *
  *  Constructeur par defaut de la classe GestionContact, initialise a vide la liste des contacts
  */
-GestionContact::GestionContact()
+GestionContact::GestionContact(Date derniereSuppression)
 {
     contacts = list<Contact*>();
+    dateDerniereSuppression = derniereSuppression;
 }
 
 /**
@@ -77,11 +78,12 @@ void GestionContact::supprimeContact(Contact* c)
  *  Cree une nouvelle interaction avec le text correspondant et l'ajoute au contact
  *
  *  \param c : le contact
+ *  \param d : la date de l'interaction
  *  \param text : le text de l'interaction
  */
-Interaction* GestionContact::ajoutInteraction(Contact* c, const string& text)
+Interaction* GestionContact::ajoutInteraction(Contact* c, const Date& d, const string& text)
 {
-    Interaction* i = new Interaction(text);
+    Interaction* i = new Interaction(d, text);
     c->addInteraction(i);
 
     return i;
@@ -100,6 +102,22 @@ void GestionContact::ajoutInteraction(Contact* c, Interaction* i)
 {
     c->addInteraction(i);
 }
+
+/**
+ *  \brief Ajoute un todo a une interaction
+ *
+ *  Ajoute a l'interaction un nouveau todo cree
+ *
+ *  \param i : l'e contact'interaction
+ *  \param date : la date du todo
+ *  \param c : le contenu du todo
+ *  \param e : todo deja effectue ou non
+ */
+void GestionContact::ajoutTodo(Interaction* i, const Date& date, const string& c, const bool e)
+{
+    i->ajoutTodo(new Todo(c, date, e));
+}
+
 
 /**
  *  \brief Recupere toutes les interactions de tous les contacts

@@ -129,6 +129,7 @@
      <string>Options</string>
     </property>
     <addaction name="actionExporter_en_JSON"/>
+    <addaction name="actionImporter_un_fichier_JSON"/>
     <addaction name="actionQuitter"/>
    </widget>
    <widget class="QMenu" name="menuaide">
@@ -154,6 +155,11 @@
   <action name="actionExporter_en_JSON">
    <property name="text">
     <string>Exporter en JSON</string>
+   </property>
+  </action>
+  <action name="actionImporter_un_fichier_JSON">
+   <property name="text">
+    <string>Importer un fichier JSON</string>
    </property>
   </action>
  </widget>

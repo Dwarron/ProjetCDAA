@@ -27,7 +27,7 @@ using namespace std;
  *  \param c : le contact a modifier/afficher
  *  \param parent : fenetre parent
  */
-FicheContactWindow::FicheContactWindow(QWidget *parent)
+FicheContactWindow::FicheContactWindow(list<Contact*> contacts, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::FicheContactWindow)
 {
@@ -36,10 +36,11 @@ FicheContactWindow::FicheContactWindow(QWidget *parent)
     afficheInteractionsWindow = new AfficheInteractionsWindow();
     afficheInteractionsWindow->setWindowTitle("Interactions de :");
 
-    ajoutinter = new AjoutInteractionWindow();
+    ajoutinter = new AjoutInteractionWindow(contacts);
 
     connect(this, SIGNAL(listContactsUpdated(std::list<Contact*>)), ajoutinter, SIGNAL(listContactsUpdated(std::list<Contact*>)));
     connect(this, SIGNAL(onEndModifContact()), ajoutinter, SIGNAL(onEndModifContact()));
+    connect(this, SIGNAL(onEndModifContact()), this, SLOT(reloadDateModif()));
 
     connect(ajoutinter, SIGNAL(ajoutInteraction(Contact*,QString)), this, SIGNAL(ajoutInteraction(Contact*,QString)));
     connect(ajoutinter, SIGNAL(ajoutInteraction(Contact*,Interaction*)), this, SIGNAL(ajoutInteraction(Contact*,Interaction*)));
@@ -164,7 +165,11 @@ void FicheContactWindow::loadContact(Contact* c)
     ui->photoLineEdit->setEnabled(contactExistant);
 
     emit contactSelected(c);
+}
 
+void FicheContactWindow::reloadDateModif()
+{
+    ui->labelDateModif->setText(QString::fromStdString("<i>" + curContact->getDateDerniereModification().toString() + "</i>"));
 }
 
 void FicheContactWindow::resizeEvent(QResizeEvent*)
@@ -266,11 +271,15 @@ void FicheContactWindow::modifFiche()
     if(curContact->getMail() != mail)
     {
         bool badMail = false;
-        try {
-           Contact::checkMail(mail);
-        }
-        catch (const invalid_argument& e) {
-            badMail = true;
+
+        if(mail.length() > 0)
+        {
+            try {
+               Contact::checkMail(mail);
+            }
+            catch (const invalid_argument& e) {
+                badMail = true;
+            }
         }
 
         if(badMail)

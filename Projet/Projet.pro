@@ -17,6 +17,7 @@ SOURCES += \
     Date.cpp \
     FicheContactWindow.cpp \
     Interaction.cpp \
+    JSONSerializer.cpp \
     RechercheContactWindow.cpp \
     RequeteWindow.cpp \
     Todo.cpp \
@@ -34,6 +35,7 @@ HEADERS += \
     Date.h \
     FicheContactWindow.h \
     Interaction.h \
+    JSONSerializer.h \
     RechercheContactWindow.h \
     RequeteWindow.h \
     Todo.h \

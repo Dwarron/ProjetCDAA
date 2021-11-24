@@ -20,13 +20,13 @@ using namespace std;
  *
  *  \param parent : fenetre parent
  */
-AjoutInteractionWindow::AjoutInteractionWindow(QWidget *parent)
+AjoutInteractionWindow::AjoutInteractionWindow(list<Contact*> contacts, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::AjoutInteractionWindow)
 {
     ui->setupUi(this);
 
-    rechContactWindow = new RechercheContactWindow();
+    rechContactWindow = new RechercheContactWindow(contacts);
     rechContactWindow->setWindowTitle("Recherche du contact sur lequel se trouve l'évènement à ajouter");
     rechContactWindow->setWindowModality(Qt::ApplicationModal);
     afficheInteractionsWindow = new AfficheInteractionsWindow();

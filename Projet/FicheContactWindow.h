@@ -21,7 +21,7 @@ class FicheContactWindow : public QWidget
     Q_OBJECT
 
 public:
-    FicheContactWindow(QWidget* parent = nullptr);
+    FicheContactWindow(std::list<Contact*>, QWidget* parent = nullptr);
     ~FicheContactWindow();
 
 protected:
@@ -35,6 +35,7 @@ private:
     AjoutInteractionWindow* ajoutinter;
 
 public slots:
+    void reloadDateModif();
     void loadContact(Contact*);
     void modifFiche();
     void changeFile();

@@ -19,13 +19,13 @@
  *  \param g : gestion des contacts
  *  \param parent : fenetre parent
  */
-RequeteWindow::RequeteWindow(GestionContact *g, QWidget *parent)
+RequeteWindow::RequeteWindow(std::list<Contact*> c, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::RequeteWindow)
 {
     ui->setupUi(this);
 
-    gestCont = g;
+    contacts = c;
 
     connect(ui->contactsButton, SIGNAL(clicked()), this, SLOT(NombreContacts()));
     connect(ui->eventButton, SIGNAL(clicked()), this, SLOT(EvenementEntre2Dates()));
@@ -49,7 +49,7 @@ void RequeteWindow::NombreContacts()
 {
     ui->stackedWidget->setCurrentIndex(1);
 
-    std::string nbrContacts = std::to_string(gestCont->getContacts().size());
+    std::string nbrContacts = std::to_string(contacts.size());
     ui->nombreContacts->setText("Pour le moment il y a : " + QString::fromStdString(nbrContacts) + " fiches de contacts sur l'application.");
 }
 
@@ -79,7 +79,7 @@ void RequeteWindow::LoadInfosEvent2Dates()
 
     ui->listeEvenementPlainTextEdit->clear();
 
-    for(auto it = gestCont->getContacts().begin(); it != gestCont->getContacts().end(); it++)
+    for(auto it = contacts.begin(); it != contacts.end(); it++)
     {
         for(auto it2 = (*it)->getInteractions().begin(); it2 != (*it)->getInteractions().end(); it2++)
         {
@@ -105,7 +105,7 @@ void RequeteWindow::ListeTodoDateContact()
 
     ui->selectContactComboBox->clear();
     //on remplie la combo box des contacts
-    for(auto it = gestCont->getContacts().begin(); it != gestCont->getContacts().end(); it++)
+    for(auto it = contacts.begin(); it != contacts.end(); it++)
     {
         ui->selectContactComboBox->addItem(QString::fromStdString((*it)->toString()));
     }
@@ -125,7 +125,7 @@ void RequeteWindow::LoadInfosSelectContact()
     QString contact = ui->selectContactComboBox->currentText();
 
     //on recupere le contact
-    for(auto it = gestCont->getContacts().begin(); it != gestCont->getContacts().end(); it++)
+    for(auto it = contacts.begin(); it != contacts.end(); it++)
     {
         if( (*it)->toString() == contact.toStdString() )
             c = *it;
@@ -189,7 +189,7 @@ void RequeteWindow::LoadInfosContacts()
 
     std::list<Todo*> todostemp;
 
-    for(auto it = gestCont->getContacts().begin(); it != gestCont->getContacts().end(); it++)
+    for(auto it = contacts.begin(); it != contacts.end(); it++)
     {
         todostemp = (*it)->getTodos();
 

@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_FicheContactWindow_t {
-    QByteArrayData data[26];
-    char stringdata0[392];
+    QByteArrayData data[27];
+    char stringdata0[408];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -52,11 +52,12 @@ QT_MOC_LITERAL(17, 256, 16), // "ajoutInteraction"
 QT_MOC_LITERAL(18, 273, 19), // "listContactsUpdated"
 QT_MOC_LITERAL(19, 293, 19), // "std::list<Contact*>"
 QT_MOC_LITERAL(20, 313, 17), // "onEndModifContact"
-QT_MOC_LITERAL(21, 331, 11), // "loadContact"
-QT_MOC_LITERAL(22, 343, 10), // "modifFiche"
-QT_MOC_LITERAL(23, 354, 10), // "changeFile"
-QT_MOC_LITERAL(24, 365, 16), // "supprimerContact"
-QT_MOC_LITERAL(25, 382, 9) // "showImage"
+QT_MOC_LITERAL(21, 331, 15), // "reloadDateModif"
+QT_MOC_LITERAL(22, 347, 11), // "loadContact"
+QT_MOC_LITERAL(23, 359, 10), // "modifFiche"
+QT_MOC_LITERAL(24, 370, 10), // "changeFile"
+QT_MOC_LITERAL(25, 381, 16), // "supprimerContact"
+QT_MOC_LITERAL(26, 398, 9) // "showImage"
 
     },
     "FicheContactWindow\0imageSelected\0\0"
@@ -68,8 +69,8 @@ QT_MOC_LITERAL(25, 382, 9) // "showImage"
     "interactionResumeEdited\0onInteractionEdited\0"
     "ajoutInteraction\0listContactsUpdated\0"
     "std::list<Contact*>\0onEndModifContact\0"
-    "loadContact\0modifFiche\0changeFile\0"
-    "supprimerContact\0showImage"
+    "reloadDateModif\0loadContact\0modifFiche\0"
+    "changeFile\0supprimerContact\0showImage"
 };
 #undef QT_MOC_LITERAL
 
@@ -79,7 +80,7 @@ static const uint qt_meta_data_FicheContactWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      21,   14, // methods
+      22,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -87,29 +88,30 @@ static const uint qt_meta_data_FicheContactWindow[] = {
       16,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  119,    2, 0x06 /* Public */,
-       3,    1,  122,    2, 0x06 /* Public */,
-       5,    2,  125,    2, 0x06 /* Public */,
-       7,    2,  130,    2, 0x06 /* Public */,
-       8,    2,  135,    2, 0x06 /* Public */,
-       9,    2,  140,    2, 0x06 /* Public */,
-      10,    2,  145,    2, 0x06 /* Public */,
-      11,    2,  150,    2, 0x06 /* Public */,
-      12,    1,  155,    2, 0x06 /* Public */,
-      13,    2,  158,    2, 0x06 /* Public */,
-      15,    2,  163,    2, 0x06 /* Public */,
-      16,    0,  168,    2, 0x06 /* Public */,
-      17,    2,  169,    2, 0x06 /* Public */,
+       1,    1,  124,    2, 0x06 /* Public */,
+       3,    1,  127,    2, 0x06 /* Public */,
+       5,    2,  130,    2, 0x06 /* Public */,
+       7,    2,  135,    2, 0x06 /* Public */,
+       8,    2,  140,    2, 0x06 /* Public */,
+       9,    2,  145,    2, 0x06 /* Public */,
+      10,    2,  150,    2, 0x06 /* Public */,
+      11,    2,  155,    2, 0x06 /* Public */,
+      12,    1,  160,    2, 0x06 /* Public */,
+      13,    2,  163,    2, 0x06 /* Public */,
+      15,    2,  168,    2, 0x06 /* Public */,
+      16,    0,  173,    2, 0x06 /* Public */,
       17,    2,  174,    2, 0x06 /* Public */,
-      18,    1,  179,    2, 0x06 /* Public */,
-      20,    0,  182,    2, 0x06 /* Public */,
+      17,    2,  179,    2, 0x06 /* Public */,
+      18,    1,  184,    2, 0x06 /* Public */,
+      20,    0,  187,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      21,    1,  183,    2, 0x0a /* Public */,
-      22,    0,  186,    2, 0x0a /* Public */,
-      23,    0,  187,    2, 0x0a /* Public */,
-      24,    0,  188,    2, 0x0a /* Public */,
-      25,    1,  189,    2, 0x0a /* Public */,
+      21,    0,  188,    2, 0x0a /* Public */,
+      22,    1,  189,    2, 0x0a /* Public */,
+      23,    0,  192,    2, 0x0a /* Public */,
+      24,    0,  193,    2, 0x0a /* Public */,
+      25,    0,  194,    2, 0x0a /* Public */,
+      26,    1,  195,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    2,
@@ -130,6 +132,7 @@ static const uint qt_meta_data_FicheContactWindow[] = {
     QMetaType::Void,
 
  // slots: parameters
+    QMetaType::Void,
     QMetaType::Void, 0x80000000 | 4,    2,
     QMetaType::Void,
     QMetaType::Void,
@@ -161,11 +164,12 @@ void FicheContactWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 13: _t->ajoutInteraction((*reinterpret_cast< Contact*(*)>(_a[1])),(*reinterpret_cast< Interaction*(*)>(_a[2]))); break;
         case 14: _t->listContactsUpdated((*reinterpret_cast< std::list<Contact*>(*)>(_a[1]))); break;
         case 15: _t->onEndModifContact(); break;
-        case 16: _t->loadContact((*reinterpret_cast< Contact*(*)>(_a[1]))); break;
-        case 17: _t->modifFiche(); break;
-        case 18: _t->changeFile(); break;
-        case 19: _t->supprimerContact(); break;
-        case 20: _t->showImage((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 16: _t->reloadDateModif(); break;
+        case 17: _t->loadContact((*reinterpret_cast< Contact*(*)>(_a[1]))); break;
+        case 18: _t->modifFiche(); break;
+        case 19: _t->changeFile(); break;
+        case 20: _t->supprimerContact(); break;
+        case 21: _t->showImage((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -314,13 +318,13 @@ int FicheContactWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 21)
+        if (_id < 22)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 21;
+        _id -= 22;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 21)
+        if (_id < 22)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 21;
+        _id -= 22;
     }
     return _id;
 }

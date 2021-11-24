@@ -19,13 +19,13 @@ using namespace std;
  *  \param txt : le contenu du todo
  *  \param date : la date d'echeance
  *  \param i : pointeur vers l'interaction initiale
+ *  \param e : booleen effectue ou non
  */
-Todo::Todo(const string& txt, const Date& date, Interaction* i)
+Todo::Todo(const string& txt, const Date& date, const bool e)
 {
-    contenue = txt;
+    contenu = txt;
     echeance = date;
-    interaction = i;
-    effectue = false;
+    effectue = e;
 }
 
 /**
@@ -45,11 +45,11 @@ Date &Todo::getEcheance()
   *
   *  Methode qui permet d'acceder au contenu du todo
   *
-  *  \return contenue
+  *  \return contenu
   */
-const string& Todo::getContenue() const
+const string& Todo::getContenu() const
 {
-    return contenue;
+    return contenu;
 }
 
 /**
@@ -61,7 +61,7 @@ const string& Todo::getContenue() const
   */
 const string Todo::toString() const
 {
-    return "TODO pour le " + echeance.toString() + " : " + contenue;
+    return "TODO pour le " + echeance.toString() + " : " + contenu;
 }
 
 /**
@@ -88,21 +88,20 @@ ostream& operator<< (ostream &o, const Todo& t)
   *  \param text : le text du todo
   *  \return une date extraite du text, ou la date du jour le cas echeant
   */
-const Date Todo::getDateFromTodoLine(string* text)
+const Date Todo::getDateFromTodoLine(const string& text)
 {
     Date d = Date();
     const string delimiter = "@date ";
     const int delimiterLength = delimiter.length();
 
-    size_t position = text->find(delimiter);
+    size_t position = text.find(delimiter);
 
     if(position != string::npos)    // recherche de @ date, sinon date du jour
     {
         position += delimiterLength;
         size_t last = position;
-        string dateText = text->substr(position);
+        string dateText = text.substr(position);
 
-        *text = text->substr(0, position - delimiterLength) + text->substr(position);
         size_t positionFinDate = 0;
         for(int i = 0; i < 2; i++)  // position du 'J/M/' pour le debut de la date
         {
@@ -121,7 +120,7 @@ const Date Todo::getDateFromTodoLine(string* text)
         dateText = dateText.substr(0, positionFinDate);    // on coupe la fin si @ date ne termine pas la ligne
         d = Date(dateText);
 
-        position = text->find(delimiter, last);
+        position = text.find(delimiter, last);
         if(position != string::npos)
         {
             throw invalid_argument("Plusieurs @date dans une ligne de todo");
@@ -153,18 +152,6 @@ bool Todo::getEffectue() const
 void Todo::setEffectue(bool e)
 {
     effectue = e;
-}
-
-/**
-  *  \brief Accesseur d'interaction
-  *
-  *  Methode qui permet d'acceder a l'interaction dans laquelle le todo a ete trouve
-  *
-  *  \return effectue
-  */
-Interaction *Todo::getInteraction() const
-{
-    return interaction;
 }
 
 /**

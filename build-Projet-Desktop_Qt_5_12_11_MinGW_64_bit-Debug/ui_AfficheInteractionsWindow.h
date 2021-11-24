@@ -97,6 +97,7 @@ public:
 
         editTextButton = new QPushButton(AfficheInteractionsWindow);
         editTextButton->setObjectName(QString::fromUtf8("editTextButton"));
+        editTextButton->setEnabled(false);
 
         verticalLayout_3->addWidget(editTextButton);
 

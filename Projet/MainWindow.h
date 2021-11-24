@@ -23,7 +23,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget* parent = nullptr);
+    MainWindow(std::string, std::list<Contact*>, QWidget* parent = nullptr);
     ~MainWindow();
 
 protected:
@@ -42,6 +42,9 @@ public slots:
     void selectContact(Contact*);
     void selectContact();
     void updateContactValues();
+    void updateDateDerniereSuppression(std::string);
+    void exportJSON();
+    void importJSON();
 
 signals:
     void contactDeleted(Contact*);
@@ -60,5 +63,7 @@ signals:
     void onInteractionEdited();
     void ajoutInteraction(Contact*, QString);
     void ajoutInteraction(Contact*, Interaction*);
+    void exportJSON(QString);
+    void importJSON(QString);
 };
 #endif // MAINWINDOW_H

@@ -19,7 +19,7 @@ class Contact;   //probleme d'include, vu avec Monsieur Raffin et pas de meilleu
 class Interaction
 {
 public:
-    Interaction(const std::string&);
+    Interaction(const Date&, const std::string&);
     ~Interaction();
 
     Date getDate() const;
@@ -32,14 +32,15 @@ public:
 
     friend bool operator<(Interaction&, Interaction&);
 
+    void ajoutTodo(Todo*);
     const std::list<Todo*> &getTodos() const;
+
+    void creerTodos();
+    void viderTodos();
 
 private:
     Date date;
     std::string resume;
 
     std::list<Todo*> todos;
-
-    void creerTodos();
-    void viderTodos();
 };

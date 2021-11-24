@@ -22,7 +22,7 @@ using namespace std;
  *  \param g : gestion des contacts
  *  \param parent : fenetre parent
  */
-RechercheContactWindow::RechercheContactWindow(QWidget *parent)
+RechercheContactWindow::RechercheContactWindow(list<Contact*> c, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::RechercheContactWindow)
 {
@@ -35,7 +35,9 @@ RechercheContactWindow::RechercheContactWindow(QWidget *parent)
    ui->triListeComboBox->addItem("Ordre alphabétique");
    ui->triListeComboBox->addItem("Date de création");
 
+   contacts = c;
    contactsAffiches = list<Contact*>();
+
    listeContactsModel = new QStringListModel();
    ui->listeContacts->setModel(listeContactsModel);
 
@@ -47,6 +49,8 @@ RechercheContactWindow::RechercheContactWindow(QWidget *parent)
    connect(ui->rechercheContactComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(rechercheContact()));
    connect(ui->triListeComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(rechercheContact()));
    connect(ui->listeContacts->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)), this, SLOT(selectContact(QModelIndex)));
+
+   rechercheContact();
 }
 
 void RechercheContactWindow::updateListContacts(std::list<Contact*> c)

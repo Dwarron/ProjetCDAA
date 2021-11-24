@@ -17,29 +17,24 @@ class Interaction;   //probleme d'include, vu avec Monsieur Raffin et pas de mei
 class Todo
 {
 public:
-    Todo(const std::string&, const Date&, Interaction*);
+    Todo(const std::string&, const Date&, const bool);
 
     Date &getEcheance();
 
-    const std::string &getContenue() const;
+    const std::string &getContenu() const;
 
     const std::string toString() const;
     friend std::ostream& operator << (std::ostream&, const Todo&);
 
-    static const Date getDateFromTodoLine(std::string*);
+    static const Date getDateFromTodoLine(const std::string&);
 
     bool getEffectue() const;
-    void setEffectue(bool newEffectue);
-
-    Interaction *getInteraction() const;
+    void setEffectue(bool);
 
     friend bool operator<(Todo&, Todo&);
 
 private:
     Date echeance;
-    std::string contenue;
+    std::string contenu;
     bool effectue;
-    size_t positionDate;
-
-    Interaction* interaction;
 };
