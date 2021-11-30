@@ -192,6 +192,21 @@ bool operator<(Interaction& a, Interaction& b)
 }
 
 /**
+  *  \brief Comparaison a > b
+  *
+  *  Surdefinition de l'operateur ">", renvoie vraie si semantiquement a > b
+  *  Les interactions sont comparees selon leurs dates
+  *  \param a : premiere operande
+  *  \param b : deuxieme operande
+  *
+  *  \return a < b
+  */
+bool operator>(Interaction& a, Interaction& b)
+{
+    return (a.getDate() > b.getDate());
+}
+
+/**
  *  \brief Destructeur d'Interaction
  *
  *  Detruis en memoire tout ce qui etait utilise par une instance d'interactions qui va etre supprimee (les instances de todos pointees par la liste)

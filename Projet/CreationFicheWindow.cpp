@@ -19,10 +19,9 @@ using namespace std;
 /**
  *  \brief Constructeur standard
  *
- *  Constructeur standard de la classe CreationFicheWindow.
- *  Effectue les connexions entre les differents Widget et evenement a declencher.
+ *  Constructeur standard de la classe CreationFicheWindow
+ *  Effectue les connexions signaux/slots
  *
- *  \param g : gestion des contacts
  *  \param parent : fenetre parent
  */
 CreationFicheWindow::CreationFicheWindow(QWidget *parent)
@@ -42,8 +41,8 @@ CreationFicheWindow::CreationFicheWindow(QWidget *parent)
 /**
   *  \brief Selection de fichier
   *
-  *  Slot qui permet de selectionner la photo d'un contacts.
-  *  La photo ne peut seulement etre en format jpg ou png.
+  *  Slot qui permet de selectionner la photo du contact (le chemin)
+  *  La photo ne peut seulement etre en format jpg ou png
   */
 void CreationFicheWindow::SelectFile()
 {
@@ -53,6 +52,12 @@ void CreationFicheWindow::SelectFile()
     emit imageSelected(file_name);
 }
 
+/**
+  *  \brief Affiche l'image
+  *
+  *  Slot qui permet d'afficher l'image situee dans path
+  *  \param path : le chemin absolu jusqu'a l'image
+  */
 void CreationFicheWindow::showImage(QString path)
 {
     if(path != "")
@@ -81,6 +86,7 @@ void CreationFicheWindow::showImage(QString path)
   *  \brief Creation de la fiche d'un contact
   *
   *  Slot qui permet de creer la fiche d'un contact avec tous les informations recupere dans la fenetre.
+  *  Appele lors du click sur le bouton de creation
   */
 void CreationFicheWindow::CreationFiche()
 {
@@ -178,9 +184,15 @@ void CreationFicheWindow::CreationFiche()
     }
 }
 
+/**
+  *  \brief Evenement de modification de la taille de la fenetre
+  *
+  *  Surcharge de l'evenement de modification de la taille de la fenetre, reaffiche l'image (photo du contact)
+  *  \param e : l'evenement
+  */
 void CreationFicheWindow::resizeEvent(QResizeEvent* e)
 {
-    QWidget::resizeEvent(e);
+    QWidget::resizeEvent(e);        //evenement de la classe parente (QWidget)
     emit imageSelected(file_name);
 }
 

@@ -20,11 +20,9 @@ using namespace std;
  *  \brief Constructeur standard
  *
  *  Constructeur standard de la classe ModificationContactWindow.
- *  Effectue les connexions entre les differents Widget et evenement a declencher.
- *  Permet de remplir l'ensemble de la comboBox des contacts.
+ *  Effectue les connexions signaux/slots
  *
- *  \param g : gestion des contacts
- *  \param c : le contact a modifier/afficher
+ *  \param contacts : la liste des contacts lors de la creation de la fenetre
  *  \param parent : fenetre parent
  */
 FicheContactWindow::FicheContactWindow(list<Contact*> contacts, QWidget *parent)
@@ -65,7 +63,7 @@ FicheContactWindow::FicheContactWindow(list<Contact*> contacts, QWidget *parent)
 /**
   *  \brief Selection de fichier
   *
-  *  Slot qui permet de selectionner la photo d'un contacts.
+  *  Slot qui permet de selectionner la photo d'un contact.
   *  La photo ne peut seulement etre en format jpg ou png.
   */
 void FicheContactWindow::changeFile()
@@ -92,6 +90,12 @@ void FicheContactWindow::supprimerContact()
     }
 }
 
+/**
+  *  \brief Affiche l'image
+  *
+  *  Slot qui permet d'afficher l'image situee dans path
+  *  \param path : le chemin absolu jusqu'a l'image
+  */
 void FicheContactWindow::showImage(QString path)
 {
     if(path != "")
@@ -119,7 +123,7 @@ void FicheContactWindow::showImage(QString path)
 /**
   *  \brief Charge le contact selectionne
   *
-  *  Recupere le contact selectionne dans la comboBox.
+  *  Recupere le contact selectionne
   *
   *  \param c : le contact selectionne
   */
@@ -167,13 +171,24 @@ void FicheContactWindow::loadContact(Contact* c)
     emit contactSelected(c);
 }
 
+/**
+  *  \brief ReAffiche la date de derniere modification
+  *
+  */
 void FicheContactWindow::reloadDateModif()
 {
     ui->labelDateModif->setText(QString::fromStdString("<i>" + curContact->getDateDerniereModification().toString() + "</i>"));
 }
 
-void FicheContactWindow::resizeEvent(QResizeEvent*)
+/**
+  *  \brief Evenement de modification de la taille de la fenetre
+  *
+  *  Surcharge de l'evenement de modification de la taille de la fenetre, reaffiche l'image (photo du contact)
+  *  \param e : l'evenement
+  */
+void FicheContactWindow::resizeEvent(QResizeEvent* e)
 {
+    QWidget::resizeEvent(e);        //evenement de la classe parente (QWidget)
     emit imageSelected(file_name);
 }
 

@@ -108,14 +108,17 @@ void GestionContact::ajoutInteraction(Contact* c, Interaction* i)
  *
  *  Ajoute a l'interaction un nouveau todo cree
  *
- *  \param i : l'e contact'interaction
+ *  \param i : l'interaction
  *  \param date : la date du todo
  *  \param c : le contenu du todo
  *  \param e : todo deja effectue ou non
+ *  \return le todo cree
  */
-void GestionContact::ajoutTodo(Interaction* i, const Date& date, const string& c, const bool e)
+Todo* GestionContact::ajoutTodo(Interaction* i, const Date& date, const string& c, const bool e)
 {
-    i->ajoutTodo(new Todo(c, date, e));
+    Todo* t = new Todo(c, date, e);
+    i->ajoutTodo(t);
+    return t;
 }
 
 
@@ -163,6 +166,16 @@ const Date &GestionContact::getDateDerniereSuppression() const
     return dateDerniereSuppression;
 }
 
+/**
+  *  \brief Mutateur de dateDerniereSuppression
+  *
+  *  Methode qui permet de modifier la date de la derniere suppression
+  *
+  */
+void GestionContact::setDateDerniereSuppression(const Date& d)
+{
+    dateDerniereSuppression = d;
+}
 
 /**
   *  \brief Destructeur de GestionContact

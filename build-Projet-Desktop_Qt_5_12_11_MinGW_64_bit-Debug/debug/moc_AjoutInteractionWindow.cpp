@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_AjoutInteractionWindow_t {
-    QByteArrayData data[11];
-    char stringdata0[168];
+    QByteArrayData data[10];
+    char stringdata0[153];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -40,15 +40,13 @@ QT_MOC_LITERAL(5, 63, 19), // "listContactsUpdated"
 QT_MOC_LITERAL(6, 83, 19), // "std::list<Contact*>"
 QT_MOC_LITERAL(7, 103, 17), // "onEndModifContact"
 QT_MOC_LITERAL(8, 121, 13), // "selectContact"
-QT_MOC_LITERAL(9, 135, 14), // "ajoutEvenement"
-QT_MOC_LITERAL(10, 150, 17) // "selectInteraction"
+QT_MOC_LITERAL(9, 135, 17) // "selectInteraction"
 
     },
     "AjoutInteractionWindow\0ajoutInteraction\0"
     "\0Contact*\0Interaction*\0listContactsUpdated\0"
     "std::list<Contact*>\0onEndModifContact\0"
-    "selectContact\0ajoutEvenement\0"
-    "selectInteraction"
+    "selectContact\0selectInteraction"
 };
 #undef QT_MOC_LITERAL
 
@@ -73,8 +71,8 @@ static const uint qt_meta_data_AjoutInteractionWindow[] = {
 
  // slots: name, argc, parameters, tag, flags
        8,    1,   63,    2, 0x0a /* Public */,
-       9,    0,   66,    2, 0x0a /* Public */,
-      10,    1,   67,    2, 0x0a /* Public */,
+       1,    0,   66,    2, 0x0a /* Public */,
+       9,    1,   67,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3, QMetaType::QString,    2,    2,
@@ -101,7 +99,7 @@ void AjoutInteractionWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _
         case 2: _t->listContactsUpdated((*reinterpret_cast< std::list<Contact*>(*)>(_a[1]))); break;
         case 3: _t->onEndModifContact(); break;
         case 4: _t->selectContact((*reinterpret_cast< Contact*(*)>(_a[1]))); break;
-        case 5: _t->ajoutEvenement(); break;
+        case 5: _t->ajoutInteraction(); break;
         case 6: _t->selectInteraction((*reinterpret_cast< Interaction*(*)>(_a[1]))); break;
         default: ;
         }

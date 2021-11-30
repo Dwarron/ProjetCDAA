@@ -31,6 +31,8 @@ public:
     const std::string toString() const;
 
     friend bool operator<(const Date&, const Date&);
+    friend bool operator>(const Date&, const Date&);
+    friend bool operator<=(const Date&, const Date&);
     friend std::string operator+(const std::string&, const Date&);
     friend int operator-(const Date&, const Date&);
     friend bool operator==(const Date&, const Date&);

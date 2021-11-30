@@ -25,13 +25,13 @@ public:
 
 private:
     Ui::AjoutInteractionWindow* ui;
-    Contact* curContact;
-    RechercheContactWindow* rechContactWindow;
-    AfficheInteractionsWindow* afficheInteractionsWindow;
+    Contact* curContact;    //contact courant
+    RechercheContactWindow* rechContactWindow;      //fenetre de recherche utilisee pour selectionner le contact sur laquelle se trouve l'interaction existante que l'on veut ajouter au contact courant
+    AfficheInteractionsWindow* afficheInteractionsWindow;   //fenetre d'affichage utilisee pour selectionner l'interaction existante que l'on veut ajouter au contact courant
 
 public slots:
     void selectContact(Contact*);
-    void ajoutEvenement();
+    void ajoutInteraction();
     void selectInteraction(Interaction*);
 
 signals:

@@ -184,7 +184,7 @@ public:
         ButtonCreerFiche->setText(QApplication::translate("MainWindow", "Cr\303\251er la fiche d'un contact", nullptr));
         ButtonFicheContact->setText(QApplication::translate("MainWindow", "Afficher la fiche du contact", nullptr));
         ButtonRechercherContact->setText(QApplication::translate("MainWindow", "Chercher un contact", nullptr));
-        ButtonRequete->setText(QApplication::translate("MainWindow", "Requ\303\252te sur les contacts", nullptr));
+        ButtonRequete->setText(QApplication::translate("MainWindow", "Requ\303\252tes sur les contacts", nullptr));
         label_4->setText(QApplication::translate("MainWindow", "<i>Date de la derni\303\250re suppression de fiche : </i>", nullptr));
         labelDateSuppression->setText(QApplication::translate("MainWindow", "<i>01/01/2021</i>", nullptr));
         menuOptions->setTitle(QApplication::translate("MainWindow", "Options", nullptr));

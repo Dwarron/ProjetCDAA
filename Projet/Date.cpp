@@ -261,6 +261,47 @@ bool operator<(const Date& a, const Date& b)
 }
 
 /**
+  *  \brief Comparaison a > b
+  *
+  *  Surdefinition de l'operateur ">", renvoie vraie si semantiquement a > b
+  *  \param a : premiere operande
+  *  \param b : deuxieme operande
+  *
+  *  \return a < b
+  */
+bool operator>(const Date& a, const Date& b)
+{
+    if(a.getAnnee() > b.getAnnee())
+        return true;
+    if(b.getAnnee() > a.getAnnee())
+        return false;
+    if(a.getMois() > b.getMois())
+        return true;
+    if(b.getMois() > a.getMois())
+        return false;
+    if(a.getJour() > b.getJour())
+        return true;
+    if(b.getJour() > a.getJour())
+        return false;
+
+    return false;
+}
+
+/**
+  *  \brief Comparaison a <= b
+  *
+  *  Surdefinition de l'operateur "<=", renvoie vraie si semantiquement a <= b
+  *  \param a : premiere operande
+  *  \param b : deuxieme operande
+  *
+  *  \return a < b
+  */
+bool operator<=(const Date& a, const Date& b)
+{
+    return a < b || a == b;
+}
+
+/**
   *  \brief Surcharge de l'operateur +
   *
   *  Surdefinition de l'operateur + de concatenation avec un string

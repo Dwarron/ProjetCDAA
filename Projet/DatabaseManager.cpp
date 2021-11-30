@@ -4,14 +4,29 @@
 #include <QSqlError>
 #include <QtDebug>
 #include "DatabaseManager.h"
-#include <iostream>
+
 using namespace std;
 
+/**
+ *  \brief Constructeur standard
+ *
+ *  Constructeur standard de la classe DatabaseManager
+ *
+ *  \param parent : classe parent
+ *  \see init()
+ */
 DatabaseManager::DatabaseManager(QObject *parent) : QObject(parent)
 {
     init();
 }
 
+/**
+ *  \brief Initiation de la connexion a la base de donnees
+ *
+ *  Initie la connexion à la base de donnee et la cree si necessaire
+ *
+ *  \see createBDDModel()
+ */
 void DatabaseManager::init()
 {
     contactsIds = map<Contact*, int>();
@@ -27,6 +42,12 @@ void DatabaseManager::init()
     createBDDModel();
 }
 
+/**
+ *  \brief Creation du model de la base de donnees
+ *
+ *  Cree le modele de la base de donnees, s'il a ete supprimee ou c'est la premiere fois qu'on utilise le logiciel
+ *
+ */
 void DatabaseManager::createBDDModel()
 {
     QFile model(QDir::currentPath()+ QDir::separator() + "model.sql");
@@ -61,7 +82,7 @@ void DatabaseManager::createBDDModel()
         if(count == "0")
         {
             QSqlQuery queryDate;
-            if(!queryDate.exec("INSERT INTO Infos VALUES('01/01/2021');"))
+            if(!queryDate.exec("INSERT INTO Infos VALUES('01/01/2021');"))  //insertion de la valeur par defaut de la date de derniere suppression
             {
                 throw runtime_error("Unable to insert in created bdd model : " + db.lastError().text().toStdString());
             }
@@ -70,7 +91,14 @@ void DatabaseManager::createBDDModel()
 }
 
 
-void DatabaseManager::loadAllContacts()
+/**
+ *  \brief Chargement des donnees
+ *
+ *  Lis tous les contacts stockes dans la base de donnees et demande leur creation dans le logiciel via des signaux
+ *  Lis egalement les interactions
+ *  Les todos seront lu pour chaque interaction lorsqu'elle aura ete creee
+ */
+void DatabaseManager::loadDatas()
 {
     QSqlQuery queryContact;
 
@@ -140,6 +168,15 @@ void DatabaseManager::loadAllContacts()
     }
 }
 
+/**
+ *  \brief Creation d'un nouveau contact
+ *
+ *  Slot pour l'insertion dans la base de donnees d'un nouveau contact
+ *
+ *  \param c : pointeur vers le nouveau contact
+ *  \param dc : date de creation
+ *  \param dm :  date de derniere modification
+ */
 void DatabaseManager::createContact(Contact* c, string dc, string dm)
 {
     QSqlQuery query;
@@ -174,11 +211,25 @@ void DatabaseManager::createContact(Contact* c, string dc, string dm)
     }
 }
 
+/**
+ *  \brief Slot appele lorsqu'un contact a effectivement ete charger comme une instance dans le logiciel
+ *
+ *  \param id : identifiant dans la base de donnees
+ *  \param c : pointeur vers le contact
+ */
 void DatabaseManager::contactLoaded(int id, Contact* c)
 {
     contactsIds[c] = id;
 }
 
+/**
+ *  \brief Slot appele lorsqu'une interaction a effectivement ete charger comme une instance dans le logiciel
+ *
+ *  Provoque la lectue des todos correspondant a cette interaction
+ *
+ *  \param id : identifiant dans la base de donnees
+ *  \param i : pointeur vers l'interaction
+ */
 void DatabaseManager::interactionLoaded(int id, Interaction* i)
 {
     idsInteraction[id] = i;
@@ -196,15 +247,24 @@ void DatabaseManager::interactionLoaded(int id, Interaction* i)
     {
         while(query.next())
         {
+            const int id = query.value(0).toInt();
             const string& date = query.value(2).toString().toStdString();
             const string& contenu = query.value(3).toString().toStdString();
             const bool effectue = query.value(4).toInt();
 
-            emit loadTodo(i, date, contenu, effectue);
+            emit loadTodo(id, i, date, contenu, effectue);
         }
     }
 }
 
+/**
+ *  \brief Creation des todos pour une interaction
+ *
+ *  Slot pour l'insertion dans la base de donnees des todos d'une nouvelle interaction
+ *
+ *  \param i : pointeur vers l'interaction
+ *  \param todos : les todos a inserer
+ */
 void DatabaseManager::createTodos(Interaction* i, std::list<Todo*> todos)
 {
     int interactionId = interactionsIds[i];
@@ -222,9 +282,41 @@ void DatabaseManager::createTodos(Interaction* i, std::list<Todo*> todos)
         {
             throw runtime_error("Error inserting todos in bdd : " + db.lastError().text().toStdString());
         }
+        else
+        {
+            QSqlQuery queryId;
+            if(!queryId.exec("SELECT MAX(Id) FROM Todo;"))
+            {
+                throw runtime_error("Error reading inserted todo id in bdd : " + db.lastError().text().toStdString());
+            }
+            else
+            {
+                queryId.next();
+                int createdId = queryId.value(0).toInt();
+                todosIds[*it] = createdId;
+            }
+        }
     }
 }
 
+/**
+ *  \brief Slot appele lorsqu'un todo a effectivement ete charger comme une instance dans le logiciel
+ *
+ *  \param id : identifiant dans la base de donnees
+ *  \param t : pointeur vers le todo
+ */
+void DatabaseManager::todoLoaded(int id, Todo* t)
+{
+    todosIds[t] = id;
+}
+
+/**
+ *  \brief Suppression des todos pour une interaction
+ *
+ *  Slot pour la suppression dans la base de donnees des todos d'une interaction
+ *
+ *  \param i : pointeur vers l'interaction
+ */
 void DatabaseManager::deleteTodos(Interaction* i)
 {
     QSqlQuery query;
@@ -237,6 +329,13 @@ void DatabaseManager::deleteTodos(Interaction* i)
     }
 }
 
+/**
+ *  \brief Lecture de la date de derniere suppression
+ *
+ *  Slot pour consulter la date de derniere suppression inscrite dans la base de donnees
+ *
+ *  \return la date de derniere suppression lue
+ */
 string DatabaseManager::getDateDerniereSuppression()
 {
     QSqlQuery query;
@@ -250,6 +349,13 @@ string DatabaseManager::getDateDerniereSuppression()
     return query.value(0).toString().toStdString();
 }
 
+/**
+ *  \brief Modification de la date de derniere suppression
+ *
+ *  Slot pour modifier la date de derniere suppression inscrite dans la base de donnees
+ *
+ *  \param d : la nouvelle date
+ */
 void DatabaseManager::updateDateDerniereSuppression(string d)
 {
     QSqlQuery query;
@@ -262,6 +368,14 @@ void DatabaseManager::updateDateDerniereSuppression(string d)
     }
 }
 
+/**
+ *  \brief Modification du nom d'un contact
+ *
+ *  Slot pour modifier le nom d'un contact inscris dans la base de donnees
+ *
+ *  \param c : le contact
+ *  \param nom : le nouveau nom
+ */
 void DatabaseManager::updateContactNom(Contact* c, string nom)
 {
     QSqlQuery query;
@@ -275,6 +389,14 @@ void DatabaseManager::updateContactNom(Contact* c, string nom)
     }
 }
 
+/**
+ *  \brief Modification du prenom d'un contact
+ *
+ *  Slot pour modifier le prenom d'un contact inscris dans la base de donnees
+ *
+ *  \param c : le contact
+ *  \param nom : le nouveau prenom
+ */
 void DatabaseManager::updateContactPrenom(Contact* c, string prenom)
 {
     QSqlQuery query;
@@ -288,6 +410,14 @@ void DatabaseManager::updateContactPrenom(Contact* c, string prenom)
     }
 }
 
+/**
+ *  \brief Modification de l'entreprise d'un contact
+ *
+ *  Slot pour modifier l'entreprise d'un contact inscrite dans la base de donnees
+ *
+ *  \param c : le contact
+ *  \param entreprise : la nouvelle entreprise
+ */
 void DatabaseManager::updateContactEntreprise(Contact* c, string entreprise)
 {
     QSqlQuery query;
@@ -301,6 +431,14 @@ void DatabaseManager::updateContactEntreprise(Contact* c, string entreprise)
     }
 }
 
+/**
+ *  \brief Modification du telephone d'un contact
+ *
+ *  Slot pour modifier le telephone d'un contact inscris dans la base de donnees
+ *
+ *  \param c : le contact
+ *  \param tel : le nouveau telephone
+ */
 void DatabaseManager::updateContactTelephone(Contact* c, string tel)
 {
     QSqlQuery query;
@@ -314,6 +452,14 @@ void DatabaseManager::updateContactTelephone(Contact* c, string tel)
     }
 }
 
+/**
+ *  \brief Modification du mail d'un contact
+ *
+ *  Slot pour modifier le mail d'un contact inscris dans la base de donnees
+ *
+ *  \param c : le contact
+ *  \param mail : le nouveau mail
+ */
 void DatabaseManager::updateContactMail(Contact* c, string mail)
 {
     QSqlQuery query;
@@ -327,6 +473,14 @@ void DatabaseManager::updateContactMail(Contact* c, string mail)
     }
 }
 
+/**
+ *  \brief Modification de la photo d'un contact
+ *
+ *  Slot pour modifier la photo d'un contact inscrite dans la base de donnees
+ *
+ *  \param c : le contact
+ *  \param photo : le nouveau chemin vers la photo
+ */
 void DatabaseManager::updateContactPhoto(Contact* c, string photo)
 {
     QSqlQuery query;
@@ -340,6 +494,14 @@ void DatabaseManager::updateContactPhoto(Contact* c, string photo)
     }
 }
 
+/**
+ *  \brief Modification de la date de derniere modification d'un contact
+ *
+ *  Slot pour modifier la date de derniere modification d'un contact inscrite dans la base de donnees
+ *
+ *  \param c : le contact
+ *  \param date : la nouvelle date
+ */
 void DatabaseManager::updateContactDateModif(Contact* c, string date)
 {
     QSqlQuery query;
@@ -353,6 +515,13 @@ void DatabaseManager::updateContactDateModif(Contact* c, string date)
     }
 }
 
+/**
+ *  \brief Suppression de la fiche d'un contact
+ *
+ *  Slot pour supprimer la fiche d'un contact dans la base de donnees
+ *
+ *  \param c : le contact
+ */
 void DatabaseManager::deleteContact(Contact* c)
 {
     QSqlQuery query;
@@ -365,6 +534,14 @@ void DatabaseManager::deleteContact(Contact* c)
     }
 }
 
+/**
+ *  \brief Modification de la date d'une interaction
+ *
+ *  Slot pour modifier la date d'une interaction inscrite dans la base de donnees
+ *
+ *  \param c : le contact
+ *  \param d : la nouvelle date
+ */
 void DatabaseManager::updateInteractionDate(Interaction* i, string d)
 {
     QSqlQuery query;
@@ -378,6 +555,14 @@ void DatabaseManager::updateInteractionDate(Interaction* i, string d)
     }
 }
 
+/**
+ *  \brief Modification du resume d'une interaction
+ *
+ *  Slot pour modifier le resume d'une interaction inscrite dans la base de donnees
+ *
+ *  \param c : le contact
+ *  \param r : le nouveau resume
+ */
 void DatabaseManager::updateInteractionResume(Interaction* i, string r)
 {
     QSqlQuery query;
@@ -391,6 +576,15 @@ void DatabaseManager::updateInteractionResume(Interaction* i, string r)
     }
 }
 
+/**
+ *  \brief Creation d'une nouvelle interaction
+ *
+ *  Slot pour la creation dans la base de donnees d'une nouvelle interaction
+ *
+ *  \param i : pointeur vers la nouvelle interaction
+ *  \param c : pointeur vers le contact avec lequel a ete fais l'interaction
+ *  \param date : date de l'interaction
+ */
 void DatabaseManager::createInteraction(Interaction* i, Contact* c, string date)
 {
     QSqlQuery query;
@@ -422,6 +616,14 @@ void DatabaseManager::createInteraction(Interaction* i, Contact* c, string date)
     }
 }
 
+/**
+ *  \brief Ajout d'une interaction existante a un nouveau contact
+ *
+ *  Slot pour l'ajout d'une interaction existante a un nouveau contact
+ *
+ *  \param i : pointeur vers l'interaction
+ *  \param c : pointeur vers le nouveau contact
+ */
 void DatabaseManager::addExistingInteraction(Interaction* i, Contact* c)
 {
     QSqlQuery queryLinkContactInteraction;
@@ -435,6 +637,32 @@ void DatabaseManager::addExistingInteraction(Interaction* i, Contact* c)
     }
 }
 
+/**
+ *  \brief Modification de l'etat effectue d'un todo
+ *
+ *  Slot pour changer l'etat effectue ou non d'un todo dans la base de donnees
+ *
+ *  \param t : le todo
+ *  \param e : l'etat
+ */
+void DatabaseManager::setTodoEffectue(Todo* t, bool e)
+{
+    QSqlQuery query;
+    query.prepare("UPDATE Todo SET effectue = :etat WHERE Id = :id");
+    query.bindValue(":etat", QVariant(e ? 1 : 0));
+    query.bindValue(":id", todosIds[t]);
+
+    if(!query.exec())
+    {
+        throw runtime_error("Error updating todos in bdd : " + db.lastError().text().toStdString());
+    }
+}
+
+/**
+ *  \brief Suppression de toute la base de donnees
+ *
+ *  Slot pour la suppression de toute la base de donnees
+ */
 void DatabaseManager::deleteAll()
 {
     db.close();

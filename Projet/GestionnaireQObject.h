@@ -12,6 +12,7 @@
 #include <QObject>
 #include "MainWindow.h"
 #include "DatabaseManager.h"
+#include "GestionContact.h"
 
 class GestionnaireQObject : public QObject
 {
@@ -34,17 +35,20 @@ private slots:
     void modifMail(Contact*, std::string);
     void modifPhoto(Contact*, std::string);
     void createContact(std::string, std::string, std::string, std::string, std::string, std::string);
+    void createContact(std::string, std::string, std::string, std::string, std::string, std::string, Date, Date);
     void loadContact(int, std::string, std::string, std::string, std::string, std::string, std::string, std::string, std::string);
     void editInteractionDate(Interaction*, QDate);
     void editInteractionResume(Interaction*, QString);
     void ajoutInteraction(Contact*, QString);
+    Interaction* ajoutInteraction(Contact*, Date, QString, bool createTodo = true);
     void ajoutInteraction(Contact*, Interaction*);
     void loadAndCreateInteraction(int, Contact*, std::string, std::string);
     void loadInteraction(Interaction*, Contact*);
-    void loadTodo(Interaction*, std::string, std::string, bool);
+    void loadTodo(int, Interaction*, std::string, std::string, bool);
     void exportJSON(QString);
     void importJSON(QString);
     void clearData();
+    void setTodoEffectue(Todo*,bool);
 
 signals:
     void listContactsUpdated(std::list<Contact*>);
@@ -53,7 +57,11 @@ signals:
     void onEndModifContact(Contact*,std::string);
     void contactDeleted(std::string);
     void contactLoaded(int, Contact*);
+    void contactCreated(std::string, std::string, std::string, std::string, std::string, std::string);
+    void contactCreated(std::string, std::string, std::string, std::string, std::string, std::string, Date, Date);
     void interactionLoaded(int, Interaction*);
+    void todoLoaded(int, Todo*);
+    void onTodoEdited();
     void onInteractionModifDate(Interaction*, std::string);
     void onInteractionModifResume(Interaction*, std::string);
     void onCreateInteraction(Interaction*, Contact*, std::string);

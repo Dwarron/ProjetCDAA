@@ -20,9 +20,10 @@ using namespace std;
  *  \brief Constructeur standard
  *
  *  Constructeur standard de la classe MainWindow.
- *  Effectue les connections entre les differentes fenetres et evenements a declencher.
+ *  Effectue les connexions signaux/slots
  *
- *  \param g : gestion des contacts
+ *  \param dateDerniereSuppression : la date de la derniere suppression
+ *  \param contacts : la liste des contacts lors de la creation de la fenetre
  *  \param parent : fenetre parent
  */
 MainWindow::MainWindow(string dateDerniereSuppression, list<Contact*> contacts, QWidget* parent)
@@ -39,15 +40,25 @@ MainWindow::MainWindow(string dateDerniereSuppression, list<Contact*> contacts, 
 
     connect(this, SIGNAL(listContactsUpdated(std::list<Contact*>)), rechcontact, SLOT(updateListContacts(std::list<Contact*>)));
     connect(this, SIGNAL(listContactsUpdated(std::list<Contact*>)), afficheFich, SIGNAL(listContactsUpdated(std::list<Contact*>)));
+    connect(this, SIGNAL(listContactsUpdated(std::list<Contact*>)), requete, SLOT(updateListContacts(std::list<Contact*>)));
 
     connect(rechcontact, SIGNAL(contactSelected(Contact*)), this, SLOT(selectContact(Contact*)));
     connect(this, SIGNAL(contactSelected(Contact*)), afficheFich, SLOT(loadContact(Contact*)));
     connect(this, SIGNAL(contactSelected(Contact*)), this, SLOT(updateContactValues()));
+    connect(this, SIGNAL(contactSelected(Contact*)), requete, SLOT(loadInfosContact(Contact*)));
+
     connect(this, SIGNAL(onEndModifContact()), this, SLOT(updateContactValues()));
     connect(this, SIGNAL(onEndModifContact()), rechcontact, SLOT(rechercheContact()));
     connect(this, SIGNAL(onEndModifContact()), afficheFich, SIGNAL(onEndModifContact()));
+    connect(this, SIGNAL(onEndModifContact()), requete, SLOT(loadInfosContact()));
+    connect(this, SIGNAL(onEndModifContact()), requete, SLOT(loadInfosAllContacts()));
 
     connect(this, SIGNAL(onInteractionEdited()), afficheFich, SIGNAL(onInteractionEdited()));
+    connect(this, SIGNAL(onInteractionEdited()), requete, SLOT(loadInfosContact()));
+    connect(this, SIGNAL(onInteractionEdited()), requete, SLOT(loadInfosAllContacts()));
+
+    connect(this, SIGNAL(onTodoEdited()), requete, SLOT(loadInfosAllContacts()));
+    connect(this, SIGNAL(onTodoEdited()), requete, SLOT(loadInfosContact()));
 
     connect(afficheFich, SIGNAL(contactDeleted(Contact*)), this, SIGNAL(contactDeleted(Contact*)));
     connect(afficheFich, SIGNAL(prenomModified(Contact*,std::string)), this, SIGNAL(prenomModified(Contact*,std::string)));
@@ -66,6 +77,8 @@ MainWindow::MainWindow(string dateDerniereSuppression, list<Contact*> contacts, 
     connect(creatfich, SIGNAL(contactCreated(std::string,std::string,std::string,std::string,std::string,std::string)),
             this, SIGNAL(contactCreated(std::string,std::string,std::string,std::string,std::string,std::string)));
 
+    connect(requete, SIGNAL(todoSetEffectue(Todo*,bool)), this, SIGNAL(todoSetEffectue(Todo*,bool)));
+
     connect(ui->actionA_propos, SIGNAL(triggered(bool)), this, SLOT(slot_aPropos()));
     connect(ui->ButtonCreerFiche, SIGNAL(clicked()), creatfich, SLOT(show()));
     connect(ui->ButtonRechercherContact, SIGNAL(clicked()), rechcontact, SLOT(show()));
@@ -75,17 +88,37 @@ MainWindow::MainWindow(string dateDerniereSuppression, list<Contact*> contacts, 
     connect(ui->actionImporter_un_fichier_JSON, SIGNAL(triggered()), SLOT(importJSON()));
 }
 
+/**
+ *  \brief Mis a jour de la date de la derniere suppression
+ *
+ *  Slot pour mettre a jour l'affichage de la date de la derniere suppression
+ *
+ *  \param date : la nouvelle date
+ */
 void MainWindow::updateDateDerniereSuppression(string date)
 {
     ui->labelDateSuppression->setText(QString::fromStdString("<i> " + date + "</i>"));
 }
 
-
+/**
+ *  \brief Selection du contact
+ *
+ *  Slot pour selectionner le contact
+ *
+ *  \param date : la nouvelle date
+ */
 void MainWindow::selectContact()
 {
     selectContact(nullptr);
 }
 
+/**
+ *  \brief Selection du contact
+ *
+ *  Slot pour selectionner le contact
+ *
+ *  \param c : le contact
+ */
 void MainWindow::selectContact(Contact* c)
 {
     curContact = c;
@@ -93,6 +126,11 @@ void MainWindow::selectContact(Contact* c)
     emit contactSelected(c);
 }
 
+/**
+ *  \brief Mis a jour du contact
+ *
+ *  Mis a jour de l'affichage des donnees du contact
+ */
 void MainWindow::updateContactValues()
 {
     bool contactExistant = curContact != nullptr;
@@ -113,7 +151,7 @@ void MainWindow::updateContactValues()
 /**
   *  \brief A propos de l'application
   *
-  *  Affiche le fonctionnement globale de l'application dans un QMessageBox.
+  *  Affiche le fonctionnement globale de l'application dans un QMessageBox
   */
 void MainWindow::slot_aPropos()
 {
@@ -124,12 +162,23 @@ void MainWindow::slot_aPropos()
     "L'application tilise également une base de données SQLite afin de stocker les contacts et les interactions; et les données sont exportables en JSON.");
 }
 
+/**
+ *  \brief Evenement de fermeture de la fenetre
+ *
+ *  Quitte toute l'application lors de la fermeture de la fenetre principale
+ */
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     event->accept();
+    QWidget::closeEvent(event);
     QApplication::quit();
 }
 
+/**
+ *  \brief Export en JSON
+ *
+ *  Selectionne un fichier pour exporter les donnees en JSON
+ */
 void MainWindow::exportJSON()
 {
     QString file = QFileDialog::getSaveFileName(this, "Save JSON file", QDir::homePath(), "JSON File (*.json)");
@@ -137,6 +186,11 @@ void MainWindow::exportJSON()
     emit exportJSON(file);
 }
 
+/**
+ *  \brief Import en JSON
+ *
+ *  Selectionne un fichier pour importer les donnees en JSON
+ */
 void MainWindow::importJSON()
 {
     QString file = QFileDialog::getOpenFileName(this, "Choose JSON file", QDir::homePath(), "JSON File (*.json)");
@@ -145,7 +199,7 @@ void MainWindow::importJSON()
 }
 
 /**
- *  \brie>f Destructeur de ModificationContactWindow
+ *  \brief Destructeur de MainWindow
  *
  *  Detruis en memoire la fenetre
  */

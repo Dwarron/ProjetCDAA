@@ -15,9 +15,9 @@ using namespace std;
  *  \brief Constructeur standard
  *
  *  Constructeur standard de la classe AjoutEvenementWindow.
- *  Effectue les connexions entre les differents Widget et evenement a declencher.
- *  Permet de remplir l'ensemble de la comboBox des contacts.
+ *  Effectue les connexions signaux/slots
  *
+ *  \param contacts : la liste des contacts lors de la creation de la fenetre
  *  \param parent : fenetre parent
  */
 AjoutInteractionWindow::AjoutInteractionWindow(list<Contact*> contacts, QWidget *parent)
@@ -43,13 +43,14 @@ AjoutInteractionWindow::AjoutInteractionWindow(list<Contact*> contacts, QWidget 
     connect(afficheInteractionsWindow, SIGNAL(interactionSelected(Interaction*)), this, SLOT(hide()));
 
     connect(ui->existingEventButton, SIGNAL(clicked()), rechContactWindow, SLOT(show()));
-    connect(ui->newEventButton, SIGNAL(clicked()), this, SLOT(ajoutEvenement()));
+    connect(ui->newEventButton, SIGNAL(clicked()), this, SLOT(ajoutInteraction()));
     connect(ui->quitButton, SIGNAL(clicked()), this, SLOT(close()));
 }
 
 /**
   *  \brief Charge le contact selectionne
   *
+  *  Slot appele lors du changement du contact selectionne, le stocke dans le contact courant
   *  \param c : le contact selectionne
   */
 void AjoutInteractionWindow::selectContact(Contact* c)
@@ -62,6 +63,12 @@ void AjoutInteractionWindow::selectContact(Contact* c)
     }
 }
 
+/**
+  *  \brief Charge l'interaction selectionne
+  *
+  *  Slot appele lors de la selection de l'interaction que l'on veut ajouter au contact courant
+  *  \param i : l'interaction selectionne
+  */
 void AjoutInteractionWindow::selectInteraction(Interaction* i)
 {
     emit ajoutInteraction(curContact, i);
@@ -70,9 +77,9 @@ void AjoutInteractionWindow::selectInteraction(Interaction* i)
 /**
   *  \brief Ajoute l'interaction
   *
-  *  Slot qui permet d'ajouter au contact l'interation selectionne ou cree.
+  *  Slot qui permet d'ajouter au contact l'interaction cree, appele lors du click sur le bouton
   */
-void AjoutInteractionWindow::ajoutEvenement()
+void AjoutInteractionWindow::ajoutInteraction()
 {
     if(curContact != nullptr && ui->newEventText->toPlainText().length() > 0)
     {

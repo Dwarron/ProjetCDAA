@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_DatabaseManager_t {
-    QByteArrayData data[29];
-    char stringdata0[485];
+    QByteArrayData data[32];
+    char stringdata0[518];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -52,14 +52,17 @@ QT_MOC_LITERAL(17, 262, 22), // "updateContactDateModif"
 QT_MOC_LITERAL(18, 285, 29), // "updateDateDerniereSuppression"
 QT_MOC_LITERAL(19, 315, 13), // "deleteContact"
 QT_MOC_LITERAL(20, 329, 17), // "interactionLoaded"
-QT_MOC_LITERAL(21, 347, 21), // "updateInteractionDate"
-QT_MOC_LITERAL(22, 369, 23), // "updateInteractionResume"
-QT_MOC_LITERAL(23, 393, 17), // "createInteraction"
-QT_MOC_LITERAL(24, 411, 22), // "addExistingInteraction"
-QT_MOC_LITERAL(25, 434, 11), // "createTodos"
-QT_MOC_LITERAL(26, 446, 16), // "std::list<Todo*>"
-QT_MOC_LITERAL(27, 463, 11), // "deleteTodos"
-QT_MOC_LITERAL(28, 475, 9) // "deleteAll"
+QT_MOC_LITERAL(21, 347, 10), // "todoLoaded"
+QT_MOC_LITERAL(22, 358, 5), // "Todo*"
+QT_MOC_LITERAL(23, 364, 21), // "updateInteractionDate"
+QT_MOC_LITERAL(24, 386, 23), // "updateInteractionResume"
+QT_MOC_LITERAL(25, 410, 17), // "createInteraction"
+QT_MOC_LITERAL(26, 428, 22), // "addExistingInteraction"
+QT_MOC_LITERAL(27, 451, 11), // "createTodos"
+QT_MOC_LITERAL(28, 463, 16), // "std::list<Todo*>"
+QT_MOC_LITERAL(29, 480, 11), // "deleteTodos"
+QT_MOC_LITERAL(30, 492, 9), // "deleteAll"
+QT_MOC_LITERAL(31, 502, 15) // "setTodoEffectue"
 
     },
     "DatabaseManager\0loadContact\0\0std::string\0"
@@ -72,10 +75,11 @@ QT_MOC_LITERAL(28, 475, 9) // "deleteAll"
     "updateContactDateModif\0"
     "updateDateDerniereSuppression\0"
     "deleteContact\0interactionLoaded\0"
-    "updateInteractionDate\0updateInteractionResume\0"
-    "createInteraction\0addExistingInteraction\0"
-    "createTodos\0std::list<Todo*>\0deleteTodos\0"
-    "deleteAll"
+    "todoLoaded\0Todo*\0updateInteractionDate\0"
+    "updateInteractionResume\0createInteraction\0"
+    "addExistingInteraction\0createTodos\0"
+    "std::list<Todo*>\0deleteTodos\0deleteAll\0"
+    "setTodoEffectue"
 };
 #undef QT_MOC_LITERAL
 
@@ -85,7 +89,7 @@ static const uint qt_meta_data_DatabaseManager[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      23,   14, // methods
+      25,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -93,37 +97,39 @@ static const uint qt_meta_data_DatabaseManager[] = {
        4,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    9,  129,    2, 0x06 /* Public */,
-       4,    4,  148,    2, 0x06 /* Public */,
-       6,    2,  157,    2, 0x06 /* Public */,
-       8,    4,  162,    2, 0x06 /* Public */,
+       1,    9,  139,    2, 0x06 /* Public */,
+       4,    4,  158,    2, 0x06 /* Public */,
+       6,    2,  167,    2, 0x06 /* Public */,
+       8,    5,  172,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       9,    3,  171,    2, 0x08 /* Private */,
-      10,    2,  178,    2, 0x08 /* Private */,
-      11,    2,  183,    2, 0x08 /* Private */,
-      12,    2,  188,    2, 0x08 /* Private */,
-      13,    2,  193,    2, 0x08 /* Private */,
-      14,    2,  198,    2, 0x08 /* Private */,
-      15,    2,  203,    2, 0x08 /* Private */,
-      16,    2,  208,    2, 0x08 /* Private */,
-      17,    2,  213,    2, 0x08 /* Private */,
-      18,    1,  218,    2, 0x08 /* Private */,
-      19,    1,  221,    2, 0x08 /* Private */,
-      20,    2,  224,    2, 0x08 /* Private */,
-      21,    2,  229,    2, 0x08 /* Private */,
-      22,    2,  234,    2, 0x08 /* Private */,
-      23,    3,  239,    2, 0x08 /* Private */,
-      24,    2,  246,    2, 0x08 /* Private */,
-      25,    2,  251,    2, 0x08 /* Private */,
-      27,    1,  256,    2, 0x08 /* Private */,
-      28,    0,  259,    2, 0x08 /* Private */,
+       9,    3,  183,    2, 0x08 /* Private */,
+      10,    2,  190,    2, 0x08 /* Private */,
+      11,    2,  195,    2, 0x08 /* Private */,
+      12,    2,  200,    2, 0x08 /* Private */,
+      13,    2,  205,    2, 0x08 /* Private */,
+      14,    2,  210,    2, 0x08 /* Private */,
+      15,    2,  215,    2, 0x08 /* Private */,
+      16,    2,  220,    2, 0x08 /* Private */,
+      17,    2,  225,    2, 0x08 /* Private */,
+      18,    1,  230,    2, 0x08 /* Private */,
+      19,    1,  233,    2, 0x08 /* Private */,
+      20,    2,  236,    2, 0x08 /* Private */,
+      21,    2,  241,    2, 0x08 /* Private */,
+      23,    2,  246,    2, 0x08 /* Private */,
+      24,    2,  251,    2, 0x08 /* Private */,
+      25,    3,  256,    2, 0x08 /* Private */,
+      26,    2,  263,    2, 0x08 /* Private */,
+      27,    2,  268,    2, 0x08 /* Private */,
+      29,    1,  273,    2, 0x08 /* Private */,
+      30,    0,  276,    2, 0x08 /* Private */,
+      31,    2,  277,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int, 0x80000000 | 3, 0x80000000 | 3, 0x80000000 | 3, 0x80000000 | 3, 0x80000000 | 3, 0x80000000 | 3, 0x80000000 | 3, 0x80000000 | 3,    2,    2,    2,    2,    2,    2,    2,    2,    2,
     QMetaType::Void, QMetaType::Int, 0x80000000 | 5, 0x80000000 | 3, 0x80000000 | 3,    2,    2,    2,    2,
     QMetaType::Void, 0x80000000 | 7, 0x80000000 | 5,    2,    2,
-    QMetaType::Void, 0x80000000 | 7, 0x80000000 | 3, 0x80000000 | 3, QMetaType::Bool,    2,    2,    2,    2,
+    QMetaType::Void, QMetaType::Int, 0x80000000 | 7, 0x80000000 | 3, 0x80000000 | 3, QMetaType::Bool,    2,    2,    2,    2,    2,
 
  // slots: parameters
     QMetaType::Void, 0x80000000 | 5, 0x80000000 | 3, 0x80000000 | 3,    2,    2,    2,
@@ -138,13 +144,15 @@ static const uint qt_meta_data_DatabaseManager[] = {
     QMetaType::Void, 0x80000000 | 3,    2,
     QMetaType::Void, 0x80000000 | 5,    2,
     QMetaType::Void, QMetaType::Int, 0x80000000 | 7,    2,    2,
+    QMetaType::Void, QMetaType::Int, 0x80000000 | 22,    2,    2,
     QMetaType::Void, 0x80000000 | 7, 0x80000000 | 3,    2,    2,
     QMetaType::Void, 0x80000000 | 7, 0x80000000 | 3,    2,    2,
     QMetaType::Void, 0x80000000 | 7, 0x80000000 | 5, 0x80000000 | 3,    2,    2,    2,
     QMetaType::Void, 0x80000000 | 7, 0x80000000 | 5,    2,    2,
-    QMetaType::Void, 0x80000000 | 7, 0x80000000 | 26,    2,    2,
+    QMetaType::Void, 0x80000000 | 7, 0x80000000 | 28,    2,    2,
     QMetaType::Void, 0x80000000 | 7,    2,
     QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 22, QMetaType::Bool,    2,    2,
 
        0        // eod
 };
@@ -158,7 +166,7 @@ void DatabaseManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         case 0: _t->loadContact((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< std::string(*)>(_a[2])),(*reinterpret_cast< std::string(*)>(_a[3])),(*reinterpret_cast< std::string(*)>(_a[4])),(*reinterpret_cast< std::string(*)>(_a[5])),(*reinterpret_cast< std::string(*)>(_a[6])),(*reinterpret_cast< std::string(*)>(_a[7])),(*reinterpret_cast< std::string(*)>(_a[8])),(*reinterpret_cast< std::string(*)>(_a[9]))); break;
         case 1: _t->loadAndCreateInteraction((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< Contact*(*)>(_a[2])),(*reinterpret_cast< std::string(*)>(_a[3])),(*reinterpret_cast< std::string(*)>(_a[4]))); break;
         case 2: _t->loadInteraction((*reinterpret_cast< Interaction*(*)>(_a[1])),(*reinterpret_cast< Contact*(*)>(_a[2]))); break;
-        case 3: _t->loadTodo((*reinterpret_cast< Interaction*(*)>(_a[1])),(*reinterpret_cast< std::string(*)>(_a[2])),(*reinterpret_cast< std::string(*)>(_a[3])),(*reinterpret_cast< bool(*)>(_a[4]))); break;
+        case 3: _t->loadTodo((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< Interaction*(*)>(_a[2])),(*reinterpret_cast< std::string(*)>(_a[3])),(*reinterpret_cast< std::string(*)>(_a[4])),(*reinterpret_cast< bool(*)>(_a[5]))); break;
         case 4: _t->createContact((*reinterpret_cast< Contact*(*)>(_a[1])),(*reinterpret_cast< std::string(*)>(_a[2])),(*reinterpret_cast< std::string(*)>(_a[3]))); break;
         case 5: _t->contactLoaded((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< Contact*(*)>(_a[2]))); break;
         case 6: _t->updateContactNom((*reinterpret_cast< Contact*(*)>(_a[1])),(*reinterpret_cast< std::string(*)>(_a[2]))); break;
@@ -171,13 +179,15 @@ void DatabaseManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         case 13: _t->updateDateDerniereSuppression((*reinterpret_cast< std::string(*)>(_a[1]))); break;
         case 14: _t->deleteContact((*reinterpret_cast< Contact*(*)>(_a[1]))); break;
         case 15: _t->interactionLoaded((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< Interaction*(*)>(_a[2]))); break;
-        case 16: _t->updateInteractionDate((*reinterpret_cast< Interaction*(*)>(_a[1])),(*reinterpret_cast< std::string(*)>(_a[2]))); break;
-        case 17: _t->updateInteractionResume((*reinterpret_cast< Interaction*(*)>(_a[1])),(*reinterpret_cast< std::string(*)>(_a[2]))); break;
-        case 18: _t->createInteraction((*reinterpret_cast< Interaction*(*)>(_a[1])),(*reinterpret_cast< Contact*(*)>(_a[2])),(*reinterpret_cast< std::string(*)>(_a[3]))); break;
-        case 19: _t->addExistingInteraction((*reinterpret_cast< Interaction*(*)>(_a[1])),(*reinterpret_cast< Contact*(*)>(_a[2]))); break;
-        case 20: _t->createTodos((*reinterpret_cast< Interaction*(*)>(_a[1])),(*reinterpret_cast< std::list<Todo*>(*)>(_a[2]))); break;
-        case 21: _t->deleteTodos((*reinterpret_cast< Interaction*(*)>(_a[1]))); break;
-        case 22: _t->deleteAll(); break;
+        case 16: _t->todoLoaded((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< Todo*(*)>(_a[2]))); break;
+        case 17: _t->updateInteractionDate((*reinterpret_cast< Interaction*(*)>(_a[1])),(*reinterpret_cast< std::string(*)>(_a[2]))); break;
+        case 18: _t->updateInteractionResume((*reinterpret_cast< Interaction*(*)>(_a[1])),(*reinterpret_cast< std::string(*)>(_a[2]))); break;
+        case 19: _t->createInteraction((*reinterpret_cast< Interaction*(*)>(_a[1])),(*reinterpret_cast< Contact*(*)>(_a[2])),(*reinterpret_cast< std::string(*)>(_a[3]))); break;
+        case 20: _t->addExistingInteraction((*reinterpret_cast< Interaction*(*)>(_a[1])),(*reinterpret_cast< Contact*(*)>(_a[2]))); break;
+        case 21: _t->createTodos((*reinterpret_cast< Interaction*(*)>(_a[1])),(*reinterpret_cast< std::list<Todo*>(*)>(_a[2]))); break;
+        case 22: _t->deleteTodos((*reinterpret_cast< Interaction*(*)>(_a[1]))); break;
+        case 23: _t->deleteAll(); break;
+        case 24: _t->setTodoEffectue((*reinterpret_cast< Todo*(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -204,7 +214,7 @@ void DatabaseManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
             }
         }
         {
-            using _t = void (DatabaseManager::*)(Interaction * , std::string , std::string , bool );
+            using _t = void (DatabaseManager::*)(int , Interaction * , std::string , std::string , bool );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&DatabaseManager::loadTodo)) {
                 *result = 3;
                 return;
@@ -242,13 +252,13 @@ int DatabaseManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 23)
+        if (_id < 25)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 23;
+        _id -= 25;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 23)
+        if (_id < 25)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 23;
+        _id -= 25;
     }
     return _id;
 }
@@ -275,9 +285,9 @@ void DatabaseManager::loadInteraction(Interaction * _t1, Contact * _t2)
 }
 
 // SIGNAL 3
-void DatabaseManager::loadTodo(Interaction * _t1, std::string _t2, std::string _t3, bool _t4)
+void DatabaseManager::loadTodo(int _t1, Interaction * _t2, std::string _t3, std::string _t4, bool _t5)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)), const_cast<void*>(reinterpret_cast<const void*>(&_t4)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)), const_cast<void*>(reinterpret_cast<const void*>(&_t4)), const_cast<void*>(reinterpret_cast<const void*>(&_t5)) };
     QMetaObject::activate(this, &staticMetaObject, 3, _a);
 }
 QT_WARNING_POP

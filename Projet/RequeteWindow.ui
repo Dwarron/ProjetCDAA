@@ -14,7 +14,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Requête</string>
+   <string>Requêtes</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
@@ -41,9 +41,9 @@
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="eventButton">
+          <widget class="QRadioButton" name="interactionsButton">
            <property name="text">
-            <string>Evénements entre 2 dates</string>
+            <string>Interactions entre 2 dates</string>
            </property>
            <attribute name="buttonGroup">
             <string notr="true">buttonGroup</string>
@@ -53,7 +53,7 @@
          <item>
           <widget class="QRadioButton" name="listContactButton">
            <property name="text">
-            <string>Liste des choses à faire ou des dates d'événement pour un contact dans un intervalle</string>
+            <string>Liste des choses à faire ou des dates d'interactions pour un contact dans un intervalle</string>
            </property>
            <attribute name="buttonGroup">
             <string notr="true">buttonGroup</string>
@@ -61,9 +61,9 @@
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="listContactsButton">
+          <widget class="QRadioButton" name="listAllContactsButton">
            <property name="text">
-            <string>Liste des choses à faire ou des dates d'événement pour tous les contact dans un intervalle</string>
+            <string>Liste des choses à faire ou des dates d'interactions pour tous les contacts dans un intervalle</string>
            </property>
            <attribute name="buttonGroup">
             <string notr="true">buttonGroup</string>
@@ -101,17 +101,24 @@
         <layout class="QGridLayout" name="gridLayout_4">
          <item row="0" column="0">
           <layout class="QGridLayout" name="gridLayout_3">
+           <item row="1" column="0">
+            <widget class="QListView" name="listViewInteractions2Dates">
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+            </widget>
+           </item>
            <item row="0" column="0">
             <layout class="QHBoxLayout" name="horizontalLayout_2">
              <item>
               <widget class="QLabel" name="label_3">
                <property name="text">
-                <string>Evénement entre </string>
+                <string>Interactions entre le</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QDateEdit" name="dateDebutDateEdit">
+              <widget class="QDateEdit" name="dateDebutInteractions2Dates">
                <property name="dateTime">
                 <datetime>
                  <hour>0</hour>
@@ -132,7 +139,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QDateEdit" name="dateFinDateEdit">
+              <widget class="QDateEdit" name="dateFinInteractions2Dates">
                <property name="dateTime">
                 <datetime>
                  <hour>0</hour>
@@ -147,20 +154,6 @@
              </item>
             </layout>
            </item>
-           <item row="2" column="0">
-            <widget class="QPlainTextEdit" name="listeEvenementPlainTextEdit">
-             <property name="readOnly">
-              <bool>false</bool>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QPushButton" name="validIntervalButton">
-             <property name="text">
-              <string>Valider l'intervalle</string>
-             </property>
-            </widget>
-           </item>
           </layout>
          </item>
         </layout>
@@ -170,30 +163,16 @@
          <item row="0" column="0">
           <layout class="QVBoxLayout" name="verticalLayout_3">
            <item>
-            <layout class="QFormLayout" name="formLayout">
-             <item row="0" column="0">
-              <widget class="QLabel" name="selectContactLabel">
-               <property name="text">
-                <string>Selectionner le contact</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QComboBox" name="selectContactComboBox"/>
-             </item>
-            </layout>
-           </item>
-           <item>
             <layout class="QHBoxLayout" name="horizontalLayout">
              <item>
               <widget class="QLabel" name="label_2">
                <property name="text">
-                <string>Intervalle de dates entre le </string>
+                <string>Dates entre le </string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QDateEdit" name="debutContactDateEdit">
+              <widget class="QDateEdit" name="dateDebutContact">
                <property name="dateTime">
                 <datetime>
                  <hour>0</hour>
@@ -214,7 +193,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QDateEdit" name="finContactDateEdit">
+              <widget class="QDateEdit" name="dateFinContact">
                <property name="dateTime">
                 <datetime>
                  <hour>0</hour>
@@ -234,7 +213,7 @@
              <item row="0" column="0">
               <widget class="QLabel" name="afficherLabel">
                <property name="text">
-                <string>Afficher </string>
+                <string>Afficher : </string>
                </property>
               </widget>
              </item>
@@ -244,14 +223,24 @@
             </layout>
            </item>
            <item>
-            <widget class="QPushButton" name="validInfosContactPushButton">
+            <widget class="QCheckBox" name="checkBoxOnlyNotDoneContact">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
              <property name="text">
-              <string>Effectuer la requête</string>
+              <string>Seulement non effectués</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QPlainTextEdit" name="listeInfosContactplainTextEdit"/>
+            <widget class="QListView" name="listViewRequeteContact">
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="tabKeyNavigation">
+              <bool>true</bool>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>
@@ -266,12 +255,12 @@
              <item>
               <widget class="QLabel" name="label_6">
                <property name="text">
-                <string>Intervalles de dates entre le </string>
+                <string>Dates entre le </string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QDateEdit" name="debutContactsDateEdit">
+              <widget class="QDateEdit" name="dateDebutAllContacts">
                <property name="dateTime">
                 <datetime>
                  <hour>0</hour>
@@ -292,7 +281,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QDateEdit" name="finContactsDateEdit">
+              <widget class="QDateEdit" name="dateFinAllContacts">
                <property name="dateTime">
                 <datetime>
                  <hour>0</hour>
@@ -312,26 +301,33 @@
              <item row="0" column="0">
               <widget class="QLabel" name="afficherLabel_2">
                <property name="text">
-                <string>Afficher </string>
+                <string>Afficher :  </string>
                </property>
               </widget>
              </item>
              <item row="0" column="1">
-              <widget class="QComboBox" name="afficherInfosContactsComboBox"/>
+              <widget class="QComboBox" name="afficherInfosAllContactsComboBox"/>
              </item>
             </layout>
            </item>
-           <item>
-            <widget class="QPushButton" name="validInfosContactsPushButton">
-             <property name="text">
-              <string>Valider les informations séléctionner</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPlainTextEdit" name="listeInfosplainTextEdit"/>
-           </item>
           </layout>
+         </item>
+         <item row="2" column="0">
+          <widget class="QListView" name="listViewRequeteAllContacts">
+           <property name="editTriggers">
+            <set>QAbstractItemView::NoEditTriggers</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QCheckBox" name="checkBoxOnlyNotDoneAllContacts">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Seulement non effectués</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>

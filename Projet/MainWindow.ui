@@ -87,7 +87,7 @@
         <item>
          <widget class="QPushButton" name="ButtonRequete">
           <property name="text">
-           <string>Requête sur les contacts</string>
+           <string>Requêtes sur les contacts</string>
           </property>
          </widget>
         </item>

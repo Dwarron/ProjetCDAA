@@ -1,6 +1,14 @@
 #ifndef JSONSERIALIZER_H
 #define JSONSERIALIZER_H
 
+/**
+ * \file JSONSerializer.h
+ * \class JSONSerializer JSONSerializer.h
+ * \brief Classe utilitaire pour serialiser en JSON différentes classes
+ * \author Pinon Alexandre, Perion Maxence
+ * \version 0.1
+ */
+
 #include <QJsonObject>
 #include "Contact.h"
 

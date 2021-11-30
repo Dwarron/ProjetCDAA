@@ -61,9 +61,11 @@ signals:
     void interactionDateEdited(Interaction*, QDate);
     void interactionResumeEdited(Interaction*, QString);
     void onInteractionEdited();
+    void onTodoEdited();
     void ajoutInteraction(Contact*, QString);
     void ajoutInteraction(Contact*, Interaction*);
     void exportJSON(QString);
     void importJSON(QString);
+    void todoSetEffectue(Todo*, bool);
 };
 #endif // MAINWINDOW_H

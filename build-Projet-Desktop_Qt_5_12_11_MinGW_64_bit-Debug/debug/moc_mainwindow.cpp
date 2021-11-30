@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[27];
-    char stringdata0[423];
+    QByteArrayData data[30];
+    char stringdata0[458];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -51,13 +51,16 @@ QT_MOC_LITERAL(16, 228, 21), // "interactionDateEdited"
 QT_MOC_LITERAL(17, 250, 12), // "Interaction*"
 QT_MOC_LITERAL(18, 263, 23), // "interactionResumeEdited"
 QT_MOC_LITERAL(19, 287, 19), // "onInteractionEdited"
-QT_MOC_LITERAL(20, 307, 16), // "ajoutInteraction"
-QT_MOC_LITERAL(21, 324, 10), // "exportJSON"
-QT_MOC_LITERAL(22, 335, 10), // "importJSON"
-QT_MOC_LITERAL(23, 346, 12), // "slot_aPropos"
-QT_MOC_LITERAL(24, 359, 13), // "selectContact"
-QT_MOC_LITERAL(25, 373, 19), // "updateContactValues"
-QT_MOC_LITERAL(26, 393, 29) // "updateDateDerniereSuppression"
+QT_MOC_LITERAL(20, 307, 12), // "onTodoEdited"
+QT_MOC_LITERAL(21, 320, 16), // "ajoutInteraction"
+QT_MOC_LITERAL(22, 337, 10), // "exportJSON"
+QT_MOC_LITERAL(23, 348, 10), // "importJSON"
+QT_MOC_LITERAL(24, 359, 15), // "todoSetEffectue"
+QT_MOC_LITERAL(25, 375, 5), // "Todo*"
+QT_MOC_LITERAL(26, 381, 12), // "slot_aPropos"
+QT_MOC_LITERAL(27, 394, 13), // "selectContact"
+QT_MOC_LITERAL(28, 408, 19), // "updateContactValues"
+QT_MOC_LITERAL(29, 428, 29) // "updateDateDerniereSuppression"
 
     },
     "MainWindow\0contactDeleted\0\0Contact*\0"
@@ -68,8 +71,9 @@ QT_MOC_LITERAL(26, 393, 29) // "updateDateDerniereSuppression"
     "std::list<Contact*>\0contactCreated\0"
     "onEndModifContact\0interactionDateEdited\0"
     "Interaction*\0interactionResumeEdited\0"
-    "onInteractionEdited\0ajoutInteraction\0"
-    "exportJSON\0importJSON\0slot_aPropos\0"
+    "onInteractionEdited\0onTodoEdited\0"
+    "ajoutInteraction\0exportJSON\0importJSON\0"
+    "todoSetEffectue\0Todo*\0slot_aPropos\0"
     "selectContact\0updateContactValues\0"
     "updateDateDerniereSuppression"
 };
@@ -81,41 +85,43 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      25,   14, // methods
+      27,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-      18,       // signalCount
+      20,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  139,    2, 0x06 /* Public */,
-       4,    1,  142,    2, 0x06 /* Public */,
-       5,    2,  145,    2, 0x06 /* Public */,
-       7,    2,  150,    2, 0x06 /* Public */,
-       8,    2,  155,    2, 0x06 /* Public */,
-       9,    2,  160,    2, 0x06 /* Public */,
-      10,    2,  165,    2, 0x06 /* Public */,
-      11,    2,  170,    2, 0x06 /* Public */,
-      12,    1,  175,    2, 0x06 /* Public */,
-      14,    6,  178,    2, 0x06 /* Public */,
-      15,    0,  191,    2, 0x06 /* Public */,
-      16,    2,  192,    2, 0x06 /* Public */,
-      18,    2,  197,    2, 0x06 /* Public */,
-      19,    0,  202,    2, 0x06 /* Public */,
-      20,    2,  203,    2, 0x06 /* Public */,
-      20,    2,  208,    2, 0x06 /* Public */,
-      21,    1,  213,    2, 0x06 /* Public */,
-      22,    1,  216,    2, 0x06 /* Public */,
+       1,    1,  149,    2, 0x06 /* Public */,
+       4,    1,  152,    2, 0x06 /* Public */,
+       5,    2,  155,    2, 0x06 /* Public */,
+       7,    2,  160,    2, 0x06 /* Public */,
+       8,    2,  165,    2, 0x06 /* Public */,
+       9,    2,  170,    2, 0x06 /* Public */,
+      10,    2,  175,    2, 0x06 /* Public */,
+      11,    2,  180,    2, 0x06 /* Public */,
+      12,    1,  185,    2, 0x06 /* Public */,
+      14,    6,  188,    2, 0x06 /* Public */,
+      15,    0,  201,    2, 0x06 /* Public */,
+      16,    2,  202,    2, 0x06 /* Public */,
+      18,    2,  207,    2, 0x06 /* Public */,
+      19,    0,  212,    2, 0x06 /* Public */,
+      20,    0,  213,    2, 0x06 /* Public */,
+      21,    2,  214,    2, 0x06 /* Public */,
+      21,    2,  219,    2, 0x06 /* Public */,
+      22,    1,  224,    2, 0x06 /* Public */,
+      23,    1,  227,    2, 0x06 /* Public */,
+      24,    2,  230,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      23,    0,  219,    2, 0x0a /* Public */,
-      24,    1,  220,    2, 0x0a /* Public */,
-      24,    0,  223,    2, 0x0a /* Public */,
-      25,    0,  224,    2, 0x0a /* Public */,
-      26,    1,  225,    2, 0x0a /* Public */,
-      21,    0,  228,    2, 0x0a /* Public */,
-      22,    0,  229,    2, 0x0a /* Public */,
+      26,    0,  235,    2, 0x0a /* Public */,
+      27,    1,  236,    2, 0x0a /* Public */,
+      27,    0,  239,    2, 0x0a /* Public */,
+      28,    0,  240,    2, 0x0a /* Public */,
+      29,    1,  241,    2, 0x0a /* Public */,
+      22,    0,  244,    2, 0x0a /* Public */,
+      23,    0,  245,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    2,
@@ -132,10 +138,12 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void, 0x80000000 | 17, QMetaType::QDate,    2,    2,
     QMetaType::Void, 0x80000000 | 17, QMetaType::QString,    2,    2,
     QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void, 0x80000000 | 3, QMetaType::QString,    2,    2,
     QMetaType::Void, 0x80000000 | 3, 0x80000000 | 17,    2,    2,
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void, QMetaType::QString,    2,
+    QMetaType::Void, 0x80000000 | 25, QMetaType::Bool,    2,    2,
 
  // slots: parameters
     QMetaType::Void,
@@ -169,17 +177,19 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 11: _t->interactionDateEdited((*reinterpret_cast< Interaction*(*)>(_a[1])),(*reinterpret_cast< QDate(*)>(_a[2]))); break;
         case 12: _t->interactionResumeEdited((*reinterpret_cast< Interaction*(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
         case 13: _t->onInteractionEdited(); break;
-        case 14: _t->ajoutInteraction((*reinterpret_cast< Contact*(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
-        case 15: _t->ajoutInteraction((*reinterpret_cast< Contact*(*)>(_a[1])),(*reinterpret_cast< Interaction*(*)>(_a[2]))); break;
-        case 16: _t->exportJSON((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 17: _t->importJSON((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 18: _t->slot_aPropos(); break;
-        case 19: _t->selectContact((*reinterpret_cast< Contact*(*)>(_a[1]))); break;
-        case 20: _t->selectContact(); break;
-        case 21: _t->updateContactValues(); break;
-        case 22: _t->updateDateDerniereSuppression((*reinterpret_cast< std::string(*)>(_a[1]))); break;
-        case 23: _t->exportJSON(); break;
-        case 24: _t->importJSON(); break;
+        case 14: _t->onTodoEdited(); break;
+        case 15: _t->ajoutInteraction((*reinterpret_cast< Contact*(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
+        case 16: _t->ajoutInteraction((*reinterpret_cast< Contact*(*)>(_a[1])),(*reinterpret_cast< Interaction*(*)>(_a[2]))); break;
+        case 17: _t->exportJSON((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 18: _t->importJSON((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 19: _t->todoSetEffectue((*reinterpret_cast< Todo*(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
+        case 20: _t->slot_aPropos(); break;
+        case 21: _t->selectContact((*reinterpret_cast< Contact*(*)>(_a[1]))); break;
+        case 22: _t->selectContact(); break;
+        case 23: _t->updateContactValues(); break;
+        case 24: _t->updateDateDerniereSuppression((*reinterpret_cast< std::string(*)>(_a[1]))); break;
+        case 25: _t->exportJSON(); break;
+        case 26: _t->importJSON(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -283,30 +293,44 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
             }
         }
         {
-            using _t = void (MainWindow::*)(Contact * , QString );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::ajoutInteraction)) {
+            using _t = void (MainWindow::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::onTodoEdited)) {
                 *result = 14;
                 return;
             }
         }
         {
-            using _t = void (MainWindow::*)(Contact * , Interaction * );
+            using _t = void (MainWindow::*)(Contact * , QString );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::ajoutInteraction)) {
                 *result = 15;
                 return;
             }
         }
         {
-            using _t = void (MainWindow::*)(QString );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::exportJSON)) {
+            using _t = void (MainWindow::*)(Contact * , Interaction * );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::ajoutInteraction)) {
                 *result = 16;
                 return;
             }
         }
         {
             using _t = void (MainWindow::*)(QString );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::importJSON)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::exportJSON)) {
                 *result = 17;
+                return;
+            }
+        }
+        {
+            using _t = void (MainWindow::*)(QString );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::importJSON)) {
+                *result = 18;
+                return;
+            }
+        }
+        {
+            using _t = void (MainWindow::*)(Todo * , bool );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::todoSetEffectue)) {
+                *result = 19;
                 return;
             }
         }
@@ -342,13 +366,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 25)
+        if (_id < 27)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 25;
+        _id -= 27;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 25)
+        if (_id < 27)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 25;
+        _id -= 27;
     }
     return _id;
 }
@@ -450,31 +474,44 @@ void MainWindow::onInteractionEdited()
 }
 
 // SIGNAL 14
-void MainWindow::ajoutInteraction(Contact * _t1, QString _t2)
+void MainWindow::onTodoEdited()
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
-    QMetaObject::activate(this, &staticMetaObject, 14, _a);
+    QMetaObject::activate(this, &staticMetaObject, 14, nullptr);
 }
 
 // SIGNAL 15
-void MainWindow::ajoutInteraction(Contact * _t1, Interaction * _t2)
+void MainWindow::ajoutInteraction(Contact * _t1, QString _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
     QMetaObject::activate(this, &staticMetaObject, 15, _a);
 }
 
 // SIGNAL 16
-void MainWindow::exportJSON(QString _t1)
+void MainWindow::ajoutInteraction(Contact * _t1, Interaction * _t2)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
     QMetaObject::activate(this, &staticMetaObject, 16, _a);
 }
 
 // SIGNAL 17
-void MainWindow::importJSON(QString _t1)
+void MainWindow::exportJSON(QString _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 17, _a);
+}
+
+// SIGNAL 18
+void MainWindow::importJSON(QString _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 18, _a);
+}
+
+// SIGNAL 19
+void MainWindow::todoSetEffectue(Todo * _t1, bool _t2)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 19, _a);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

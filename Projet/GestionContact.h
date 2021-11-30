@@ -25,8 +25,9 @@ public:
 
     Interaction* ajoutInteraction(Contact*, const Date&, const std::string&);
     void ajoutInteraction(Contact*, Interaction*);
-    void ajoutTodo(Interaction*, const Date&, const std::string&, const bool);
+    Todo* ajoutTodo(Interaction*, const Date&, const std::string&, const bool);
 
+    void setDateDerniereSuppression(const Date&);
     const Date &getDateDerniereSuppression() const;
 
     const std::list<Interaction*> getAllInteractions() const;

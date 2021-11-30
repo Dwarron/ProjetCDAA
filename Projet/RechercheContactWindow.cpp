@@ -16,10 +16,9 @@ using namespace std;
  *  \brief Constructeur standard
  *
  *  Constructeur standard de la classe RechercheContactWindow.
- *  Effectue les connexions entre les differents Widget et evenement a declencher.
- *  Permet de remplir les comboBox pour le trie et pour la recherche d'un contact.
+ *  Effectue les connexions signaux/slots
  *
- *  \param g : gestion des contacts
+ *  \param contacts : la liste des contacts lors de la creation de la fenetre
  *  \param parent : fenetre parent
  */
 RechercheContactWindow::RechercheContactWindow(list<Contact*> c, QWidget *parent)
@@ -53,21 +52,30 @@ RechercheContactWindow::RechercheContactWindow(list<Contact*> c, QWidget *parent
    rechercheContact();
 }
 
-void RechercheContactWindow::updateListContacts(std::list<Contact*> c)
+/**
+ *  \brief Mis a jour de la liste des contacts
+ *
+ *  Slot pour mettre a jour la liste des contacts
+ *
+ *  \param c : la nouvelle liste
+ */
+void RechercheContactWindow::updateListContacts(list<Contact*> c)
 {
     contacts = c;
     rechercheContact();
 }
 
 /**
-  *  \brief Signal emis lorsqu'un nouveau contact a ete selectionne
+  *  \brief slot appele lors de la selection d'un contact
   *
-  *  Signal emis lorsque l'utilisateur selectionne un nouveau contact, trouve via une recherche
+  *  Selection d'un contact apres click dans la liste
+  *
+  *  \param newItem : l'item de selection
   */
 void RechercheContactWindow::selectContact(QModelIndex q)
 {
     auto it = contactsAffiches.begin();
-    for( int i = 0; i < q.row(); i++)
+    for(int i = 0; i < q.row(); i++)
     {
         it++;
     }
@@ -87,7 +95,7 @@ void RechercheContactWindow::rechercheContact()
 /**
   *  \brief Recherche le contact
   *
-  *  Slot qui recherche le contact selectionne dans la comboBox.
+  *  Slot qui recherche le contact selectionne dans la liste des contacts
   *  Permet de recherche ce contact entre 2 date et de trier le resultat par date de creation ou par ordre alphabetique.
   *
   *  \param text : le text avec lequel effectue la recherche (nom/prenom ou entreprise)
@@ -117,13 +125,13 @@ void RechercheContactWindow::rechercheContact(QString text)
 
     for(auto it = contacts.begin(); it != contacts.end(); it++)
     {
-        if( (triDates && dateDebut < (*it)->getDateCreation() && (*it)->getDateCreation() < dateFin) || !triDates )
+        if((triDates && dateDebut < (*it)->getDateCreation() && (*it)->getDateCreation() < dateFin) || !triDates)
              contactstemp.push_back(*it);
     }
 
     QStringList list;
 
-    if( recherche == "Nom")
+    if(recherche == "Nom")
     {
         // on affiche tous les nom des contacts de la liste temporaire
         for(auto it = contactstemp.begin(); it != contactstemp.end(); it++)

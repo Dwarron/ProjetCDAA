@@ -31,6 +31,7 @@ public:
     const std::string toString() const;
 
     friend bool operator<(Interaction&, Interaction&);
+    friend bool operator>(Interaction&, Interaction&);
 
     void ajoutTodo(Todo*);
     const std::list<Todo*> &getTodos() const;
