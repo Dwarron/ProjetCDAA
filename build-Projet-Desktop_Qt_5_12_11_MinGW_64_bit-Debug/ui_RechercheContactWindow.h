@@ -28,7 +28,6 @@ class Ui_RechercheContactWindow
 {
 public:
     QGridLayout *gridLayout;
-    QPushButton *validButton;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
@@ -53,11 +52,6 @@ public:
         RechercheContactWindow->resize(627, 503);
         gridLayout = new QGridLayout(RechercheContactWindow);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        validButton = new QPushButton(RechercheContactWindow);
-        validButton->setObjectName(QString::fromUtf8("validButton"));
-
-        gridLayout->addWidget(validButton, 4, 0, 1, 1);
-
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         horizontalLayout = new QHBoxLayout();
@@ -134,7 +128,7 @@ public:
         quitButton = new QPushButton(RechercheContactWindow);
         quitButton->setObjectName(QString::fromUtf8("quitButton"));
 
-        gridLayout->addWidget(quitButton, 5, 0, 1, 1);
+        gridLayout->addWidget(quitButton, 4, 0, 1, 1);
 
         listeContacts = new QListView(RechercheContactWindow);
         listeContacts->setObjectName(QString::fromUtf8("listeContacts"));
@@ -154,7 +148,6 @@ public:
     void retranslateUi(QWidget *RechercheContactWindow)
     {
         RechercheContactWindow->setWindowTitle(QApplication::translate("RechercheContactWindow", "Chercher un contact", nullptr));
-        validButton->setText(QApplication::translate("RechercheContactWindow", "Rechercher", nullptr));
         label->setText(QApplication::translate("RechercheContactWindow", "Chercher un contact par :", nullptr));
         rechercheLineEdit->setPlaceholderText(QApplication::translate("RechercheContactWindow", "Nom ou Entreprise", nullptr));
         label_2->setText(QApplication::translate("RechercheContactWindow", "Cr\303\251\303\251 entre le", nullptr));

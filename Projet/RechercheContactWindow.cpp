@@ -27,7 +27,7 @@ RechercheContactWindow::RechercheContactWindow(list<Contact*> c, QWidget *parent
 {
    ui->setupUi(this);
 
-   //on remplie les combo box
+   //on rempli les combo box
    ui->rechercheContactComboBox->addItem("Nom");
    ui->rechercheContactComboBox->addItem("Entreprise");
 
@@ -42,11 +42,12 @@ RechercheContactWindow::RechercheContactWindow(list<Contact*> c, QWidget *parent
 
    connect(this, SIGNAL(listContactsUpdated(std::list<Contact*>)), this, SLOT(updateListContacts(std::list<Contact*>)));
 
-   connect(ui->validButton, SIGNAL(clicked()), this, SLOT(rechercheContact()));
    connect(ui->quitButton, SIGNAL(clicked()), this, SLOT(close()));
    connect(ui->rechercheLineEdit, SIGNAL(textEdited(QString)), this, SLOT(rechercheContact(QString)));
    connect(ui->rechercheContactComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(rechercheContact()));
    connect(ui->triListeComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(rechercheContact()));
+   connect(ui->dateEditDebut, SIGNAL(dateChanged(QDate)), this, SLOT(rechercheContact()));
+   connect(ui->dateEditFin, SIGNAL(dateChanged(QDate)), this, SLOT(rechercheContact()));
    connect(ui->listeContacts->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)), this, SLOT(selectContact(QModelIndex)));
 
    rechercheContact();
@@ -114,11 +115,11 @@ void RechercheContactWindow::rechercheContact(QString text)
 
     if(tri == "Ordre alphabétique")
     {
-        contacts.sort([](Contact* a, Contact* b) {return *a < *b;}); // on trie dans l'ordre alphabetique
+        contacts.sort([](Contact* a, Contact* b) {return *a < *b;}); // on tri dans l'ordre alphabetique
     }
     else
     {   // date de creation
-        contacts.sort([](Contact* a, Contact* b) {return a->getDateCreation() < b->getDateCreation();}); // on trie dans l'ordre de dates de création
+        contacts.sort([](Contact* a, Contact* b) {return a->getDateCreation() < b->getDateCreation();}); // on tri dans l'ordre de dates de création
     }
 
     bool triDates = dateDebut != dateFin && dateDebut < dateFin;
@@ -133,7 +134,7 @@ void RechercheContactWindow::rechercheContact(QString text)
 
     if(recherche == "Nom")
     {
-        // on affiche tous les nom des contacts de la liste temporaire
+        // on affiche tous les noms des contacts de la liste temporaire
         for(auto it = contactstemp.begin(); it != contactstemp.end(); it++)
         {
             if((*it)->getNom().find(text.toStdString()) != string::npos || (*it)->getPrenom().find(text.toStdString()) != string::npos)

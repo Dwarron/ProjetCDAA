@@ -923,8 +923,12 @@ debug/moc_RequeteWindow.cpp: ../Projet/RequeteWindow.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qfiledevice.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtGui/qvector2d.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtGui/qtouchdevice.h \
-		../Projet/GestionContact.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtCore/QObject \
+		D:/Qt/5.12.11/mingw73_64/include/QtGui/QStandardItemModel \
+		D:/Qt/5.12.11/mingw73_64/include/QtGui/qstandarditemmodel.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qabstractitemmodel.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtGui/qicon.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/QStringListModel \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qstringlistmodel.h \
 		../Projet/Contact.h \
 		../Projet/Interaction.h \
 		../Projet/Todo.h \
@@ -1058,12 +1062,14 @@ debug/moc_GestionnaireQObject.cpp: ../Projet/GestionnaireQObject.h \
 		../Projet/AjoutInteractionWindow.h \
 		../Projet/RechercheContactWindow.h \
 		../Projet/RequeteWindow.h \
-		../Projet/GestionContact.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtGui/QStandardItemModel \
+		D:/Qt/5.12.11/mingw73_64/include/QtGui/qstandarditemmodel.h \
 		../Projet/DatabaseManager.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtSql/QSqlDatabase \
 		D:/Qt/5.12.11/mingw73_64/include/QtSql/qsqldatabase.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtSql/qtsqlglobal.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtSql/qtsql-config.h \
+		../Projet/GestionContact.h \
 		debug/moc_predefs.h \
 		D:/Qt/5.12.11/mingw73_64/bin/moc.exe
 	D:\Qt\5.12.11\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/maxen/Documents/GitHub/ProjetCDAA/build-Projet-Desktop_Qt_5_12_11_MinGW_64_bit-Debug/debug/moc_predefs.h -ID:/Qt/5.12.11/mingw73_64/mkspecs/win32-g++ -IC:/Users/maxen/Documents/GitHub/ProjetCDAA/Projet -ID:/Qt/5.12.11/mingw73_64/include -ID:/Qt/5.12.11/mingw73_64/include/QtWidgets -ID:/Qt/5.12.11/mingw73_64/include/QtGui -ID:/Qt/5.12.11/mingw73_64/include/QtANGLE -ID:/Qt/5.12.11/mingw73_64/include/QtSql -ID:/Qt/5.12.11/mingw73_64/include/QtCore -I. -ID:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -ID:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -ID:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -ID:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -ID:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -ID:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\Projet\GestionnaireQObject.h -o debug\moc_GestionnaireQObject.cpp
@@ -1191,8 +1197,8 @@ debug/moc_MainWindow.cpp: ../Projet/MainWindow.h \
 		../Projet/AjoutInteractionWindow.h \
 		../Projet/RechercheContactWindow.h \
 		../Projet/RequeteWindow.h \
-		../Projet/GestionContact.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtCore/QObject \
+		D:/Qt/5.12.11/mingw73_64/include/QtGui/QStandardItemModel \
+		D:/Qt/5.12.11/mingw73_64/include/QtGui/qstandarditemmodel.h \
 		debug/moc_predefs.h \
 		D:/Qt/5.12.11/mingw73_64/bin/moc.exe
 	D:\Qt\5.12.11\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/maxen/Documents/GitHub/ProjetCDAA/build-Projet-Desktop_Qt_5_12_11_MinGW_64_bit-Debug/debug/moc_predefs.h -ID:/Qt/5.12.11/mingw73_64/mkspecs/win32-g++ -IC:/Users/maxen/Documents/GitHub/ProjetCDAA/Projet -ID:/Qt/5.12.11/mingw73_64/include -ID:/Qt/5.12.11/mingw73_64/include/QtWidgets -ID:/Qt/5.12.11/mingw73_64/include/QtGui -ID:/Qt/5.12.11/mingw73_64/include/QtANGLE -ID:/Qt/5.12.11/mingw73_64/include/QtSql -ID:/Qt/5.12.11/mingw73_64/include/QtCore -I. -ID:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -ID:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -ID:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -ID:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -ID:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -ID:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\Projet\MainWindow.h -o debug\moc_MainWindow.cpp
@@ -1979,10 +1985,9 @@ debug/Interaction.o: ../Projet/Interaction.cpp ../Projet/Interaction.h \
 		../Projet/Contact.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\Interaction.o ..\Projet\Interaction.cpp
 
-debug/JSONSerializer.o: ../Projet/JSONSerializer.cpp ../Projet/JSONSerializer.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtCore/QJsonObject \
-		D:/Qt/5.12.11/mingw73_64/include/QtCore/qjsonobject.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtCore/qjsonvalue.h \
+debug/JSONSerializer.o: ../Projet/JSONSerializer.cpp D:/Qt/5.12.11/mingw73_64/include/QtCore/QVariant \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qvariant.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qatomic.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qglobal.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qconfig.h \
@@ -1994,28 +1999,62 @@ debug/JSONSerializer.o: ../Projet/JSONSerializer.cpp ../Projet/JSONSerializer.h 
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qsysinfo.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qlogging.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qflags.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtCore/qatomic.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qglobalstatic.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qmutex.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qnumeric.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qversiontagging.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qbasicatomic.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qatomic_bootstrap.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qgenericatomic.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qatomic_cxx11.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qatomic_msvc.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtCore/qglobalstatic.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtCore/qmutex.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtCore/qnumeric.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtCore/qversiontagging.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtCore/qstring.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtCore/qchar.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qbytearray.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qrefcount.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qnamespace.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qarraydata.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qlist.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qalgorithms.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qiterator.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qhashfunctions.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qstring.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qchar.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qstringliteral.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qstringalgorithms.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qstringview.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qstringbuilder.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtCore/qiterator.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qpair.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qbytearraylist.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qstringlist.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qregexp.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qstringmatcher.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qmetatype.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qvarlengtharray.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qcontainerfwd.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qobjectdefs.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qobjectdefs_impl.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qmap.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qdebug.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qhash.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qtextstream.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qiodevice.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qobject.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qcoreevent.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qscopedpointer.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qobject_impl.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qlocale.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qshareddata.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qvector.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qpoint.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qset.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qcontiguouscache.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qsharedpointer.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qsharedpointer_impl.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/QJsonArray \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qjsonarray.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qjsonvalue.h \
+		../Projet/JSONSerializer.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/QJsonObject \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qjsonobject.h \
 		../Projet/Contact.h \
 		../Projet/Interaction.h \
 		../Projet/Todo.h \
@@ -2289,8 +2328,12 @@ debug/RequeteWindow.o: ../Projet/RequeteWindow.cpp ../Projet/RequeteWindow.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qfiledevice.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtGui/qvector2d.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtGui/qtouchdevice.h \
-		../Projet/GestionContact.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtCore/QObject \
+		D:/Qt/5.12.11/mingw73_64/include/QtGui/QStandardItemModel \
+		D:/Qt/5.12.11/mingw73_64/include/QtGui/qstandarditemmodel.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qabstractitemmodel.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtGui/qicon.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/QStringListModel \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qstringlistmodel.h \
 		../Projet/Contact.h \
 		../Projet/Interaction.h \
 		../Projet/Todo.h \
@@ -2306,6 +2349,9 @@ debug/RequeteWindow.o: ../Projet/RequeteWindow.cpp ../Projet/RequeteWindow.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtGui/qinputmethod.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/QButtonGroup \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qbuttongroup.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/QCheckBox \
+		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qcheckbox.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qabstractbutton.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/QComboBox \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qcombobox.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qabstractitemdelegate.h \
@@ -2313,7 +2359,6 @@ debug/RequeteWindow.o: ../Projet/RequeteWindow.cpp ../Projet/RequeteWindow.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qabstractspinbox.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtGui/qvalidator.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qregularexpression.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtGui/qicon.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qslider.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qabstractslider.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qstyle.h \
@@ -2321,7 +2366,6 @@ debug/RequeteWindow.o: ../Projet/RequeteWindow.cpp ../Projet/RequeteWindow.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qtabwidget.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qrubberband.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qframe.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtCore/qabstractitemmodel.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/QDateEdit \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qdatetimeedit.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qdatetime.h \
@@ -2336,23 +2380,13 @@ debug/RequeteWindow.o: ../Projet/RequeteWindow.cpp ../Projet/RequeteWindow.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/QHBoxLayout \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/QLabel \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qlabel.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/QPlainTextEdit \
-		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qplaintextedit.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qtextedit.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/QListView \
+		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qlistview.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qabstractitemview.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtGui/qtextdocument.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtGui/qtextoption.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtGui/qtextcursor.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtGui/qtextformat.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtGui/qpen.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtGui/qabstracttextdocumentlayout.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtGui/qtextlayout.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtGui/qglyphrun.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtGui/qrawfont.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtGui/qfontdatabase.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtCore/qitemselectionmodel.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/QPushButton \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qpushbutton.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qabstractbutton.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/QRadioButton \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/qradiobutton.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/QStackedWidget \
@@ -2554,12 +2588,14 @@ debug/GestionnaireQObject.o: ../Projet/GestionnaireQObject.cpp D:/Qt/5.12.11/min
 		../Projet/AjoutInteractionWindow.h \
 		../Projet/RechercheContactWindow.h \
 		../Projet/RequeteWindow.h \
-		../Projet/GestionContact.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtGui/QStandardItemModel \
+		D:/Qt/5.12.11/mingw73_64/include/QtGui/qstandarditemmodel.h \
 		../Projet/DatabaseManager.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtSql/QSqlDatabase \
 		D:/Qt/5.12.11/mingw73_64/include/QtSql/qsqldatabase.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtSql/qtsqlglobal.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtSql/qtsql-config.h \
+		../Projet/GestionContact.h \
 		../Projet/JSONSerializer.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/QJsonObject \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/qjsonobject.h
@@ -2697,12 +2733,14 @@ debug/main.o: ../Projet/main.cpp D:/Qt/5.12.11/mingw73_64/include/QtWidgets/QApp
 		../Projet/AjoutInteractionWindow.h \
 		../Projet/RechercheContactWindow.h \
 		../Projet/RequeteWindow.h \
-		../Projet/GestionContact.h \
+		D:/Qt/5.12.11/mingw73_64/include/QtGui/QStandardItemModel \
+		D:/Qt/5.12.11/mingw73_64/include/QtGui/qstandarditemmodel.h \
 		../Projet/DatabaseManager.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtSql/QSqlDatabase \
 		D:/Qt/5.12.11/mingw73_64/include/QtSql/qsqldatabase.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtSql/qtsqlglobal.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtSql/qtsql-config.h
+		D:/Qt/5.12.11/mingw73_64/include/QtSql/qtsql-config.h \
+		../Projet/GestionContact.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\Projet\main.cpp
 
 debug/MainWindow.o: ../Projet/MainWindow.cpp D:/Qt/5.12.11/mingw73_64/include/QtWidgets/QMessageBox \
@@ -2837,8 +2875,8 @@ debug/MainWindow.o: ../Projet/MainWindow.cpp D:/Qt/5.12.11/mingw73_64/include/Qt
 		../Projet/AjoutInteractionWindow.h \
 		../Projet/RechercheContactWindow.h \
 		../Projet/RequeteWindow.h \
-		../Projet/GestionContact.h \
-		D:/Qt/5.12.11/mingw73_64/include/QtCore/QObject \
+		D:/Qt/5.12.11/mingw73_64/include/QtGui/QStandardItemModel \
+		D:/Qt/5.12.11/mingw73_64/include/QtGui/qstandarditemmodel.h \
 		ui_MainWindow.h \
 		D:/Qt/5.12.11/mingw73_64/include/QtCore/QVariant \
 		D:/Qt/5.12.11/mingw73_64/include/QtWidgets/QAction \

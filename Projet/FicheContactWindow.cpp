@@ -166,7 +166,6 @@ void FicheContactWindow::loadContact(Contact* c)
     ui->entrepriseLineEdit->setEnabled(contactExistant);
     ui->telLineEdit->setEnabled(contactExistant);
     ui->mailLineEdit->setEnabled(contactExistant);
-    ui->photoLineEdit->setEnabled(contactExistant);
 
     emit contactSelected(c);
 }
@@ -217,8 +216,6 @@ void FicheContactWindow::modifFiche()
             {
                 ui->nomLineEdit->setText(QString::fromStdString(nomTest));
             }
-
-            return;
         }
         else
         {
@@ -242,7 +239,6 @@ void FicheContactWindow::modifFiche()
             {
                 ui->prenomLineEdit->setText(QString::fromStdString(prenomTest));
             }
-            return;
         }
         else
         {

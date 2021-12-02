@@ -87,7 +87,7 @@ void AjoutInteractionWindow::ajoutInteraction()
 
         ui->newEventText->setText("");
 
-        //apres avoir ajouter l'événement avec les informations de la fenetre on la ferme
+        //apres avoir ajoute l'interaction avec les informations de la fenetre, on la referme
         this->hide();
     }
 }

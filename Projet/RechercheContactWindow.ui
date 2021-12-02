@@ -17,13 +17,6 @@
    <string>Chercher un contact</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="4" column="0">
-    <widget class="QPushButton" name="validButton">
-     <property name="text">
-      <string>Rechercher</string>
-     </property>
-    </widget>
-   </item>
    <item row="0" column="0">
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
@@ -118,7 +111,7 @@
      </item>
     </layout>
    </item>
-   <item row="5" column="0">
+   <item row="4" column="0">
     <widget class="QPushButton" name="quitButton">
      <property name="text">
       <string>Quitter</string>

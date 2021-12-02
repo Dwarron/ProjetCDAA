@@ -33,8 +33,8 @@ CreationFicheWindow::CreationFicheWindow(QWidget *parent)
     file_name = "";
 
     connect(this, SIGNAL(imageSelected(QString)), this, SLOT(showImage(QString)));
-    connect(ui->validButton, SIGNAL(clicked()), this, SLOT(CreationFiche()));
-    connect(ui->selectFilePushButton, SIGNAL(clicked()), this, SLOT(SelectFile()));
+    connect(ui->validButton, SIGNAL(clicked()), this, SLOT(creationFiche()));
+    connect(ui->selectFilePushButton, SIGNAL(clicked()), this, SLOT(selectFile()));
     connect(ui->quitButton, SIGNAL(clicked()), this, SLOT(close()));
 }
 
@@ -44,7 +44,7 @@ CreationFicheWindow::CreationFicheWindow(QWidget *parent)
   *  Slot qui permet de selectionner la photo du contact (le chemin)
   *  La photo ne peut seulement etre en format jpg ou png
   */
-void CreationFicheWindow::SelectFile()
+void CreationFicheWindow::selectFile()
 {
     QString filter = "PNG File (*.png) ;; JPG File (*.jpg)";
     file_name = QFileDialog::getOpenFileName(this, "Open file", QDir::homePath(), filter);
@@ -73,11 +73,13 @@ void CreationFicheWindow::showImage(QString path)
         }
         else
         {
+            delete ui->photoView->scene();
             ui->photoView->setScene(nullptr);
         }
     }
     else
     {
+        delete ui->photoView->scene();
         ui->photoView->setScene(nullptr);
     }
 }
@@ -88,7 +90,7 @@ void CreationFicheWindow::showImage(QString path)
   *  Slot qui permet de creer la fiche d'un contact avec tous les informations recupere dans la fenetre.
   *  Appele lors du click sur le bouton de creation
   */
-void CreationFicheWindow::CreationFiche()
+void CreationFicheWindow::creationFiche()
 {
     string nom = ui->nomLineEdit->text().toStdString();
     string nomTest = Contact::suggestionNom(nom);

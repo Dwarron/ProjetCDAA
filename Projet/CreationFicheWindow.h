@@ -29,8 +29,8 @@ private:
     QString file_name;
 
 private slots:
-    void CreationFiche();
-    void SelectFile();
+    void creationFiche();
+    void selectFile();
     void showImage(QString path);
 
 signals:

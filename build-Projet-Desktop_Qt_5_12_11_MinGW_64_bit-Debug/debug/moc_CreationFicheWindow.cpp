@@ -36,15 +36,15 @@ QT_MOC_LITERAL(1, 20, 13), // "imageSelected"
 QT_MOC_LITERAL(2, 34, 0), // ""
 QT_MOC_LITERAL(3, 35, 14), // "contactCreated"
 QT_MOC_LITERAL(4, 50, 11), // "std::string"
-QT_MOC_LITERAL(5, 62, 13), // "CreationFiche"
-QT_MOC_LITERAL(6, 76, 10), // "SelectFile"
+QT_MOC_LITERAL(5, 62, 13), // "creationFiche"
+QT_MOC_LITERAL(6, 76, 10), // "selectFile"
 QT_MOC_LITERAL(7, 87, 9), // "showImage"
 QT_MOC_LITERAL(8, 97, 4) // "path"
 
     },
     "CreationFicheWindow\0imageSelected\0\0"
-    "contactCreated\0std::string\0CreationFiche\0"
-    "SelectFile\0showImage\0path"
+    "contactCreated\0std::string\0creationFiche\0"
+    "selectFile\0showImage\0path"
 };
 #undef QT_MOC_LITERAL
 
@@ -90,8 +90,8 @@ void CreationFicheWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
         switch (_id) {
         case 0: _t->imageSelected((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 1: _t->contactCreated((*reinterpret_cast< std::string(*)>(_a[1])),(*reinterpret_cast< std::string(*)>(_a[2])),(*reinterpret_cast< std::string(*)>(_a[3])),(*reinterpret_cast< std::string(*)>(_a[4])),(*reinterpret_cast< std::string(*)>(_a[5])),(*reinterpret_cast< std::string(*)>(_a[6]))); break;
-        case 2: _t->CreationFiche(); break;
-        case 3: _t->SelectFile(); break;
+        case 2: _t->creationFiche(); break;
+        case 3: _t->selectFile(); break;
         case 4: _t->showImage((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
