@@ -12,6 +12,7 @@ release/RequeteWindow.o
 release/Todo.o
 release/GestionContact.o
 release/GestionnaireQObject.o
+release/Verificator.o
 release/main.o
 release/MainWindow.o
 release/moc_AfficheInteractionsWindow.o

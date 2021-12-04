@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include "Date.h"
+#include "Verificator.h"
 
 using namespace std;
 
@@ -23,25 +24,10 @@ using namespace std;
 Date::Date()
 {
     time_t n = time(0);     //date courante
-    d = *localtime(&n);
-}
-
-/**
- *  \brief Renvoie true si le parametre est un nombre, false sinon
- *
- *  Fonction utilitaire indiquant si une chaine de caracteres est un nombre ou non
- *
- *  \param s : chaine de caractere pouvant etre un nombre
- */
-bool isNumber(const string s)
-{
-    for (char const &c : s)
-    {
-        if (!isdigit(c))
-          return false;
-    }
-
-    return true;
+    struct tm d = *localtime(&n);
+    jour = d.tm_mday;
+    mois = d.tm_mon + 1;
+    annee = d.tm_year + 1900;
 }
 
 /**
@@ -68,16 +54,14 @@ Date::Date(const string &text)
         composition[i] = text.substr(last, position - last);    //on decoupe la partie entre ce delimiteur et le precedent
         last = position + 1;
 
-        if (!isNumber(composition[i]))  //on verifie qu'on a bien decoupe un nombre
-            throw invalid_argument("Representation de date non composee de chiffres");
+        Verificator::checkChiffres(composition[i]);  //on verifie qu'on a bien decoupe un nombre
     }
 
     if(text.length() - last == 0)   //pas de texte apres le dernier delimiteur
         throw invalid_argument("Representation de date mal formee");
 
     composition[2] = text.substr(last); //decoupe de la derniere partie
-    if (!isNumber(composition[2]))
-        throw invalid_argument("Representation de date non composee de chiffres ou mal formee");
+    Verificator::checkChiffres((composition[2]));
 
     *this = Date(stoi(composition[0]), stoi(composition[1]), stoi(composition[2])); //appel du constructeur standard de Date avec les informations recuperees et converties en entier
 }
@@ -105,14 +89,13 @@ Date::Date(const int j, const int m, const int y)
         throw invalid_argument("annee y incorrecte");
     }
 
-    d = tm();
-    d.tm_mday = j;
-    d.tm_mon = m - 1;
-    d.tm_year = y - 1900;
+    jour = j;
+    mois = m;
+    annee = y;
 }
 
 /**
-  *  \brief Accesseur virtuel du jour
+  *  \brief Accesseur du jour
   *
   *  Methode qui renvoie le jour de la date
   *
@@ -120,11 +103,11 @@ Date::Date(const int j, const int m, const int y)
   */
 int Date::getJour() const
 {
-    return d.tm_mday;
+    return jour;
 }
 
 /**
-  *  \brief Accesseur virtuel du mois
+  *  \brief Accesseur du mois
   *
   *  Methode qui renvoie le mois de la date
   *
@@ -132,11 +115,11 @@ int Date::getJour() const
   */
 int Date::getMois() const
 {
-    return d.tm_mon + 1;
+    return mois;
 }
 
 /**
-  *  \brief Accesseur virtuel de l'annee
+  *  \brief Accesseur de l'annee
   *
   *  Methode qui renvoie l'annee de la date
   *
@@ -144,7 +127,7 @@ int Date::getMois() const
   */
 int Date::getAnnee() const
 {
-    return d.tm_year + 1900;
+    return annee;
 }
 
 /**
@@ -177,21 +160,21 @@ void Date::addDelay(const int jours, const int mois)
   *
   *  Methode qui permet de decaler la date selon un delai
   *
-  *  \param jours : le nombre de jours a ajouter
-  *  \param mois : le nombre de mois a ajouter
-  *  \param annee : le nombre d'annees a ajouter
+  *  \param j : le nombre de jours a ajouter
+  *  \param m : le nombre de mois a ajouter
+  *  \param a : le nombre d'annees a ajouter
   */
-void Date::addDelay(const int jours, const int mois, const int annees)
+void Date::addDelay(const int j, const int m, const int a)
 {
-    int newDay = d.tm_mday + jours;
-    d.tm_mday = newDay % 31;                   //le nombre de jour ne doit pas depasser 31
+    int newDay = jour + j;
+    jour = newDay % 31;                   //le nombre de jour ne doit pas depasser 31
     int additionalMonth = newDay / 31;          //si on a plus de 31j, on ajoute des mois
 
-    int newMonth = d.tm_mon + mois + additionalMonth;
-    d.tm_mon = newMonth % 12;                  //le nombre de mois ne doit pas depasser 12
+    int newMonth = mois + m + additionalMonth;
+    mois = newMonth % 12;                  //le nombre de mois ne doit pas depasser 12
     int additionalYear = newMonth / 12;         //si on a plus de 12 mois, on ajoute des annees
 
-    d.tm_year += annees + additionalYear;
+    annee += a + additionalYear;
 }
 
 /**

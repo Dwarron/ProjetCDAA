@@ -43,9 +43,9 @@ MainWindow::MainWindow(string dateDerniereSuppression, list<Contact*> contacts, 
     connect(this, SIGNAL(listContactsUpdated(std::list<Contact*>)), requete, SLOT(updateListContacts(std::list<Contact*>)));
 
     connect(rechcontact, SIGNAL(contactSelected(Contact*)), this, SLOT(selectContact(Contact*)));
-    connect(this, SIGNAL(contactSelected(Contact*)), afficheFich, SLOT(loadContact(Contact*)));
-    connect(this, SIGNAL(contactSelected(Contact*)), this, SLOT(updateContactValues()));
-    connect(this, SIGNAL(contactSelected(Contact*)), requete, SLOT(loadInfosContact(Contact*)));
+    connect(rechcontact, SIGNAL(contactSelected(Contact*)), afficheFich, SLOT(loadContact(Contact*)));
+    connect(rechcontact, SIGNAL(contactSelected(Contact*)), this, SLOT(updateContactValues()));
+    connect(rechcontact, SIGNAL(contactSelected(Contact*)), requete, SLOT(loadInfosContact(Contact*)));
 
     connect(this, SIGNAL(onEndModifContact()), this, SLOT(updateContactValues()));
     connect(this, SIGNAL(onEndModifContact()), rechcontact, SLOT(rechercheContact()));
@@ -122,8 +122,6 @@ void MainWindow::selectContact()
 void MainWindow::selectContact(Contact* c)
 {
     curContact = c;
-
-    emit contactSelected(c);
 }
 
 /**

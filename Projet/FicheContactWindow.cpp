@@ -13,6 +13,7 @@
 #include <QDate>
 #include "FicheContactWindow.h"
 #include "ui_FicheContactWindow.h"
+#include "Verificator.h"
 
 using namespace std;
 
@@ -200,7 +201,7 @@ void FicheContactWindow::resizeEvent(QResizeEvent* e)
 void FicheContactWindow::modifFiche()
 {
     string nom = ui->nomLineEdit->text().toStdString();
-    string nomTest = Contact::suggestionNom(nom);
+    string nomTest = Verificator::onlyLetters(nom);
 
     //on va regarder quel champ sont modifies pour utiliser les setters/mutateur
     if(curContact->getNom() != nom)
@@ -224,7 +225,7 @@ void FicheContactWindow::modifFiche()
     }
 
     string prenom = ui->prenomLineEdit->text().toStdString();
-    string prenomTest = Contact::suggestionNom(prenom);
+    string prenomTest = Verificator::onlyLetters(prenom);
 
     if(curContact->getPrenom() != prenom)
     {
@@ -257,13 +258,9 @@ void FicheContactWindow::modifFiche()
         if(tel.length() > 0)
         {
             try {
-               Contact::checkChiffres(tel);
+               Verificator::checkTelephone(tel);
             }
             catch (const invalid_argument& e) {
-                badPhone = true;
-            }
-            if(tel.length() != 10)
-            {
                 badPhone = true;
             }
         }
@@ -286,7 +283,7 @@ void FicheContactWindow::modifFiche()
         if(mail.length() > 0)
         {
             try {
-               Contact::checkMail(mail);
+               Verificator::checkMail(mail);
             }
             catch (const invalid_argument& e) {
                 badMail = true;

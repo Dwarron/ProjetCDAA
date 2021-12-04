@@ -90,6 +90,94 @@ Interaction* GestionContact::ajoutInteraction(Contact* c, const Date& d, const s
 }
 
 /**
+ *  \brief Creation de la liste des Todo concernant cette Interaction
+ *
+ *  Analyse le resume/contenu de l'interaction pour creer tous les Todo correspondant et les stocker dans la liste
+ *
+ *  \param i : l'interaction
+ */
+void GestionContact::creerTodos(Interaction* i)
+{
+    const string delimiter = "@todo ";
+    const int delimiterLength = delimiter.length();
+
+    size_t position;
+    size_t last = 0;
+
+    string resume = i->getResume();
+    position = resume.find(delimiter, last);
+    while(position != string::npos) // on recherche tous les @ todo
+    {
+        size_t positionEndLine = resume.find("\n", position); // fin de ligne du todo
+        if(positionEndLine == string::npos)
+            positionEndLine = resume.length();  // fin du todo a la fin du texte si pas de nouvelle ligne
+
+        size_t positionNextTodo = resume.find(delimiter, position + delimiterLength);   //@todo present sur la meme ligne
+        if(positionNextTodo != string::npos && positionNextTodo < positionEndLine)
+            positionEndLine = positionNextTodo;
+
+        string todoText = resume.substr(position, positionEndLine - position); // on decoupe le texte correspondant au todo
+        Date d = getDateFromLine(todoText);
+        Todo* t = new Todo(todoText, d, false);
+        resume = resume.substr(0, position) +  todoText + resume.substr(positionEndLine);   // correction de la ligne du todo avec celle analysee et retournee par l'instance
+        i->ajoutTodo(t);
+
+        last = position + delimiterLength;
+        position = resume.find(delimiter, last);
+    }
+}
+
+/**
+  *  \brief Recupere la date d'une ligne de text de todo
+  *
+  *  Fonction qui recupere une date valide apres un @ date (ou la date du jour) a partir d'un text ayant debute par @ todo
+  *
+  *  \param text : le text du todo
+  *  \return une date extraite du text, ou la date du jour le cas echeant
+  */
+const Date GestionContact::getDateFromLine(const string& text)
+{
+    Date d = Date();
+    const string delimiter = "@date ";
+    const int delimiterLength = delimiter.length();
+
+    size_t position = text.find(delimiter);
+
+    if(position != string::npos)    // recherche de @ date, sinon date du jour
+    {
+        position += delimiterLength;
+        size_t last = position;
+        string dateText = text.substr(position);
+
+        size_t positionFinDate = 0;
+        for(int i = 0; i < 2; i++)  // position du 'J/M/' pour le debut de la date
+        {
+            positionFinDate = dateText.find("/", positionFinDate);
+            if(positionFinDate == string::npos)
+            {
+                throw invalid_argument("Date mal formee dans un todo");
+            }
+            positionFinDate++;
+        }
+        positionFinDate += 4; //YYYY
+        if(positionFinDate > dateText.length())
+        {
+            throw invalid_argument("Date mal formee dans un todo");
+        }
+        dateText = dateText.substr(0, positionFinDate);    // on coupe la fin si @ date ne termine pas la ligne
+        d = Date(dateText);
+
+        position = text.find(delimiter, last);
+        if(position != string::npos)
+        {
+            throw invalid_argument("Plusieurs @date dans une ligne de todo");
+        }
+    }
+
+    return d;
+}
+
+/**
  *  \brief Ajoute une interaction existante dans un contact
  *
  *  Ajoute au contact une interaction deja existante.

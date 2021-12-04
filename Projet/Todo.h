@@ -26,8 +26,6 @@ public:
     const std::string toString() const;
     friend std::ostream& operator << (std::ostream&, const Todo&);
 
-    static const Date getDateFromTodoLine(const std::string&);
-
     bool getEffectue() const;
     void setEffectue(bool);
 

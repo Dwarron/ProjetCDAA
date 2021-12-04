@@ -28,41 +28,6 @@ Interaction::Interaction(const Date& d, const string& r)
 }
 
 /**
- *  \brief Creation de la liste des Todo concernant cette Interaction
- *
- *  Analyse le resume/contenu de l'interaction pour creer tous les Todo correspondant et les stocker dans la liste
- */
-void Interaction::creerTodos()
-{
-    const string delimiter = "@todo ";
-    const int delimiterLength = delimiter.length();
-
-    size_t position;
-    size_t last = 0;
-
-    position = resume.find(delimiter, last);
-    while(position != string::npos) // on recherche tous les @ todo
-    {
-        size_t positionEndLine = resume.find("\n", position); // fin de ligne du todo
-        if(positionEndLine == string::npos)
-            positionEndLine = resume.length();  // fin du todo a la fin du texte si pas de nouvelle ligne
-
-        size_t positionNextTodo = resume.find(delimiter, position + delimiterLength);   //@todo present sur la meme ligne
-        if(positionNextTodo != string::npos && positionNextTodo < positionEndLine)
-            positionEndLine = positionNextTodo;
-
-        string todoText = resume.substr(position, positionEndLine - position); // on decoupe le texte correspondant au todo
-        Date d = Todo::getDateFromTodoLine(todoText);
-        Todo* t = new Todo(todoText, d, false);
-        resume = resume.substr(0, position) +  todoText + resume.substr(positionEndLine);   // correction de la ligne du todo avec celle analysee et retournee par l'instance
-        todos.push_back(t);
-
-        last = position + delimiterLength;
-        position = resume.find(delimiter, last);
-    }
-}
-
-/**
   *  \brief Accesseur de date
   *
   *  Methode qui permet d'acceder a la date de l'interaction
@@ -73,7 +38,6 @@ Date Interaction::getDate() const
 {
     return date;
 }
-
 
 /**
   *  \brief Mutateur de date

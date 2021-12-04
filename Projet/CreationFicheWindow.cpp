@@ -13,6 +13,7 @@
 #include "CreationFicheWindow.h"
 #include "ui_CreationFicheWindow.h"
 #include "Contact.h"
+#include "Verificator.h"
 
 using namespace std;
 
@@ -93,7 +94,7 @@ void CreationFicheWindow::showImage(QString path)
 void CreationFicheWindow::creationFiche()
 {
     string nom = ui->nomLineEdit->text().toStdString();
-    string nomTest = Contact::suggestionNom(nom);
+    string nomTest = Verificator::onlyLetters(nom);
 
     if(nom.length() == 0)
     {
@@ -110,7 +111,7 @@ void CreationFicheWindow::creationFiche()
     else
     {
         string prenom = ui->prenomLineEdit->text().toStdString();
-        string prenomTest = Contact::suggestionNom(prenom);
+        string prenomTest = Verificator::onlyLetters(prenom);
 
         if(prenom.length() == 0)
         {
@@ -132,13 +133,9 @@ void CreationFicheWindow::creationFiche()
             if(telephone.length() > 0)
             {
                 try {
-                   Contact::checkChiffres(telephone);
+                   Verificator::checkTelephone(telephone);
                 }
                 catch (const invalid_argument& e) {
-                    badPhone = true;
-                }
-                if(telephone.length() != 10)
-                {
                     badPhone = true;
                 }
             }
@@ -155,7 +152,7 @@ void CreationFicheWindow::creationFiche()
                 if(mail.length() > 0)
                 {
                     try {
-                       Contact::checkMail(mail);
+                       Verificator::checkMail(mail);
                     }
                     catch (const invalid_argument& e) {
                         badMail = true;

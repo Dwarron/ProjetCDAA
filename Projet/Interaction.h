@@ -36,7 +36,6 @@ public:
     void ajoutTodo(Todo*);
     const std::list<Todo*> &getTodos() const;
 
-    void creerTodos();
     void viderTodos();
 
 private:

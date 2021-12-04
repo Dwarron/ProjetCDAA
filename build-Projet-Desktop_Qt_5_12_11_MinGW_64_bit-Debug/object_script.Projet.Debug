@@ -12,6 +12,7 @@ debug/RequeteWindow.o
 debug/Todo.o
 debug/GestionContact.o
 debug/GestionnaireQObject.o
+debug/Verificator.o
 debug/main.o
 debug/MainWindow.o
 debug/moc_AfficheInteractionsWindow.o

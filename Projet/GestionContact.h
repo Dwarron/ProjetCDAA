@@ -23,9 +23,9 @@ public:
     Contact* creeContact(const std::string&, const std::string&, const std::string&, const std::string&, const std::string&, const std::string&);
     Contact* creeContact(const std::string&, const std::string&, const std::string&, const std::string&, const std::string&, const std::string&, const Date&, const Date&);
 
-    Interaction* ajoutInteraction(Contact*, const Date&, const std::string&);
-    void ajoutInteraction(Contact*, Interaction*);
-    Todo* ajoutTodo(Interaction*, const Date&, const std::string&, const bool);
+    static Interaction* ajoutInteraction(Contact*, const Date&, const std::string&);
+    static void ajoutInteraction(Contact*, Interaction*);
+    static Todo* ajoutTodo(Interaction*, const Date&, const std::string&, const bool);
 
     void setDateDerniereSuppression(const Date&);
     const Date &getDateDerniereSuppression() const;
@@ -33,6 +33,9 @@ public:
     const std::list<Interaction*> getAllInteractions() const;
 
     const std::list<Contact*> &getContacts();
+
+    static void creerTodos(Interaction*);
+    static const Date getDateFromLine(const std::string&);
 
 public slots:
     void supprimeContact(Contact*);

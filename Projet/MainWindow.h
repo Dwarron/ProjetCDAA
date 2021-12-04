@@ -48,7 +48,6 @@ public slots:
 
 signals:
     void contactDeleted(Contact*);
-    void contactSelected(Contact*);
     void prenomModified(Contact*, std::string);
     void nomModified(Contact*, std::string);
     void entrepriseModified(Contact*, std::string);

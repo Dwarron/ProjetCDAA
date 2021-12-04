@@ -371,7 +371,7 @@ void GestionnaireQObject::editInteractionResume(Interaction* i, QString s)
     i->viderTodos();
     emit onDeleteTodos(i);
 
-    i->creerTodos();
+    gestionContact->creerTodos(i);
 
     emit onInteractionModifResume(i, s.toStdString());
     emit onCreateTodos(i, i->getTodos());
@@ -405,7 +405,7 @@ Interaction* GestionnaireQObject::ajoutInteraction(Contact* c, Date d, QString s
     Interaction* i = gestionContact->ajoutInteraction(c, d, s.toStdString());
 
     if(createTodo)
-        i->creerTodos();
+        gestionContact->creerTodos(i);
 
     emit onCreateInteraction(i, c, d.toString());
 

@@ -57,10 +57,6 @@ public:
     void addInteraction(Interaction*);
     void clearInteractions();
 
-    static void checkLettres(const std::string&);
-    static void checkChiffres(const std::string&);
-    static void checkMail(const std::string&);
-
     static const std::string suggestionNom(std::string);
 
     friend bool operator==(const Contact&, const Contact&);

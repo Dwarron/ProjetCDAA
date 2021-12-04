@@ -19,6 +19,7 @@ SOURCES += \
     Todo.cpp \
     GestionContact.cpp \
     GestionnaireQObject.cpp \
+    Verificator.cpp \
     main.cpp \
     MainWindow.cpp
 
@@ -37,7 +38,8 @@ HEADERS += \
     Todo.h \
     GestionContact.h \
     GestionnaireQObject.h \
-    MainWindow.h
+    MainWindow.h \
+    Verificator.h
 
 FORMS += \
     AfficheInteractionsWindow.ui \

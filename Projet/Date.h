@@ -39,5 +39,7 @@ public:
     friend bool operator!=(const Date&, const Date&);
 
 private:
-    struct tm d;
+    int jour;
+    int mois;
+    int annee;
 };

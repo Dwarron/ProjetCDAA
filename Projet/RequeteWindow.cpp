@@ -6,7 +6,6 @@
  * \version 0.1
  */
 
-#include <tuple>
 #include "RequeteWindow.h"
 #include "ui_RequeteWindow.h"
 
@@ -225,7 +224,7 @@ void RequeteWindow::loadInfosAllContacts()
         ui->checkBoxOnlyNotDoneAllContacts->setEnabled(true);
         bool onlyNotDone = ui->checkBoxOnlyNotDoneAllContacts->checkState() == Qt::Checked;
 
-        std::list<tuple<Date, string, Todo*>> datesContent;
+        std::list<pair<string, Todo*>> datesContent;
         for(auto c = contacts.begin(); c != contacts.end(); c++)
         {
             std::list<Todo*> todosContact = (*c)->getTodos();
@@ -235,13 +234,13 @@ void RequeteWindow::loadInfosAllContacts()
                 {
                     if((onlyNotDone && !(*t)->getEffectue()) || !onlyNotDone)
                     {
-                        datesContent.push_back(make_tuple((*t)->getEcheance(), (*c)->toString() + " : " + (*t)->toString(), *t));
+                        datesContent.push_back(make_pair((*c)->toString() + " : " + (*t)->toString(), *t));
                     }
                 }
             }
         }
 
-        datesContent.sort([](tuple<Date, string, Todo*> a, tuple<Date, string, Todo*> b) {return get<0>(a) < get<0>(b);});
+        datesContent.sort([](pair<string, Todo*> a, pair<string, Todo*> b) {return *a.second < *b.second;});
 
         todosShownListViewAllContacts.clear();
         modelCheckableListViewAllContacts->clear();
@@ -250,15 +249,14 @@ void RequeteWindow::loadInfosAllContacts()
         {
             QStandardItem* item = new QStandardItem();
             item->setCheckable(true);
-            item->setCheckState(get<2>(*it)->getEffectue() ? Qt::Checked : Qt::Unchecked);
-            item->setText(QString::fromStdString(get<1>(*it)));
-            Todo* t = get<2>(*it);
-            if(!t->getEffectue() && t->getEcheance().depassee())
+            item->setCheckState((*it).second->getEffectue() ? Qt::Checked : Qt::Unchecked);
+            item->setText(QString::fromStdString((*it).first));
+            if(!(*it).second->getEffectue() && (*it).second->getEcheance().depassee())
             {
                 item->setBackground(Qt::red);
             }
             modelCheckableListViewAllContacts->appendRow(item);
-            todosShownListViewAllContacts.push_back(t);
+            todosShownListViewAllContacts.push_back((*it).second);
         }
 
         ui->listViewRequeteAllContacts->setModel(modelCheckableListViewAllContacts);
