@@ -99,7 +99,7 @@ void AfficheInteractionsWindow::selectInteraction(QModelIndex newItem)
 }
 
 /**
-  *  \brief slot appele lors de la selection d'une interaction
+  *  \brief fonction appele par le slot de la selection d'une interaction
   *
   *  Selection d'une interaction, affiche les informations dans la fenetre
   */

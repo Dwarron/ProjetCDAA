@@ -527,7 +527,6 @@ void GestionnaireQObject::importJSON(QString filePath)
 
         emit onLoadJSON();
 
-
         for(auto it = contactsArray.begin(); it != contactsArray.end(); it++)
         {
             QJsonObject contactObj = (*it).toObject();
