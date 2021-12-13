@@ -1,3 +1,11 @@
+/**
+ * \file DatabaseManager.h
+ * \class DatabaseManager DatabaseManager.h
+ * \brief Gestionnaire de la base de donnees: lis, modifie et insere des donnees persistentes
+ * \author Perion Maxence, Pinon Alexandre
+ * \version 0.1
+ */
+
 #ifndef DATABASEMANAGER_H
 #define DATABASEMANAGER_H
 

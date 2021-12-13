@@ -24,7 +24,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="ub.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Projet CDAA
    &#160;<span id="projectnumber">0.0.1</span>
@@ -85,14 +84,20 @@ $(document).ready(function(){initNavTree('class_main_window.html',''); initResiz
 
 <div class="header">
   <div class="summary">
+<a href="#pub-slots">Connecteurs publics</a> &#124;
+<a href="#signals">Signaux</a> &#124;
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pro-methods">Fonctions membres protégées</a> &#124;
 <a href="class_main_window-members.html">Liste de tous les membres</a>  </div>
   <div class="headertitle">
 <div class="title">Référence de la classe MainWindow</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>&gt;</code></p>
+<p>Fenetre principale qui permet de gerer l'ensemble des fenetres.  
+ <a href="class_main_window.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_main_window_8h_source.html">MainWindow.h</a>&gt;</code></p>
 <div class="dynheader">
 Graphe d'héritage de MainWindow:</div>
 <div class="dyncontent">
@@ -100,19 +105,95 @@ Graphe d'héritage de MainWindow:</div>
   <img src="class_main_window.png" alt=""/>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Connecteurs publics</h2></td></tr>
+<tr class="memitem:a403494b2c7fc2d014742b8c60f6202d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a403494b2c7fc2d014742b8c60f6202d4">slot_aPropos</a> ()</td></tr>
+<tr class="memdesc:a403494b2c7fc2d014742b8c60f6202d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A propos de l'application.  <a href="class_main_window.html#a403494b2c7fc2d014742b8c60f6202d4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a403494b2c7fc2d014742b8c60f6202d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa21d3a8f9c80feb4bf3ab2f770ec92ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aa21d3a8f9c80feb4bf3ab2f770ec92ee">selectContact</a> (<a class="el" href="class_contact.html">Contact</a> *)</td></tr>
+<tr class="memdesc:aa21d3a8f9c80feb4bf3ab2f770ec92ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selection du contact.  <a href="class_main_window.html#aa21d3a8f9c80feb4bf3ab2f770ec92ee">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa21d3a8f9c80feb4bf3ab2f770ec92ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef640fa4baf2deef4e77d622ce639b3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aef640fa4baf2deef4e77d622ce639b3a">selectContact</a> ()</td></tr>
+<tr class="memdesc:aef640fa4baf2deef4e77d622ce639b3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selection du contact.  <a href="class_main_window.html#aef640fa4baf2deef4e77d622ce639b3a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aef640fa4baf2deef4e77d622ce639b3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac883d7cc11daf58c365acd7b10efcf6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ac883d7cc11daf58c365acd7b10efcf6a">updateContactValues</a> ()</td></tr>
+<tr class="memdesc:ac883d7cc11daf58c365acd7b10efcf6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mis a jour du contact.  <a href="class_main_window.html#ac883d7cc11daf58c365acd7b10efcf6a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac883d7cc11daf58c365acd7b10efcf6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae16661277a1c726175cc2ac8f56a6e31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae16661277a1c726175cc2ac8f56a6e31">updateDateDerniereSuppression</a> (std::string)</td></tr>
+<tr class="memdesc:ae16661277a1c726175cc2ac8f56a6e31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mis a jour de la date de la derniere suppression.  <a href="class_main_window.html#ae16661277a1c726175cc2ac8f56a6e31">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae16661277a1c726175cc2ac8f56a6e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0a47154e7294aba78a01136e965afa4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ab0a47154e7294aba78a01136e965afa4">exportJSON</a> ()</td></tr>
+<tr class="memdesc:ab0a47154e7294aba78a01136e965afa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export en JSON.  <a href="class_main_window.html#ab0a47154e7294aba78a01136e965afa4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab0a47154e7294aba78a01136e965afa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69ed1391996b5202b36fd8cbe0cb2d8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a69ed1391996b5202b36fd8cbe0cb2d8c">importJSON</a> ()</td></tr>
+<tr class="memdesc:a69ed1391996b5202b36fd8cbe0cb2d8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Import en JSON.  <a href="class_main_window.html#a69ed1391996b5202b36fd8cbe0cb2d8c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a69ed1391996b5202b36fd8cbe0cb2d8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Signaux</h2></td></tr>
+<tr class="memitem:a4a070a5e46648886d021af27dfb3a319"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a4a070a5e46648886d021af27dfb3a319">contactDeleted</a> (<a class="el" href="class_contact.html">Contact</a> *)</td></tr>
+<tr class="separator:a4a070a5e46648886d021af27dfb3a319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28af826eea7c20e5757feb486a8cd980"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a28af826eea7c20e5757feb486a8cd980">prenomModified</a> (<a class="el" href="class_contact.html">Contact</a> *, std::string)</td></tr>
+<tr class="separator:a28af826eea7c20e5757feb486a8cd980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affb0053e2d68c690140d028c8c13bab1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#affb0053e2d68c690140d028c8c13bab1">nomModified</a> (<a class="el" href="class_contact.html">Contact</a> *, std::string)</td></tr>
+<tr class="separator:affb0053e2d68c690140d028c8c13bab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03c2a783f99d71af6a0ab4e07556f1ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a03c2a783f99d71af6a0ab4e07556f1ea">entrepriseModified</a> (<a class="el" href="class_contact.html">Contact</a> *, std::string)</td></tr>
+<tr class="separator:a03c2a783f99d71af6a0ab4e07556f1ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34db79e1f414e02f90356cf14529c471"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a34db79e1f414e02f90356cf14529c471">telephoneModified</a> (<a class="el" href="class_contact.html">Contact</a> *, std::string)</td></tr>
+<tr class="separator:a34db79e1f414e02f90356cf14529c471"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed61026eff4347362a7230ed00e11097"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aed61026eff4347362a7230ed00e11097">mailModified</a> (<a class="el" href="class_contact.html">Contact</a> *, std::string)</td></tr>
+<tr class="separator:aed61026eff4347362a7230ed00e11097"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c90085718e2083e6ab8743bb9f47e56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a3c90085718e2083e6ab8743bb9f47e56">photoModified</a> (<a class="el" href="class_contact.html">Contact</a> *, std::string)</td></tr>
+<tr class="separator:a3c90085718e2083e6ab8743bb9f47e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad39fd9fa1e669172058b486423a1de43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ad39fd9fa1e669172058b486423a1de43">listContactsUpdated</a> (std::list&lt; <a class="el" href="class_contact.html">Contact</a> * &gt;)</td></tr>
+<tr class="separator:ad39fd9fa1e669172058b486423a1de43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9b35d18755f23636bbd3ae00068a668"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aa9b35d18755f23636bbd3ae00068a668">contactCreated</a> (std::string, std::string, std::string, std::string, std::string, std::string)</td></tr>
+<tr class="separator:aa9b35d18755f23636bbd3ae00068a668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42316efdc8b3276169b50ea2a78e6fb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a42316efdc8b3276169b50ea2a78e6fb7">onEndModifContact</a> ()</td></tr>
+<tr class="separator:a42316efdc8b3276169b50ea2a78e6fb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57448829d502517235d042a800f8d76c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a57448829d502517235d042a800f8d76c">interactionDateEdited</a> (<a class="el" href="class_interaction.html">Interaction</a> *, QDate)</td></tr>
+<tr class="separator:a57448829d502517235d042a800f8d76c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d94bbecbf0c97df250c9af90b6e433b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a8d94bbecbf0c97df250c9af90b6e433b">interactionResumeEdited</a> (<a class="el" href="class_interaction.html">Interaction</a> *, QString)</td></tr>
+<tr class="separator:a8d94bbecbf0c97df250c9af90b6e433b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50d2e4b87c3b8f01dd34830ba1aa02b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a50d2e4b87c3b8f01dd34830ba1aa02b4">onInteractionEdited</a> ()</td></tr>
+<tr class="separator:a50d2e4b87c3b8f01dd34830ba1aa02b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5d06daffceac95893a492692e2eee9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#af5d06daffceac95893a492692e2eee9f">onTodoEdited</a> ()</td></tr>
+<tr class="separator:af5d06daffceac95893a492692e2eee9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f298ab1dba7388b25f5f12ef4ed4416"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a9f298ab1dba7388b25f5f12ef4ed4416">ajoutInteraction</a> (<a class="el" href="class_contact.html">Contact</a> *, QString)</td></tr>
+<tr class="separator:a9f298ab1dba7388b25f5f12ef4ed4416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa2411154e9ccf01b041221e3733a79d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#afa2411154e9ccf01b041221e3733a79d">ajoutInteraction</a> (<a class="el" href="class_contact.html">Contact</a> *, <a class="el" href="class_interaction.html">Interaction</a> *)</td></tr>
+<tr class="separator:afa2411154e9ccf01b041221e3733a79d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf3b487e99bf49e227a308605483fb3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#abf3b487e99bf49e227a308605483fb3b">exportJSON</a> (QString)</td></tr>
+<tr class="separator:abf3b487e99bf49e227a308605483fb3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31b800206d78dba57b017ce64cdd4dfe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a31b800206d78dba57b017ce64cdd4dfe">importJSON</a> (QString)</td></tr>
+<tr class="separator:a31b800206d78dba57b017ce64cdd4dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3898694318b826a0333c617a6a6e1aac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a3898694318b826a0333c617a6a6e1aac">todoSetEffectue</a> (<a class="el" href="class_todo.html">Todo</a> *, bool)</td></tr>
+<tr class="separator:a3898694318b826a0333c617a6a6e1aac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:a996c5a2b6f77944776856f08ec30858d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d">MainWindow</a> (QWidget *parent=nullptr)</td></tr>
-<tr class="separator:a996c5a2b6f77944776856f08ec30858d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1fb34390a43ed0309d66988c17493a5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae1fb34390a43ed0309d66988c17493a5">MainWindow</a> (std::string, std::list&lt; <a class="el" href="class_contact.html">Contact</a> * &gt;, QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:ae1fb34390a43ed0309d66988c17493a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur standard.  <a href="class_main_window.html#ae1fb34390a43ed0309d66988c17493a5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae1fb34390a43ed0309d66988c17493a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae98d00a93bc118200eeef9f9bba1dba7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a> ()</td></tr>
+<tr class="memdesc:ae98d00a93bc118200eeef9f9bba1dba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur de <a class="el" href="class_main_window.html" title="Fenetre principale qui permet de gerer l&#39;ensemble des fenetres.">MainWindow</a>.  <a href="class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ae98d00a93bc118200eeef9f9bba1dba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Fonctions membres protégées</h2></td></tr>
+<tr class="memitem:a4aa386518569b0bbceb958df0ddc8f32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a4aa386518569b0bbceb958df0ddc8f32">closeEvent</a> (QCloseEvent *) override</td></tr>
+<tr class="memdesc:a4aa386518569b0bbceb958df0ddc8f32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evenement de fermeture de la fenetre.  <a href="class_main_window.html#a4aa386518569b0bbceb958df0ddc8f32">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4aa386518569b0bbceb958df0ddc8f32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock">
-<p class="definition">Définition à la ligne <a class="el" href="mainwindow_8h_source.html#l00010">10</a> du fichier <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<div class="textblock"><p>Fenetre principale qui permet de gerer l'ensemble des fenetres. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Perion Maxence, Pinon Alexandre </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_main_window_8h_source.html#l00021">21</a> du fichier <a class="el" href="_main_window_8h_source.html">MainWindow.h</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
-<a id="a996c5a2b6f77944776856f08ec30858d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a996c5a2b6f77944776856f08ec30858d">&#9670;&nbsp;</a></span>MainWindow()</h2>
+<a id="ae1fb34390a43ed0309d66988c17493a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1fb34390a43ed0309d66988c17493a5">&#9670;&nbsp;</a></span>MainWindow()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -120,14 +201,41 @@ Fonctions membres publiques</h2></td></tr>
         <tr>
           <td class="memname">MainWindow::MainWindow </td>
           <td>(</td>
-          <td class="paramtype">QWidget *&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::list&lt; <a class="el" href="class_contact.html">Contact</a> * &gt;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="mainwindow_8cpp_source.html#l00004">4</a> du fichier <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p>Constructeur standard. </p>
+<p>Constructeur standard de la classe <a class="el" href="class_main_window.html" title="Fenetre principale qui permet de gerer l&#39;ensemble des fenetres.">MainWindow</a>. Effectue les connexions signaux/slots</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dateDerniereSuppression</td><td>: la date de la derniere suppression </td></tr>
+    <tr><td class="paramname">contacts</td><td>: la liste des contacts lors de la creation de la fenetre </td></tr>
+    <tr><td class="paramname">parent</td><td>: fenetre parent </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_main_window_8cpp_source.html#l00029">29</a> du fichier <a class="el" href="_main_window_8cpp_source.html">MainWindow.cpp</a>.</p>
 
 </div>
 </div>
@@ -146,13 +254,913 @@ Fonctions membres publiques</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="mainwindow_8cpp_source.html#l00011">11</a> du fichier <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p>Destructeur de <a class="el" href="class_main_window.html" title="Fenetre principale qui permet de gerer l&#39;ensemble des fenetres.">MainWindow</a>. </p>
+<p>Detruis en memoire la fenetre </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_main_window_8cpp_source.html#l00204">204</a> du fichier <a class="el" href="_main_window_8cpp_source.html">MainWindow.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a id="afa2411154e9ccf01b041221e3733a79d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa2411154e9ccf01b041221e3733a79d">&#9670;&nbsp;</a></span>ajoutInteraction <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::ajoutInteraction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_contact.html">Contact</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_interaction.html">Interaction</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9f298ab1dba7388b25f5f12ef4ed4416"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f298ab1dba7388b25f5f12ef4ed4416">&#9670;&nbsp;</a></span>ajoutInteraction <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::ajoutInteraction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_contact.html">Contact</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4aa386518569b0bbceb958df0ddc8f32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aa386518569b0bbceb958df0ddc8f32">&#9670;&nbsp;</a></span>closeEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::closeEvent </td>
+          <td>(</td>
+          <td class="paramtype">QCloseEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Evenement de fermeture de la fenetre. </p>
+<p>Quitte toute l'application lors de la fermeture de la fenetre principale </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_main_window_8cpp_source.html#l00168">168</a> du fichier <a class="el" href="_main_window_8cpp_source.html">MainWindow.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa9b35d18755f23636bbd3ae00068a668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9b35d18755f23636bbd3ae00068a668">&#9670;&nbsp;</a></span>contactCreated</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::contactCreated </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4a070a5e46648886d021af27dfb3a319"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a070a5e46648886d021af27dfb3a319">&#9670;&nbsp;</a></span>contactDeleted</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::contactDeleted </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_contact.html">Contact</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a03c2a783f99d71af6a0ab4e07556f1ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03c2a783f99d71af6a0ab4e07556f1ea">&#9670;&nbsp;</a></span>entrepriseModified</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::entrepriseModified </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_contact.html">Contact</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab0a47154e7294aba78a01136e965afa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0a47154e7294aba78a01136e965afa4">&#9670;&nbsp;</a></span>exportJSON <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::exportJSON </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Export en JSON. </p>
+<p>Selectionne un fichier pour exporter les donnees en JSON </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_main_window_8cpp_source.html#l00180">180</a> du fichier <a class="el" href="_main_window_8cpp_source.html">MainWindow.cpp</a>.</p>
+
+</div>
+</div>
+<a id="abf3b487e99bf49e227a308605483fb3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf3b487e99bf49e227a308605483fb3b">&#9670;&nbsp;</a></span>exportJSON <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::exportJSON </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a69ed1391996b5202b36fd8cbe0cb2d8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69ed1391996b5202b36fd8cbe0cb2d8c">&#9670;&nbsp;</a></span>importJSON <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::importJSON </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Import en JSON. </p>
+<p>Selectionne un fichier pour importer les donnees en JSON </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_main_window_8cpp_source.html#l00192">192</a> du fichier <a class="el" href="_main_window_8cpp_source.html">MainWindow.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a31b800206d78dba57b017ce64cdd4dfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31b800206d78dba57b017ce64cdd4dfe">&#9670;&nbsp;</a></span>importJSON <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::importJSON </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a57448829d502517235d042a800f8d76c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57448829d502517235d042a800f8d76c">&#9670;&nbsp;</a></span>interactionDateEdited</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::interactionDateEdited </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_interaction.html">Interaction</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QDate&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8d94bbecbf0c97df250c9af90b6e433b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d94bbecbf0c97df250c9af90b6e433b">&#9670;&nbsp;</a></span>interactionResumeEdited</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::interactionResumeEdited </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_interaction.html">Interaction</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad39fd9fa1e669172058b486423a1de43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad39fd9fa1e669172058b486423a1de43">&#9670;&nbsp;</a></span>listContactsUpdated</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::listContactsUpdated </td>
+          <td>(</td>
+          <td class="paramtype">std::list&lt; <a class="el" href="class_contact.html">Contact</a> * &gt;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aed61026eff4347362a7230ed00e11097"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed61026eff4347362a7230ed00e11097">&#9670;&nbsp;</a></span>mailModified</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::mailModified </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_contact.html">Contact</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="affb0053e2d68c690140d028c8c13bab1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affb0053e2d68c690140d028c8c13bab1">&#9670;&nbsp;</a></span>nomModified</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::nomModified </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_contact.html">Contact</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a42316efdc8b3276169b50ea2a78e6fb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42316efdc8b3276169b50ea2a78e6fb7">&#9670;&nbsp;</a></span>onEndModifContact</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::onEndModifContact </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a50d2e4b87c3b8f01dd34830ba1aa02b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50d2e4b87c3b8f01dd34830ba1aa02b4">&#9670;&nbsp;</a></span>onInteractionEdited</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::onInteractionEdited </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af5d06daffceac95893a492692e2eee9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5d06daffceac95893a492692e2eee9f">&#9670;&nbsp;</a></span>onTodoEdited</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::onTodoEdited </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3c90085718e2083e6ab8743bb9f47e56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c90085718e2083e6ab8743bb9f47e56">&#9670;&nbsp;</a></span>photoModified</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::photoModified </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_contact.html">Contact</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a28af826eea7c20e5757feb486a8cd980"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28af826eea7c20e5757feb486a8cd980">&#9670;&nbsp;</a></span>prenomModified</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::prenomModified </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_contact.html">Contact</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aef640fa4baf2deef4e77d622ce639b3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef640fa4baf2deef4e77d622ce639b3a">&#9670;&nbsp;</a></span>selectContact <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::selectContact </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Selection du contact. </p>
+<p>Slot pour selectionner le contact</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>: la nouvelle date </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_main_window_8cpp_source.html#l00110">110</a> du fichier <a class="el" href="_main_window_8cpp_source.html">MainWindow.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa21d3a8f9c80feb4bf3ab2f770ec92ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa21d3a8f9c80feb4bf3ab2f770ec92ee">&#9670;&nbsp;</a></span>selectContact <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::selectContact </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_contact.html">Contact</a> *&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Selection du contact. </p>
+<p>Slot pour selectionner le contact</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>: le contact </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_main_window_8cpp_source.html#l00122">122</a> du fichier <a class="el" href="_main_window_8cpp_source.html">MainWindow.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a403494b2c7fc2d014742b8c60f6202d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a403494b2c7fc2d014742b8c60f6202d4">&#9670;&nbsp;</a></span>slot_aPropos</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::slot_aPropos </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A propos de l'application. </p>
+<p>Affiche le fonctionnement globale de l'application dans un QMessageBox </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_main_window_8cpp_source.html#l00154">154</a> du fichier <a class="el" href="_main_window_8cpp_source.html">MainWindow.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a34db79e1f414e02f90356cf14529c471"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34db79e1f414e02f90356cf14529c471">&#9670;&nbsp;</a></span>telephoneModified</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::telephoneModified </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_contact.html">Contact</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3898694318b826a0333c617a6a6e1aac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3898694318b826a0333c617a6a6e1aac">&#9670;&nbsp;</a></span>todoSetEffectue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::todoSetEffectue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_todo.html">Todo</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac883d7cc11daf58c365acd7b10efcf6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac883d7cc11daf58c365acd7b10efcf6a">&#9670;&nbsp;</a></span>updateContactValues</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::updateContactValues </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mis a jour du contact. </p>
+<p>Mis a jour de l'affichage des donnees du contact </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_main_window_8cpp_source.html#l00132">132</a> du fichier <a class="el" href="_main_window_8cpp_source.html">MainWindow.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae16661277a1c726175cc2ac8f56a6e31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae16661277a1c726175cc2ac8f56a6e31">&#9670;&nbsp;</a></span>updateDateDerniereSuppression</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::updateDateDerniereSuppression </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mis a jour de la date de la derniere suppression. </p>
+<p>Slot pour mettre a jour l'affichage de la date de la derniere suppression</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>: la nouvelle date </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_main_window_8cpp_source.html#l00098">98</a> du fichier <a class="el" href="_main_window_8cpp_source.html">MainWindow.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
-<li><a class="el" href="mainwindow_8h_source.html">mainwindow.h</a></li>
-<li><a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a></li>
+<li><a class="el" href="_main_window_8h_source.html">MainWindow.h</a></li>
+<li><a class="el" href="_main_window_8cpp_source.html">MainWindow.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

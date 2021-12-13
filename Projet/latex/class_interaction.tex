@@ -12,27 +12,35 @@ Enregistre une interaction avec un \mbox{\hyperlink{class_contact}{Contact}}.
 \doxysubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_interaction_a73b7a7b384ba6436d3c73c3435517e5f}{Interaction}} (const std\+::string \&)
+\mbox{\hyperlink{class_interaction_a2c9aa6cf32e6bf0cb13ca0ec0f807c98}{Interaction}} (const \mbox{\hyperlink{class_date}{Date}} \&, const std\+::string \&)
 \begin{DoxyCompactList}\small\item\em Constructeur de la class \mbox{\hyperlink{class_interaction}{Interaction}}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_interaction_a6610199fedc7fae617003cb2f397c825}{$\sim$\+Interaction}} ()
 \begin{DoxyCompactList}\small\item\em Destructeur d\textquotesingle{}\mbox{\hyperlink{class_interaction}{Interaction}}. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{class_date}{Date}} \mbox{\hyperlink{class_interaction_a6adeb7f999505adc3100a83dac1ee4de}{get\+Date}} () const
+\mbox{\hyperlink{class_date}{Date}} \mbox{\hyperlink{class_interaction_ae30667c22b4c8f0d56d1828f8d247139}{get\+Date}} () const
 \begin{DoxyCompactList}\small\item\em Accesseur de date. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_interaction_a78ab3582f37b88498eab85b71c248bb0}{set\+Date}} (const \mbox{\hyperlink{class_date}{Date}} \&)
+\begin{DoxyCompactList}\small\item\em Mutateur de date. \end{DoxyCompactList}\item 
 const std\+::string \& \mbox{\hyperlink{class_interaction_af2fc9889b4e9a17c35b3fb6d21c17320}{get\+Resume}} () const
 \begin{DoxyCompactList}\small\item\em Accesseur de resume. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_interaction_a7b904695469d24331aa10a7cbd14ea32}{set\+Resume}} (const std\+::string \&new\+Resume)
 \begin{DoxyCompactList}\small\item\em Mutateur de resume. \end{DoxyCompactList}\item 
 const std\+::string \mbox{\hyperlink{class_interaction_a4fb2d8d19d9e499a0ab76e6996d2f058}{to\+String}} () const
 \begin{DoxyCompactList}\small\item\em Representation en string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_interaction_a8ae8a5a0077990bdc5c8af6c31976617}{ajout\+Todo}} (\mbox{\hyperlink{class_todo}{Todo}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Ajout d\textquotesingle{}un todo. \end{DoxyCompactList}\item 
 const std\+::list$<$ \mbox{\hyperlink{class_todo}{Todo}} $\ast$ $>$ \& \mbox{\hyperlink{class_interaction_a105548a9f2f3b3b47fe8bcf2382b2a03}{get\+Todos}} () const
-\begin{DoxyCompactList}\small\item\em Accesseur de todos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Accesseur de todos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_interaction_ad688c4677d2ba96c8185624098a4fbe9}{vider\+Todos}} ()
+\begin{DoxyCompactList}\small\item\em Vide la liste des todos stockes dans cette interaction. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Amis}
 \begin{DoxyCompactItemize}
 \item 
 std\+::ostream \& \mbox{\hyperlink{class_interaction_a60099cfbe5db8c8d2d10fb60e100e4bf}{operator$<$$<$}} (std\+::ostream \&, const \mbox{\hyperlink{class_interaction}{Interaction}} \&)
 \item 
-bool \mbox{\hyperlink{class_interaction_a84432a425905bea1591a887d41997071}{operator$<$}} (const \mbox{\hyperlink{class_interaction}{Interaction}} \&, const \mbox{\hyperlink{class_interaction}{Interaction}} \&)
-\begin{DoxyCompactList}\small\item\em Comparaison a $<$ b. \end{DoxyCompactList}\end{DoxyCompactItemize}
+bool \mbox{\hyperlink{class_interaction_a880057150b94f6175845eecc0355d8d8}{operator$<$}} (\mbox{\hyperlink{class_interaction}{Interaction}} \&, \mbox{\hyperlink{class_interaction}{Interaction}} \&)
+\begin{DoxyCompactList}\small\item\em Comparaison a $<$ b. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_interaction_ac67de9b094e9ed108ffc579a739b4125}{operator$>$}} (\mbox{\hyperlink{class_interaction}{Interaction}} \&, \mbox{\hyperlink{class_interaction}{Interaction}} \&)
+\begin{DoxyCompactList}\small\item\em Comparaison a $>$ b. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -53,11 +61,11 @@ Définition à la ligne 19 du fichier Interaction.\+h.
 
 
 \doxysubsection{Documentation des constructeurs et destructeur}
-\mbox{\Hypertarget{class_interaction_a73b7a7b384ba6436d3c73c3435517e5f}\label{class_interaction_a73b7a7b384ba6436d3c73c3435517e5f}} 
+\mbox{\Hypertarget{class_interaction_a2c9aa6cf32e6bf0cb13ca0ec0f807c98}\label{class_interaction_a2c9aa6cf32e6bf0cb13ca0ec0f807c98}} 
 \index{Interaction@{Interaction}!Interaction@{Interaction}}
 \index{Interaction@{Interaction}!Interaction@{Interaction}}
 \doxysubsubsection{\texorpdfstring{Interaction()}{Interaction()}}
-{\footnotesize\ttfamily Interaction\+::\+Interaction (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Interaction\+::\+Interaction (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{,  }\item[{const std\+::string \&}]{ }\end{DoxyParamCaption})}
 
 
 
@@ -67,12 +75,14 @@ Constructeur avec parametre de la classe \mbox{\hyperlink{class_interaction}{Int
 
 
 \begin{DoxyParams}{Paramètres}
+{\em d} & \+: la date de l\textquotesingle{}interaction \\
+\hline
 {\em r} & \+: le resume de l\textquotesingle{}interaction \\
 \hline
 \end{DoxyParams}
 
 
-Définition à la ligne 22 du fichier Interaction.\+cpp.
+Définition à la ligne 23 du fichier Interaction.\+cpp.
 
 \mbox{\Hypertarget{class_interaction_a6610199fedc7fae617003cb2f397c825}\label{class_interaction_a6610199fedc7fae617003cb2f397c825}} 
 \index{Interaction@{Interaction}!````~Interaction@{$\sim$Interaction}}
@@ -86,16 +96,37 @@ Destructeur d\textquotesingle{}\mbox{\hyperlink{class_interaction}{Interaction}}
 
 Detruis en memoire tout ce qui etait utilise par une instance d\textquotesingle{}interactions qui va etre supprimee (les instances de todos pointees par la liste) 
 
-Définition à la ligne 175 du fichier Interaction.\+cpp.
+Définition à la ligne 178 du fichier Interaction.\+cpp.
 
 
 
 \doxysubsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_interaction_a6adeb7f999505adc3100a83dac1ee4de}\label{class_interaction_a6adeb7f999505adc3100a83dac1ee4de}} 
+\mbox{\Hypertarget{class_interaction_a8ae8a5a0077990bdc5c8af6c31976617}\label{class_interaction_a8ae8a5a0077990bdc5c8af6c31976617}} 
+\index{Interaction@{Interaction}!ajoutTodo@{ajoutTodo}}
+\index{ajoutTodo@{ajoutTodo}!Interaction@{Interaction}}
+\doxysubsubsection{\texorpdfstring{ajoutTodo()}{ajoutTodo()}}
+{\footnotesize\ttfamily void Interaction\+::ajout\+Todo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_todo}{Todo}} $\ast$}]{t }\end{DoxyParamCaption})}
+
+
+
+Ajout d\textquotesingle{}un todo. 
+
+Methode qui ajoute le todo a la liste des todos
+
+
+\begin{DoxyParams}{Paramètres}
+{\em t} & \+: le todo a ajouter \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 100 du fichier Interaction.\+cpp.
+
+\mbox{\Hypertarget{class_interaction_ae30667c22b4c8f0d56d1828f8d247139}\label{class_interaction_ae30667c22b4c8f0d56d1828f8d247139}} 
 \index{Interaction@{Interaction}!getDate@{getDate}}
 \index{getDate@{getDate}!Interaction@{Interaction}}
 \doxysubsubsection{\texorpdfstring{getDate()}{getDate()}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{class_date}{Date}} Interaction\+::get\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_date}{Date}} Interaction\+::get\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -108,7 +139,7 @@ date
 \end{DoxyReturn}
 
 
-Définition à la ligne 71 du fichier Interaction.\+cpp.
+Définition à la ligne 37 du fichier Interaction.\+cpp.
 
 \mbox{\Hypertarget{class_interaction_af2fc9889b4e9a17c35b3fb6d21c17320}\label{class_interaction_af2fc9889b4e9a17c35b3fb6d21c17320}} 
 \index{Interaction@{Interaction}!getResume@{getResume}}
@@ -127,7 +158,7 @@ resume
 \end{DoxyReturn}
 
 
-Définition à la ligne 83 du fichier Interaction.\+cpp.
+Définition à la ligne 61 du fichier Interaction.\+cpp.
 
 \mbox{\Hypertarget{class_interaction_a105548a9f2f3b3b47fe8bcf2382b2a03}\label{class_interaction_a105548a9f2f3b3b47fe8bcf2382b2a03}} 
 \index{Interaction@{Interaction}!getTodos@{getTodos}}
@@ -146,7 +177,28 @@ contact
 \end{DoxyReturn}
 
 
-Définition à la ligne 122 du fichier Interaction.\+cpp.
+Définition à la ligne 112 du fichier Interaction.\+cpp.
+
+\mbox{\Hypertarget{class_interaction_a78ab3582f37b88498eab85b71c248bb0}\label{class_interaction_a78ab3582f37b88498eab85b71c248bb0}} 
+\index{Interaction@{Interaction}!setDate@{setDate}}
+\index{setDate@{setDate}!Interaction@{Interaction}}
+\doxysubsubsection{\texorpdfstring{setDate()}{setDate()}}
+{\footnotesize\ttfamily void Interaction\+::set\+Date (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{d }\end{DoxyParamCaption})}
+
+
+
+Mutateur de date. 
+
+Methode qui permet de modifier la date de l\textquotesingle{}interaction
+
+
+\begin{DoxyParams}{Paramètres}
+{\em d} & \+: la nouvelle date \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 49 du fichier Interaction.\+cpp.
 
 \mbox{\Hypertarget{class_interaction_a7b904695469d24331aa10a7cbd14ea32}\label{class_interaction_a7b904695469d24331aa10a7cbd14ea32}} 
 \index{Interaction@{Interaction}!setResume@{setResume}}
@@ -160,7 +212,7 @@ Mutateur de resume.
 
 Methode qui permet de modifier le resume de l\textquotesingle{}interaction (en cas d\textquotesingle{}erreur) Regenere egalement les todos associes. 
 
-Définition à la ligne 134 du fichier Interaction.\+cpp.
+Définition à la ligne 124 du fichier Interaction.\+cpp.
 
 \mbox{\Hypertarget{class_interaction_a4fb2d8d19d9e499a0ab76e6996d2f058}\label{class_interaction_a4fb2d8d19d9e499a0ab76e6996d2f058}} 
 \index{Interaction@{Interaction}!toString@{toString}}
@@ -179,16 +231,30 @@ date \+: resume
 \end{DoxyReturn}
 
 
-Définition à la ligne 110 du fichier Interaction.\+cpp.
+Définition à la ligne 88 du fichier Interaction.\+cpp.
+
+\mbox{\Hypertarget{class_interaction_ad688c4677d2ba96c8185624098a4fbe9}\label{class_interaction_ad688c4677d2ba96c8185624098a4fbe9}} 
+\index{Interaction@{Interaction}!viderTodos@{viderTodos}}
+\index{viderTodos@{viderTodos}!Interaction@{Interaction}}
+\doxysubsubsection{\texorpdfstring{viderTodos()}{viderTodos()}}
+{\footnotesize\ttfamily void Interaction\+::vider\+Todos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Vide la liste des todos stockes dans cette interaction. 
+
+Desalloue les instances de todos references 
+
+Définition à la ligne 134 du fichier Interaction.\+cpp.
 
 
 
 \doxysubsection{Documentation des fonctions amies et associées}
-\mbox{\Hypertarget{class_interaction_a84432a425905bea1591a887d41997071}\label{class_interaction_a84432a425905bea1591a887d41997071}} 
+\mbox{\Hypertarget{class_interaction_a880057150b94f6175845eecc0355d8d8}\label{class_interaction_a880057150b94f6175845eecc0355d8d8}} 
 \index{Interaction@{Interaction}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!Interaction@{Interaction}}
 \doxysubsubsection{\texorpdfstring{operator$<$}{operator<}}
-{\footnotesize\ttfamily bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_interaction}{Interaction}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_interaction}{Interaction}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+{\footnotesize\ttfamily bool operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_interaction}{Interaction}} \&}]{a,  }\item[{\mbox{\hyperlink{class_interaction}{Interaction}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
 
 
 
@@ -206,13 +272,37 @@ a $<$ b
 \end{DoxyReturn}
 
 
-Définition à la ligne 165 du fichier Interaction.\+cpp.
+Définition à la ligne 153 du fichier Interaction.\+cpp.
 
 \mbox{\Hypertarget{class_interaction_a60099cfbe5db8c8d2d10fb60e100e4bf}\label{class_interaction_a60099cfbe5db8c8d2d10fb60e100e4bf}} 
 \index{Interaction@{Interaction}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!Interaction@{Interaction}}
 \doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
 {\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{,  }\item[{const \mbox{\hyperlink{class_interaction}{Interaction}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_interaction_ac67de9b094e9ed108ffc579a739b4125}\label{class_interaction_ac67de9b094e9ed108ffc579a739b4125}} 
+\index{Interaction@{Interaction}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Interaction@{Interaction}}
+\doxysubsubsection{\texorpdfstring{operator$>$}{operator>}}
+{\footnotesize\ttfamily bool operator$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_interaction}{Interaction}} \&}]{a,  }\item[{\mbox{\hyperlink{class_interaction}{Interaction}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Comparaison a $>$ b. 
+
+Surdefinition de l\textquotesingle{}operateur \char`\"{}$>$\char`\"{}, renvoie vraie si semantiquement a $>$ b Les interactions sont comparees selon leurs dates 
+\begin{DoxyParams}{Paramètres}
+{\em a} & \+: premiere operande \\
+\hline
+{\em b} & \+: deuxieme operande\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+a $<$ b 
+\end{DoxyReturn}
+
+
+Définition à la ligne 168 du fichier Interaction.\+cpp.
 
 
 

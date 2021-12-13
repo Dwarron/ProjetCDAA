@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['testdate_70',['testDate',['../main_8cpp.html#a003aea2910a5f618f50b78082934186f',1,'main.cpp']]],
-  ['todo_71',['Todo',['../class_todo.html',1,'Todo'],['../class_todo.html#af04d7306089100e0a51ab46785a498d2',1,'Todo::Todo()']]],
-  ['todo_2ecpp_72',['Todo.cpp',['../_todo_8cpp.html',1,'']]],
-  ['todo_2eh_73',['Todo.h',['../_todo_8h.html',1,'']]],
-  ['todostostring_74',['todosToString',['../class_contact.html#aba2053b48fbf5e978be695eec3ee879f',1,'Contact']]],
-  ['tostring_75',['toString',['../class_contact.html#a8c548da2f7375842f44df45c38132add',1,'Contact::toString()'],['../class_date.html#aafe8a781392a49bb10af5856ccc52cb5',1,'Date::toString()'],['../class_interaction.html#a4fb2d8d19d9e499a0ab76e6996d2f058',1,'Interaction::toString()'],['../class_todo.html#ac4fb53b124cfb2fa78bcd1b237ded07e',1,'Todo::toString()']]]
+  ['mailmodified_89',['mailModified',['../class_fiche_contact_window.html#a9255853de357090bc5eceb6486dd2e8a',1,'FicheContactWindow::mailModified()'],['../class_main_window.html#aed61026eff4347362a7230ed00e11097',1,'MainWindow::mailModified()']]],
+  ['main_90',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
+  ['main_2ecpp_91',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['mainwindow_92',['MainWindow',['../class_main_window.html',1,'MainWindow'],['../class_main_window.html#ae1fb34390a43ed0309d66988c17493a5',1,'MainWindow::MainWindow()']]],
+  ['mainwindow_2ecpp_93',['MainWindow.cpp',['../_main_window_8cpp.html',1,'']]],
+  ['mainwindow_2eh_94',['MainWindow.h',['../_main_window_8h.html',1,'']]],
+  ['modiffiche_95',['modifFiche',['../class_fiche_contact_window.html#a80492fa4dc087949a793fd5785d84e56',1,'FicheContactWindow']]]
 ];

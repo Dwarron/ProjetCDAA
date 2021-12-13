@@ -11,9 +11,12 @@ var class_date =
     [ "getJour", "class_date.html#a1b38f44aaa8c9035149b188be5650af4", null ],
     [ "getMois", "class_date.html#a72aade20bcf0954935efea32bee0b244", null ],
     [ "toString", "class_date.html#aafe8a781392a49bb10af5856ccc52cb5", null ],
+    [ "operator!=", "class_date.html#a5ac1b43688828377f31de974e061006f", null ],
     [ "operator+", "class_date.html#a19fd196890cd19eb9f3e31a793dc7fe6", null ],
     [ "operator-", "class_date.html#a1fe1c8f9582dbfe2ee08ed2066ebca74", null ],
     [ "operator<", "class_date.html#acbc7a012dc46ebcd65dfd2887e3a3ad4", null ],
     [ "operator<<", "class_date.html#a191ee8989894d19ac4c9a71e359210a1", null ],
-    [ "operator==", "class_date.html#ad51822da99f2cc001b6326ac28bd49d6", null ]
+    [ "operator<=", "class_date.html#aec251fea3c00fa40e6e9e07a90620f78", null ],
+    [ "operator==", "class_date.html#ad51822da99f2cc001b6326ac28bd49d6", null ],
+    [ "operator>", "class_date.html#a042bfc86a816127e316415634bb99107", null ]
 ];

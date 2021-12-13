@@ -24,7 +24,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="ub.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Projet CDAA
    &#160;<span id="projectnumber">0.0.1</span>
@@ -90,26 +89,30 @@ $(document).ready(function(){initNavTree('_date_8cpp.html',''); initResizable();
 <div class="title">Référence du fichier Date.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_date_8h_source.html">Date.h</a>&quot;</code><br />
-<code>#include &lt;time.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;time.h&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;stdexcept&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;ctype.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_date_8h_source.html">Date.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_verificator_8h_source.html">Verificator.h</a>&quot;</code><br />
 </div>
 <p><a href="_date_8cpp_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a1247d4f6e4991b381a3729a58a0783b6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_date_8cpp.html#a1247d4f6e4991b381a3729a58a0783b6">isNumber</a> (const string s)</td></tr>
-<tr class="memdesc:a1247d4f6e4991b381a3729a58a0783b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie true si le parametre est un nombre, false sinon.  <a href="_date_8cpp.html#a1247d4f6e4991b381a3729a58a0783b6">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a1247d4f6e4991b381a3729a58a0783b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5631b5c8e27784ae48e9d3236439c76d"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_date_8cpp.html#a5631b5c8e27784ae48e9d3236439c76d">operator&lt;&lt;</a> (ostream &amp;o, const <a class="el" href="class_date.html">Date</a> &amp;d)</td></tr>
 <tr class="memdesc:a5631b5c8e27784ae48e9d3236439c76d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction amie d'affichage via cout.  <a href="_date_8cpp.html#a5631b5c8e27784ae48e9d3236439c76d">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5631b5c8e27784ae48e9d3236439c76d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a900297f0a1d5018e0c30d2e8fa6a99c6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_date_8cpp.html#a900297f0a1d5018e0c30d2e8fa6a99c6">operator&lt;</a> (const <a class="el" href="class_date.html">Date</a> &amp;a, const <a class="el" href="class_date.html">Date</a> &amp;b)</td></tr>
 <tr class="memdesc:a900297f0a1d5018e0c30d2e8fa6a99c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comparaison a &lt; b.  <a href="_date_8cpp.html#a900297f0a1d5018e0c30d2e8fa6a99c6">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a900297f0a1d5018e0c30d2e8fa6a99c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0522a0522684cb4206274de78a4f2fce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_date_8cpp.html#a0522a0522684cb4206274de78a4f2fce">operator&gt;</a> (const <a class="el" href="class_date.html">Date</a> &amp;a, const <a class="el" href="class_date.html">Date</a> &amp;b)</td></tr>
+<tr class="memdesc:a0522a0522684cb4206274de78a4f2fce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comparaison a &gt; b.  <a href="_date_8cpp.html#a0522a0522684cb4206274de78a4f2fce">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0522a0522684cb4206274de78a4f2fce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54e8d7e0bf2a62a64edbf0163b916964"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_date_8cpp.html#a54e8d7e0bf2a62a64edbf0163b916964">operator&lt;=</a> (const <a class="el" href="class_date.html">Date</a> &amp;a, const <a class="el" href="class_date.html">Date</a> &amp;b)</td></tr>
+<tr class="memdesc:a54e8d7e0bf2a62a64edbf0163b916964"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comparaison a &lt;= b.  <a href="_date_8cpp.html#a54e8d7e0bf2a62a64edbf0163b916964">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a54e8d7e0bf2a62a64edbf0163b916964"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf43a7dbb802337957895085bef52fec"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_date_8cpp.html#aaf43a7dbb802337957895085bef52fec">operator+</a> (const string &amp;s, const <a class="el" href="class_date.html">Date</a> &amp;d)</td></tr>
 <tr class="memdesc:aaf43a7dbb802337957895085bef52fec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surcharge de l'operateur +.  <a href="_date_8cpp.html#aaf43a7dbb802337957895085bef52fec">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aaf43a7dbb802337957895085bef52fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -119,34 +122,49 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a9cfaaa2dd5867578b32c02fd8bc16339"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_date_8cpp.html#a9cfaaa2dd5867578b32c02fd8bc16339">operator==</a> (const <a class="el" href="class_date.html">Date</a> &amp;a, const <a class="el" href="class_date.html">Date</a> &amp;b)</td></tr>
 <tr class="memdesc:a9cfaaa2dd5867578b32c02fd8bc16339"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surcharge de l'operateur de test d'egalite.  <a href="_date_8cpp.html#a9cfaaa2dd5867578b32c02fd8bc16339">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a9cfaaa2dd5867578b32c02fd8bc16339"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd179446ef2a78265104038e26b5174b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_date_8cpp.html#afd179446ef2a78265104038e26b5174b">operator!=</a> (const <a class="el" href="class_date.html">Date</a> &amp;a, const <a class="el" href="class_date.html">Date</a> &amp;b)</td></tr>
+<tr class="memdesc:afd179446ef2a78265104038e26b5174b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surcharge de l'operateur de test de difference.  <a href="_date_8cpp.html#afd179446ef2a78265104038e26b5174b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afd179446ef2a78265104038e26b5174b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des fonctions</h2>
-<a id="a1247d4f6e4991b381a3729a58a0783b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1247d4f6e4991b381a3729a58a0783b6">&#9670;&nbsp;</a></span>isNumber()</h2>
+<a id="afd179446ef2a78265104038e26b5174b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd179446ef2a78265104038e26b5174b">&#9670;&nbsp;</a></span>operator!=()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool isNumber </td>
+          <td class="memname">bool operator!= </td>
           <td>(</td>
-          <td class="paramtype">const string&#160;</td>
-          <td class="paramname"><em>s</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="class_date.html">Date</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="class_date.html">Date</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Renvoie true si le parametre est un nombre, false sinon. </p>
-<p>Fonction utilitaire indiquant si une chaine de caracteres est un nombre ou non</p>
+<p>Surcharge de l'operateur de test de difference. </p>
+<p>Methode qui surcharge l'operateur !=, compare semantiquement deux dates</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">s</td><td>: chaine de caractere pouvant etre un nombre </td></tr>
+    <tr><td class="paramname">a</td><td>: operande de gauche </td></tr>
+    <tr><td class="paramname">b</td><td>: operande de droite </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Renvoie</dt><dd>vrai si les dates sont semantiquement egales, faux sinon </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="_date_8cpp_source.html#l00036">36</a> du fichier <a class="el" href="_date_8cpp_source.html">Date.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_date_8cpp_source.html#l00339">339</a> du fichier <a class="el" href="_date_8cpp_source.html">Date.cpp</a>.</p>
 
 </div>
 </div>
@@ -186,7 +204,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>s + d.toString() </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="_date_8cpp_source.html#l00260">260</a> du fichier <a class="el" href="_date_8cpp_source.html">Date.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_date_8cpp_source.html#l00296">296</a> du fichier <a class="el" href="_date_8cpp_source.html">Date.cpp</a>.</p>
 
 </div>
 </div>
@@ -226,7 +244,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>s + d.toString() </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="_date_8cpp_source.html#l00275">275</a> du fichier <a class="el" href="_date_8cpp_source.html">Date.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_date_8cpp_source.html#l00311">311</a> du fichier <a class="el" href="_date_8cpp_source.html">Date.cpp</a>.</p>
 
 </div>
 </div>
@@ -266,7 +284,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>a &lt; b </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="_date_8cpp_source.html#l00233">233</a> du fichier <a class="el" href="_date_8cpp_source.html">Date.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_date_8cpp_source.html#l00228">228</a> du fichier <a class="el" href="_date_8cpp_source.html">Date.cpp</a>.</p>
 
 </div>
 </div>
@@ -307,7 +325,47 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>operateur surchage </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="_date_8cpp_source.html#l00218">218</a> du fichier <a class="el" href="_date_8cpp_source.html">Date.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_date_8cpp_source.html#l00213">213</a> du fichier <a class="el" href="_date_8cpp_source.html">Date.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a54e8d7e0bf2a62a64edbf0163b916964"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54e8d7e0bf2a62a64edbf0163b916964">&#9670;&nbsp;</a></span>operator&lt;=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator&lt;= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_date.html">Date</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_date.html">Date</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Comparaison a &lt;= b. </p>
+<p>Surdefinition de l'operateur "&lt;=", renvoie vraie si semantiquement a &lt;= b </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>: premiere operande </td></tr>
+    <tr><td class="paramname">b</td><td>: deuxieme operande</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>a &lt; b </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_date_8cpp_source.html#l00282">282</a> du fichier <a class="el" href="_date_8cpp_source.html">Date.cpp</a>.</p>
 
 </div>
 </div>
@@ -348,7 +406,47 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>vrai si les dates sont semantiquement egales, faux sinon </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="_date_8cpp_source.html#l00289">289</a> du fichier <a class="el" href="_date_8cpp_source.html">Date.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_date_8cpp_source.html#l00325">325</a> du fichier <a class="el" href="_date_8cpp_source.html">Date.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a0522a0522684cb4206274de78a4f2fce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0522a0522684cb4206274de78a4f2fce">&#9670;&nbsp;</a></span>operator&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator&gt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_date.html">Date</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_date.html">Date</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Comparaison a &gt; b. </p>
+<p>Surdefinition de l'operateur "&gt;", renvoie vraie si semantiquement a &gt; b </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>: premiere operande </td></tr>
+    <tr><td class="paramname">b</td><td>: deuxieme operande</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>a &lt; b </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_date_8cpp_source.html#l00255">255</a> du fichier <a class="el" href="_date_8cpp_source.html">Date.cpp</a>.</p>
 
 </div>
 </div>

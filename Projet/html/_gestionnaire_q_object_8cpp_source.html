@@ -1,0 +1,558 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projet CDAA:  Fichier source de GestionnaireQObject.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Projet CDAA
+   &#160;<span id="projectnumber">0.0.1</span>
+   </div>
+   <div id="projectbrief">Logiciel de gestion de relations clients. Projet scolaire pour le module de CDAA (Romain Raffin) en Licence 3 d&#39;informatique à l&#39;université de Bourgogne</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_gestionnaire_q_object_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">GestionnaireQObject.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_gestionnaire_q_object_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QDate&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QFile&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QJsonDocument&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;QJsonArray&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_gestionnaire_q_object_8h.html">GestionnaireQObject.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_j_s_o_n_serializer_8h.html">JSONSerializer.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_gestionnaire_q_object.html#aca5bdc90f85033c7b18128c6dec0c20d">   26</a></span>&#160;<a class="code" href="class_gestionnaire_q_object.html#aca5bdc90f85033c7b18128c6dec0c20d">GestionnaireQObject::GestionnaireQObject</a>(QObject *parent) : QObject(parent)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    dbManager = <span class="keyword">new</span> <a class="code" href="class_database_manager.html">DatabaseManager</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">string</span> dateDerniereSuppression = dbManager-&gt;<a class="code" href="class_database_manager.html#ae8d395e6c7ed63d6cf68ba35465b68da">getDateDerniereSuppression</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    gestionContact = <span class="keyword">new</span> <a class="code" href="class_gestion_contact.html">GestionContact</a>(<a class="code" href="class_date.html">Date</a>(dateDerniereSuppression));</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    connect(dbManager, SIGNAL(loadContact(<span class="keywordtype">int</span>,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string)),</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keyword">this</span>, SLOT(loadContact(<span class="keywordtype">int</span>,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string)));</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a3c2b0bae88db82fa6385e23f77eadbae">contactLoaded</a>(<span class="keywordtype">int</span>,<a class="code" href="class_contact.html">Contact</a>*)), dbManager, SLOT(<a class="code" href="class_gestionnaire_q_object.html#a3c2b0bae88db82fa6385e23f77eadbae">contactLoaded</a>(<span class="keywordtype">int</span>,<a class="code" href="class_contact.html">Contact</a>*)));</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    connect(dbManager, SIGNAL(loadAndCreateInteraction(<span class="keywordtype">int</span>,<a class="code" href="class_contact.html">Contact</a>*,std::string,std::string)), <span class="keyword">this</span>, SLOT(loadAndCreateInteraction(<span class="keywordtype">int</span>,<a class="code" href="class_contact.html">Contact</a>*,std::string,std::string)));</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#afb1036ecbbdb81ece284632189bda512">interactionLoaded</a>(<span class="keywordtype">int</span>,<a class="code" href="class_interaction.html">Interaction</a>*)), dbManager, SLOT(<a class="code" href="class_gestionnaire_q_object.html#afb1036ecbbdb81ece284632189bda512">interactionLoaded</a>(<span class="keywordtype">int</span>,<a class="code" href="class_interaction.html">Interaction</a>*)));</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    connect(dbManager, SIGNAL(loadInteraction(<a class="code" href="class_interaction.html">Interaction</a>*,<a class="code" href="class_contact.html">Contact</a>*)), <span class="keyword">this</span>, SLOT(loadInteraction(<a class="code" href="class_interaction.html">Interaction</a>*,<a class="code" href="class_contact.html">Contact</a>*)));</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    connect(dbManager, SIGNAL(loadTodo(<span class="keywordtype">int</span>,<a class="code" href="class_interaction.html">Interaction</a>*,std::string,std::string,<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(loadTodo(<span class="keywordtype">int</span>,<a class="code" href="class_interaction.html">Interaction</a>*,std::string,std::string,<span class="keywordtype">bool</span>)));</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#aa4f418110218001ca5654d8925675fb1">todoLoaded</a>(<span class="keywordtype">int</span>,<a class="code" href="class_todo.html">Todo</a>*)), dbManager, SLOT(<a class="code" href="class_gestionnaire_q_object.html#aa4f418110218001ca5654d8925675fb1">todoLoaded</a>(<span class="keywordtype">int</span>,<a class="code" href="class_todo.html">Todo</a>*)));</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    dbManager-&gt;<a class="code" href="class_database_manager.html#a396db1ca1ac24e95e41a76d248af15ba">loadDatas</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    mainWin = <span class="keyword">new</span> <a class="code" href="class_main_window.html">MainWindow</a>(gestionContact-&gt;<a class="code" href="class_gestion_contact.html#a95888c31ed32c1c5c1bf64363119bb58">getDateDerniereSuppression</a>().<a class="code" href="class_date.html#aafe8a781392a49bb10af5856ccc52cb5">toString</a>(), gestionContact-&gt;<a class="code" href="class_gestion_contact.html#a7c81842c85dc7a6369eea00ec51bb805">getContacts</a>());</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    connect(mainWin, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a97ab66ef789dc928a46d834b87657d20">contactDeleted</a>(<a class="code" href="class_contact.html">Contact</a>*)), <span class="keyword">this</span>, SLOT(deleteContact(<a class="code" href="class_contact.html">Contact</a>*)));</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    connect(mainWin, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a97ab66ef789dc928a46d834b87657d20">contactDeleted</a>(<a class="code" href="class_contact.html">Contact</a>*)), dbManager, SLOT(deleteContact(<a class="code" href="class_contact.html">Contact</a>*)));</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    connect(mainWin, SIGNAL(prenomModified(<a class="code" href="class_contact.html">Contact</a>*,std::string)), <span class="keyword">this</span>, SLOT(modifPrenom(<a class="code" href="class_contact.html">Contact</a>*,std::string)));</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    connect(mainWin, SIGNAL(prenomModified(<a class="code" href="class_contact.html">Contact</a>*,std::string)), dbManager, SLOT(updateContactPrenom(<a class="code" href="class_contact.html">Contact</a>*,std::string)));</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    connect(mainWin, SIGNAL(nomModified(<a class="code" href="class_contact.html">Contact</a>*,std::string)), <span class="keyword">this</span>, SLOT(modifNom(<a class="code" href="class_contact.html">Contact</a>*,std::string)));</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    connect(mainWin, SIGNAL(nomModified(<a class="code" href="class_contact.html">Contact</a>*,std::string)), dbManager, SLOT(updateContactNom(<a class="code" href="class_contact.html">Contact</a>*,std::string)));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    connect(mainWin, SIGNAL(entrepriseModified(<a class="code" href="class_contact.html">Contact</a>*,std::string)), <span class="keyword">this</span>, SLOT(modifEntreprise(<a class="code" href="class_contact.html">Contact</a>*,std::string)));</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    connect(mainWin, SIGNAL(entrepriseModified(<a class="code" href="class_contact.html">Contact</a>*,std::string)), dbManager, SLOT(updateContactEntreprise(<a class="code" href="class_contact.html">Contact</a>*,std::string)));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    connect(mainWin, SIGNAL(mailModified(<a class="code" href="class_contact.html">Contact</a>*,std::string)), <span class="keyword">this</span>, SLOT(modifMail(<a class="code" href="class_contact.html">Contact</a>*,std::string)));</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    connect(mainWin, SIGNAL(mailModified(<a class="code" href="class_contact.html">Contact</a>*,std::string)), dbManager, SLOT(updateContactMail(<a class="code" href="class_contact.html">Contact</a>*,std::string)));</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    connect(mainWin, SIGNAL(telephoneModified(<a class="code" href="class_contact.html">Contact</a>*,std::string)), <span class="keyword">this</span>, SLOT(modifTelephone(<a class="code" href="class_contact.html">Contact</a>*,std::string)));</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    connect(mainWin, SIGNAL(telephoneModified(<a class="code" href="class_contact.html">Contact</a>*,std::string)), dbManager, SLOT(updateContactTelephone(<a class="code" href="class_contact.html">Contact</a>*,std::string)));</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    connect(mainWin, SIGNAL(photoModified(<a class="code" href="class_contact.html">Contact</a>*,std::string)), <span class="keyword">this</span>, SLOT(modifPhoto(<a class="code" href="class_contact.html">Contact</a>*,std::string)));</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    connect(mainWin, SIGNAL(photoModified(<a class="code" href="class_contact.html">Contact</a>*,std::string)), dbManager, SLOT(updateContactPhoto(<a class="code" href="class_contact.html">Contact</a>*,std::string)));</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    connect(mainWin, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a973d71ee6d24c57ea671519b47e012cc">contactCreated</a>(std::string,std::string,std::string,std::string,std::string,std::string)),</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a973d71ee6d24c57ea671519b47e012cc">contactCreated</a>(std::string,std::string,std::string,std::string,std::string,std::string)));</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a973d71ee6d24c57ea671519b47e012cc">contactCreated</a>(std::string,std::string,std::string,std::string,std::string,std::string)),</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keyword">this</span>, SLOT(createContact(std::string,std::string,std::string,std::string,std::string,std::string)));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a973d71ee6d24c57ea671519b47e012cc">contactCreated</a>(std::string,std::string,std::string,std::string,std::string,std::string,<a class="code" href="class_date.html">Date</a>,<a class="code" href="class_date.html">Date</a>)),</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keyword">this</span>, SLOT(createContact(std::string,std::string,std::string,std::string,std::string,std::string,<a class="code" href="class_date.html">Date</a>,<a class="code" href="class_date.html">Date</a>)));</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    connect(mainWin, SIGNAL(interactionDateEdited(<a class="code" href="class_interaction.html">Interaction</a>*,QDate)), <span class="keyword">this</span>, SLOT(editInteractionDate(<a class="code" href="class_interaction.html">Interaction</a>*,QDate)));</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    connect(mainWin, SIGNAL(interactionResumeEdited(<a class="code" href="class_interaction.html">Interaction</a>*,QString)), <span class="keyword">this</span>, SLOT(editInteractionResume(<a class="code" href="class_interaction.html">Interaction</a>*,QString)));</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    connect(mainWin, SIGNAL(ajoutInteraction(<a class="code" href="class_contact.html">Contact</a>*,QString)), <span class="keyword">this</span>, SLOT(ajoutInteraction(<a class="code" href="class_contact.html">Contact</a>*,QString)));</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    connect(mainWin, SIGNAL(ajoutInteraction(<a class="code" href="class_contact.html">Contact</a>*,<a class="code" href="class_interaction.html">Interaction</a>*)), <span class="keyword">this</span>, SLOT(ajoutInteraction(<a class="code" href="class_contact.html">Contact</a>*,<a class="code" href="class_interaction.html">Interaction</a>*)));</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a7f12d0a35d1f2e4319b9c81e15c9b122">listContactsUpdated</a>(std::list&lt;Contact*&gt;)), mainWin, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a7f12d0a35d1f2e4319b9c81e15c9b122">listContactsUpdated</a>(std::list&lt;Contact*&gt;)));</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a97ab66ef789dc928a46d834b87657d20">contactDeleted</a>(std::string)), mainWin, SLOT(updateDateDerniereSuppression(std::string)));</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a97ab66ef789dc928a46d834b87657d20">contactDeleted</a>(std::string)), dbManager, SLOT(updateDateDerniereSuppression(std::string)));</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a97ab66ef789dc928a46d834b87657d20">contactDeleted</a>(std::string)), mainWin, SLOT(selectContact()));</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a5f6f081ec6759d4d36642d93c60af9eb">onContactCreated</a>(<a class="code" href="class_contact.html">Contact</a>*,std::string,std::string)), mainWin, SLOT(selectContact(<a class="code" href="class_contact.html">Contact</a>*)));</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a5f6f081ec6759d4d36642d93c60af9eb">onContactCreated</a>(<a class="code" href="class_contact.html">Contact</a>*,std::string,std::string)), dbManager, SLOT(createContact(<a class="code" href="class_contact.html">Contact</a>*,std::string,std::string)));</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a29d97bf26b662419f60b1d437117ee56">onInteractionModifResume</a>(<a class="code" href="class_interaction.html">Interaction</a>*,std::string)), <span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#abcc9bfa89db207b6333eb67a501afab1">onInteractionEdited</a>()));</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a29d97bf26b662419f60b1d437117ee56">onInteractionModifResume</a>(<a class="code" href="class_interaction.html">Interaction</a>*,std::string)), dbManager, SLOT(updateInteractionResume(<a class="code" href="class_interaction.html">Interaction</a>*,std::string)));</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a58c8ccb9ce9b70f86410ca53b4439284">onInteractionModifDate</a>(<a class="code" href="class_interaction.html">Interaction</a>*,std::string)), <span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#abcc9bfa89db207b6333eb67a501afab1">onInteractionEdited</a>()));</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a58c8ccb9ce9b70f86410ca53b4439284">onInteractionModifDate</a>(<a class="code" href="class_interaction.html">Interaction</a>*,std::string)), dbManager, SLOT(updateInteractionDate(<a class="code" href="class_interaction.html">Interaction</a>*,std::string)));</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#abcc9bfa89db207b6333eb67a501afab1">onInteractionEdited</a>()), mainWin, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#abcc9bfa89db207b6333eb67a501afab1">onInteractionEdited</a>()));</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#ac49901b336934c4f979a819b7fdd0c48">onEndModifContact</a>(<a class="code" href="class_contact.html">Contact</a>*,std::string)), mainWin, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#ac49901b336934c4f979a819b7fdd0c48">onEndModifContact</a>()));</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#ac49901b336934c4f979a819b7fdd0c48">onEndModifContact</a>(<a class="code" href="class_contact.html">Contact</a>*,std::string)), dbManager, SLOT(updateContactDateModif(<a class="code" href="class_contact.html">Contact</a>*,std::string)));</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a4fd72b912d0ba5c3d216e54d4abe19ed">onCreateInteraction</a>(<a class="code" href="class_interaction.html">Interaction</a>*,<a class="code" href="class_contact.html">Contact</a>*,std::string)), <span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#abcc9bfa89db207b6333eb67a501afab1">onInteractionEdited</a>()));</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a4fd72b912d0ba5c3d216e54d4abe19ed">onCreateInteraction</a>(<a class="code" href="class_interaction.html">Interaction</a>*,<a class="code" href="class_contact.html">Contact</a>*,std::string)), dbManager, SLOT(createInteraction(<a class="code" href="class_interaction.html">Interaction</a>*,<a class="code" href="class_contact.html">Contact</a>*,std::string)));</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a2290208030ece90c0cc1502cc237cbef">onAddExistingInteraction</a>(<a class="code" href="class_interaction.html">Interaction</a>*,<a class="code" href="class_contact.html">Contact</a>*)), <span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#abcc9bfa89db207b6333eb67a501afab1">onInteractionEdited</a>()));</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a2290208030ece90c0cc1502cc237cbef">onAddExistingInteraction</a>(<a class="code" href="class_interaction.html">Interaction</a>*,<a class="code" href="class_contact.html">Contact</a>*)), dbManager, SLOT(addExistingInteraction(<a class="code" href="class_interaction.html">Interaction</a>*,<a class="code" href="class_contact.html">Contact</a>*)));</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a3ab0dd3938c9cb51597143e7bd040331">onCreateTodos</a>(<a class="code" href="class_interaction.html">Interaction</a>*,std::list&lt;Todo*&gt;)), dbManager, SLOT(createTodos(<a class="code" href="class_interaction.html">Interaction</a>*,std::list&lt;Todo*&gt;)));</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a098695e25f00046074cfa5fb37af3461">onDeleteTodos</a>(<a class="code" href="class_interaction.html">Interaction</a>*)), dbManager, SLOT(deleteTodos(<a class="code" href="class_interaction.html">Interaction</a>*)));</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    connect(mainWin, SIGNAL(todoSetEffectue(<a class="code" href="class_todo.html">Todo</a>*,<span class="keywordtype">bool</span>)), <span class="keyword">this</span>, SLOT(setTodoEffectue(<a class="code" href="class_todo.html">Todo</a>*,<span class="keywordtype">bool</span>)));</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    connect(mainWin, SIGNAL(todoSetEffectue(<a class="code" href="class_todo.html">Todo</a>*,<span class="keywordtype">bool</span>)), dbManager, SLOT(setTodoEffectue(<a class="code" href="class_todo.html">Todo</a>*,<span class="keywordtype">bool</span>)));</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a7c2ef2d68ad741384d0228437a3932a0">onTodoEdited</a>()), mainWin, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a7c2ef2d68ad741384d0228437a3932a0">onTodoEdited</a>()));</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    connect(mainWin, SIGNAL(exportJSON(QString)), <span class="keyword">this</span>, SLOT(exportJSON(QString)));</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    connect(mainWin, SIGNAL(importJSON(QString)), <span class="keyword">this</span>, SLOT(importJSON(QString)));</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a39768198d956449ada7d3c0a2956e43e">onLoadJSON</a>()), <span class="keyword">this</span>, SLOT(clearData()));</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    connect(<span class="keyword">this</span>, SIGNAL(<a class="code" href="class_gestionnaire_q_object.html#a39768198d956449ada7d3c0a2956e43e">onLoadJSON</a>()), dbManager, SLOT(deleteAll()));</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    mainWin-&gt;show();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keywordtype">void</span> GestionnaireQObject::deleteContact(<a class="code" href="class_contact.html">Contact</a>* c)</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;{</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    gestionContact-&gt;<a class="code" href="class_gestion_contact.html#a627aeba03d0893e273e482b30418e499">supprimeContact</a>(c);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    emit <a class="code" href="class_gestionnaire_q_object.html#a7f12d0a35d1f2e4319b9c81e15c9b122">listContactsUpdated</a>(gestionContact-&gt;<a class="code" href="class_gestion_contact.html#a7c81842c85dc7a6369eea00ec51bb805">getContacts</a>());</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    emit <a class="code" href="class_gestionnaire_q_object.html#a97ab66ef789dc928a46d834b87657d20">contactDeleted</a>(gestionContact-&gt;<a class="code" href="class_gestion_contact.html#a95888c31ed32c1c5c1bf64363119bb58">getDateDerniereSuppression</a>().<a class="code" href="class_date.html#aafe8a781392a49bb10af5856ccc52cb5">toString</a>());</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="keywordtype">void</span> GestionnaireQObject::modifPrenom(<a class="code" href="class_contact.html">Contact</a>* c, <span class="keywordtype">string</span> prenom)</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;{</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">string</span> oldPrenom = c-&gt;<a class="code" href="class_contact.html#a62980364c568e7f38b8f2e0892672416">getPrenom</a>();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    c-&gt;<a class="code" href="class_contact.html#ac31195d758df58ee327cc05b6276aace">setPrenom</a>(prenom);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    emit <a class="code" href="class_gestionnaire_q_object.html#ac49901b336934c4f979a819b7fdd0c48">onEndModifContact</a>(c, c-&gt;<a class="code" href="class_contact.html#a75dedfa3ee66c6c49bf8123d9ec59f34">getDateDerniereModification</a>().<a class="code" href="class_date.html#aafe8a781392a49bb10af5856ccc52cb5">toString</a>());</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    ajoutInteraction(c, QString::fromStdString(<span class="stringliteral">&quot;modification du prenom (&quot;</span> + oldPrenom + <span class="stringliteral">&quot; -&gt; &quot;</span> + prenom + <span class="stringliteral">&quot;)&quot;</span>));</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="keywordtype">void</span> GestionnaireQObject::modifNom(<a class="code" href="class_contact.html">Contact</a>* c, <span class="keywordtype">string</span> nom)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;{</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordtype">string</span> oldNom = c-&gt;<a class="code" href="class_contact.html#afae52eacfbe597c6dfcc226654a75819">getNom</a>();</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    c-&gt;<a class="code" href="class_contact.html#a0837af372d75a5d85ab296c6104a3232">setNom</a>(nom);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    emit <a class="code" href="class_gestionnaire_q_object.html#ac49901b336934c4f979a819b7fdd0c48">onEndModifContact</a>(c, c-&gt;<a class="code" href="class_contact.html#a75dedfa3ee66c6c49bf8123d9ec59f34">getDateDerniereModification</a>().<a class="code" href="class_date.html#aafe8a781392a49bb10af5856ccc52cb5">toString</a>());</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    ajoutInteraction(c, QString::fromStdString(<span class="stringliteral">&quot;modification du nom (&quot;</span> + oldNom + <span class="stringliteral">&quot; -&gt; &quot;</span> + nom + <span class="stringliteral">&quot;)&quot;</span>));</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="keywordtype">void</span> GestionnaireQObject::modifEntreprise(<a class="code" href="class_contact.html">Contact</a>* c, <span class="keywordtype">string</span> entreprise)</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;{</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordtype">string</span> oldEntreprise = c-&gt;<a class="code" href="class_contact.html#a2074cf9b55c1066344f9068d2f7064d1">getEntreprise</a>();</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    c-&gt;<a class="code" href="class_contact.html#a1237b826b80e3ead402d0c26cc3c2ace">setEntreprise</a>(entreprise);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    emit <a class="code" href="class_gestionnaire_q_object.html#ac49901b336934c4f979a819b7fdd0c48">onEndModifContact</a>(c, c-&gt;<a class="code" href="class_contact.html#a75dedfa3ee66c6c49bf8123d9ec59f34">getDateDerniereModification</a>().<a class="code" href="class_date.html#aafe8a781392a49bb10af5856ccc52cb5">toString</a>());</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    ajoutInteraction(c, QString::fromStdString(<span class="stringliteral">&quot;modification de l&#39;entreprise (&quot;</span> + oldEntreprise + <span class="stringliteral">&quot; -&gt; &quot;</span> + entreprise + <span class="stringliteral">&quot;)&quot;</span>));</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;}</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="keywordtype">void</span> GestionnaireQObject::modifTelephone(<a class="code" href="class_contact.html">Contact</a>* c, <span class="keywordtype">string</span> telephone)</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;{</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordtype">string</span> oldTelephone = c-&gt;<a class="code" href="class_contact.html#a98aa91a89fd83578686227826c2eea6b">getTelephone</a>();</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    c-&gt;<a class="code" href="class_contact.html#a54c863b3045a9255d75f1ad876ecb7de">setTelephone</a>(telephone);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    emit <a class="code" href="class_gestionnaire_q_object.html#ac49901b336934c4f979a819b7fdd0c48">onEndModifContact</a>(c, c-&gt;<a class="code" href="class_contact.html#a75dedfa3ee66c6c49bf8123d9ec59f34">getDateDerniereModification</a>().<a class="code" href="class_date.html#aafe8a781392a49bb10af5856ccc52cb5">toString</a>());</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    ajoutInteraction(c, QString::fromStdString(<span class="stringliteral">&quot;modification du telephone (&quot;</span> + oldTelephone + <span class="stringliteral">&quot; -&gt; &quot;</span> + telephone + <span class="stringliteral">&quot;)&quot;</span>));</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;}</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="keywordtype">void</span> GestionnaireQObject::modifMail(<a class="code" href="class_contact.html">Contact</a>* c, <span class="keywordtype">string</span> mail)</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;{</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordtype">string</span> oldMail = c-&gt;<a class="code" href="class_contact.html#a6b9044988b8ec70fbf1c6d620844d707">getMail</a>();</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    c-&gt;<a class="code" href="class_contact.html#a513b0a2da8a697076f4616ce7b6c445f">setMail</a>(mail);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    emit <a class="code" href="class_gestionnaire_q_object.html#ac49901b336934c4f979a819b7fdd0c48">onEndModifContact</a>(c, c-&gt;<a class="code" href="class_contact.html#a75dedfa3ee66c6c49bf8123d9ec59f34">getDateDerniereModification</a>().<a class="code" href="class_date.html#aafe8a781392a49bb10af5856ccc52cb5">toString</a>());</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    ajoutInteraction(c, QString::fromStdString(<span class="stringliteral">&quot;modification du mail (&quot;</span> + oldMail + <span class="stringliteral">&quot; -&gt; &quot;</span> + mail + <span class="stringliteral">&quot;)&quot;</span>));</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;}</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="keywordtype">void</span> GestionnaireQObject::modifPhoto(<a class="code" href="class_contact.html">Contact</a>* c, <span class="keywordtype">string</span> photo)</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;{</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordtype">string</span> oldPhoto = c-&gt;<a class="code" href="class_contact.html#afbf8f3c920221656f59702d0f5a6367b">getUriPhoto</a>();</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    c-&gt;<a class="code" href="class_contact.html#a24d89f71724842a6375db8550495d3e8">setUriPhoto</a>(photo);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    emit <a class="code" href="class_gestionnaire_q_object.html#ac49901b336934c4f979a819b7fdd0c48">onEndModifContact</a>(c, c-&gt;<a class="code" href="class_contact.html#a75dedfa3ee66c6c49bf8123d9ec59f34">getDateDerniereModification</a>().<a class="code" href="class_date.html#aafe8a781392a49bb10af5856ccc52cb5">toString</a>());</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    ajoutInteraction(c, QString::fromStdString(<span class="stringliteral">&quot;modification de la photo (&quot;</span> + oldPhoto + <span class="stringliteral">&quot; -&gt; &quot;</span> + photo + <span class="stringliteral">&quot;)&quot;</span>));</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;}</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="keywordtype">void</span> GestionnaireQObject::createContact(<span class="keywordtype">string</span> nom, <span class="keywordtype">string</span> prenom, <span class="keywordtype">string</span> entreprise, <span class="keywordtype">string</span> tel, <span class="keywordtype">string</span> mail, <span class="keywordtype">string</span> photo)</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;{</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    createContact(nom, prenom, entreprise, tel, mail, photo, <a class="code" href="class_date.html">Date</a>(), <a class="code" href="class_date.html">Date</a>());</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;}</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="keywordtype">void</span> GestionnaireQObject::createContact(<span class="keywordtype">string</span> nom, <span class="keywordtype">string</span> prenom, <span class="keywordtype">string</span> entreprise, <span class="keywordtype">string</span> tel, <span class="keywordtype">string</span> mail, <span class="keywordtype">string</span> photo, <a class="code" href="class_date.html">Date</a> dc, <a class="code" href="class_date.html">Date</a> dm)</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;{</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <a class="code" href="class_contact.html">Contact</a>* c = gestionContact-&gt;<a class="code" href="class_gestion_contact.html#a4242680d2c479460fa417087624ec3e7">creeContact</a>(nom, prenom, entreprise, tel, mail, photo, dc, dm);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    emit <a class="code" href="class_gestionnaire_q_object.html#a7f12d0a35d1f2e4319b9c81e15c9b122">listContactsUpdated</a>(gestionContact-&gt;<a class="code" href="class_gestion_contact.html#a7c81842c85dc7a6369eea00ec51bb805">getContacts</a>());</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    emit <a class="code" href="class_gestionnaire_q_object.html#a5f6f081ec6759d4d36642d93c60af9eb">onContactCreated</a>(c, c-&gt;<a class="code" href="class_contact.html#afde7db06fa36f2fa54139e22feff6adb">getDateCreation</a>().<a class="code" href="class_date.html#aafe8a781392a49bb10af5856ccc52cb5">toString</a>(), c-&gt;<a class="code" href="class_contact.html#a75dedfa3ee66c6c49bf8123d9ec59f34">getDateDerniereModification</a>().<a class="code" href="class_date.html#aafe8a781392a49bb10af5856ccc52cb5">toString</a>());</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;}</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="keywordtype">void</span> GestionnaireQObject::loadContact(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">string</span> nom, <span class="keywordtype">string</span> prenom, <span class="keywordtype">string</span> entreprise, <span class="keywordtype">string</span> tel, <span class="keywordtype">string</span> mail, <span class="keywordtype">string</span> photo, <span class="keywordtype">string</span> dateCreation, <span class="keywordtype">string</span> dateModification)</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;{</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <a class="code" href="class_contact.html">Contact</a>* c = gestionContact-&gt;<a class="code" href="class_gestion_contact.html#a4242680d2c479460fa417087624ec3e7">creeContact</a>(nom, prenom, entreprise, tel, mail, photo, dateCreation, dateModification);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    emit <a class="code" href="class_gestionnaire_q_object.html#a3c2b0bae88db82fa6385e23f77eadbae">contactLoaded</a>(<span class="keywordtype">id</span>, c);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;}</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="keywordtype">void</span> GestionnaireQObject::loadAndCreateInteraction(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <a class="code" href="class_contact.html">Contact</a>* c, <span class="keywordtype">string</span> date, <span class="keywordtype">string</span> resume)</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;{</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <a class="code" href="class_interaction.html">Interaction</a>* i = gestionContact-&gt;<a class="code" href="class_gestion_contact.html#a244211ece351717d07fe71fa9aef1b13">ajoutInteraction</a>(c, <a class="code" href="class_date.html">Date</a>(date), resume);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    emit <a class="code" href="class_gestionnaire_q_object.html#afb1036ecbbdb81ece284632189bda512">interactionLoaded</a>(<span class="keywordtype">id</span>, i);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;}</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="keywordtype">void</span> GestionnaireQObject::loadInteraction(<a class="code" href="class_interaction.html">Interaction</a>* i, <a class="code" href="class_contact.html">Contact</a>* c)</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;{</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    gestionContact-&gt;<a class="code" href="class_gestion_contact.html#a244211ece351717d07fe71fa9aef1b13">ajoutInteraction</a>(c, i);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;}</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="keywordtype">void</span> GestionnaireQObject::loadTodo(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <a class="code" href="class_interaction.html">Interaction</a>* i, <span class="keywordtype">string</span> date, <span class="keywordtype">string</span> contenu, <span class="keywordtype">bool</span> effectue)</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;{</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <a class="code" href="class_todo.html">Todo</a>* t = gestionContact-&gt;<a class="code" href="class_gestion_contact.html#a418f98f248946bd49a8bbf02b438c529">ajoutTodo</a>(i, <a class="code" href="class_date.html">Date</a>(date), contenu, effectue);</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    emit <a class="code" href="class_gestionnaire_q_object.html#aa4f418110218001ca5654d8925675fb1">todoLoaded</a>(<span class="keywordtype">id</span>, t);</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;}</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="keywordtype">void</span> GestionnaireQObject::editInteractionDate(<a class="code" href="class_interaction.html">Interaction</a>* i, QDate d)</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;{</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordtype">string</span> dateString = d.toString(<span class="stringliteral">&quot;dd/MM/yyyy&quot;</span>).toStdString();</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="keywordflow">if</span>(dateString != i-&gt;<a class="code" href="class_interaction.html#ae30667c22b4c8f0d56d1828f8d247139">getDate</a>().<a class="code" href="class_date.html#aafe8a781392a49bb10af5856ccc52cb5">toString</a>())</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    {</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        i-&gt;<a class="code" href="class_interaction.html#a78ab3582f37b88498eab85b71c248bb0">setDate</a>(<a class="code" href="class_date.html">Date</a>(dateString));</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        emit <a class="code" href="class_gestionnaire_q_object.html#a58c8ccb9ce9b70f86410ca53b4439284">onInteractionModifDate</a>(i, d.toString(<span class="stringliteral">&quot;dd/MM/yyyy&quot;</span>).toStdString());</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    }</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;}</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="keywordtype">void</span> GestionnaireQObject::editInteractionResume(<a class="code" href="class_interaction.html">Interaction</a>* i, QString s)</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;{</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    i-&gt;<a class="code" href="class_interaction.html#a7b904695469d24331aa10a7cbd14ea32">setResume</a>(s.toStdString());</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    i-&gt;<a class="code" href="class_interaction.html#ad688c4677d2ba96c8185624098a4fbe9">viderTodos</a>();</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    emit <a class="code" href="class_gestionnaire_q_object.html#a098695e25f00046074cfa5fb37af3461">onDeleteTodos</a>(i);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    gestionContact-&gt;<a class="code" href="class_gestion_contact.html#a98eaa3ecb272debd17e583c83a57f36c">creerTodos</a>(i);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    emit <a class="code" href="class_gestionnaire_q_object.html#a29d97bf26b662419f60b1d437117ee56">onInteractionModifResume</a>(i, s.toStdString());</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    emit <a class="code" href="class_gestionnaire_q_object.html#a3ab0dd3938c9cb51597143e7bd040331">onCreateTodos</a>(i, i-&gt;<a class="code" href="class_interaction.html#a105548a9f2f3b3b47fe8bcf2382b2a03">getTodos</a>());</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;}</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;<span class="keywordtype">void</span> GestionnaireQObject::ajoutInteraction(<a class="code" href="class_contact.html">Contact</a>* c, QString s)</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;{</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    ajoutInteraction(c, <a class="code" href="class_date.html">Date</a>(), s);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;}</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160; </div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;<a class="code" href="class_interaction.html">Interaction</a>* GestionnaireQObject::ajoutInteraction(<a class="code" href="class_contact.html">Contact</a>* c, <a class="code" href="class_date.html">Date</a> d, QString s, <span class="keywordtype">bool</span> createTodo)</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;{</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <a class="code" href="class_interaction.html">Interaction</a>* i = gestionContact-&gt;<a class="code" href="class_gestion_contact.html#a244211ece351717d07fe71fa9aef1b13">ajoutInteraction</a>(c, d, s.toStdString());</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160; </div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <span class="keywordflow">if</span>(createTodo)</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        gestionContact-&gt;<a class="code" href="class_gestion_contact.html#a98eaa3ecb272debd17e583c83a57f36c">creerTodos</a>(i);</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    emit <a class="code" href="class_gestionnaire_q_object.html#a4fd72b912d0ba5c3d216e54d4abe19ed">onCreateInteraction</a>(i, c, d.<a class="code" href="class_date.html#aafe8a781392a49bb10af5856ccc52cb5">toString</a>());</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; </div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <span class="keywordflow">if</span>(createTodo)</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        emit <a class="code" href="class_gestionnaire_q_object.html#a3ab0dd3938c9cb51597143e7bd040331">onCreateTodos</a>(i, i-&gt;<a class="code" href="class_interaction.html#a105548a9f2f3b3b47fe8bcf2382b2a03">getTodos</a>());</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <span class="keywordflow">return</span> i;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;}</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160; </div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="keywordtype">void</span> GestionnaireQObject::ajoutInteraction(<a class="code" href="class_contact.html">Contact</a>* c, <a class="code" href="class_interaction.html">Interaction</a>* i)</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;{</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    gestionContact-&gt;<a class="code" href="class_gestion_contact.html#a244211ece351717d07fe71fa9aef1b13">ajoutInteraction</a>(c, i);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    emit <a class="code" href="class_gestionnaire_q_object.html#a2290208030ece90c0cc1502cc237cbef">onAddExistingInteraction</a>(i, c);</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;}</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160; </div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;<span class="keywordtype">void</span> GestionnaireQObject::setTodoEffectue(<a class="code" href="class_todo.html">Todo</a>* t, <span class="keywordtype">bool</span> e)</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;{</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    t-&gt;<a class="code" href="class_todo.html#a7db4fd6d6a8083cb9a5ee00965418d2a">setEffectue</a>(e);</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160; </div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    emit <a class="code" href="class_gestionnaire_q_object.html#a7c2ef2d68ad741384d0228437a3932a0">onTodoEdited</a>();</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;}</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160; </div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;<span class="keywordtype">void</span> GestionnaireQObject::exportJSON(QString filePath)</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;{</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    QFile file(filePath);</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    <span class="keywordflow">if</span>(file.open(QIODevice::WriteOnly))</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;    {</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        QJsonDocument doc;</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;        QJsonArray baseArray;</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;        QJsonArray contactsArray;</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;        QJsonArray interactionsArray;</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;        list&lt;Interaction*&gt; interactions = gestionContact-&gt;<a class="code" href="class_gestion_contact.html#a76eb2ec4b6fe580465418305bc0cb0df">getAllInteractions</a>();</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;        map&lt;Interaction*, int&gt; interactionsIds;</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160; </div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;        <span class="keywordtype">int</span> <span class="keywordtype">id</span> = 0;</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">auto</span> it = interactions.begin(); it != interactions.end(); it++)</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;        {</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;            interactionsIds[*it] = id;</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;            QJsonObject interactionJson = <a class="code" href="class_j_s_o_n_serializer.html#ab16e419e1fb587abb69de8e85f6b45f8">JSONSerializer::serialize</a>(*it);</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;            interactionJson.insert(<span class="stringliteral">&quot;id&quot;</span>, <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;            interactionsArray.append(interactionJson);</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;            <span class="keywordtype">id</span>++;</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;        }</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160; </div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">auto</span> c = gestionContact-&gt;<a class="code" href="class_gestion_contact.html#a7c81842c85dc7a6369eea00ec51bb805">getContacts</a>().begin(); c != gestionContact-&gt;<a class="code" href="class_gestion_contact.html#a7c81842c85dc7a6369eea00ec51bb805">getContacts</a>().end(); c++)</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;        {</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;            QJsonObject contactJson = <a class="code" href="class_j_s_o_n_serializer.html#ab16e419e1fb587abb69de8e85f6b45f8">JSONSerializer::serialize</a>(*c);</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160; </div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;            QJsonArray contactInteractionArray;</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;            <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = (*c)-&gt;getInteractions().begin(); i != (*c)-&gt;getInteractions().end(); i++)</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;            {</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;                contactInteractionArray.append(QJsonValue::fromVariant(QVariant(interactionsIds[*i])));</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;            }</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160; </div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;            contactJson.insert(<span class="stringliteral">&quot;interactionsIds&quot;</span>, contactInteractionArray);</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;            contactsArray.append(contactJson);</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;        }</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160; </div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        QJsonArray infosArray;</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;        QJsonObject infosObj;</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;        infosObj.insert(<span class="stringliteral">&quot;dernierSuppression&quot;</span>, QString::fromStdString(gestionContact-&gt;<a class="code" href="class_gestion_contact.html#a95888c31ed32c1c5c1bf64363119bb58">getDateDerniereSuppression</a>().<a class="code" href="class_date.html#aafe8a781392a49bb10af5856ccc52cb5">toString</a>()));</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;        infosArray.append(infosObj);</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160; </div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;        baseArray.append(contactsArray);</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;        baseArray.append(interactionsArray);</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;        baseArray.append(infosArray);</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;        doc.setArray(baseArray);</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160; </div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        file.write(doc.toJson());</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;        file.close();</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    }</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    {</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;        <span class="keywordflow">throw</span> runtime_error(<span class="stringliteral">&quot;Unable to open JSON file&quot;</span>);</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    }</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;}</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160; </div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;<span class="keywordtype">void</span> GestionnaireQObject::importJSON(QString filePath)</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;{</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    QFile file(filePath);</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    <span class="keywordflow">if</span> (file.open(QIODevice::ReadOnly))</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    {</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;        QByteArray bytes = file.readAll();</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;        QJsonDocument doc = QJsonDocument::fromJson(bytes);</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        QJsonArray baseArray = doc.array();</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;        QJsonArray contactsArray = baseArray.takeAt(0).toArray();</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;        QJsonArray interactionsArray = baseArray.takeAt(0).toArray();</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;        QJsonArray infosArray = baseArray.takeAt(0).toArray();</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160; </div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;        emit <a class="code" href="class_gestionnaire_q_object.html#a39768198d956449ada7d3c0a2956e43e">onLoadJSON</a>();</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160; </div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">auto</span> it = contactsArray.begin(); it != contactsArray.end(); it++)</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        {</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;            QJsonObject contactObj = (*it).toObject();</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;            emit <a class="code" href="class_gestionnaire_q_object.html#a973d71ee6d24c57ea671519b47e012cc">contactCreated</a>(contactObj[<span class="stringliteral">&quot;nom&quot;</span>].toString().toStdString(), contactObj[<span class="stringliteral">&quot;prenom&quot;</span>].toString().toStdString(),</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;                    contactObj[<span class="stringliteral">&quot;entreprise&quot;</span>].toString().toStdString(), contactObj[<span class="stringliteral">&quot;tel&quot;</span>].toString().toStdString(),</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;                    contactObj[<span class="stringliteral">&quot;mail&quot;</span>].toString().toStdString(), contactObj[<span class="stringliteral">&quot;photo&quot;</span>].toString().toStdString(),</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;                    <a class="code" href="class_date.html">Date</a>(contactObj[<span class="stringliteral">&quot;dateCreation&quot;</span>].toString().toStdString()), <a class="code" href="class_date.html">Date</a>(contactObj[<span class="stringliteral">&quot;dateModification&quot;</span>].toString().toStdString()));</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;        }</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160; </div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        map&lt;int, list&lt;Contact*&gt;&gt; interactionsToContacts;</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160; </div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;        list&lt;Contact*&gt; contacts = gestionContact-&gt;<a class="code" href="class_gestion_contact.html#a7c81842c85dc7a6369eea00ec51bb805">getContacts</a>();</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;        <span class="keyword">auto</span> cJson = contactsArray.begin();</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">auto</span> c = contacts.begin(); c != contacts.end(); c++, cJson++)</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;        {</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;            QJsonArray interactionsContactToArray = (*cJson).toObject()[<span class="stringliteral">&quot;interactionsIds&quot;</span>].toArray();</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;            <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = interactionsContactToArray.begin(); i != interactionsContactToArray.end(); i++)</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;            {</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;                <span class="keywordtype">int</span> interactionId = (*i).toInt();</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;                interactionsToContacts[interactionId].push_back(*c);</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;            }</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;        }</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160; </div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">auto</span> it = interactionsArray.begin(); it != interactionsArray.end(); it++)</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;        {</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;            QJsonObject interactionObj = (*it).toObject();</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;            <span class="keywordtype">int</span> indice = interactionObj[<span class="stringliteral">&quot;id&quot;</span>].toInt();</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;            <a class="code" href="class_interaction.html">Interaction</a>* i = ajoutInteraction(*interactionsToContacts[indice].begin(), <a class="code" href="class_date.html">Date</a>(interactionObj[<span class="stringliteral">&quot;date&quot;</span>].toString().toStdString()),</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;                    interactionObj[<span class="stringliteral">&quot;resume&quot;</span>].toString(), <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160; </div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;            QJsonArray todosArray = interactionObj[<span class="stringliteral">&quot;todos&quot;</span>].toArray();</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;            <span class="keywordflow">for</span>(<span class="keyword">auto</span> t = todosArray.begin(); t != todosArray.end(); t++)</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;            {</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;                QJsonObject todoObj = (*t).toObject();</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;                i-&gt;<a class="code" href="class_interaction.html#a8ae8a5a0077990bdc5c8af6c31976617">ajoutTodo</a>(<span class="keyword">new</span> <a class="code" href="class_todo.html">Todo</a>(todoObj[<span class="stringliteral">&quot;contenu&quot;</span>].toString().toStdString(), <a class="code" href="class_date.html">Date</a>(todoObj[<span class="stringliteral">&quot;echeance&quot;</span>].toString().toStdString()),</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                        todoObj[<span class="stringliteral">&quot;effectue&quot;</span>].toBool()));</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;            }</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;            emit <a class="code" href="class_gestionnaire_q_object.html#a3ab0dd3938c9cb51597143e7bd040331">onCreateTodos</a>(i, i-&gt;<a class="code" href="class_interaction.html#a105548a9f2f3b3b47fe8bcf2382b2a03">getTodos</a>());</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160; </div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;            <span class="keyword">auto</span> c = interactionsToContacts[indice].begin();</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;            c++;</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;            <span class="keywordflow">for</span>(; c != interactionsToContacts[indice].end(); c++)</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;            {</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;                ajoutInteraction(*c, i);</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;            }</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;        }</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160; </div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;        <span class="keywordtype">string</span> date = infosArray.begin()-&gt;toObject()[<span class="stringliteral">&quot;dernierSuppression&quot;</span>].toString().toStdString();</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;        gestionContact-&gt;<a class="code" href="class_gestion_contact.html#ab899d2d9cecf7aadc41f741ddad2f25d">setDateDerniereSuppression</a>(<a class="code" href="class_date.html">Date</a>(date));</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;        emit <a class="code" href="class_gestionnaire_q_object.html#a97ab66ef789dc928a46d834b87657d20">contactDeleted</a>(date);</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    }</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    {</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;        <span class="keywordflow">throw</span> runtime_error(<span class="stringliteral">&quot;Unable to open JSON file&quot;</span>);</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    }</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;}</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160; </div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;<span class="keywordtype">void</span> GestionnaireQObject::clearData()</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;{</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    <span class="keyword">delete</span> gestionContact;</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    gestionContact = <span class="keyword">new</span> <a class="code" href="class_gestion_contact.html">GestionContact</a>(<a class="code" href="class_date.html">Date</a>());</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;}</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160; </div>
+<div class="line"><a name="l00603"></a><span class="lineno"><a class="line" href="class_gestionnaire_q_object.html#ac94d53496339fe408920553bd7f721f0">  603</a></span>&#160;<a class="code" href="class_gestionnaire_q_object.html#ac94d53496339fe408920553bd7f721f0">GestionnaireQObject::~GestionnaireQObject</a>()</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;{</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    <span class="keyword">delete</span> gestionContact;</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    <span class="keyword">delete</span> dbManager;</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    <span class="keyword">delete</span> mainWin;</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_gestion_contact_html_a98eaa3ecb272debd17e583c83a57f36c"><div class="ttname"><a href="class_gestion_contact.html#a98eaa3ecb272debd17e583c83a57f36c">GestionContact::creerTodos</a></div><div class="ttdeci">static void creerTodos(Interaction *)</div><div class="ttdoc">Creation de la liste des Todo concernant cette Interaction.</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8cpp_source.html#l00099">GestionContact.cpp:99</a></div></div>
+<div class="ttc" id="aclass_gestionnaire_q_object_html_a2290208030ece90c0cc1502cc237cbef"><div class="ttname"><a href="class_gestionnaire_q_object.html#a2290208030ece90c0cc1502cc237cbef">GestionnaireQObject::onAddExistingInteraction</a></div><div class="ttdeci">void onAddExistingInteraction(Interaction *, Contact *)</div></div>
+<div class="ttc" id="aclass_contact_html_afae52eacfbe597c6dfcc226654a75819"><div class="ttname"><a href="class_contact.html#afae52eacfbe597c6dfcc226654a75819">Contact::getNom</a></div><div class="ttdeci">const std::string &amp; getNom() const</div><div class="ttdoc">Accesseur de nom.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00075">Contact.cpp:75</a></div></div>
+<div class="ttc" id="aclass_date_html_aafe8a781392a49bb10af5856ccc52cb5"><div class="ttname"><a href="class_date.html#aafe8a781392a49bb10af5856ccc52cb5">Date::toString</a></div><div class="ttdeci">const std::string toString() const</div><div class="ttdoc">Representation en string.</div><div class="ttdef"><b>Definition:</b> <a href="_date_8cpp_source.html#l00187">Date.cpp:187</a></div></div>
+<div class="ttc" id="aclass_gestionnaire_q_object_html_a5f6f081ec6759d4d36642d93c60af9eb"><div class="ttname"><a href="class_gestionnaire_q_object.html#a5f6f081ec6759d4d36642d93c60af9eb">GestionnaireQObject::onContactCreated</a></div><div class="ttdeci">void onContactCreated(Contact *, std::string, std::string)</div></div>
+<div class="ttc" id="aclass_contact_html_a2074cf9b55c1066344f9068d2f7064d1"><div class="ttname"><a href="class_contact.html#a2074cf9b55c1066344f9068d2f7064d1">Contact::getEntreprise</a></div><div class="ttdeci">const std::string &amp; getEntreprise() const</div><div class="ttdoc">Accesseur d'entreprise.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00129">Contact.cpp:129</a></div></div>
+<div class="ttc" id="aclass_gestion_contact_html_a7c81842c85dc7a6369eea00ec51bb805"><div class="ttname"><a href="class_gestion_contact.html#a7c81842c85dc7a6369eea00ec51bb805">GestionContact::getContacts</a></div><div class="ttdeci">const std::list&lt; Contact * &gt; &amp; getContacts()</div><div class="ttdoc">Accesseur de Contacts.</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8cpp_source.html#l00240">GestionContact.cpp:240</a></div></div>
+<div class="ttc" id="aclass_database_manager_html_ae8d395e6c7ed63d6cf68ba35465b68da"><div class="ttname"><a href="class_database_manager.html#ae8d395e6c7ed63d6cf68ba35465b68da">DatabaseManager::getDateDerniereSuppression</a></div><div class="ttdeci">std::string getDateDerniereSuppression()</div><div class="ttdoc">Lecture de la date de derniere suppression.</div><div class="ttdef"><b>Definition:</b> <a href="_database_manager_8cpp_source.html#l00347">DatabaseManager.cpp:347</a></div></div>
+<div class="ttc" id="aclass_gestionnaire_q_object_html_a3c2b0bae88db82fa6385e23f77eadbae"><div class="ttname"><a href="class_gestionnaire_q_object.html#a3c2b0bae88db82fa6385e23f77eadbae">GestionnaireQObject::contactLoaded</a></div><div class="ttdeci">void contactLoaded(int, Contact *)</div></div>
+<div class="ttc" id="aclass_contact_html_a0837af372d75a5d85ab296c6104a3232"><div class="ttname"><a href="class_contact.html#a0837af372d75a5d85ab296c6104a3232">Contact::setNom</a></div><div class="ttdeci">void setNom(const std::string &amp;)</div><div class="ttdoc">Mutateur de nom.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00087">Contact.cpp:87</a></div></div>
+<div class="ttc" id="aclass_gestionnaire_q_object_html_a973d71ee6d24c57ea671519b47e012cc"><div class="ttname"><a href="class_gestionnaire_q_object.html#a973d71ee6d24c57ea671519b47e012cc">GestionnaireQObject::contactCreated</a></div><div class="ttdeci">void contactCreated(std::string, std::string, std::string, std::string, std::string, std::string)</div></div>
+<div class="ttc" id="aclass_gestion_contact_html_a76eb2ec4b6fe580465418305bc0cb0df"><div class="ttname"><a href="class_gestion_contact.html#a76eb2ec4b6fe580465418305bc0cb0df">GestionContact::getAllInteractions</a></div><div class="ttdeci">const std::list&lt; Interaction * &gt; getAllInteractions() const</div><div class="ttdoc">Recupere toutes les interactions de tous les contacts Trie toutes les interactions et supprime les du...</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8cpp_source.html#l00219">GestionContact.cpp:219</a></div></div>
+<div class="ttc" id="aclass_interaction_html_a7b904695469d24331aa10a7cbd14ea32"><div class="ttname"><a href="class_interaction.html#a7b904695469d24331aa10a7cbd14ea32">Interaction::setResume</a></div><div class="ttdeci">void setResume(const std::string &amp;newResume)</div><div class="ttdoc">Mutateur de resume.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00124">Interaction.cpp:124</a></div></div>
+<div class="ttc" id="aclass_interaction_html_a8ae8a5a0077990bdc5c8af6c31976617"><div class="ttname"><a href="class_interaction.html#a8ae8a5a0077990bdc5c8af6c31976617">Interaction::ajoutTodo</a></div><div class="ttdeci">void ajoutTodo(Todo *)</div><div class="ttdoc">Ajout d'un todo.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00100">Interaction.cpp:100</a></div></div>
+<div class="ttc" id="aclass_gestionnaire_q_object_html_a7c2ef2d68ad741384d0228437a3932a0"><div class="ttname"><a href="class_gestionnaire_q_object.html#a7c2ef2d68ad741384d0228437a3932a0">GestionnaireQObject::onTodoEdited</a></div><div class="ttdeci">void onTodoEdited()</div></div>
+<div class="ttc" id="aclass_contact_html_a75dedfa3ee66c6c49bf8123d9ec59f34"><div class="ttname"><a href="class_contact.html#a75dedfa3ee66c6c49bf8123d9ec59f34">Contact::getDateDerniereModification</a></div><div class="ttdeci">const Date &amp; getDateDerniereModification() const</div><div class="ttdoc">Accesseur de dateModification.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00247">Contact.cpp:247</a></div></div>
+<div class="ttc" id="aclass_contact_html_afbf8f3c920221656f59702d0f5a6367b"><div class="ttname"><a href="class_contact.html#afbf8f3c920221656f59702d0f5a6367b">Contact::getUriPhoto</a></div><div class="ttdeci">const std::string &amp; getUriPhoto() const</div><div class="ttdoc">Accesseur de uriPhoto.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00209">Contact.cpp:209</a></div></div>
+<div class="ttc" id="a_gestionnaire_q_object_8h_html"><div class="ttname"><a href="_gestionnaire_q_object_8h.html">GestionnaireQObject.h</a></div></div>
+<div class="ttc" id="aclass_contact_html_a6b9044988b8ec70fbf1c6d620844d707"><div class="ttname"><a href="class_contact.html#a6b9044988b8ec70fbf1c6d620844d707">Contact::getMail</a></div><div class="ttdeci">const std::string &amp; getMail() const</div><div class="ttdoc">Accesseur de mail.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00181">Contact.cpp:181</a></div></div>
+<div class="ttc" id="aclass_gestionnaire_q_object_html_a7f12d0a35d1f2e4319b9c81e15c9b122"><div class="ttname"><a href="class_gestionnaire_q_object.html#a7f12d0a35d1f2e4319b9c81e15c9b122">GestionnaireQObject::listContactsUpdated</a></div><div class="ttdeci">void listContactsUpdated(std::list&lt; Contact * &gt;)</div></div>
+<div class="ttc" id="aclass_database_manager_html_a396db1ca1ac24e95e41a76d248af15ba"><div class="ttname"><a href="class_database_manager.html#a396db1ca1ac24e95e41a76d248af15ba">DatabaseManager::loadDatas</a></div><div class="ttdeci">void loadDatas()</div><div class="ttdoc">Chargement des donnees.</div><div class="ttdef"><b>Definition:</b> <a href="_database_manager_8cpp_source.html#l00109">DatabaseManager.cpp:109</a></div></div>
+<div class="ttc" id="aclass_contact_html_ac31195d758df58ee327cc05b6276aace"><div class="ttname"><a href="class_contact.html#ac31195d758df58ee327cc05b6276aace">Contact::setPrenom</a></div><div class="ttdeci">void setPrenom(const std::string &amp;)</div><div class="ttdoc">Mutateur de prenom.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00114">Contact.cpp:114</a></div></div>
+<div class="ttc" id="aclass_gestionnaire_q_object_html_a4fd72b912d0ba5c3d216e54d4abe19ed"><div class="ttname"><a href="class_gestionnaire_q_object.html#a4fd72b912d0ba5c3d216e54d4abe19ed">GestionnaireQObject::onCreateInteraction</a></div><div class="ttdeci">void onCreateInteraction(Interaction *, Contact *, std::string)</div></div>
+<div class="ttc" id="aclass_gestion_contact_html_a418f98f248946bd49a8bbf02b438c529"><div class="ttname"><a href="class_gestion_contact.html#a418f98f248946bd49a8bbf02b438c529">GestionContact::ajoutTodo</a></div><div class="ttdeci">static Todo * ajoutTodo(Interaction *, const Date &amp;, const std::string &amp;, const bool)</div><div class="ttdoc">Ajoute un todo a une interaction.</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8cpp_source.html#l00205">GestionContact.cpp:205</a></div></div>
+<div class="ttc" id="aclass_todo_html_a7db4fd6d6a8083cb9a5ee00965418d2a"><div class="ttname"><a href="class_todo.html#a7db4fd6d6a8083cb9a5ee00965418d2a">Todo::setEffectue</a></div><div class="ttdeci">void setEffectue(bool)</div><div class="ttdoc">Mutateur d'effectue.</div><div class="ttdef"><b>Definition:</b> <a href="_todo_8cpp_source.html#l00101">Todo.cpp:101</a></div></div>
+<div class="ttc" id="aclass_gestionnaire_q_object_html_a58c8ccb9ce9b70f86410ca53b4439284"><div class="ttname"><a href="class_gestionnaire_q_object.html#a58c8ccb9ce9b70f86410ca53b4439284">GestionnaireQObject::onInteractionModifDate</a></div><div class="ttdeci">void onInteractionModifDate(Interaction *, std::string)</div></div>
+<div class="ttc" id="aclass_gestion_contact_html_a627aeba03d0893e273e482b30418e499"><div class="ttname"><a href="class_gestion_contact.html#a627aeba03d0893e273e482b30418e499">GestionContact::supprimeContact</a></div><div class="ttdeci">void supprimeContact(Contact *)</div><div class="ttdoc">Supprime un contact.</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8cpp_source.html#l00069">GestionContact.cpp:69</a></div></div>
+<div class="ttc" id="aclass_interaction_html_ae30667c22b4c8f0d56d1828f8d247139"><div class="ttname"><a href="class_interaction.html#ae30667c22b4c8f0d56d1828f8d247139">Interaction::getDate</a></div><div class="ttdeci">Date getDate() const</div><div class="ttdoc">Accesseur de date.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00037">Interaction.cpp:37</a></div></div>
+<div class="ttc" id="aclass_gestion_contact_html_a244211ece351717d07fe71fa9aef1b13"><div class="ttname"><a href="class_gestion_contact.html#a244211ece351717d07fe71fa9aef1b13">GestionContact::ajoutInteraction</a></div><div class="ttdeci">static Interaction * ajoutInteraction(Contact *, const Date &amp;, const std::string &amp;)</div></div>
+<div class="ttc" id="aclass_gestionnaire_q_object_html_abcc9bfa89db207b6333eb67a501afab1"><div class="ttname"><a href="class_gestionnaire_q_object.html#abcc9bfa89db207b6333eb67a501afab1">GestionnaireQObject::onInteractionEdited</a></div><div class="ttdeci">void onInteractionEdited()</div></div>
+<div class="ttc" id="aclass_interaction_html_a105548a9f2f3b3b47fe8bcf2382b2a03"><div class="ttname"><a href="class_interaction.html#a105548a9f2f3b3b47fe8bcf2382b2a03">Interaction::getTodos</a></div><div class="ttdeci">const std::list&lt; Todo * &gt; &amp; getTodos() const</div><div class="ttdoc">Accesseur de todos.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00112">Interaction.cpp:112</a></div></div>
+<div class="ttc" id="aclass_contact_html_a98aa91a89fd83578686227826c2eea6b"><div class="ttname"><a href="class_contact.html#a98aa91a89fd83578686227826c2eea6b">Contact::getTelephone</a></div><div class="ttdeci">const std::string &amp; getTelephone() const</div><div class="ttdoc">Accesseur de telephone.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00154">Contact.cpp:154</a></div></div>
+<div class="ttc" id="aclass_gestionnaire_q_object_html_a098695e25f00046074cfa5fb37af3461"><div class="ttname"><a href="class_gestionnaire_q_object.html#a098695e25f00046074cfa5fb37af3461">GestionnaireQObject::onDeleteTodos</a></div><div class="ttdeci">void onDeleteTodos(Interaction *)</div></div>
+<div class="ttc" id="aclass_gestionnaire_q_object_html_ac94d53496339fe408920553bd7f721f0"><div class="ttname"><a href="class_gestionnaire_q_object.html#ac94d53496339fe408920553bd7f721f0">GestionnaireQObject::~GestionnaireQObject</a></div><div class="ttdeci">~GestionnaireQObject()</div><div class="ttdoc">Destructeur de GestionnaireQObject.</div><div class="ttdef"><b>Definition:</b> <a href="_gestionnaire_q_object_8cpp_source.html#l00603">GestionnaireQObject.cpp:603</a></div></div>
+<div class="ttc" id="aclass_interaction_html"><div class="ttname"><a href="class_interaction.html">Interaction</a></div><div class="ttdoc">Enregistre une interaction avec un Contact.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8h_source.html#l00019">Interaction.h:20</a></div></div>
+<div class="ttc" id="aclass_gestion_contact_html_a95888c31ed32c1c5c1bf64363119bb58"><div class="ttname"><a href="class_gestion_contact.html#a95888c31ed32c1c5c1bf64363119bb58">GestionContact::getDateDerniereSuppression</a></div><div class="ttdeci">const Date &amp; getDateDerniereSuppression() const</div><div class="ttdoc">Accesseur de dateDerniereSuppression.</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8cpp_source.html#l00252">GestionContact.cpp:252</a></div></div>
+<div class="ttc" id="aclass_contact_html_a513b0a2da8a697076f4616ce7b6c445f"><div class="ttname"><a href="class_contact.html#a513b0a2da8a697076f4616ce7b6c445f">Contact::setMail</a></div><div class="ttdeci">void setMail(const std::string &amp;)</div><div class="ttdoc">Mutateur de mail.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00193">Contact.cpp:193</a></div></div>
+<div class="ttc" id="aclass_contact_html"><div class="ttname"><a href="class_contact.html">Contact</a></div><div class="ttdoc">Contact representant une personne.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8h_source.html#l00020">Contact.h:21</a></div></div>
+<div class="ttc" id="aclass_gestion_contact_html"><div class="ttname"><a href="class_gestion_contact.html">GestionContact</a></div><div class="ttdoc">Class de gestion des Contact: ajout, suppressions, requetes, ...</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8h_source.html#l00017">GestionContact.h:18</a></div></div>
+<div class="ttc" id="aclass_contact_html_a24d89f71724842a6375db8550495d3e8"><div class="ttname"><a href="class_contact.html#a24d89f71724842a6375db8550495d3e8">Contact::setUriPhoto</a></div><div class="ttdeci">void setUriPhoto(const std::string &amp;)</div><div class="ttdoc">Mutateur de uriPhoto.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00221">Contact.cpp:221</a></div></div>
+<div class="ttc" id="aclass_gestionnaire_q_object_html_a3ab0dd3938c9cb51597143e7bd040331"><div class="ttname"><a href="class_gestionnaire_q_object.html#a3ab0dd3938c9cb51597143e7bd040331">GestionnaireQObject::onCreateTodos</a></div><div class="ttdeci">void onCreateTodos(Interaction *, std::list&lt; Todo * &gt;)</div></div>
+<div class="ttc" id="aclass_contact_html_a62980364c568e7f38b8f2e0892672416"><div class="ttname"><a href="class_contact.html#a62980364c568e7f38b8f2e0892672416">Contact::getPrenom</a></div><div class="ttdeci">const std::string &amp; getPrenom() const</div><div class="ttdoc">Accesseur de prenom.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00102">Contact.cpp:102</a></div></div>
+<div class="ttc" id="aclass_gestion_contact_html_ab899d2d9cecf7aadc41f741ddad2f25d"><div class="ttname"><a href="class_gestion_contact.html#ab899d2d9cecf7aadc41f741ddad2f25d">GestionContact::setDateDerniereSuppression</a></div><div class="ttdeci">void setDateDerniereSuppression(const Date &amp;)</div><div class="ttdoc">Mutateur de dateDerniereSuppression.</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8cpp_source.html#l00263">GestionContact.cpp:263</a></div></div>
+<div class="ttc" id="aclass_gestionnaire_q_object_html_ac49901b336934c4f979a819b7fdd0c48"><div class="ttname"><a href="class_gestionnaire_q_object.html#ac49901b336934c4f979a819b7fdd0c48">GestionnaireQObject::onEndModifContact</a></div><div class="ttdeci">void onEndModifContact(Contact *, std::string)</div></div>
+<div class="ttc" id="aclass_contact_html_a1237b826b80e3ead402d0c26cc3c2ace"><div class="ttname"><a href="class_contact.html#a1237b826b80e3ead402d0c26cc3c2ace">Contact::setEntreprise</a></div><div class="ttdeci">void setEntreprise(const std::string &amp;)</div><div class="ttdoc">Mutateur d'entreprise.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00141">Contact.cpp:141</a></div></div>
+<div class="ttc" id="aclass_gestion_contact_html_a4242680d2c479460fa417087624ec3e7"><div class="ttname"><a href="class_gestion_contact.html#a4242680d2c479460fa417087624ec3e7">GestionContact::creeContact</a></div><div class="ttdeci">Contact * creeContact(const std::string &amp;, const std::string &amp;, const std::string &amp;, const std::string &amp;, const std::string &amp;, const std::string &amp;)</div></div>
+<div class="ttc" id="aclass_database_manager_html"><div class="ttname"><a href="class_database_manager.html">DatabaseManager</a></div><div class="ttdoc">Gestionnaire de la base de donnees: lis, modifie et insere des donnees persistentes.</div><div class="ttdef"><b>Definition:</b> <a href="_database_manager_8h_source.html#l00017">DatabaseManager.h:18</a></div></div>
+<div class="ttc" id="aclass_contact_html_a54c863b3045a9255d75f1ad876ecb7de"><div class="ttname"><a href="class_contact.html#a54c863b3045a9255d75f1ad876ecb7de">Contact::setTelephone</a></div><div class="ttdeci">void setTelephone(const std::string &amp;)</div><div class="ttdoc">Mutateur de telephone.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00166">Contact.cpp:166</a></div></div>
+<div class="ttc" id="a_j_s_o_n_serializer_8h_html"><div class="ttname"><a href="_j_s_o_n_serializer_8h.html">JSONSerializer.h</a></div></div>
+<div class="ttc" id="aclass_interaction_html_ad688c4677d2ba96c8185624098a4fbe9"><div class="ttname"><a href="class_interaction.html#ad688c4677d2ba96c8185624098a4fbe9">Interaction::viderTodos</a></div><div class="ttdeci">void viderTodos()</div><div class="ttdoc">Vide la liste des todos stockes dans cette interaction.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00134">Interaction.cpp:134</a></div></div>
+<div class="ttc" id="aclass_interaction_html_a78ab3582f37b88498eab85b71c248bb0"><div class="ttname"><a href="class_interaction.html#a78ab3582f37b88498eab85b71c248bb0">Interaction::setDate</a></div><div class="ttdeci">void setDate(const Date &amp;)</div><div class="ttdoc">Mutateur de date.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00049">Interaction.cpp:49</a></div></div>
+<div class="ttc" id="aclass_gestionnaire_q_object_html_aa4f418110218001ca5654d8925675fb1"><div class="ttname"><a href="class_gestionnaire_q_object.html#aa4f418110218001ca5654d8925675fb1">GestionnaireQObject::todoLoaded</a></div><div class="ttdeci">void todoLoaded(int, Todo *)</div></div>
+<div class="ttc" id="aclass_gestionnaire_q_object_html_a97ab66ef789dc928a46d834b87657d20"><div class="ttname"><a href="class_gestionnaire_q_object.html#a97ab66ef789dc928a46d834b87657d20">GestionnaireQObject::contactDeleted</a></div><div class="ttdeci">void contactDeleted(std::string)</div></div>
+<div class="ttc" id="aclass_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdoc">Fenetre principale qui permet de gerer l'ensemble des fenetres.</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8h_source.html#l00021">MainWindow.h:22</a></div></div>
+<div class="ttc" id="aclass_contact_html_afde7db06fa36f2fa54139e22feff6adb"><div class="ttname"><a href="class_contact.html#afde7db06fa36f2fa54139e22feff6adb">Contact::getDateCreation</a></div><div class="ttdeci">Date &amp; getDateCreation()</div><div class="ttdoc">Accesseur de dateCreation.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00235">Contact.cpp:235</a></div></div>
+<div class="ttc" id="aclass_j_s_o_n_serializer_html_ab16e419e1fb587abb69de8e85f6b45f8"><div class="ttname"><a href="class_j_s_o_n_serializer.html#ab16e419e1fb587abb69de8e85f6b45f8">JSONSerializer::serialize</a></div><div class="ttdeci">static QJsonObject serialize(Contact *)</div><div class="ttdoc">Serialisation en JSON.</div><div class="ttdef"><b>Definition:</b> <a href="_j_s_o_n_serializer_8cpp_source.html#l00018">JSONSerializer.cpp:18</a></div></div>
+<div class="ttc" id="aclass_gestionnaire_q_object_html_aca5bdc90f85033c7b18128c6dec0c20d"><div class="ttname"><a href="class_gestionnaire_q_object.html#aca5bdc90f85033c7b18128c6dec0c20d">GestionnaireQObject::GestionnaireQObject</a></div><div class="ttdeci">GestionnaireQObject(QObject *parent=nullptr)</div><div class="ttdoc">Constructeur standard.</div><div class="ttdef"><b>Definition:</b> <a href="_gestionnaire_q_object_8cpp_source.html#l00026">GestionnaireQObject.cpp:26</a></div></div>
+<div class="ttc" id="aclass_todo_html"><div class="ttname"><a href="class_todo.html">Todo</a></div><div class="ttdoc">Permets de décrire les choses à faire (todo), des Interaction pour un Contact.</div><div class="ttdef"><b>Definition:</b> <a href="_todo_8h_source.html#l00017">Todo.h:18</a></div></div>
+<div class="ttc" id="aclass_gestionnaire_q_object_html_a29d97bf26b662419f60b1d437117ee56"><div class="ttname"><a href="class_gestionnaire_q_object.html#a29d97bf26b662419f60b1d437117ee56">GestionnaireQObject::onInteractionModifResume</a></div><div class="ttdeci">void onInteractionModifResume(Interaction *, std::string)</div></div>
+<div class="ttc" id="aclass_gestionnaire_q_object_html_a39768198d956449ada7d3c0a2956e43e"><div class="ttname"><a href="class_gestionnaire_q_object.html#a39768198d956449ada7d3c0a2956e43e">GestionnaireQObject::onLoadJSON</a></div><div class="ttdeci">void onLoadJSON()</div></div>
+<div class="ttc" id="aclass_gestionnaire_q_object_html_afb1036ecbbdb81ece284632189bda512"><div class="ttname"><a href="class_gestionnaire_q_object.html#afb1036ecbbdb81ece284632189bda512">GestionnaireQObject::interactionLoaded</a></div><div class="ttdeci">void interactionLoaded(int, Interaction *)</div></div>
+<div class="ttc" id="aclass_date_html"><div class="ttname"><a href="class_date.html">Date</a></div><div class="ttdoc">Stocke une date.</div><div class="ttdef"><b>Definition:</b> <a href="_date_8h_source.html#l00013">Date.h:14</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="_gestionnaire_q_object_8cpp.html">GestionnaireQObject.cpp</a></li>
+    <li class="footer">Généré par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
+  </ul>
+</div>
+</body>
+</html>

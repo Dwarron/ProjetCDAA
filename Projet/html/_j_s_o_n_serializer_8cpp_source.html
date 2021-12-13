@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projet CDAA:  Fichier source de JSONSerializer.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Projet CDAA
+   &#160;<span id="projectnumber">0.0.1</span>
+   </div>
+   <div id="projectbrief">Logiciel de gestion de relations clients. Projet scolaire pour le module de CDAA (Romain Raffin) en Licence 3 d&#39;informatique à l&#39;université de Bourgogne</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_j_s_o_n_serializer_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">JSONSerializer.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_j_s_o_n_serializer_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QVariant&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QJsonArray&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_j_s_o_n_serializer_8h.html">JSONSerializer.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_j_s_o_n_serializer.html#ab16e419e1fb587abb69de8e85f6b45f8">   18</a></span>&#160;QJsonObject <a class="code" href="class_j_s_o_n_serializer.html#ab16e419e1fb587abb69de8e85f6b45f8">JSONSerializer::serialize</a>(<a class="code" href="class_contact.html">Contact</a>* c)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    QJsonObject object;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">object</span>.insert(<span class="stringliteral">&quot;nom&quot;</span>, QJsonValue(QString::fromStdString(c-&gt;<a class="code" href="class_contact.html#afae52eacfbe597c6dfcc226654a75819">getNom</a>())));</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">object</span>.insert(<span class="stringliteral">&quot;prenom&quot;</span>, QJsonValue(QString::fromStdString(c-&gt;<a class="code" href="class_contact.html#a62980364c568e7f38b8f2e0892672416">getPrenom</a>())));</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">object</span>.insert(<span class="stringliteral">&quot;entreprise&quot;</span>, QJsonValue(QString::fromStdString(c-&gt;<a class="code" href="class_contact.html#a2074cf9b55c1066344f9068d2f7064d1">getEntreprise</a>())));</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">object</span>.insert(<span class="stringliteral">&quot;tel&quot;</span>, QJsonValue(QString::fromStdString(c-&gt;<a class="code" href="class_contact.html#a98aa91a89fd83578686227826c2eea6b">getTelephone</a>())));</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">object</span>.insert(<span class="stringliteral">&quot;mail&quot;</span>, QJsonValue(QString::fromStdString(c-&gt;<a class="code" href="class_contact.html#a6b9044988b8ec70fbf1c6d620844d707">getMail</a>())));</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">object</span>.insert(<span class="stringliteral">&quot;photo&quot;</span>, QJsonValue(QString::fromStdString(c-&gt;<a class="code" href="class_contact.html#afbf8f3c920221656f59702d0f5a6367b">getUriPhoto</a>())));</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">object</span>.insert(<span class="stringliteral">&quot;dateCreation&quot;</span>, QJsonValue(QString::fromStdString(c-&gt;<a class="code" href="class_contact.html#afde7db06fa36f2fa54139e22feff6adb">getDateCreation</a>().<a class="code" href="class_date.html#aafe8a781392a49bb10af5856ccc52cb5">toString</a>())));</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">object</span>.insert(<span class="stringliteral">&quot;dateModification&quot;</span>, QJsonValue(QString::fromStdString(c-&gt;<a class="code" href="class_contact.html#a75dedfa3ee66c6c49bf8123d9ec59f34">getDateDerniereModification</a>().<a class="code" href="class_date.html#aafe8a781392a49bb10af5856ccc52cb5">toString</a>())));</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> object;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_j_s_o_n_serializer.html#a95d55e7b827dfdd2768f28d914f4cd3d">   37</a></span>&#160;QJsonObject <a class="code" href="class_j_s_o_n_serializer.html#ab16e419e1fb587abb69de8e85f6b45f8">JSONSerializer::serialize</a>(<a class="code" href="class_interaction.html">Interaction</a>* i)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    QJsonObject object;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">object</span>.insert(<span class="stringliteral">&quot;date&quot;</span>, QJsonValue(QString::fromStdString(i-&gt;<a class="code" href="class_interaction.html#ae30667c22b4c8f0d56d1828f8d247139">getDate</a>().<a class="code" href="class_date.html#aafe8a781392a49bb10af5856ccc52cb5">toString</a>())));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">object</span>.insert(<span class="stringliteral">&quot;resume&quot;</span>, QJsonValue(QString::fromStdString(i-&gt;<a class="code" href="class_interaction.html#af2fc9889b4e9a17c35b3fb6d21c17320">getResume</a>())));</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    QJsonArray todos;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> it = i-&gt;<a class="code" href="class_interaction.html#a105548a9f2f3b3b47fe8bcf2382b2a03">getTodos</a>().begin(); it != i-&gt;<a class="code" href="class_interaction.html#a105548a9f2f3b3b47fe8bcf2382b2a03">getTodos</a>().end(); it++)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        todos.append(<a class="code" href="class_j_s_o_n_serializer.html#ab16e419e1fb587abb69de8e85f6b45f8">serialize</a>(*it));</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">object</span>.insert(<span class="stringliteral">&quot;todos&quot;</span>, todos);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> object;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_j_s_o_n_serializer.html#af33fd99ed0d2865341bd0a0b8d0bef65">   58</a></span>&#160;QJsonObject <a class="code" href="class_j_s_o_n_serializer.html#ab16e419e1fb587abb69de8e85f6b45f8">JSONSerializer::serialize</a>(<a class="code" href="class_todo.html">Todo</a>* t)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    QJsonObject object;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">object</span>.insert(<span class="stringliteral">&quot;echeance&quot;</span>, QJsonValue(QString::fromStdString(t-&gt;<a class="code" href="class_todo.html#ad772ca0384884150772fcf1a03494726">getEcheance</a>().<a class="code" href="class_date.html#aafe8a781392a49bb10af5856ccc52cb5">toString</a>())));</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">object</span>.insert(<span class="stringliteral">&quot;contenu&quot;</span>, QJsonValue(QString::fromStdString(t-&gt;<a class="code" href="class_todo.html#a758f591327eb2b8b67b38d1aec6b3462">getContenu</a>())));</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">object</span>.insert(<span class="stringliteral">&quot;effectue&quot;</span>, QJsonValue::fromVariant(QVariant(t-&gt;<a class="code" href="class_todo.html#ab7e641a5a3a226cf86b3254ead670969">getEffectue</a>())));</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> object;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_contact_html_afae52eacfbe597c6dfcc226654a75819"><div class="ttname"><a href="class_contact.html#afae52eacfbe597c6dfcc226654a75819">Contact::getNom</a></div><div class="ttdeci">const std::string &amp; getNom() const</div><div class="ttdoc">Accesseur de nom.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00075">Contact.cpp:75</a></div></div>
+<div class="ttc" id="aclass_date_html_aafe8a781392a49bb10af5856ccc52cb5"><div class="ttname"><a href="class_date.html#aafe8a781392a49bb10af5856ccc52cb5">Date::toString</a></div><div class="ttdeci">const std::string toString() const</div><div class="ttdoc">Representation en string.</div><div class="ttdef"><b>Definition:</b> <a href="_date_8cpp_source.html#l00187">Date.cpp:187</a></div></div>
+<div class="ttc" id="aclass_todo_html_a758f591327eb2b8b67b38d1aec6b3462"><div class="ttname"><a href="class_todo.html#a758f591327eb2b8b67b38d1aec6b3462">Todo::getContenu</a></div><div class="ttdeci">const std::string &amp; getContenu() const</div><div class="ttdoc">Accesseur du contenu.</div><div class="ttdef"><b>Definition:</b> <a href="_todo_8cpp_source.html#l00050">Todo.cpp:50</a></div></div>
+<div class="ttc" id="aclass_contact_html_a2074cf9b55c1066344f9068d2f7064d1"><div class="ttname"><a href="class_contact.html#a2074cf9b55c1066344f9068d2f7064d1">Contact::getEntreprise</a></div><div class="ttdeci">const std::string &amp; getEntreprise() const</div><div class="ttdoc">Accesseur d'entreprise.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00129">Contact.cpp:129</a></div></div>
+<div class="ttc" id="aclass_todo_html_ab7e641a5a3a226cf86b3254ead670969"><div class="ttname"><a href="class_todo.html#ab7e641a5a3a226cf86b3254ead670969">Todo::getEffectue</a></div><div class="ttdeci">bool getEffectue() const</div><div class="ttdoc">Accesseur d'effectue.</div><div class="ttdef"><b>Definition:</b> <a href="_todo_8cpp_source.html#l00089">Todo.cpp:89</a></div></div>
+<div class="ttc" id="aclass_contact_html_a75dedfa3ee66c6c49bf8123d9ec59f34"><div class="ttname"><a href="class_contact.html#a75dedfa3ee66c6c49bf8123d9ec59f34">Contact::getDateDerniereModification</a></div><div class="ttdeci">const Date &amp; getDateDerniereModification() const</div><div class="ttdoc">Accesseur de dateModification.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00247">Contact.cpp:247</a></div></div>
+<div class="ttc" id="aclass_contact_html_afbf8f3c920221656f59702d0f5a6367b"><div class="ttname"><a href="class_contact.html#afbf8f3c920221656f59702d0f5a6367b">Contact::getUriPhoto</a></div><div class="ttdeci">const std::string &amp; getUriPhoto() const</div><div class="ttdoc">Accesseur de uriPhoto.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00209">Contact.cpp:209</a></div></div>
+<div class="ttc" id="aclass_contact_html_a6b9044988b8ec70fbf1c6d620844d707"><div class="ttname"><a href="class_contact.html#a6b9044988b8ec70fbf1c6d620844d707">Contact::getMail</a></div><div class="ttdeci">const std::string &amp; getMail() const</div><div class="ttdoc">Accesseur de mail.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00181">Contact.cpp:181</a></div></div>
+<div class="ttc" id="aclass_interaction_html_ae30667c22b4c8f0d56d1828f8d247139"><div class="ttname"><a href="class_interaction.html#ae30667c22b4c8f0d56d1828f8d247139">Interaction::getDate</a></div><div class="ttdeci">Date getDate() const</div><div class="ttdoc">Accesseur de date.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00037">Interaction.cpp:37</a></div></div>
+<div class="ttc" id="aclass_interaction_html_a105548a9f2f3b3b47fe8bcf2382b2a03"><div class="ttname"><a href="class_interaction.html#a105548a9f2f3b3b47fe8bcf2382b2a03">Interaction::getTodos</a></div><div class="ttdeci">const std::list&lt; Todo * &gt; &amp; getTodos() const</div><div class="ttdoc">Accesseur de todos.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00112">Interaction.cpp:112</a></div></div>
+<div class="ttc" id="aclass_contact_html_a98aa91a89fd83578686227826c2eea6b"><div class="ttname"><a href="class_contact.html#a98aa91a89fd83578686227826c2eea6b">Contact::getTelephone</a></div><div class="ttdeci">const std::string &amp; getTelephone() const</div><div class="ttdoc">Accesseur de telephone.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00154">Contact.cpp:154</a></div></div>
+<div class="ttc" id="aclass_interaction_html"><div class="ttname"><a href="class_interaction.html">Interaction</a></div><div class="ttdoc">Enregistre une interaction avec un Contact.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8h_source.html#l00019">Interaction.h:20</a></div></div>
+<div class="ttc" id="aclass_contact_html"><div class="ttname"><a href="class_contact.html">Contact</a></div><div class="ttdoc">Contact representant une personne.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8h_source.html#l00020">Contact.h:21</a></div></div>
+<div class="ttc" id="aclass_todo_html_ad772ca0384884150772fcf1a03494726"><div class="ttname"><a href="class_todo.html#ad772ca0384884150772fcf1a03494726">Todo::getEcheance</a></div><div class="ttdeci">Date &amp; getEcheance()</div><div class="ttdoc">Accesseur d'echeance.</div><div class="ttdef"><b>Definition:</b> <a href="_todo_8cpp_source.html#l00038">Todo.cpp:38</a></div></div>
+<div class="ttc" id="aclass_interaction_html_af2fc9889b4e9a17c35b3fb6d21c17320"><div class="ttname"><a href="class_interaction.html#af2fc9889b4e9a17c35b3fb6d21c17320">Interaction::getResume</a></div><div class="ttdeci">const std::string &amp; getResume() const</div><div class="ttdoc">Accesseur de resume.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00061">Interaction.cpp:61</a></div></div>
+<div class="ttc" id="aclass_contact_html_a62980364c568e7f38b8f2e0892672416"><div class="ttname"><a href="class_contact.html#a62980364c568e7f38b8f2e0892672416">Contact::getPrenom</a></div><div class="ttdeci">const std::string &amp; getPrenom() const</div><div class="ttdoc">Accesseur de prenom.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00102">Contact.cpp:102</a></div></div>
+<div class="ttc" id="a_j_s_o_n_serializer_8h_html"><div class="ttname"><a href="_j_s_o_n_serializer_8h.html">JSONSerializer.h</a></div></div>
+<div class="ttc" id="aclass_contact_html_afde7db06fa36f2fa54139e22feff6adb"><div class="ttname"><a href="class_contact.html#afde7db06fa36f2fa54139e22feff6adb">Contact::getDateCreation</a></div><div class="ttdeci">Date &amp; getDateCreation()</div><div class="ttdoc">Accesseur de dateCreation.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00235">Contact.cpp:235</a></div></div>
+<div class="ttc" id="aclass_j_s_o_n_serializer_html_ab16e419e1fb587abb69de8e85f6b45f8"><div class="ttname"><a href="class_j_s_o_n_serializer.html#ab16e419e1fb587abb69de8e85f6b45f8">JSONSerializer::serialize</a></div><div class="ttdeci">static QJsonObject serialize(Contact *)</div><div class="ttdoc">Serialisation en JSON.</div><div class="ttdef"><b>Definition:</b> <a href="_j_s_o_n_serializer_8cpp_source.html#l00018">JSONSerializer.cpp:18</a></div></div>
+<div class="ttc" id="aclass_todo_html"><div class="ttname"><a href="class_todo.html">Todo</a></div><div class="ttdoc">Permets de décrire les choses à faire (todo), des Interaction pour un Contact.</div><div class="ttdef"><b>Definition:</b> <a href="_todo_8h_source.html#l00017">Todo.h:18</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="_j_s_o_n_serializer_8cpp.html">JSONSerializer.cpp</a></li>
+    <li class="footer">Généré par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
+  </ul>
+</div>
+</body>
+</html>

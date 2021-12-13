@@ -33,15 +33,12 @@ var NAVTREE =
         [ "Partie Persistence des données", "index.html#persistence_subsec", null ]
       ] ]
     ] ],
-    [ "Espaces de nommage", "namespaces.html", [
-      [ "Liste des espaces de nommage", "namespaces.html", "namespaces_dup" ]
-    ] ],
     [ "Classes", "annotated.html", [
       [ "Liste des classes", "annotated.html", "annotated_dup" ],
       [ "Index des classes", "classes.html", null ],
       [ "Hiérarchie des classes", "hierarchy.html", "hierarchy" ],
       [ "Membres de classe", "functions.html", [
-        [ "Tout", "functions.html", null ],
+        [ "Tout", "functions.html", "functions_dup" ],
         [ "Fonctions", "functions_func.html", null ],
         [ "Fonctions associées", "functions_rela.html", null ]
       ] ]
@@ -58,7 +55,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_contact_8cpp.html"
+"_affiche_interactions_window_8cpp.html",
+"class_main_window.html#a4a070a5e46648886d021af27dfb3a319"
 ];
 
 var SYNCONMSG = 'cliquez pour désactiver la synchronisation du panel';

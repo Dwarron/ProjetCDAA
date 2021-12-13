@@ -1,0 +1,198 @@
+\hypertarget{class_recherche_contact_window}{}\doxysection{Référence de la classe Recherche\+Contact\+Window}
+\label{class_recherche_contact_window}\index{RechercheContactWindow@{RechercheContactWindow}}
+
+
+Fenetre permettant la recherche et la selection d\textquotesingle{}un contact.  
+
+
+
+
+{\ttfamily \#include $<$Recherche\+Contact\+Window.\+h$>$}
+
+Graphe d\textquotesingle{}héritage de Recherche\+Contact\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_recherche_contact_window}
+\end{center}
+\end{figure}
+\doxysubsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_recherche_contact_window_a5ae29988a7cb2e339f953da24802822d}{update\+List\+Contacts}} (std\+::list$<$ \mbox{\hyperlink{class_contact}{Contact}} $\ast$ $>$)
+\begin{DoxyCompactList}\small\item\em Mis a jour de la liste des contacts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_recherche_contact_window_a0162eba48f9805fc1c1348151c0f5b82}{recherche\+Contact}} (Q\+String)
+\begin{DoxyCompactList}\small\item\em Recherche le contact. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_recherche_contact_window_abbd1d18c8808fbba60a20d2f3a293ffe}{recherche\+Contact}} ()
+\begin{DoxyCompactList}\small\item\em Recherche le contact. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_recherche_contact_window_a5bd3c84efce59ef73d99a00d7838aecf}{select\+Contact}} (Q\+Model\+Index)
+\begin{DoxyCompactList}\small\item\em slot appele lors de la selection d\textquotesingle{}un contact \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signaux}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_recherche_contact_window_acd76cc2ff56ef9a82154cb852ba8e8e8}{contact\+Selected}} (\mbox{\hyperlink{class_contact}{Contact}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_recherche_contact_window_a9503a4669c64b6f5a73c5d06274e97d4}{list\+Contacts\+Updated}} (std\+::list$<$ \mbox{\hyperlink{class_contact}{Contact}} $\ast$ $>$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_recherche_contact_window_a15d796ff332bfd0532208a0fd0c4d394}{Recherche\+Contact\+Window}} (std\+::list$<$ \mbox{\hyperlink{class_contact}{Contact}} $\ast$ $>$, Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructeur standard. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_recherche_contact_window_a032060e589a01933c41675aa4f1f88e1}{$\sim$\+Recherche\+Contact\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de \mbox{\hyperlink{class_recherche_contact_window}{Recherche\+Contact\+Window}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Fenetre permettant la recherche et la selection d\textquotesingle{}un contact. 
+
+\begin{DoxyAuthor}{Auteur}
+Perion Maxence, Pinon Alexandre 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+
+
+Définition à la ligne 18 du fichier Recherche\+Contact\+Window.\+h.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_recherche_contact_window_a15d796ff332bfd0532208a0fd0c4d394}\label{class_recherche_contact_window_a15d796ff332bfd0532208a0fd0c4d394}} 
+\index{RechercheContactWindow@{RechercheContactWindow}!RechercheContactWindow@{RechercheContactWindow}}
+\index{RechercheContactWindow@{RechercheContactWindow}!RechercheContactWindow@{RechercheContactWindow}}
+\doxysubsubsection{\texorpdfstring{RechercheContactWindow()}{RechercheContactWindow()}}
+{\footnotesize\ttfamily Recherche\+Contact\+Window\+::\+Recherche\+Contact\+Window (\begin{DoxyParamCaption}\item[{std\+::list$<$ \mbox{\hyperlink{class_contact}{Contact}} $\ast$ $>$}]{,  }\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructeur standard. 
+
+Constructeur standard de la classe \mbox{\hyperlink{class_recherche_contact_window}{Recherche\+Contact\+Window}}. Effectue les connexions signaux/slots
+
+
+\begin{DoxyParams}{Paramètres}
+{\em contacts} & \+: la liste des contacts lors de la creation de la fenetre \\
+\hline
+{\em parent} & \+: fenetre parent \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 24 du fichier Recherche\+Contact\+Window.\+cpp.
+
+\mbox{\Hypertarget{class_recherche_contact_window_a032060e589a01933c41675aa4f1f88e1}\label{class_recherche_contact_window_a032060e589a01933c41675aa4f1f88e1}} 
+\index{RechercheContactWindow@{RechercheContactWindow}!````~RechercheContactWindow@{$\sim$RechercheContactWindow}}
+\index{````~RechercheContactWindow@{$\sim$RechercheContactWindow}!RechercheContactWindow@{RechercheContactWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$RechercheContactWindow()}{~RechercheContactWindow()}}
+{\footnotesize\ttfamily Recherche\+Contact\+Window\+::$\sim$\+Recherche\+Contact\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur de \mbox{\hyperlink{class_recherche_contact_window}{Recherche\+Contact\+Window}}. 
+
+Detruis en memoire la fenetre 
+
+Définition à la ligne 171 du fichier Recherche\+Contact\+Window.\+cpp.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_recherche_contact_window_acd76cc2ff56ef9a82154cb852ba8e8e8}\label{class_recherche_contact_window_acd76cc2ff56ef9a82154cb852ba8e8e8}} 
+\index{RechercheContactWindow@{RechercheContactWindow}!contactSelected@{contactSelected}}
+\index{contactSelected@{contactSelected}!RechercheContactWindow@{RechercheContactWindow}}
+\doxysubsubsection{\texorpdfstring{contactSelected}{contactSelected}}
+{\footnotesize\ttfamily void Recherche\+Contact\+Window\+::contact\+Selected (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_recherche_contact_window_a9503a4669c64b6f5a73c5d06274e97d4}\label{class_recherche_contact_window_a9503a4669c64b6f5a73c5d06274e97d4}} 
+\index{RechercheContactWindow@{RechercheContactWindow}!listContactsUpdated@{listContactsUpdated}}
+\index{listContactsUpdated@{listContactsUpdated}!RechercheContactWindow@{RechercheContactWindow}}
+\doxysubsubsection{\texorpdfstring{listContactsUpdated}{listContactsUpdated}}
+{\footnotesize\ttfamily void Recherche\+Contact\+Window\+::list\+Contacts\+Updated (\begin{DoxyParamCaption}\item[{std\+::list$<$ \mbox{\hyperlink{class_contact}{Contact}} $\ast$ $>$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_recherche_contact_window_abbd1d18c8808fbba60a20d2f3a293ffe}\label{class_recherche_contact_window_abbd1d18c8808fbba60a20d2f3a293ffe}} 
+\index{RechercheContactWindow@{RechercheContactWindow}!rechercheContact@{rechercheContact}}
+\index{rechercheContact@{rechercheContact}!RechercheContactWindow@{RechercheContactWindow}}
+\doxysubsubsection{\texorpdfstring{rechercheContact}{rechercheContact}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Recherche\+Contact\+Window\+::recherche\+Contact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Recherche le contact. 
+
+\begin{DoxySeeAlso}{Voir également}
+\mbox{\hyperlink{class_recherche_contact_window_a0162eba48f9805fc1c1348151c0f5b82}{recherche\+Contact(\+Q\+String text)}} 
+\end{DoxySeeAlso}
+
+
+Définition à la ligne 91 du fichier Recherche\+Contact\+Window.\+cpp.
+
+\mbox{\Hypertarget{class_recherche_contact_window_a0162eba48f9805fc1c1348151c0f5b82}\label{class_recherche_contact_window_a0162eba48f9805fc1c1348151c0f5b82}} 
+\index{RechercheContactWindow@{RechercheContactWindow}!rechercheContact@{rechercheContact}}
+\index{rechercheContact@{rechercheContact}!RechercheContactWindow@{RechercheContactWindow}}
+\doxysubsubsection{\texorpdfstring{rechercheContact}{rechercheContact}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Recherche\+Contact\+Window\+::recherche\+Contact (\begin{DoxyParamCaption}\item[{Q\+String}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Recherche le contact. 
+
+Slot qui recherche le contact selectionne dans la liste des contacts Permet de recherche ce contact entre 2 date et de trier le resultat par date de creation ou par ordre alphabetique.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em text} & \+: le text avec lequel effectue la recherche (nom/prenom ou entreprise) \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 104 du fichier Recherche\+Contact\+Window.\+cpp.
+
+\mbox{\Hypertarget{class_recherche_contact_window_a5bd3c84efce59ef73d99a00d7838aecf}\label{class_recherche_contact_window_a5bd3c84efce59ef73d99a00d7838aecf}} 
+\index{RechercheContactWindow@{RechercheContactWindow}!selectContact@{selectContact}}
+\index{selectContact@{selectContact}!RechercheContactWindow@{RechercheContactWindow}}
+\doxysubsubsection{\texorpdfstring{selectContact}{selectContact}}
+{\footnotesize\ttfamily void Recherche\+Contact\+Window\+::select\+Contact (\begin{DoxyParamCaption}\item[{Q\+Model\+Index}]{q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+slot appele lors de la selection d\textquotesingle{}un contact 
+
+Selection d\textquotesingle{}un contact apres click dans la liste
+
+
+\begin{DoxyParams}{Paramètres}
+{\em new\+Item} & \+: l\textquotesingle{}item de selection \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 76 du fichier Recherche\+Contact\+Window.\+cpp.
+
+\mbox{\Hypertarget{class_recherche_contact_window_a5ae29988a7cb2e339f953da24802822d}\label{class_recherche_contact_window_a5ae29988a7cb2e339f953da24802822d}} 
+\index{RechercheContactWindow@{RechercheContactWindow}!updateListContacts@{updateListContacts}}
+\index{updateListContacts@{updateListContacts}!RechercheContactWindow@{RechercheContactWindow}}
+\doxysubsubsection{\texorpdfstring{updateListContacts}{updateListContacts}}
+{\footnotesize\ttfamily void Recherche\+Contact\+Window\+::update\+List\+Contacts (\begin{DoxyParamCaption}\item[{std\+::list$<$ \mbox{\hyperlink{class_contact}{Contact}} $\ast$ $>$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Mis a jour de la liste des contacts. 
+
+Slot pour mettre a jour la liste des contacts
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & \+: la nouvelle liste \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 63 du fichier Recherche\+Contact\+Window.\+cpp.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_recherche_contact_window_8h}{Recherche\+Contact\+Window.\+h}}\item 
+\mbox{\hyperlink{_recherche_contact_window_8cpp}{Recherche\+Contact\+Window.\+cpp}}\end{DoxyCompactItemize}

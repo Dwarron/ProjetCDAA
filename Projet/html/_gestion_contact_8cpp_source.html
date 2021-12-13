@@ -24,7 +24,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="ub.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Projet CDAA
    &#160;<span id="projectnumber">0.0.1</span>
@@ -90,88 +89,192 @@ $(document).ready(function(){initNavTree('_gestion_contact_8cpp_source.html','')
 <div class="contents">
 <a href="_gestion_contact_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_gestion_contact_8h.html">GestionContact.h</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_gestion_contact.html#a0d42db3777c1e15d557979c897acf344">   18</a></span>&#160;<a class="code" href="class_gestion_contact.html#a0d42db3777c1e15d557979c897acf344">GestionContact::GestionContact</a>()</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_gestion_contact.html#a8f089fd769cc6a20378321cde356a928">   18</a></span>&#160;<a class="code" href="class_gestion_contact.html#a8f089fd769cc6a20378321cde356a928">GestionContact::GestionContact</a>(<a class="code" href="class_date.html">Date</a> derniereSuppression)</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    contacts = list&lt;Contact*&gt;();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_gestion_contact.html#aae4185c2c5d70dd07dbe29933784e8ee">   35</a></span>&#160;<a class="code" href="class_contact.html">Contact</a>* <a class="code" href="class_gestion_contact.html#aae4185c2c5d70dd07dbe29933784e8ee">GestionContact::creeContact</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; n, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; p, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; e, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; tel, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; m, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; uri)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="class_contact.html">Contact</a>* c = <span class="keyword">new</span> <a class="code" href="class_contact.html">Contact</a>(n, p, e, tel, m, uri);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    contacts.push_back(c);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> c;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_gestion_contact.html#a627aeba03d0893e273e482b30418e499">   49</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_gestion_contact.html#a627aeba03d0893e273e482b30418e499">GestionContact::supprimeContact</a>(<a class="code" href="class_contact.html">Contact</a>* c)</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    contacts.remove(c);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    dateDerniereSuppression = <a class="code" href="class_date.html">Date</a>();   <span class="comment">//date de la derniere suppression = aujourdhui</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<a class="code" href="class_interaction.html">Interaction</a>* <a class="code" href="class_gestion_contact.html#a501085a9e8064285d2cbea6d65ff9951">GestionContact::ajoutInteraction</a>(<a class="code" href="class_contact.html">Contact</a>* c, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; text)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="class_interaction.html">Interaction</a>* i = <span class="keyword">new</span> <a class="code" href="class_interaction.html">Interaction</a>(text);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    c-&gt;<a class="code" href="class_contact.html#a78ad44e085d55393e0d8951a83770f4f">addInteraction</a>(i);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> i;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="class_gestion_contact.html#aebb5873f2365c50bc29f0d6c13d7d8f1">   80</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_gestion_contact.html#a501085a9e8064285d2cbea6d65ff9951">GestionContact::ajoutInteraction</a>(<a class="code" href="class_contact.html">Contact</a>* c, <a class="code" href="class_interaction.html">Interaction</a>* i)</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    c-&gt;<a class="code" href="class_contact.html#a78ad44e085d55393e0d8951a83770f4f">addInteraction</a>(i);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="class_gestion_contact.html#a7464f850396871eca442178e30644896">   91</a></span>&#160;list&lt;Interaction*&gt; <a class="code" href="class_gestion_contact.html#a7464f850396871eca442178e30644896">GestionContact::getAllInteractions</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    list&lt;Interaction*&gt; li = list&lt;Interaction*&gt;();</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> it = contacts.begin(); it != contacts.end(); it++)</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        list&lt;Interaction*&gt; licontact = (*it)-&gt;getInteractions();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        li.insert(li.end(), licontact.begin(), licontact.end());</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    li.sort();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    li.unique();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">return</span> li;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="class_gestion_contact.html#a95888c31ed32c1c5c1bf64363119bb58">  112</a></span>&#160;<span class="keyword">const</span> <a class="code" href="class_date.html">Date</a> &amp;<a class="code" href="class_gestion_contact.html#a95888c31ed32c1c5c1bf64363119bb58">GestionContact::getDateDerniereSuppression</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">return</span> dateDerniereSuppression;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="class_gestion_contact.html#a9c0d781c68963dcdc05b6d52019538f9">  123</a></span>&#160;<a class="code" href="class_gestion_contact.html#a9c0d781c68963dcdc05b6d52019538f9">GestionContact::~GestionContact</a>()</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;{</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    list&lt;Interaction*&gt; interactions = getAllInteractions();     <span class="comment">// detruis toutes les interactions depuis ici pour ne pas supprime plusieurs fois</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                                                                <span class="comment">// une meme instance references par deux contacts differents (aucun moyen de le savoir depuis contact)</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> it = interactions.begin(); it != interactions.end(); it++)</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keyword">delete</span> *it;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> it = contacts.begin(); it != contacts.end(); it++)</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        (*it)-&gt;clearInteractions();</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keyword">delete</span> *it;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    dateDerniereSuppression = derniereSuppression;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<a class="code" href="class_contact.html">Contact</a>* <a class="code" href="class_gestion_contact.html#a4242680d2c479460fa417087624ec3e7">GestionContact::creeContact</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; n, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; p, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; e, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; tel, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; m, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; uri)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> creeContact(n, p, e, tel, m, uri, <a class="code" href="class_date.html">Date</a>(), <a class="code" href="class_date.html">Date</a>());</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<a class="code" href="class_contact.html">Contact</a>* <a class="code" href="class_gestion_contact.html#a4242680d2c479460fa417087624ec3e7">GestionContact::creeContact</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; n, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; p, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; e, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; tel, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; m, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; uri, <span class="keyword">const</span> <a class="code" href="class_date.html">Date</a>&amp; dc, <span class="keyword">const</span> <a class="code" href="class_date.html">Date</a>&amp; dm)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="class_contact.html">Contact</a>* c = <span class="keyword">new</span> <a class="code" href="class_contact.html">Contact</a>(n, p, e, tel, m, uri, dc, dm);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    contacts.push_back(c);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span> c;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="class_gestion_contact.html#a627aeba03d0893e273e482b30418e499">   69</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_gestion_contact.html#a627aeba03d0893e273e482b30418e499">GestionContact::supprimeContact</a>(<a class="code" href="class_contact.html">Contact</a>* c)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    contacts.remove(c);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    dateDerniereSuppression = <a class="code" href="class_date.html">Date</a>();   <span class="comment">//date de la derniere suppression = aujourdhui</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<a class="code" href="class_interaction.html">Interaction</a>* <a class="code" href="class_gestion_contact.html#a244211ece351717d07fe71fa9aef1b13">GestionContact::ajoutInteraction</a>(<a class="code" href="class_contact.html">Contact</a>* c, <span class="keyword">const</span> <a class="code" href="class_date.html">Date</a>&amp; d, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; text)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="class_interaction.html">Interaction</a>* i = <span class="keyword">new</span> <a class="code" href="class_interaction.html">Interaction</a>(d, text);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    c-&gt;<a class="code" href="class_contact.html#a78ad44e085d55393e0d8951a83770f4f">addInteraction</a>(i);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">return</span> i;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="class_gestion_contact.html#a98eaa3ecb272debd17e583c83a57f36c">   99</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_gestion_contact.html#a98eaa3ecb272debd17e583c83a57f36c">GestionContact::creerTodos</a>(<a class="code" href="class_interaction.html">Interaction</a>* i)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;{</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">string</span> delimiter = <span class="stringliteral">&quot;@todo &quot;</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> delimiterLength = delimiter.length();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">size_t</span> position;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">size_t</span> last = 0;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">string</span> resume = i-&gt;<a class="code" href="class_interaction.html#af2fc9889b4e9a17c35b3fb6d21c17320">getResume</a>();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    position = resume.find(delimiter, last);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">while</span>(position != string::npos) <span class="comment">// on recherche tous les @ todo</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordtype">size_t</span> positionEndLine = resume.find(<span class="stringliteral">&quot;\n&quot;</span>, position); <span class="comment">// fin de ligne du todo</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">if</span>(positionEndLine == string::npos)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            positionEndLine = resume.length();  <span class="comment">// fin du todo a la fin du texte si pas de nouvelle ligne</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordtype">size_t</span> positionNextTodo = resume.find(delimiter, position + delimiterLength);   <span class="comment">//@todo present sur la meme ligne</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">if</span>(positionNextTodo != string::npos &amp;&amp; positionNextTodo &lt; positionEndLine)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            positionEndLine = positionNextTodo;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordtype">string</span> todoText = resume.substr(position, positionEndLine - position); <span class="comment">// on decoupe le texte correspondant au todo</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <a class="code" href="class_date.html">Date</a> d = getDateFromLine(todoText);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <a class="code" href="class_todo.html">Todo</a>* t = <span class="keyword">new</span> <a class="code" href="class_todo.html">Todo</a>(todoText, d, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        resume = resume.substr(0, position) +  todoText + resume.substr(positionEndLine);   <span class="comment">// correction de la ligne du todo avec celle analysee et retournee par l&#39;instance</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        i-&gt;<a class="code" href="class_interaction.html#a8ae8a5a0077990bdc5c8af6c31976617">ajoutTodo</a>(t);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        last = position + delimiterLength;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        position = resume.find(delimiter, last);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="class_gestion_contact.html#a3dcccd0f9178f9f391a41e837abe0db9">  138</a></span>&#160;<span class="keyword">const</span> <a class="code" href="class_date.html">Date</a> <a class="code" href="class_gestion_contact.html#a3dcccd0f9178f9f391a41e837abe0db9">GestionContact::getDateFromLine</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; text)</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;{</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <a class="code" href="class_date.html">Date</a> d = <a class="code" href="class_date.html">Date</a>();</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">string</span> delimiter = <span class="stringliteral">&quot;@date &quot;</span>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> delimiterLength = delimiter.length();</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">size_t</span> position = text.find(delimiter);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">if</span>(position != string::npos)    <span class="comment">// recherche de @ date, sinon date du jour</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        position += delimiterLength;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordtype">size_t</span> last = position;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordtype">string</span> dateText = text.substr(position);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordtype">size_t</span> positionFinDate = 0;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 2; i++)  <span class="comment">// position du &#39;J/M/&#39; pour le debut de la date</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            positionFinDate = dateText.find(<span class="stringliteral">&quot;/&quot;</span>, positionFinDate);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <span class="keywordflow">if</span>(positionFinDate == string::npos)</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                <span class="keywordflow">throw</span> invalid_argument(<span class="stringliteral">&quot;Date mal formee dans un todo&quot;</span>);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            positionFinDate++;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        positionFinDate += 4; <span class="comment">//YYYY</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordflow">if</span>(positionFinDate &gt; dateText.length())</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordflow">throw</span> invalid_argument(<span class="stringliteral">&quot;Date mal formee dans un todo&quot;</span>);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        dateText = dateText.substr(0, positionFinDate);    <span class="comment">// on coupe la fin si @ date ne termine pas la ligne</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        d = <a class="code" href="class_date.html">Date</a>(dateText);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        position = text.find(delimiter, last);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordflow">if</span>(position != string::npos)</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <span class="keywordflow">throw</span> invalid_argument(<span class="stringliteral">&quot;Plusieurs @date dans une ligne de todo&quot;</span>);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        }</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">return</span> d;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="class_gestion_contact.html#aebb5873f2365c50bc29f0d6c13d7d8f1">  189</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_gestion_contact.html#a244211ece351717d07fe71fa9aef1b13">GestionContact::ajoutInteraction</a>(<a class="code" href="class_contact.html">Contact</a>* c, <a class="code" href="class_interaction.html">Interaction</a>* i)</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;{</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    c-&gt;<a class="code" href="class_contact.html#a78ad44e085d55393e0d8951a83770f4f">addInteraction</a>(i);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;}</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="class_gestion_contact.html#a418f98f248946bd49a8bbf02b438c529">  205</a></span>&#160;<a class="code" href="class_todo.html">Todo</a>* <a class="code" href="class_gestion_contact.html#a418f98f248946bd49a8bbf02b438c529">GestionContact::ajoutTodo</a>(<a class="code" href="class_interaction.html">Interaction</a>* i, <span class="keyword">const</span> <a class="code" href="class_date.html">Date</a>&amp; date, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; c, <span class="keyword">const</span> <span class="keywordtype">bool</span> e)</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;{</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <a class="code" href="class_todo.html">Todo</a>* t = <span class="keyword">new</span> <a class="code" href="class_todo.html">Todo</a>(c, date, e);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    i-&gt;<a class="code" href="class_interaction.html#a8ae8a5a0077990bdc5c8af6c31976617">ajoutTodo</a>(t);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordflow">return</span> t;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno"><a class="line" href="class_gestion_contact.html#a76eb2ec4b6fe580465418305bc0cb0df">  219</a></span>&#160;<span class="keyword">const</span> list&lt;Interaction*&gt; <a class="code" href="class_gestion_contact.html#a76eb2ec4b6fe580465418305bc0cb0df">GestionContact::getAllInteractions</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    list&lt;Interaction*&gt; li = list&lt;Interaction*&gt;();</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> it = contacts.begin(); it != contacts.end(); it++)</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        list&lt;Interaction*&gt; licontact = (*it)-&gt;getInteractions();</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        li.insert(li.end(), licontact.begin(), licontact.end());</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    li.sort();</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    li.unique();</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordflow">return</span> li;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;}</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
+<div class="line"><a name="l00240"></a><span class="lineno"><a class="line" href="class_gestion_contact.html#a7c81842c85dc7a6369eea00ec51bb805">  240</a></span>&#160;<span class="keyword">const</span> list&lt;Contact*&gt; &amp;<a class="code" href="class_gestion_contact.html#a7c81842c85dc7a6369eea00ec51bb805">GestionContact::getContacts</a>()</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;{</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">return</span> contacts;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;}</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00252"></a><span class="lineno"><a class="line" href="class_gestion_contact.html#a95888c31ed32c1c5c1bf64363119bb58">  252</a></span>&#160;<span class="keyword">const</span> <a class="code" href="class_date.html">Date</a> &amp;<a class="code" href="class_gestion_contact.html#a95888c31ed32c1c5c1bf64363119bb58">GestionContact::getDateDerniereSuppression</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordflow">return</span> dateDerniereSuppression;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;}</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno"><a class="line" href="class_gestion_contact.html#ab899d2d9cecf7aadc41f741ddad2f25d">  263</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_gestion_contact.html#ab899d2d9cecf7aadc41f741ddad2f25d">GestionContact::setDateDerniereSuppression</a>(<span class="keyword">const</span> <a class="code" href="class_date.html">Date</a>&amp; d)</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;{</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    dateDerniereSuppression = d;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;}</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00273"></a><span class="lineno"><a class="line" href="class_gestion_contact.html#a9c0d781c68963dcdc05b6d52019538f9">  273</a></span>&#160;<a class="code" href="class_gestion_contact.html#a9c0d781c68963dcdc05b6d52019538f9">GestionContact::~GestionContact</a>()</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;{</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    list&lt;Interaction*&gt; interactions = getAllInteractions();     <span class="comment">// detruis toutes les interactions depuis ici pour ne pas supprime plusieurs fois</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                                                                <span class="comment">// une meme instance references par deux contacts differents (aucun moyen de le savoir depuis contact)</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> it = interactions.begin(); it != interactions.end(); it++)</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keyword">delete</span> *it;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    }</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> it = contacts.begin(); it != contacts.end(); it++)</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    {</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        (*it)-&gt;clearInteractions();</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="keyword">delete</span> *it;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    }</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_gestion_contact_html_aae4185c2c5d70dd07dbe29933784e8ee"><div class="ttname"><a href="class_gestion_contact.html#aae4185c2c5d70dd07dbe29933784e8ee">GestionContact::creeContact</a></div><div class="ttdeci">Contact * creeContact(const std::string &amp;, const std::string &amp;, const std::string &amp;, const std::string &amp;, const std::string &amp;, const std::string &amp;)</div><div class="ttdoc">Cree et ajoute un contact.</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8cpp_source.html#l00035">GestionContact.cpp:35</a></div></div>
-<div class="ttc" id="aclass_gestion_contact_html_a9c0d781c68963dcdc05b6d52019538f9"><div class="ttname"><a href="class_gestion_contact.html#a9c0d781c68963dcdc05b6d52019538f9">GestionContact::~GestionContact</a></div><div class="ttdeci">~GestionContact()</div><div class="ttdoc">Destructeur de GestionContact.</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8cpp_source.html#l00123">GestionContact.cpp:123</a></div></div>
-<div class="ttc" id="aclass_gestion_contact_html_a627aeba03d0893e273e482b30418e499"><div class="ttname"><a href="class_gestion_contact.html#a627aeba03d0893e273e482b30418e499">GestionContact::supprimeContact</a></div><div class="ttdeci">void supprimeContact(Contact *)</div><div class="ttdoc">Supprime un contact.</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8cpp_source.html#l00049">GestionContact.cpp:49</a></div></div>
-<div class="ttc" id="aclass_gestion_contact_html_a501085a9e8064285d2cbea6d65ff9951"><div class="ttname"><a href="class_gestion_contact.html#a501085a9e8064285d2cbea6d65ff9951">GestionContact::ajoutInteraction</a></div><div class="ttdeci">Interaction * ajoutInteraction(Contact *, const std::string &amp;)</div></div>
+<div class="ttc" id="aclass_gestion_contact_html_a98eaa3ecb272debd17e583c83a57f36c"><div class="ttname"><a href="class_gestion_contact.html#a98eaa3ecb272debd17e583c83a57f36c">GestionContact::creerTodos</a></div><div class="ttdeci">static void creerTodos(Interaction *)</div><div class="ttdoc">Creation de la liste des Todo concernant cette Interaction.</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8cpp_source.html#l00099">GestionContact.cpp:99</a></div></div>
+<div class="ttc" id="aclass_gestion_contact_html_a7c81842c85dc7a6369eea00ec51bb805"><div class="ttname"><a href="class_gestion_contact.html#a7c81842c85dc7a6369eea00ec51bb805">GestionContact::getContacts</a></div><div class="ttdeci">const std::list&lt; Contact * &gt; &amp; getContacts()</div><div class="ttdoc">Accesseur de Contacts.</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8cpp_source.html#l00240">GestionContact.cpp:240</a></div></div>
+<div class="ttc" id="aclass_gestion_contact_html_a76eb2ec4b6fe580465418305bc0cb0df"><div class="ttname"><a href="class_gestion_contact.html#a76eb2ec4b6fe580465418305bc0cb0df">GestionContact::getAllInteractions</a></div><div class="ttdeci">const std::list&lt; Interaction * &gt; getAllInteractions() const</div><div class="ttdoc">Recupere toutes les interactions de tous les contacts Trie toutes les interactions et supprime les du...</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8cpp_source.html#l00219">GestionContact.cpp:219</a></div></div>
+<div class="ttc" id="aclass_interaction_html_a8ae8a5a0077990bdc5c8af6c31976617"><div class="ttname"><a href="class_interaction.html#a8ae8a5a0077990bdc5c8af6c31976617">Interaction::ajoutTodo</a></div><div class="ttdeci">void ajoutTodo(Todo *)</div><div class="ttdoc">Ajout d'un todo.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00100">Interaction.cpp:100</a></div></div>
+<div class="ttc" id="aclass_gestion_contact_html_a9c0d781c68963dcdc05b6d52019538f9"><div class="ttname"><a href="class_gestion_contact.html#a9c0d781c68963dcdc05b6d52019538f9">GestionContact::~GestionContact</a></div><div class="ttdeci">~GestionContact()</div><div class="ttdoc">Destructeur de GestionContact.</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8cpp_source.html#l00273">GestionContact.cpp:273</a></div></div>
+<div class="ttc" id="aclass_gestion_contact_html_a418f98f248946bd49a8bbf02b438c529"><div class="ttname"><a href="class_gestion_contact.html#a418f98f248946bd49a8bbf02b438c529">GestionContact::ajoutTodo</a></div><div class="ttdeci">static Todo * ajoutTodo(Interaction *, const Date &amp;, const std::string &amp;, const bool)</div><div class="ttdoc">Ajoute un todo a une interaction.</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8cpp_source.html#l00205">GestionContact.cpp:205</a></div></div>
+<div class="ttc" id="aclass_gestion_contact_html_a627aeba03d0893e273e482b30418e499"><div class="ttname"><a href="class_gestion_contact.html#a627aeba03d0893e273e482b30418e499">GestionContact::supprimeContact</a></div><div class="ttdeci">void supprimeContact(Contact *)</div><div class="ttdoc">Supprime un contact.</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8cpp_source.html#l00069">GestionContact.cpp:69</a></div></div>
+<div class="ttc" id="aclass_gestion_contact_html_a244211ece351717d07fe71fa9aef1b13"><div class="ttname"><a href="class_gestion_contact.html#a244211ece351717d07fe71fa9aef1b13">GestionContact::ajoutInteraction</a></div><div class="ttdeci">static Interaction * ajoutInteraction(Contact *, const Date &amp;, const std::string &amp;)</div></div>
+<div class="ttc" id="aclass_gestion_contact_html_a3dcccd0f9178f9f391a41e837abe0db9"><div class="ttname"><a href="class_gestion_contact.html#a3dcccd0f9178f9f391a41e837abe0db9">GestionContact::getDateFromLine</a></div><div class="ttdeci">static const Date getDateFromLine(const std::string &amp;)</div><div class="ttdoc">Recupere la date d'une ligne de text de todo.</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8cpp_source.html#l00138">GestionContact.cpp:138</a></div></div>
 <div class="ttc" id="aclass_interaction_html"><div class="ttname"><a href="class_interaction.html">Interaction</a></div><div class="ttdoc">Enregistre une interaction avec un Contact.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8h_source.html#l00019">Interaction.h:20</a></div></div>
-<div class="ttc" id="aclass_gestion_contact_html_a95888c31ed32c1c5c1bf64363119bb58"><div class="ttname"><a href="class_gestion_contact.html#a95888c31ed32c1c5c1bf64363119bb58">GestionContact::getDateDerniereSuppression</a></div><div class="ttdeci">const Date &amp; getDateDerniereSuppression() const</div><div class="ttdoc">Accesseur de dateDerniereSuppression.</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8cpp_source.html#l00112">GestionContact.cpp:112</a></div></div>
+<div class="ttc" id="aclass_gestion_contact_html_a8f089fd769cc6a20378321cde356a928"><div class="ttname"><a href="class_gestion_contact.html#a8f089fd769cc6a20378321cde356a928">GestionContact::GestionContact</a></div><div class="ttdeci">GestionContact(Date)</div><div class="ttdoc">Constructeur par defaut.</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8cpp_source.html#l00018">GestionContact.cpp:18</a></div></div>
+<div class="ttc" id="aclass_gestion_contact_html_a95888c31ed32c1c5c1bf64363119bb58"><div class="ttname"><a href="class_gestion_contact.html#a95888c31ed32c1c5c1bf64363119bb58">GestionContact::getDateDerniereSuppression</a></div><div class="ttdeci">const Date &amp; getDateDerniereSuppression() const</div><div class="ttdoc">Accesseur de dateDerniereSuppression.</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8cpp_source.html#l00252">GestionContact.cpp:252</a></div></div>
 <div class="ttc" id="aclass_contact_html"><div class="ttname"><a href="class_contact.html">Contact</a></div><div class="ttdoc">Contact representant une personne.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8h_source.html#l00020">Contact.h:21</a></div></div>
-<div class="ttc" id="aclass_gestion_contact_html_a0d42db3777c1e15d557979c897acf344"><div class="ttname"><a href="class_gestion_contact.html#a0d42db3777c1e15d557979c897acf344">GestionContact::GestionContact</a></div><div class="ttdeci">GestionContact()</div><div class="ttdoc">Constructeur par defaut.</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8cpp_source.html#l00018">GestionContact.cpp:18</a></div></div>
-<div class="ttc" id="aclass_gestion_contact_html_a7464f850396871eca442178e30644896"><div class="ttname"><a href="class_gestion_contact.html#a7464f850396871eca442178e30644896">GestionContact::getAllInteractions</a></div><div class="ttdeci">std::list&lt; Interaction * &gt; getAllInteractions() const</div><div class="ttdoc">Recupere toutes les interactions de tous les contacts Trie toutes les interactions et supprime les du...</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8cpp_source.html#l00091">GestionContact.cpp:91</a></div></div>
+<div class="ttc" id="aclass_interaction_html_af2fc9889b4e9a17c35b3fb6d21c17320"><div class="ttname"><a href="class_interaction.html#af2fc9889b4e9a17c35b3fb6d21c17320">Interaction::getResume</a></div><div class="ttdeci">const std::string &amp; getResume() const</div><div class="ttdoc">Accesseur de resume.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00061">Interaction.cpp:61</a></div></div>
+<div class="ttc" id="aclass_gestion_contact_html_ab899d2d9cecf7aadc41f741ddad2f25d"><div class="ttname"><a href="class_gestion_contact.html#ab899d2d9cecf7aadc41f741ddad2f25d">GestionContact::setDateDerniereSuppression</a></div><div class="ttdeci">void setDateDerniereSuppression(const Date &amp;)</div><div class="ttdoc">Mutateur de dateDerniereSuppression.</div><div class="ttdef"><b>Definition:</b> <a href="_gestion_contact_8cpp_source.html#l00263">GestionContact.cpp:263</a></div></div>
 <div class="ttc" id="a_gestion_contact_8h_html"><div class="ttname"><a href="_gestion_contact_8h.html">GestionContact.h</a></div></div>
-<div class="ttc" id="aclass_contact_html_a78ad44e085d55393e0d8951a83770f4f"><div class="ttname"><a href="class_contact.html#a78ad44e085d55393e0d8951a83770f4f">Contact::addInteraction</a></div><div class="ttdeci">void addInteraction(Interaction *)</div><div class="ttdoc">Ajout d'une interaction.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00333">Contact.cpp:333</a></div></div>
+<div class="ttc" id="aclass_gestion_contact_html_a4242680d2c479460fa417087624ec3e7"><div class="ttname"><a href="class_gestion_contact.html#a4242680d2c479460fa417087624ec3e7">GestionContact::creeContact</a></div><div class="ttdeci">Contact * creeContact(const std::string &amp;, const std::string &amp;, const std::string &amp;, const std::string &amp;, const std::string &amp;, const std::string &amp;)</div></div>
+<div class="ttc" id="aclass_todo_html"><div class="ttname"><a href="class_todo.html">Todo</a></div><div class="ttdoc">Permets de décrire les choses à faire (todo), des Interaction pour un Contact.</div><div class="ttdef"><b>Definition:</b> <a href="_todo_8h_source.html#l00017">Todo.h:18</a></div></div>
+<div class="ttc" id="aclass_contact_html_a78ad44e085d55393e0d8951a83770f4f"><div class="ttname"><a href="class_contact.html#a78ad44e085d55393e0d8951a83770f4f">Contact::addInteraction</a></div><div class="ttdeci">void addInteraction(Interaction *)</div><div class="ttdoc">Ajout d'une interaction.</div><div class="ttdef"><b>Definition:</b> <a href="_contact_8cpp_source.html#l00259">Contact.cpp:259</a></div></div>
 <div class="ttc" id="aclass_date_html"><div class="ttname"><a href="class_date.html">Date</a></div><div class="ttdoc">Stocke une date.</div><div class="ttdef"><b>Definition:</b> <a href="_date_8h_source.html#l00013">Date.h:14</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

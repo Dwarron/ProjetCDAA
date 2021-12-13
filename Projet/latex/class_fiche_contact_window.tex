@@ -1,0 +1,354 @@
+\hypertarget{class_fiche_contact_window}{}\doxysection{Référence de la classe Fiche\+Contact\+Window}
+\label{class_fiche_contact_window}\index{FicheContactWindow@{FicheContactWindow}}
+
+
+Fenetre qui permet d\textquotesingle{}afficher et modifier la fiche d\textquotesingle{}un contact.  
+
+
+
+
+{\ttfamily \#include $<$Fiche\+Contact\+Window.\+h$>$}
+
+Graphe d\textquotesingle{}héritage de Fiche\+Contact\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_fiche_contact_window}
+\end{center}
+\end{figure}
+\doxysubsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_fiche_contact_window_abd51f02e9e562181c3f960aaced4d8be}{reload\+Date\+Modif}} ()
+\begin{DoxyCompactList}\small\item\em Re\+Affiche la date de derniere modification. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_fiche_contact_window_a052f49d45ba47c9f89f57c28b4325f4c}{load\+Contact}} (\mbox{\hyperlink{class_contact}{Contact}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Charge le contact selectionne. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_fiche_contact_window_a80492fa4dc087949a793fd5785d84e56}{modif\+Fiche}} ()
+\begin{DoxyCompactList}\small\item\em Modification de la fiche du contact. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_fiche_contact_window_a332838ccbf28e2057246fde0952ac687}{change\+File}} ()
+\begin{DoxyCompactList}\small\item\em Selection de fichier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_fiche_contact_window_abd33c2c208d1a1159f407bc8e295286e}{supprimer\+Contact}} ()
+\begin{DoxyCompactList}\small\item\em Suppression du contact. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_fiche_contact_window_a8ff57eafc019a7557a819aa40cdbe871}{show\+Image}} (Q\+String)
+\begin{DoxyCompactList}\small\item\em Affiche l\textquotesingle{}image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signaux}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_fiche_contact_window_a34f8d7f483e21be96b6480ab9aff8662}{image\+Selected}} (Q\+String)
+\item 
+void \mbox{\hyperlink{class_fiche_contact_window_aa014bdf48ac0ec118b680eb3447faa30}{contact\+Deleted}} (\mbox{\hyperlink{class_contact}{Contact}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_fiche_contact_window_a04b60c6b7100e0607d136dad83927730}{prenom\+Modified}} (\mbox{\hyperlink{class_contact}{Contact}} $\ast$, std\+::string)
+\item 
+void \mbox{\hyperlink{class_fiche_contact_window_a988f71b096d4b6045270c6d28ea3c3b6}{nom\+Modified}} (\mbox{\hyperlink{class_contact}{Contact}} $\ast$, std\+::string)
+\item 
+void \mbox{\hyperlink{class_fiche_contact_window_acb924840b963f995d44437148ce8dfdf}{entreprise\+Modified}} (\mbox{\hyperlink{class_contact}{Contact}} $\ast$, std\+::string)
+\item 
+void \mbox{\hyperlink{class_fiche_contact_window_ad732093f68bee99680a26b747ee564c4}{telephone\+Modified}} (\mbox{\hyperlink{class_contact}{Contact}} $\ast$, std\+::string)
+\item 
+void \mbox{\hyperlink{class_fiche_contact_window_a9255853de357090bc5eceb6486dd2e8a}{mail\+Modified}} (\mbox{\hyperlink{class_contact}{Contact}} $\ast$, std\+::string)
+\item 
+void \mbox{\hyperlink{class_fiche_contact_window_a9ff7ae025f49b512263f4deeb7880acf}{photo\+Modified}} (\mbox{\hyperlink{class_contact}{Contact}} $\ast$, std\+::string)
+\item 
+void \mbox{\hyperlink{class_fiche_contact_window_a6c687078033ca25e59aa4a8eabd85689}{contact\+Selected}} (\mbox{\hyperlink{class_contact}{Contact}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_fiche_contact_window_a9ff31a38a779ff207226f21336919ef0}{interaction\+Date\+Edited}} (\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$, Q\+Date)
+\item 
+void \mbox{\hyperlink{class_fiche_contact_window_a47584c9ec703a3e2c8a2cda82a26d3dd}{interaction\+Resume\+Edited}} (\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$, Q\+String)
+\item 
+void \mbox{\hyperlink{class_fiche_contact_window_add92bac9b5bf7f49aec07ed5c3945ec6}{on\+Interaction\+Edited}} ()
+\item 
+void \mbox{\hyperlink{class_fiche_contact_window_a6a3960558ecd9b0be27876c2877c9eb6}{ajout\+Interaction}} (\mbox{\hyperlink{class_contact}{Contact}} $\ast$, Q\+String)
+\item 
+void \mbox{\hyperlink{class_fiche_contact_window_a2bfb1bc6252aae68bc09cc3c7f9b02c3}{ajout\+Interaction}} (\mbox{\hyperlink{class_contact}{Contact}} $\ast$, \mbox{\hyperlink{class_interaction}{Interaction}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_fiche_contact_window_abbf7a903905bf4efba993e821f490f86}{list\+Contacts\+Updated}} (std\+::list$<$ \mbox{\hyperlink{class_contact}{Contact}} $\ast$ $>$)
+\item 
+void \mbox{\hyperlink{class_fiche_contact_window_ad2e13bb896d9802bc5ef7a364720e48a}{on\+End\+Modif\+Contact}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_fiche_contact_window_a9f7afc6845dddf0a562bc83c9f89dfc2}{Fiche\+Contact\+Window}} (std\+::list$<$ \mbox{\hyperlink{class_contact}{Contact}} $\ast$ $>$, Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructeur standard. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_fiche_contact_window_a0152b46d54834a4043ec6058c008b320}{$\sim$\+Fiche\+Contact\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de Modification\+Contact\+Window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres protégées}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_fiche_contact_window_a6643b9a75d01db9392cd3a097654b3e8}{resize\+Event}} (Q\+Resize\+Event $\ast$) override
+\begin{DoxyCompactList}\small\item\em Evenement de modification de la taille de la fenetre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Fenetre qui permet d\textquotesingle{}afficher et modifier la fiche d\textquotesingle{}un contact. 
+
+\begin{DoxyAuthor}{Auteur}
+Perion Maxence, Pinon Alexandre 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+
+
+Définition à la ligne 19 du fichier Fiche\+Contact\+Window.\+h.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_fiche_contact_window_a9f7afc6845dddf0a562bc83c9f89dfc2}\label{class_fiche_contact_window_a9f7afc6845dddf0a562bc83c9f89dfc2}} 
+\index{FicheContactWindow@{FicheContactWindow}!FicheContactWindow@{FicheContactWindow}}
+\index{FicheContactWindow@{FicheContactWindow}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{FicheContactWindow()}{FicheContactWindow()}}
+{\footnotesize\ttfamily Fiche\+Contact\+Window\+::\+Fiche\+Contact\+Window (\begin{DoxyParamCaption}\item[{std\+::list$<$ \mbox{\hyperlink{class_contact}{Contact}} $\ast$ $>$}]{,  }\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructeur standard. 
+
+Constructeur standard de la classe Modification\+Contact\+Window. Effectue les connexions signaux/slots
+
+
+\begin{DoxyParams}{Paramètres}
+{\em contacts} & \+: la liste des contacts lors de la creation de la fenetre \\
+\hline
+{\em parent} & \+: fenetre parent \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 29 du fichier Fiche\+Contact\+Window.\+cpp.
+
+\mbox{\Hypertarget{class_fiche_contact_window_a0152b46d54834a4043ec6058c008b320}\label{class_fiche_contact_window_a0152b46d54834a4043ec6058c008b320}} 
+\index{FicheContactWindow@{FicheContactWindow}!````~FicheContactWindow@{$\sim$FicheContactWindow}}
+\index{````~FicheContactWindow@{$\sim$FicheContactWindow}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$FicheContactWindow()}{~FicheContactWindow()}}
+{\footnotesize\ttfamily Fiche\+Contact\+Window\+::$\sim$\+Fiche\+Contact\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur de Modification\+Contact\+Window. 
+
+Detruis en memoire la fenetre 
+
+Définition à la ligne 315 du fichier Fiche\+Contact\+Window.\+cpp.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_fiche_contact_window_a2bfb1bc6252aae68bc09cc3c7f9b02c3}\label{class_fiche_contact_window_a2bfb1bc6252aae68bc09cc3c7f9b02c3}} 
+\index{FicheContactWindow@{FicheContactWindow}!ajoutInteraction@{ajoutInteraction}}
+\index{ajoutInteraction@{ajoutInteraction}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{ajoutInteraction}{ajoutInteraction}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Fiche\+Contact\+Window\+::ajout\+Interaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{,  }\item[{\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_fiche_contact_window_a6a3960558ecd9b0be27876c2877c9eb6}\label{class_fiche_contact_window_a6a3960558ecd9b0be27876c2877c9eb6}} 
+\index{FicheContactWindow@{FicheContactWindow}!ajoutInteraction@{ajoutInteraction}}
+\index{ajoutInteraction@{ajoutInteraction}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{ajoutInteraction}{ajoutInteraction}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Fiche\+Contact\+Window\+::ajout\+Interaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{,  }\item[{Q\+String}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_fiche_contact_window_a332838ccbf28e2057246fde0952ac687}\label{class_fiche_contact_window_a332838ccbf28e2057246fde0952ac687}} 
+\index{FicheContactWindow@{FicheContactWindow}!changeFile@{changeFile}}
+\index{changeFile@{changeFile}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{changeFile}{changeFile}}
+{\footnotesize\ttfamily void Fiche\+Contact\+Window\+::change\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Selection de fichier. 
+
+Slot qui permet de selectionner la photo d\textquotesingle{}un contact. La photo ne peut seulement etre en format jpg ou png. 
+
+Définition à la ligne 70 du fichier Fiche\+Contact\+Window.\+cpp.
+
+\mbox{\Hypertarget{class_fiche_contact_window_aa014bdf48ac0ec118b680eb3447faa30}\label{class_fiche_contact_window_aa014bdf48ac0ec118b680eb3447faa30}} 
+\index{FicheContactWindow@{FicheContactWindow}!contactDeleted@{contactDeleted}}
+\index{contactDeleted@{contactDeleted}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{contactDeleted}{contactDeleted}}
+{\footnotesize\ttfamily void Fiche\+Contact\+Window\+::contact\+Deleted (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_fiche_contact_window_a6c687078033ca25e59aa4a8eabd85689}\label{class_fiche_contact_window_a6c687078033ca25e59aa4a8eabd85689}} 
+\index{FicheContactWindow@{FicheContactWindow}!contactSelected@{contactSelected}}
+\index{contactSelected@{contactSelected}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{contactSelected}{contactSelected}}
+{\footnotesize\ttfamily void Fiche\+Contact\+Window\+::contact\+Selected (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_fiche_contact_window_acb924840b963f995d44437148ce8dfdf}\label{class_fiche_contact_window_acb924840b963f995d44437148ce8dfdf}} 
+\index{FicheContactWindow@{FicheContactWindow}!entrepriseModified@{entrepriseModified}}
+\index{entrepriseModified@{entrepriseModified}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{entrepriseModified}{entrepriseModified}}
+{\footnotesize\ttfamily void Fiche\+Contact\+Window\+::entreprise\+Modified (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{,  }\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_fiche_contact_window_a34f8d7f483e21be96b6480ab9aff8662}\label{class_fiche_contact_window_a34f8d7f483e21be96b6480ab9aff8662}} 
+\index{FicheContactWindow@{FicheContactWindow}!imageSelected@{imageSelected}}
+\index{imageSelected@{imageSelected}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{imageSelected}{imageSelected}}
+{\footnotesize\ttfamily void Fiche\+Contact\+Window\+::image\+Selected (\begin{DoxyParamCaption}\item[{Q\+String}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_fiche_contact_window_a9ff31a38a779ff207226f21336919ef0}\label{class_fiche_contact_window_a9ff31a38a779ff207226f21336919ef0}} 
+\index{FicheContactWindow@{FicheContactWindow}!interactionDateEdited@{interactionDateEdited}}
+\index{interactionDateEdited@{interactionDateEdited}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{interactionDateEdited}{interactionDateEdited}}
+{\footnotesize\ttfamily void Fiche\+Contact\+Window\+::interaction\+Date\+Edited (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$}]{,  }\item[{Q\+Date}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_fiche_contact_window_a47584c9ec703a3e2c8a2cda82a26d3dd}\label{class_fiche_contact_window_a47584c9ec703a3e2c8a2cda82a26d3dd}} 
+\index{FicheContactWindow@{FicheContactWindow}!interactionResumeEdited@{interactionResumeEdited}}
+\index{interactionResumeEdited@{interactionResumeEdited}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{interactionResumeEdited}{interactionResumeEdited}}
+{\footnotesize\ttfamily void Fiche\+Contact\+Window\+::interaction\+Resume\+Edited (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$}]{,  }\item[{Q\+String}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_fiche_contact_window_abbf7a903905bf4efba993e821f490f86}\label{class_fiche_contact_window_abbf7a903905bf4efba993e821f490f86}} 
+\index{FicheContactWindow@{FicheContactWindow}!listContactsUpdated@{listContactsUpdated}}
+\index{listContactsUpdated@{listContactsUpdated}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{listContactsUpdated}{listContactsUpdated}}
+{\footnotesize\ttfamily void Fiche\+Contact\+Window\+::list\+Contacts\+Updated (\begin{DoxyParamCaption}\item[{std\+::list$<$ \mbox{\hyperlink{class_contact}{Contact}} $\ast$ $>$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_fiche_contact_window_a052f49d45ba47c9f89f57c28b4325f4c}\label{class_fiche_contact_window_a052f49d45ba47c9f89f57c28b4325f4c}} 
+\index{FicheContactWindow@{FicheContactWindow}!loadContact@{loadContact}}
+\index{loadContact@{loadContact}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{loadContact}{loadContact}}
+{\footnotesize\ttfamily void Fiche\+Contact\+Window\+::load\+Contact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Charge le contact selectionne. 
+
+Recupere le contact selectionne
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & \+: le contact selectionne \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 131 du fichier Fiche\+Contact\+Window.\+cpp.
+
+\mbox{\Hypertarget{class_fiche_contact_window_a9255853de357090bc5eceb6486dd2e8a}\label{class_fiche_contact_window_a9255853de357090bc5eceb6486dd2e8a}} 
+\index{FicheContactWindow@{FicheContactWindow}!mailModified@{mailModified}}
+\index{mailModified@{mailModified}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{mailModified}{mailModified}}
+{\footnotesize\ttfamily void Fiche\+Contact\+Window\+::mail\+Modified (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{,  }\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_fiche_contact_window_a80492fa4dc087949a793fd5785d84e56}\label{class_fiche_contact_window_a80492fa4dc087949a793fd5785d84e56}} 
+\index{FicheContactWindow@{FicheContactWindow}!modifFiche@{modifFiche}}
+\index{modifFiche@{modifFiche}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{modifFiche}{modifFiche}}
+{\footnotesize\ttfamily void Fiche\+Contact\+Window\+::modif\+Fiche (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Modification de la fiche du contact. 
+
+Slot qui va recuperer toutes les informations rentrer dans la fenetre par l\textquotesingle{}utilisateur pour modifier le contact selectionne. Si l\textquotesingle{}utilisateur ecrit son nom ou prenom avec un caractere special ou un chiffre l\textquotesingle{}application lui propose de le reecrire correctement. 
+
+Définition à la ligne 201 du fichier Fiche\+Contact\+Window.\+cpp.
+
+\mbox{\Hypertarget{class_fiche_contact_window_a988f71b096d4b6045270c6d28ea3c3b6}\label{class_fiche_contact_window_a988f71b096d4b6045270c6d28ea3c3b6}} 
+\index{FicheContactWindow@{FicheContactWindow}!nomModified@{nomModified}}
+\index{nomModified@{nomModified}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{nomModified}{nomModified}}
+{\footnotesize\ttfamily void Fiche\+Contact\+Window\+::nom\+Modified (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{,  }\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_fiche_contact_window_ad2e13bb896d9802bc5ef7a364720e48a}\label{class_fiche_contact_window_ad2e13bb896d9802bc5ef7a364720e48a}} 
+\index{FicheContactWindow@{FicheContactWindow}!onEndModifContact@{onEndModifContact}}
+\index{onEndModifContact@{onEndModifContact}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{onEndModifContact}{onEndModifContact}}
+{\footnotesize\ttfamily void Fiche\+Contact\+Window\+::on\+End\+Modif\+Contact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_fiche_contact_window_add92bac9b5bf7f49aec07ed5c3945ec6}\label{class_fiche_contact_window_add92bac9b5bf7f49aec07ed5c3945ec6}} 
+\index{FicheContactWindow@{FicheContactWindow}!onInteractionEdited@{onInteractionEdited}}
+\index{onInteractionEdited@{onInteractionEdited}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{onInteractionEdited}{onInteractionEdited}}
+{\footnotesize\ttfamily void Fiche\+Contact\+Window\+::on\+Interaction\+Edited (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_fiche_contact_window_a9ff7ae025f49b512263f4deeb7880acf}\label{class_fiche_contact_window_a9ff7ae025f49b512263f4deeb7880acf}} 
+\index{FicheContactWindow@{FicheContactWindow}!photoModified@{photoModified}}
+\index{photoModified@{photoModified}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{photoModified}{photoModified}}
+{\footnotesize\ttfamily void Fiche\+Contact\+Window\+::photo\+Modified (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{,  }\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_fiche_contact_window_a04b60c6b7100e0607d136dad83927730}\label{class_fiche_contact_window_a04b60c6b7100e0607d136dad83927730}} 
+\index{FicheContactWindow@{FicheContactWindow}!prenomModified@{prenomModified}}
+\index{prenomModified@{prenomModified}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{prenomModified}{prenomModified}}
+{\footnotesize\ttfamily void Fiche\+Contact\+Window\+::prenom\+Modified (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{,  }\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_fiche_contact_window_abd51f02e9e562181c3f960aaced4d8be}\label{class_fiche_contact_window_abd51f02e9e562181c3f960aaced4d8be}} 
+\index{FicheContactWindow@{FicheContactWindow}!reloadDateModif@{reloadDateModif}}
+\index{reloadDateModif@{reloadDateModif}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{reloadDateModif}{reloadDateModif}}
+{\footnotesize\ttfamily void Fiche\+Contact\+Window\+::reload\+Date\+Modif (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Re\+Affiche la date de derniere modification. 
+
+
+
+Définition à la ligne 178 du fichier Fiche\+Contact\+Window.\+cpp.
+
+\mbox{\Hypertarget{class_fiche_contact_window_a6643b9a75d01db9392cd3a097654b3e8}\label{class_fiche_contact_window_a6643b9a75d01db9392cd3a097654b3e8}} 
+\index{FicheContactWindow@{FicheContactWindow}!resizeEvent@{resizeEvent}}
+\index{resizeEvent@{resizeEvent}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{resizeEvent()}{resizeEvent()}}
+{\footnotesize\ttfamily void Fiche\+Contact\+Window\+::resize\+Event (\begin{DoxyParamCaption}\item[{Q\+Resize\+Event $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Evenement de modification de la taille de la fenetre. 
+
+Surcharge de l\textquotesingle{}evenement de modification de la taille de la fenetre, reaffiche l\textquotesingle{}image (photo du contact) 
+\begin{DoxyParams}{Paramètres}
+{\em e} & \+: l\textquotesingle{}evenement \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 189 du fichier Fiche\+Contact\+Window.\+cpp.
+
+\mbox{\Hypertarget{class_fiche_contact_window_a8ff57eafc019a7557a819aa40cdbe871}\label{class_fiche_contact_window_a8ff57eafc019a7557a819aa40cdbe871}} 
+\index{FicheContactWindow@{FicheContactWindow}!showImage@{showImage}}
+\index{showImage@{showImage}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{showImage}{showImage}}
+{\footnotesize\ttfamily void Fiche\+Contact\+Window\+::show\+Image (\begin{DoxyParamCaption}\item[{Q\+String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Affiche l\textquotesingle{}image. 
+
+Slot qui permet d\textquotesingle{}afficher l\textquotesingle{}image situee dans path 
+\begin{DoxyParams}{Paramètres}
+{\em path} & \+: le chemin absolu jusqu\textquotesingle{}a l\textquotesingle{}image \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 100 du fichier Fiche\+Contact\+Window.\+cpp.
+
+\mbox{\Hypertarget{class_fiche_contact_window_abd33c2c208d1a1159f407bc8e295286e}\label{class_fiche_contact_window_abd33c2c208d1a1159f407bc8e295286e}} 
+\index{FicheContactWindow@{FicheContactWindow}!supprimerContact@{supprimerContact}}
+\index{supprimerContact@{supprimerContact}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{supprimerContact}{supprimerContact}}
+{\footnotesize\ttfamily void Fiche\+Contact\+Window\+::supprimer\+Contact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Suppression du contact. 
+
+Slot qui permet de supprimer la fiche du contact 
+
+Définition à la ligne 84 du fichier Fiche\+Contact\+Window.\+cpp.
+
+\mbox{\Hypertarget{class_fiche_contact_window_ad732093f68bee99680a26b747ee564c4}\label{class_fiche_contact_window_ad732093f68bee99680a26b747ee564c4}} 
+\index{FicheContactWindow@{FicheContactWindow}!telephoneModified@{telephoneModified}}
+\index{telephoneModified@{telephoneModified}!FicheContactWindow@{FicheContactWindow}}
+\doxysubsubsection{\texorpdfstring{telephoneModified}{telephoneModified}}
+{\footnotesize\ttfamily void Fiche\+Contact\+Window\+::telephone\+Modified (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{,  }\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_fiche_contact_window_8h}{Fiche\+Contact\+Window.\+h}}\item 
+\mbox{\hyperlink{_fiche_contact_window_8cpp}{Fiche\+Contact\+Window.\+cpp}}\end{DoxyCompactItemize}

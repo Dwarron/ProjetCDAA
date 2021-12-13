@@ -24,7 +24,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="ub.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Projet CDAA
    &#160;<span id="projectnumber">0.0.1</span>
@@ -90,9 +89,9 @@ $(document).ready(function(){initNavTree('_contact_8cpp.html',''); initResizable
 <div class="title">Référence du fichier Contact.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_contact_8h_source.html">Contact.h</a>&quot;</code><br />
-<code>#include &lt;string.h&gt;</code><br />
-<code>#include &lt;stdexcept&gt;</code><br />
+<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<code>#include &quot;<a class="el" href="_contact_8h_source.html">Contact.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_verificator_8h_source.html">Verificator.h</a>&quot;</code><br />
 </div>
 <p><a href="_contact_8cpp_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
@@ -101,11 +100,54 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a81cdf561dee1edecf2fa11837693f389"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_contact_8cpp.html#a81cdf561dee1edecf2fa11837693f389">operator&lt;&lt;</a> (ostream &amp;o, const <a class="el" href="class_contact.html">Contact</a> &amp;c)</td></tr>
 <tr class="memdesc:a81cdf561dee1edecf2fa11837693f389"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction amie d'affichage via cout.  <a href="_contact_8cpp.html#a81cdf561dee1edecf2fa11837693f389">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a81cdf561dee1edecf2fa11837693f389"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b35506e8ac273928c2871f5fa41a2c8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_contact_8cpp.html#a2b35506e8ac273928c2871f5fa41a2c8">operator&lt;</a> (const <a class="el" href="class_contact.html">Contact</a> &amp;a, const <a class="el" href="class_contact.html">Contact</a> &amp;b)</td></tr>
+<tr class="memdesc:a2b35506e8ac273928c2871f5fa41a2c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comparaison a &lt; b.  <a href="_contact_8cpp.html#a2b35506e8ac273928c2871f5fa41a2c8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2b35506e8ac273928c2871f5fa41a2c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1bb37781a45838d0dca96a4328ca7f5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_contact_8cpp.html#ad1bb37781a45838d0dca96a4328ca7f5">operator==</a> (const <a class="el" href="class_contact.html">Contact</a> &amp;a, const <a class="el" href="class_contact.html">Contact</a> &amp;b)</td></tr>
 <tr class="memdesc:ad1bb37781a45838d0dca96a4328ca7f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surcharge de l'operateur de test d'egalite.  <a href="_contact_8cpp.html#ad1bb37781a45838d0dca96a4328ca7f5">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ad1bb37781a45838d0dca96a4328ca7f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a2b35506e8ac273928c2871f5fa41a2c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b35506e8ac273928c2871f5fa41a2c8">&#9670;&nbsp;</a></span>operator&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_contact.html">Contact</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_contact.html">Contact</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Comparaison a &lt; b. </p>
+<p>Surdefinition de l'operateur "&lt;", renvoie vraie si semantiquement a &lt; b </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>: premiere operande </td></tr>
+    <tr><td class="paramname">b</td><td>: deuxieme operande</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>a &lt; b </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_contact_8cpp_source.html#l00323">323</a> du fichier <a class="el" href="_contact_8cpp_source.html">Contact.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a81cdf561dee1edecf2fa11837693f389"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a81cdf561dee1edecf2fa11837693f389">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
 
@@ -143,7 +185,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>operateur surchage </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="_contact_8cpp_source.html#l00400">400</a> du fichier <a class="el" href="_contact_8cpp_source.html">Contact.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_contact_8cpp_source.html#l00308">308</a> du fichier <a class="el" href="_contact_8cpp_source.html">Contact.cpp</a>.</p>
 
 </div>
 </div>
@@ -184,7 +226,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>vrai si les contacts sont semantiquement egales, faux sinon </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="_contact_8cpp_source.html#l00499">499</a> du fichier <a class="el" href="_contact_8cpp_source.html">Contact.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_contact_8cpp_source.html#l00400">400</a> du fichier <a class="el" href="_contact_8cpp_source.html">Contact.cpp</a>.</p>
 
 </div>
 </div>

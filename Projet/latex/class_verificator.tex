@@ -1,0 +1,153 @@
+\hypertarget{class_verificator}{}\doxysection{Référence de la classe Verificator}
+\label{class_verificator}\index{Verificator@{Verificator}}
+
+
+Permet d\textquotesingle{}effectuer des verifications sur des donnees entrees par l\textquotesingle{}utilisateur.  
+
+
+
+
+{\ttfamily \#include $<$Verificator.\+h$>$}
+
+\doxysubsection*{Fonctions membres publiques statiques}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_verificator_af2428753c3e2fd1e3754896a02d684b4}{check\+Lettres}} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Test si la chaine entree est conforme. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_verificator_a696a304d82838c7b338fadd94e1c5a6b}{check\+Chiffres}} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Test si la chaine entree est conforme. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_verificator_a27dfde62592912871e3376ad803d82fc}{check\+Mail}} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Test si la chaine entree est conforme. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_verificator_a7c011a5840a297530f1e5b845392cee8}{check\+Telephone}} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Test si la chaine entree est conforme. \end{DoxyCompactList}\item 
+static const std\+::string \mbox{\hyperlink{class_verificator_aa930f4abc769bbdf8651258091af8611}{only\+Letters}} (std\+::string)
+\begin{DoxyCompactList}\small\item\em Propose une suggestion de nom pour une chaine entree ne correspondant pas a ce qui est attendu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Permet d\textquotesingle{}effectuer des verifications sur des donnees entrees par l\textquotesingle{}utilisateur. 
+
+\begin{DoxyAuthor}{Auteur}
+Perion Maxence, Pinon Alexandre 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+
+
+Définition à la ligne 14 du fichier Verificator.\+h.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_verificator_a696a304d82838c7b338fadd94e1c5a6b}\label{class_verificator_a696a304d82838c7b338fadd94e1c5a6b}} 
+\index{Verificator@{Verificator}!checkChiffres@{checkChiffres}}
+\index{checkChiffres@{checkChiffres}!Verificator@{Verificator}}
+\doxysubsubsection{\texorpdfstring{checkChiffres()}{checkChiffres()}}
+{\footnotesize\ttfamily void Verificator\+::check\+Chiffres (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Test si la chaine entree est conforme. 
+
+Methode qui renvoie une exception si la chaine contient autre chose que des chiffres
+
+
+\begin{DoxyParams}{Paramètres}
+{\em chaine} & \+: la chaine a tester \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 37 du fichier Verificator.\+cpp.
+
+\mbox{\Hypertarget{class_verificator_af2428753c3e2fd1e3754896a02d684b4}\label{class_verificator_af2428753c3e2fd1e3754896a02d684b4}} 
+\index{Verificator@{Verificator}!checkLettres@{checkLettres}}
+\index{checkLettres@{checkLettres}!Verificator@{Verificator}}
+\doxysubsubsection{\texorpdfstring{checkLettres()}{checkLettres()}}
+{\footnotesize\ttfamily void Verificator\+::check\+Lettres (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Test si la chaine entree est conforme. 
+
+Fonction utilitaire qui renvoie une exception si la chaine contient autre chose que des lettres, un espace ou un tiret
+
+
+\begin{DoxyParams}{Paramètres}
+{\em chaine} & \+: la chaine a tester \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 21 du fichier Verificator.\+cpp.
+
+\mbox{\Hypertarget{class_verificator_a27dfde62592912871e3376ad803d82fc}\label{class_verificator_a27dfde62592912871e3376ad803d82fc}} 
+\index{Verificator@{Verificator}!checkMail@{checkMail}}
+\index{checkMail@{checkMail}!Verificator@{Verificator}}
+\doxysubsubsection{\texorpdfstring{checkMail()}{checkMail()}}
+{\footnotesize\ttfamily void Verificator\+::check\+Mail (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Test si la chaine entree est conforme. 
+
+Methode qui renvoie une exception si la chaine ne decrit pas un mail
+
+
+\begin{DoxyParams}{Paramètres}
+{\em chaine} & \+: la chaine a tester \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 53 du fichier Verificator.\+cpp.
+
+\mbox{\Hypertarget{class_verificator_a7c011a5840a297530f1e5b845392cee8}\label{class_verificator_a7c011a5840a297530f1e5b845392cee8}} 
+\index{Verificator@{Verificator}!checkTelephone@{checkTelephone}}
+\index{checkTelephone@{checkTelephone}!Verificator@{Verificator}}
+\doxysubsubsection{\texorpdfstring{checkTelephone()}{checkTelephone()}}
+{\footnotesize\ttfamily void Verificator\+::check\+Telephone (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Test si la chaine entree est conforme. 
+
+Methode qui renvoie une exception si la chaine ne decrit pas un mail
+
+
+\begin{DoxyParams}{Paramètres}
+{\em chaine} & \+: la chaine a tester \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 84 du fichier Verificator.\+cpp.
+
+\mbox{\Hypertarget{class_verificator_aa930f4abc769bbdf8651258091af8611}\label{class_verificator_aa930f4abc769bbdf8651258091af8611}} 
+\index{Verificator@{Verificator}!onlyLetters@{onlyLetters}}
+\index{onlyLetters@{onlyLetters}!Verificator@{Verificator}}
+\doxysubsubsection{\texorpdfstring{onlyLetters()}{onlyLetters()}}
+{\footnotesize\ttfamily const string Verificator\+::only\+Letters (\begin{DoxyParamCaption}\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Propose une suggestion de nom pour une chaine entree ne correspondant pas a ce qui est attendu. 
+
+Methode qui retire tous les chiffres et caracteres speciaux
+
+
+\begin{DoxyParams}{Paramètres}
+{\em chaine} & \+: la chaine a verifier \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 100 du fichier Verificator.\+cpp.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_verificator_8h}{Verificator.\+h}}\item 
+\mbox{\hyperlink{_verificator_8cpp}{Verificator.\+cpp}}\end{DoxyCompactItemize}

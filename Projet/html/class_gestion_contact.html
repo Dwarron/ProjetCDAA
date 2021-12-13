@@ -24,7 +24,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="ub.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Projet CDAA
    &#160;<span id="projectnumber">0.0.1</span>
@@ -85,7 +84,9 @@ $(document).ready(function(){initNavTree('class_gestion_contact.html',''); initR
 
 <div class="header">
   <div class="summary">
+<a href="#pub-slots">Connecteurs publics</a> &#124;
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pub-static-methods">Fonctions membres publiques statiques</a> &#124;
 <a href="class_gestion_contact-members.html">Liste de tous les membres</a>  </div>
   <div class="headertitle">
 <div class="title">Référence de la classe GestionContact</div>  </div>
@@ -97,31 +98,53 @@ $(document).ready(function(){initNavTree('class_gestion_contact.html',''); initR
 
 <p><code>#include &lt;<a class="el" href="_gestion_contact_8h_source.html">GestionContact.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:a0d42db3777c1e15d557979c897acf344"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_contact.html#a0d42db3777c1e15d557979c897acf344">GestionContact</a> ()</td></tr>
-<tr class="memdesc:a0d42db3777c1e15d557979c897acf344"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur par defaut.  <a href="class_gestion_contact.html#a0d42db3777c1e15d557979c897acf344">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a0d42db3777c1e15d557979c897acf344"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c0d781c68963dcdc05b6d52019538f9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_contact.html#a9c0d781c68963dcdc05b6d52019538f9">~GestionContact</a> ()</td></tr>
-<tr class="memdesc:a9c0d781c68963dcdc05b6d52019538f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur de <a class="el" href="class_gestion_contact.html" title="Class de gestion des Contact: ajout, suppressions, requetes, ...">GestionContact</a>.  <a href="class_gestion_contact.html#a9c0d781c68963dcdc05b6d52019538f9">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a9c0d781c68963dcdc05b6d52019538f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae4185c2c5d70dd07dbe29933784e8ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_contact.html">Contact</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_contact.html#aae4185c2c5d70dd07dbe29933784e8ee">creeContact</a> (const std::string &amp;, const std::string &amp;, const std::string &amp;, const std::string &amp;, const std::string &amp;, const std::string &amp;)</td></tr>
-<tr class="memdesc:aae4185c2c5d70dd07dbe29933784e8ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cree et ajoute un contact.  <a href="class_gestion_contact.html#aae4185c2c5d70dd07dbe29933784e8ee">Plus de détails...</a><br /></td></tr>
-<tr class="separator:aae4185c2c5d70dd07dbe29933784e8ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Connecteurs publics</h2></td></tr>
 <tr class="memitem:a627aeba03d0893e273e482b30418e499"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_contact.html#a627aeba03d0893e273e482b30418e499">supprimeContact</a> (<a class="el" href="class_contact.html">Contact</a> *)</td></tr>
 <tr class="memdesc:a627aeba03d0893e273e482b30418e499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime un contact.  <a href="class_gestion_contact.html#a627aeba03d0893e273e482b30418e499">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a627aeba03d0893e273e482b30418e499"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a501085a9e8064285d2cbea6d65ff9951"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_interaction.html">Interaction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_contact.html#a501085a9e8064285d2cbea6d65ff9951">ajoutInteraction</a> (<a class="el" href="class_contact.html">Contact</a> *, const std::string &amp;)</td></tr>
-<tr class="separator:a501085a9e8064285d2cbea6d65ff9951"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebb5873f2365c50bc29f0d6c13d7d8f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_contact.html#aebb5873f2365c50bc29f0d6c13d7d8f1">ajoutInteraction</a> (<a class="el" href="class_contact.html">Contact</a> *, <a class="el" href="class_interaction.html">Interaction</a> *)</td></tr>
-<tr class="memdesc:aebb5873f2365c50bc29f0d6c13d7d8f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une interaction existante dans un contact.  <a href="class_gestion_contact.html#aebb5873f2365c50bc29f0d6c13d7d8f1">Plus de détails...</a><br /></td></tr>
-<tr class="separator:aebb5873f2365c50bc29f0d6c13d7d8f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:a8f089fd769cc6a20378321cde356a928"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_contact.html#a8f089fd769cc6a20378321cde356a928">GestionContact</a> (<a class="el" href="class_date.html">Date</a>)</td></tr>
+<tr class="memdesc:a8f089fd769cc6a20378321cde356a928"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur par defaut.  <a href="class_gestion_contact.html#a8f089fd769cc6a20378321cde356a928">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8f089fd769cc6a20378321cde356a928"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c0d781c68963dcdc05b6d52019538f9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_contact.html#a9c0d781c68963dcdc05b6d52019538f9">~GestionContact</a> ()</td></tr>
+<tr class="memdesc:a9c0d781c68963dcdc05b6d52019538f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur de <a class="el" href="class_gestion_contact.html" title="Class de gestion des Contact: ajout, suppressions, requetes, ...">GestionContact</a>.  <a href="class_gestion_contact.html#a9c0d781c68963dcdc05b6d52019538f9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9c0d781c68963dcdc05b6d52019538f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4242680d2c479460fa417087624ec3e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_contact.html">Contact</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_contact.html#a4242680d2c479460fa417087624ec3e7">creeContact</a> (const std::string &amp;, const std::string &amp;, const std::string &amp;, const std::string &amp;, const std::string &amp;, const std::string &amp;)</td></tr>
+<tr class="separator:a4242680d2c479460fa417087624ec3e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b0a8df38be441635c2b2cf30206c599"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_contact.html">Contact</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_contact.html#a7b0a8df38be441635c2b2cf30206c599">creeContact</a> (const std::string &amp;, const std::string &amp;, const std::string &amp;, const std::string &amp;, const std::string &amp;, const std::string &amp;, const <a class="el" href="class_date.html">Date</a> &amp;, const <a class="el" href="class_date.html">Date</a> &amp;)</td></tr>
+<tr class="separator:a7b0a8df38be441635c2b2cf30206c599"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab899d2d9cecf7aadc41f741ddad2f25d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_contact.html#ab899d2d9cecf7aadc41f741ddad2f25d">setDateDerniereSuppression</a> (const <a class="el" href="class_date.html">Date</a> &amp;)</td></tr>
+<tr class="memdesc:ab899d2d9cecf7aadc41f741ddad2f25d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutateur de dateDerniereSuppression.  <a href="class_gestion_contact.html#ab899d2d9cecf7aadc41f741ddad2f25d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab899d2d9cecf7aadc41f741ddad2f25d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95888c31ed32c1c5c1bf64363119bb58"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_date.html">Date</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_contact.html#a95888c31ed32c1c5c1bf64363119bb58">getDateDerniereSuppression</a> () const</td></tr>
 <tr class="memdesc:a95888c31ed32c1c5c1bf64363119bb58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de dateDerniereSuppression.  <a href="class_gestion_contact.html#a95888c31ed32c1c5c1bf64363119bb58">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a95888c31ed32c1c5c1bf64363119bb58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7464f850396871eca442178e30644896"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="class_interaction.html">Interaction</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_contact.html#a7464f850396871eca442178e30644896">getAllInteractions</a> () const</td></tr>
-<tr class="memdesc:a7464f850396871eca442178e30644896"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupere toutes les interactions de tous les contacts Trie toutes les interactions et supprime les duplicatas.  <a href="class_gestion_contact.html#a7464f850396871eca442178e30644896">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a7464f850396871eca442178e30644896"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76eb2ec4b6fe580465418305bc0cb0df"><td class="memItemLeft" align="right" valign="top">const std::list&lt; <a class="el" href="class_interaction.html">Interaction</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_contact.html#a76eb2ec4b6fe580465418305bc0cb0df">getAllInteractions</a> () const</td></tr>
+<tr class="memdesc:a76eb2ec4b6fe580465418305bc0cb0df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupere toutes les interactions de tous les contacts Trie toutes les interactions et supprime les duplicatas.  <a href="class_gestion_contact.html#a76eb2ec4b6fe580465418305bc0cb0df">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a76eb2ec4b6fe580465418305bc0cb0df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c81842c85dc7a6369eea00ec51bb805"><td class="memItemLeft" align="right" valign="top">const std::list&lt; <a class="el" href="class_contact.html">Contact</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_contact.html#a7c81842c85dc7a6369eea00ec51bb805">getContacts</a> ()</td></tr>
+<tr class="memdesc:a7c81842c85dc7a6369eea00ec51bb805"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de Contacts.  <a href="class_gestion_contact.html#a7c81842c85dc7a6369eea00ec51bb805">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7c81842c85dc7a6369eea00ec51bb805"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Fonctions membres publiques statiques</h2></td></tr>
+<tr class="memitem:a244211ece351717d07fe71fa9aef1b13"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_interaction.html">Interaction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_contact.html#a244211ece351717d07fe71fa9aef1b13">ajoutInteraction</a> (<a class="el" href="class_contact.html">Contact</a> *, const <a class="el" href="class_date.html">Date</a> &amp;, const std::string &amp;)</td></tr>
+<tr class="separator:a244211ece351717d07fe71fa9aef1b13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebb5873f2365c50bc29f0d6c13d7d8f1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_contact.html#aebb5873f2365c50bc29f0d6c13d7d8f1">ajoutInteraction</a> (<a class="el" href="class_contact.html">Contact</a> *, <a class="el" href="class_interaction.html">Interaction</a> *)</td></tr>
+<tr class="memdesc:aebb5873f2365c50bc29f0d6c13d7d8f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une interaction existante dans un contact.  <a href="class_gestion_contact.html#aebb5873f2365c50bc29f0d6c13d7d8f1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aebb5873f2365c50bc29f0d6c13d7d8f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a418f98f248946bd49a8bbf02b438c529"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_todo.html">Todo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_contact.html#a418f98f248946bd49a8bbf02b438c529">ajoutTodo</a> (<a class="el" href="class_interaction.html">Interaction</a> *, const <a class="el" href="class_date.html">Date</a> &amp;, const std::string &amp;, const bool)</td></tr>
+<tr class="memdesc:a418f98f248946bd49a8bbf02b438c529"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un todo a une interaction.  <a href="class_gestion_contact.html#a418f98f248946bd49a8bbf02b438c529">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a418f98f248946bd49a8bbf02b438c529"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98eaa3ecb272debd17e583c83a57f36c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_contact.html#a98eaa3ecb272debd17e583c83a57f36c">creerTodos</a> (<a class="el" href="class_interaction.html">Interaction</a> *)</td></tr>
+<tr class="memdesc:a98eaa3ecb272debd17e583c83a57f36c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creation de la liste des <a class="el" href="class_todo.html" title="Permets de décrire les choses à faire (todo), des Interaction pour un Contact.">Todo</a> concernant cette <a class="el" href="class_interaction.html" title="Enregistre une interaction avec un Contact.">Interaction</a>.  <a href="class_gestion_contact.html#a98eaa3ecb272debd17e583c83a57f36c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a98eaa3ecb272debd17e583c83a57f36c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dcccd0f9178f9f391a41e837abe0db9"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_date.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestion_contact.html#a3dcccd0f9178f9f391a41e837abe0db9">getDateFromLine</a> (const std::string &amp;)</td></tr>
+<tr class="memdesc:a3dcccd0f9178f9f391a41e837abe0db9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupere la date d'une ligne de text de todo.  <a href="class_gestion_contact.html#a3dcccd0f9178f9f391a41e837abe0db9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3dcccd0f9178f9f391a41e837abe0db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Class de gestion des <a class="el" href="class_contact.html" title="Contact representant une personne.">Contact</a>: ajout, suppressions, requetes, ... </p>
@@ -129,10 +152,10 @@ Fonctions membres publiques</h2></td></tr>
 <dl class="section author"><dt>Auteur</dt><dd>Perion Maxence </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="_gestion_contact_8h_source.html#l00016">16</a> du fichier <a class="el" href="_gestion_contact_8h_source.html">GestionContact.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_gestion_contact_8h_source.html#l00017">17</a> du fichier <a class="el" href="_gestion_contact_8h_source.html">GestionContact.h</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
-<a id="a0d42db3777c1e15d557979c897acf344"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d42db3777c1e15d557979c897acf344">&#9670;&nbsp;</a></span>GestionContact()</h2>
+<a id="a8f089fd769cc6a20378321cde356a928"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f089fd769cc6a20378321cde356a928">&#9670;&nbsp;</a></span>GestionContact()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -140,7 +163,8 @@ Fonctions membres publiques</h2></td></tr>
         <tr>
           <td class="memname">GestionContact::GestionContact </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_date.html">Date</a>&#160;</td>
+          <td class="paramname"><em>derniereSuppression</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -171,21 +195,30 @@ Fonctions membres publiques</h2></td></tr>
 <p>Destructeur de <a class="el" href="class_gestion_contact.html" title="Class de gestion des Contact: ajout, suppressions, requetes, ...">GestionContact</a>. </p>
 <p>Detruis une instance de <a class="el" href="class_gestion_contact.html" title="Class de gestion des Contact: ajout, suppressions, requetes, ...">GestionContact</a> precedemment construite et detruits egalement tous les contacts references dans la liste </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_gestion_contact_8cpp_source.html#l00123">123</a> du fichier <a class="el" href="_gestion_contact_8cpp_source.html">GestionContact.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_gestion_contact_8cpp_source.html#l00273">273</a> du fichier <a class="el" href="_gestion_contact_8cpp_source.html">GestionContact.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
-<a id="a501085a9e8064285d2cbea6d65ff9951"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a501085a9e8064285d2cbea6d65ff9951">&#9670;&nbsp;</a></span>ajoutInteraction() <span class="overload">[1/2]</span></h2>
+<a id="a244211ece351717d07fe71fa9aef1b13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a244211ece351717d07fe71fa9aef1b13">&#9670;&nbsp;</a></span>ajoutInteraction() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_interaction.html">Interaction</a>* GestionContact::ajoutInteraction </td>
+          <td class="memname">static <a class="el" href="class_interaction.html">Interaction</a>* GestionContact::ajoutInteraction </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_contact.html">Contact</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_date.html">Date</a> &amp;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -200,6 +233,11 @@ Fonctions membres publiques</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -209,6 +247,9 @@ Fonctions membres publiques</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void GestionContact::ajoutInteraction </td>
@@ -228,6 +269,11 @@ Fonctions membres publiques</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Ajoute une interaction existante dans un contact. </p>
@@ -240,18 +286,81 @@ Fonctions membres publiques</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="_gestion_contact_8cpp_source.html#l00080">80</a> du fichier <a class="el" href="_gestion_contact_8cpp_source.html">GestionContact.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_gestion_contact_8cpp_source.html#l00189">189</a> du fichier <a class="el" href="_gestion_contact_8cpp_source.html">GestionContact.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aae4185c2c5d70dd07dbe29933784e8ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae4185c2c5d70dd07dbe29933784e8ee">&#9670;&nbsp;</a></span>creeContact()</h2>
+<a id="a418f98f248946bd49a8bbf02b438c529"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a418f98f248946bd49a8bbf02b438c529">&#9670;&nbsp;</a></span>ajoutTodo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_todo.html">Todo</a> * GestionContact::ajoutTodo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_interaction.html">Interaction</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_date.html">Date</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ajoute un todo a une interaction. </p>
+<p>Ajoute a l'interaction un nouveau todo cree</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>: l'interaction </td></tr>
+    <tr><td class="paramname">date</td><td>: la date du todo </td></tr>
+    <tr><td class="paramname">c</td><td>: le contenu du todo </td></tr>
+    <tr><td class="paramname">e</td><td>: todo deja effectue ou non </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>le todo cree </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_gestion_contact_8cpp_source.html#l00205">205</a> du fichier <a class="el" href="_gestion_contact_8cpp_source.html">GestionContact.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a4242680d2c479460fa417087624ec3e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4242680d2c479460fa417087624ec3e7">&#9670;&nbsp;</a></span>creeContact() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_contact.html">Contact</a> * GestionContact::creeContact </td>
+          <td class="memname"><a class="el" href="class_contact.html">Contact</a>* GestionContact::creeContact </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname">, </td>
@@ -294,32 +403,117 @@ Fonctions membres publiques</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Cree et ajoute un contact. </p>
-<p>Ajoute un nouveau contact a la liste des contacts</p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">n</td><td>: nom du contact </td></tr>
-    <tr><td class="paramname">p</td><td>: prenom </td></tr>
-    <tr><td class="paramname">e</td><td>: entreprise </td></tr>
-    <tr><td class="paramname">tel</td><td>: telephone </td></tr>
-    <tr><td class="paramname">m</td><td>: mail </td></tr>
-    <tr><td class="paramname">uri</td><td>: chemin vers la photo de profil </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="_gestion_contact_8cpp_source.html#l00035">35</a> du fichier <a class="el" href="_gestion_contact_8cpp_source.html">GestionContact.cpp</a>.</p>
-
 </div>
 </div>
-<a id="a7464f850396871eca442178e30644896"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7464f850396871eca442178e30644896">&#9670;&nbsp;</a></span>getAllInteractions()</h2>
+<a id="a7b0a8df38be441635c2b2cf30206c599"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b0a8df38be441635c2b2cf30206c599">&#9670;&nbsp;</a></span>creeContact() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">list&lt; <a class="el" href="class_interaction.html">Interaction</a> * &gt; GestionContact::getAllInteractions </td>
+          <td class="memname"><a class="el" href="class_contact.html">Contact</a>* GestionContact::creeContact </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_date.html">Date</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_date.html">Date</a> &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a98eaa3ecb272debd17e583c83a57f36c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98eaa3ecb272debd17e583c83a57f36c">&#9670;&nbsp;</a></span>creerTodos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GestionContact::creerTodos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_interaction.html">Interaction</a> *&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creation de la liste des <a class="el" href="class_todo.html" title="Permets de décrire les choses à faire (todo), des Interaction pour un Contact.">Todo</a> concernant cette <a class="el" href="class_interaction.html" title="Enregistre une interaction avec un Contact.">Interaction</a>. </p>
+<p>Analyse le resume/contenu de l'interaction pour creer tous les <a class="el" href="class_todo.html" title="Permets de décrire les choses à faire (todo), des Interaction pour un Contact.">Todo</a> correspondant et les stocker dans la liste</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>: l'interaction </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_gestion_contact_8cpp_source.html#l00099">99</a> du fichier <a class="el" href="_gestion_contact_8cpp_source.html">GestionContact.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a76eb2ec4b6fe580465418305bc0cb0df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76eb2ec4b6fe580465418305bc0cb0df">&#9670;&nbsp;</a></span>getAllInteractions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const list&lt; <a class="el" href="class_interaction.html">Interaction</a> * &gt; GestionContact::getAllInteractions </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -330,7 +524,30 @@ Fonctions membres publiques</h2></td></tr>
 <p>Recupere toutes les interactions de tous les contacts Trie toutes les interactions et supprime les duplicatas. </p>
 <dl class="section return"><dt>Renvoie</dt><dd>la liste de toutes les interactions existantes </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="_gestion_contact_8cpp_source.html#l00091">91</a> du fichier <a class="el" href="_gestion_contact_8cpp_source.html">GestionContact.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_gestion_contact_8cpp_source.html#l00219">219</a> du fichier <a class="el" href="_gestion_contact_8cpp_source.html">GestionContact.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7c81842c85dc7a6369eea00ec51bb805"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c81842c85dc7a6369eea00ec51bb805">&#9670;&nbsp;</a></span>getContacts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const list&lt; <a class="el" href="class_contact.html">Contact</a> * &gt; &amp; GestionContact::getContacts </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de Contacts. </p>
+<p>Methode qui permet d'acceder a liste des contacts</p>
+<dl class="section return"><dt>Renvoie</dt><dd>contacts </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_gestion_contact_8cpp_source.html#l00240">240</a> du fichier <a class="el" href="_gestion_contact_8cpp_source.html">GestionContact.cpp</a>.</p>
 
 </div>
 </div>
@@ -353,15 +570,79 @@ Fonctions membres publiques</h2></td></tr>
 <p>Methode qui permet d'acceder a la date de la derniere suppression</p>
 <dl class="section return"><dt>Renvoie</dt><dd>dateDerniereSuppression </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="_gestion_contact_8cpp_source.html#l00112">112</a> du fichier <a class="el" href="_gestion_contact_8cpp_source.html">GestionContact.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_gestion_contact_8cpp_source.html#l00252">252</a> du fichier <a class="el" href="_gestion_contact_8cpp_source.html">GestionContact.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a3dcccd0f9178f9f391a41e837abe0db9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dcccd0f9178f9f391a41e837abe0db9">&#9670;&nbsp;</a></span>getDateFromLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_date.html">Date</a> GestionContact::getDateFromLine </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Recupere la date d'une ligne de text de todo. </p>
+<p>Fonction qui recupere une date valide apres un @ date (ou la date du jour) a partir d'un text ayant debute par @ todo</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>: le text du todo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>une date extraite du text, ou la date du jour le cas echeant </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_gestion_contact_8cpp_source.html#l00138">138</a> du fichier <a class="el" href="_gestion_contact_8cpp_source.html">GestionContact.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab899d2d9cecf7aadc41f741ddad2f25d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab899d2d9cecf7aadc41f741ddad2f25d">&#9670;&nbsp;</a></span>setDateDerniereSuppression()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GestionContact::setDateDerniereSuppression </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_date.html">Date</a> &amp;&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mutateur de dateDerniereSuppression. </p>
+<p>Methode qui permet de modifier la date de la derniere suppression </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_gestion_contact_8cpp_source.html#l00263">263</a> du fichier <a class="el" href="_gestion_contact_8cpp_source.html">GestionContact.cpp</a>.</p>
 
 </div>
 </div>
 <a id="a627aeba03d0893e273e482b30418e499"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a627aeba03d0893e273e482b30418e499">&#9670;&nbsp;</a></span>supprimeContact()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a627aeba03d0893e273e482b30418e499">&#9670;&nbsp;</a></span>supprimeContact</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void GestionContact::supprimeContact </td>
@@ -371,6 +652,11 @@ Fonctions membres publiques</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Supprime un contact. </p>
@@ -382,7 +668,7 @@ Fonctions membres publiques</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="_gestion_contact_8cpp_source.html#l00049">49</a> du fichier <a class="el" href="_gestion_contact_8cpp_source.html">GestionContact.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_gestion_contact_8cpp_source.html#l00069">69</a> du fichier <a class="el" href="_gestion_contact_8cpp_source.html">GestionContact.cpp</a>.</p>
 
 </div>
 </div>

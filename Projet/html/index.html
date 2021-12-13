@@ -24,7 +24,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="ub.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Projet CDAA
    &#160;<span id="projectnumber">0.0.1</span>
@@ -90,19 +89,19 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="intro_sec"></a>
 Introduction</h1>
-<p>Le sujet du projet est de produire un logiciel permettant de g&eacute;rer des contacts et leurs interactions avec une entit&eacute;. Il est &eacute;galement question d'extraire des t&acirc;ches a faire des interactions gr&acirc;ce &acirc; des tags (@ todo et @ date).</p>
+<p>Le sujet du projet est de produire un logiciel permettant de g&eacute;rer des contacts et leurs interactions avec une entit&eacute;. Il est &eacute;galement question d'extraire des t&acirc;ches a faire des interactions gr&acirc;ce &acirc; des tags (@ todo et @ date). Nous avons utilis&eacute; Github pour collaborer: <a href="https://github.com/Dwarron/ProjetCDAA">https://github.com/Dwarron/ProjetCDAA</a>.</p>
 <h1><a class="anchor" id="prog_sec"></a>
 Programmation en 3 parties</h1>
 <p>La programmation du projet est realis&eacute;e en 3 parties distinctes : la programmation orient&eacute;e object, l'interface graphique et la persistence des donn&eacute;es.</p>
 <h2><a class="anchor" id="poo_subsec"></a>
 Partie Programmation Orientée Object</h2>
-<p>Dans cette premiere partie, le but a ete de simplement d&eacute;crire les differents objets qui interviendront tout le long du projet et les relations/interactions entre eux. Nous avons notamment cr&eacute;e les classes <a class="el" href="class_contact.html" title="Contact representant une personne.">Contact</a>, <a class="el" href="class_gestion_contact.html" title="Class de gestion des Contact: ajout, suppressions, requetes, ...">GestionContact</a>, <a class="el" href="class_interaction.html" title="Enregistre une interaction avec un Contact.">Interaction</a> et <a class="el" href="class_todo.html" title="Permets de décrire les choses à faire (todo), des Interaction pour un Contact.">Todo</a>. Ces classes ayant besoin de gerer le temps, nous avons &eacute;galement produit la classe <a class="el" href="class_date.html" title="Stocke une date.">Date</a>.</p>
+<p>Dans cette premiere partie, le but a ete de simplement d&eacute;crire les differents objets qui interviendront tout le long du projet et les relations/interactions entre eux. Nous avons notamment cr&eacute;e les classes <a class="el" href="class_contact.html" title="Contact representant une personne.">Contact</a>, <a class="el" href="class_verificator.html" title="Permet d&#39;effectuer des verifications sur des donnees entrees par l&#39;utilisateur.">Verificator</a>, <a class="el" href="class_gestion_contact.html" title="Class de gestion des Contact: ajout, suppressions, requetes, ...">GestionContact</a>, <a class="el" href="class_interaction.html" title="Enregistre une interaction avec un Contact.">Interaction</a> et <a class="el" href="class_todo.html" title="Permets de décrire les choses à faire (todo), des Interaction pour un Contact.">Todo</a>. Ces classes ayant besoin ,de gerer le temps, nous avons &eacute;galement produit la classe <a class="el" href="class_date.html" title="Stocke une date.">Date</a>.</p>
 <h2><a class="anchor" id="ihm_subsec"></a>
 Partie Interface Graphique</h2>
-<p><em> A venir... </em></p>
+<p>Dans cette seconde partie, nous avons d&eacute;velopp&eacute; differente interfaces permettant aux utilisateurs d'interagir avec notre application. Ces fen$egrave;etres sont g&eacute;r&eacute;es par les classes <a class="el" href="class_affiche_interactions_window.html" title="Fenêtre d&#39;affichage des interactions d&#39;un contact.">AfficheInteractionsWindow</a>, <a class="el" href="class_ajout_interaction_window.html">AjoutInteractionWindow</a>, <a class="el" href="class_creation_fiche_window.html" title="Fenetre qui permet de creer la fiche d&#39;un contact.">CreationFicheWindow</a>, <a class="el" href="class_fiche_contact_window.html" title="Fenetre qui permet d&#39;afficher et modifier la fiche d&#39;un contact.">FicheContactWindow</a>, <a class="el" href="class_main_window.html" title="Fenetre principale qui permet de gerer l&#39;ensemble des fenetres.">MainWindow</a>, <a class="el" href="class_recherche_contact_window.html" title="Fenetre permettant la recherche et la selection d&#39;un contact.">RechercheContactWindow</a> et <a class="el" href="class_requete_window.html" title="Fenetre qui affiche differentes requetes selectionnables.">RequeteWindow</a>.</p>
 <h2><a class="anchor" id="persistence_subsec"></a>
 Partie Persistence des données</h2>
-<p><em> A venir... </em></p>
+<p>Dans cette troisime et derni&eacute;re partie, une base de donn&eacute;es SQLite a &eacute;t&eacute; mise en place afin de garder en m&eacute;moire les donn&eacute;es entr&eacute;es par l'utilisateur. Nous utilisons la classe <a class="el" href="class_database_manager.html" title="Gestionnaire de la base de donnees: lis, modifie et insere des donnees persistentes.">DatabaseManager</a> pour interagir avec celle ci.</p>
 <dl class="section author"><dt>Auteurs</dt><dd>Alexandre Pinon et Maxence Perion </dd></dl>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->

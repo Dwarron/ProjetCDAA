@@ -1,0 +1,145 @@
+\hypertarget{class_database_manager}{}\doxysection{Référence de la classe Database\+Manager}
+\label{class_database_manager}\index{DatabaseManager@{DatabaseManager}}
+
+
+Gestionnaire de la base de donnees\+: lis, modifie et insere des donnees persistentes.  
+
+
+
+
+{\ttfamily \#include $<$Database\+Manager.\+h$>$}
+
+Graphe d\textquotesingle{}héritage de Database\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_database_manager}
+\end{center}
+\end{figure}
+\doxysubsection*{Signaux}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_database_manager_aa8a9ee6ae6f024de52c5159db98e78d6}{load\+Contact}} (int, std\+::string, std\+::string, std\+::string, std\+::string, std\+::string, std\+::string, std\+::string, std\+::string)
+\item 
+void \mbox{\hyperlink{class_database_manager_a9e2be7ff69fd5e701b4dd24b0e20874b}{load\+And\+Create\+Interaction}} (int, \mbox{\hyperlink{class_contact}{Contact}} $\ast$, std\+::string, std\+::string)
+\item 
+void \mbox{\hyperlink{class_database_manager_a4ee4abe480d8e68a2279659b21593371}{load\+Interaction}} (\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$, \mbox{\hyperlink{class_contact}{Contact}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_database_manager_a63bc918e468ed36c7183fe59da151a1d}{load\+Todo}} (int, \mbox{\hyperlink{class_interaction}{Interaction}} $\ast$, std\+::string, std\+::string, bool)
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_database_manager_aebfb8cc7427256623ccbe059b30b6450}{Database\+Manager}} (Q\+Object $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructeur standard. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_database_manager_ae8d395e6c7ed63d6cf68ba35465b68da}{get\+Date\+Derniere\+Suppression}} ()
+\begin{DoxyCompactList}\small\item\em Lecture de la date de derniere suppression. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_database_manager_a396db1ca1ac24e95e41a76d248af15ba}{load\+Datas}} ()
+\begin{DoxyCompactList}\small\item\em Chargement des donnees. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Gestionnaire de la base de donnees\+: lis, modifie et insere des donnees persistentes. 
+
+\begin{DoxyAuthor}{Auteur}
+Perion Maxence, Pinon Alexandre 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+
+
+Définition à la ligne 17 du fichier Database\+Manager.\+h.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_database_manager_aebfb8cc7427256623ccbe059b30b6450}\label{class_database_manager_aebfb8cc7427256623ccbe059b30b6450}} 
+\index{DatabaseManager@{DatabaseManager}!DatabaseManager@{DatabaseManager}}
+\index{DatabaseManager@{DatabaseManager}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{DatabaseManager()}{DatabaseManager()}}
+{\footnotesize\ttfamily Database\+Manager\+::\+Database\+Manager (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructeur standard. 
+
+Constructeur standard de la classe \mbox{\hyperlink{class_database_manager}{Database\+Manager}}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em parent} & \+: classe parent \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{Voir également}
+init() 
+\end{DoxySeeAlso}
+
+
+Définition à la ligne 26 du fichier Database\+Manager.\+cpp.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_database_manager_ae8d395e6c7ed63d6cf68ba35465b68da}\label{class_database_manager_ae8d395e6c7ed63d6cf68ba35465b68da}} 
+\index{DatabaseManager@{DatabaseManager}!getDateDerniereSuppression@{getDateDerniereSuppression}}
+\index{getDateDerniereSuppression@{getDateDerniereSuppression}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{getDateDerniereSuppression()}{getDateDerniereSuppression()}}
+{\footnotesize\ttfamily string Database\+Manager\+::get\+Date\+Derniere\+Suppression (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Lecture de la date de derniere suppression. 
+
+Slot pour consulter la date de derniere suppression inscrite dans la base de donnees
+
+\begin{DoxyReturn}{Renvoie}
+la date de derniere suppression lue 
+\end{DoxyReturn}
+
+
+Définition à la ligne 347 du fichier Database\+Manager.\+cpp.
+
+\mbox{\Hypertarget{class_database_manager_a9e2be7ff69fd5e701b4dd24b0e20874b}\label{class_database_manager_a9e2be7ff69fd5e701b4dd24b0e20874b}} 
+\index{DatabaseManager@{DatabaseManager}!loadAndCreateInteraction@{loadAndCreateInteraction}}
+\index{loadAndCreateInteraction@{loadAndCreateInteraction}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{loadAndCreateInteraction}{loadAndCreateInteraction}}
+{\footnotesize\ttfamily void Database\+Manager\+::load\+And\+Create\+Interaction (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{,  }\item[{std\+::string}]{,  }\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_database_manager_aa8a9ee6ae6f024de52c5159db98e78d6}\label{class_database_manager_aa8a9ee6ae6f024de52c5159db98e78d6}} 
+\index{DatabaseManager@{DatabaseManager}!loadContact@{loadContact}}
+\index{loadContact@{loadContact}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{loadContact}{loadContact}}
+{\footnotesize\ttfamily void Database\+Manager\+::load\+Contact (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{std\+::string}]{,  }\item[{std\+::string}]{,  }\item[{std\+::string}]{,  }\item[{std\+::string}]{,  }\item[{std\+::string}]{,  }\item[{std\+::string}]{,  }\item[{std\+::string}]{,  }\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_database_manager_a396db1ca1ac24e95e41a76d248af15ba}\label{class_database_manager_a396db1ca1ac24e95e41a76d248af15ba}} 
+\index{DatabaseManager@{DatabaseManager}!loadDatas@{loadDatas}}
+\index{loadDatas@{loadDatas}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{loadDatas()}{loadDatas()}}
+{\footnotesize\ttfamily void Database\+Manager\+::load\+Datas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Chargement des donnees. 
+
+Lis tous les contacts stockes dans la base de donnees et demande leur creation dans le logiciel via des signaux Lis egalement les interactions Les todos seront lu pour chaque interaction lorsqu\textquotesingle{}elle aura ete creee 
+
+Définition à la ligne 109 du fichier Database\+Manager.\+cpp.
+
+\mbox{\Hypertarget{class_database_manager_a4ee4abe480d8e68a2279659b21593371}\label{class_database_manager_a4ee4abe480d8e68a2279659b21593371}} 
+\index{DatabaseManager@{DatabaseManager}!loadInteraction@{loadInteraction}}
+\index{loadInteraction@{loadInteraction}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{loadInteraction}{loadInteraction}}
+{\footnotesize\ttfamily void Database\+Manager\+::load\+Interaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$}]{,  }\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_database_manager_a63bc918e468ed36c7183fe59da151a1d}\label{class_database_manager_a63bc918e468ed36c7183fe59da151a1d}} 
+\index{DatabaseManager@{DatabaseManager}!loadTodo@{loadTodo}}
+\index{loadTodo@{loadTodo}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{loadTodo}{loadTodo}}
+{\footnotesize\ttfamily void Database\+Manager\+::load\+Todo (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$}]{,  }\item[{std\+::string}]{,  }\item[{std\+::string}]{,  }\item[{bool}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_database_manager_8h}{Database\+Manager.\+h}}\item 
+\mbox{\hyperlink{_database_manager_8cpp}{Database\+Manager.\+cpp}}\end{DoxyCompactItemize}

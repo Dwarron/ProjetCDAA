@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['gestioncontact_83',['GestionContact',['../class_gestion_contact.html',1,'']]]
+  ['databasemanager_179',['DatabaseManager',['../class_database_manager.html',1,'']]],
+  ['date_180',['Date',['../class_date.html',1,'']]]
 ];

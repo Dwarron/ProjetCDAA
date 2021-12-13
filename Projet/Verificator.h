@@ -1,3 +1,11 @@
+/**
+ * \file Verificator.h
+ * \class Verificator Verificator.h
+ * \brief Permet d'effectuer des verifications sur des donnees entrees par l'utilisateur.
+ * \author Perion Maxence, Pinon Alexandre
+ * \version 0.1
+ */
+
 #ifndef VERIFICATOR_H
 #define VERIFICATOR_H
 

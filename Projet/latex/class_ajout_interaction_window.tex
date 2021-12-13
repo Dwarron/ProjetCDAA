@@ -1,0 +1,171 @@
+\hypertarget{class_ajout_interaction_window}{}\doxysection{Référence de la classe Ajout\+Interaction\+Window}
+\label{class_ajout_interaction_window}\index{AjoutInteractionWindow@{AjoutInteractionWindow}}
+
+
+{\ttfamily \#include $<$Ajout\+Interaction\+Window.\+h$>$}
+
+Graphe d\textquotesingle{}héritage de Ajout\+Interaction\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ajout_interaction_window}
+\end{center}
+\end{figure}
+\doxysubsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ajout_interaction_window_a1683db303ce88df566c3a6daeda97a7b}{select\+Contact}} (\mbox{\hyperlink{class_contact}{Contact}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Charge le contact selectionne. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ajout_interaction_window_a2b436be661758042787295d2454f6611}{ajout\+Interaction}} ()
+\begin{DoxyCompactList}\small\item\em Ajoute l\textquotesingle{}interaction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ajout_interaction_window_a8a8e1004ad475bb2152e309f44293155}{select\+Interaction}} (\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Charge l\textquotesingle{}interaction selectionne. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signaux}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ajout_interaction_window_aadb32c9137ebb7b21154bea5ee8204fc}{ajout\+Interaction}} (\mbox{\hyperlink{class_contact}{Contact}} $\ast$, Q\+String)
+\item 
+void \mbox{\hyperlink{class_ajout_interaction_window_a06645cef302be3861dfd398516da1ee1}{ajout\+Interaction}} (\mbox{\hyperlink{class_contact}{Contact}} $\ast$, \mbox{\hyperlink{class_interaction}{Interaction}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_ajout_interaction_window_a1912dd58cc509073f7e05a1840aeb17d}{list\+Contacts\+Updated}} (std\+::list$<$ \mbox{\hyperlink{class_contact}{Contact}} $\ast$ $>$)
+\item 
+void \mbox{\hyperlink{class_ajout_interaction_window_a2dad0c67d2cf9ba7829b1ede111cfd11}{on\+End\+Modif\+Contact}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ajout_interaction_window_ac3d0c45ddaf2ce9c77db2a1bb276b79a}{Ajout\+Interaction\+Window}} (std\+::list$<$ \mbox{\hyperlink{class_contact}{Contact}} $\ast$ $>$, Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructeur standard. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ajout_interaction_window_a9693e7a2e7184df30f85b0164b094e96}{$\sim$\+Ajout\+Interaction\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de \mbox{\hyperlink{class_ajout_evenement_window}{Ajout\+Evenement\+Window}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+
+
+Définition à la ligne 18 du fichier Ajout\+Interaction\+Window.\+h.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_ajout_interaction_window_ac3d0c45ddaf2ce9c77db2a1bb276b79a}\label{class_ajout_interaction_window_ac3d0c45ddaf2ce9c77db2a1bb276b79a}} 
+\index{AjoutInteractionWindow@{AjoutInteractionWindow}!AjoutInteractionWindow@{AjoutInteractionWindow}}
+\index{AjoutInteractionWindow@{AjoutInteractionWindow}!AjoutInteractionWindow@{AjoutInteractionWindow}}
+\doxysubsubsection{\texorpdfstring{AjoutInteractionWindow()}{AjoutInteractionWindow()}}
+{\footnotesize\ttfamily Ajout\+Interaction\+Window\+::\+Ajout\+Interaction\+Window (\begin{DoxyParamCaption}\item[{std\+::list$<$ \mbox{\hyperlink{class_contact}{Contact}} $\ast$ $>$}]{,  }\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructeur standard. 
+
+Constructeur standard de la classe \mbox{\hyperlink{class_ajout_evenement_window}{Ajout\+Evenement\+Window}}. Effectue les connexions signaux/slots
+
+
+\begin{DoxyParams}{Paramètres}
+{\em contacts} & \+: la liste des contacts lors de la creation de la fenetre \\
+\hline
+{\em parent} & \+: fenetre parent \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 23 du fichier Ajout\+Interaction\+Window.\+cpp.
+
+\mbox{\Hypertarget{class_ajout_interaction_window_a9693e7a2e7184df30f85b0164b094e96}\label{class_ajout_interaction_window_a9693e7a2e7184df30f85b0164b094e96}} 
+\index{AjoutInteractionWindow@{AjoutInteractionWindow}!````~AjoutInteractionWindow@{$\sim$AjoutInteractionWindow}}
+\index{````~AjoutInteractionWindow@{$\sim$AjoutInteractionWindow}!AjoutInteractionWindow@{AjoutInteractionWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$AjoutInteractionWindow()}{~AjoutInteractionWindow()}}
+{\footnotesize\ttfamily Ajout\+Interaction\+Window\+::$\sim$\+Ajout\+Interaction\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur de \mbox{\hyperlink{class_ajout_evenement_window}{Ajout\+Evenement\+Window}}. 
+
+Detruis en memoire la fenetre et ses sous-\/fenêtres 
+
+Définition à la ligne 100 du fichier Ajout\+Interaction\+Window.\+cpp.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_ajout_interaction_window_a2b436be661758042787295d2454f6611}\label{class_ajout_interaction_window_a2b436be661758042787295d2454f6611}} 
+\index{AjoutInteractionWindow@{AjoutInteractionWindow}!ajoutInteraction@{ajoutInteraction}}
+\index{ajoutInteraction@{ajoutInteraction}!AjoutInteractionWindow@{AjoutInteractionWindow}}
+\doxysubsubsection{\texorpdfstring{ajoutInteraction}{ajoutInteraction}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Ajout\+Interaction\+Window\+::ajout\+Interaction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Ajoute l\textquotesingle{}interaction. 
+
+Slot qui permet d\textquotesingle{}ajouter au contact l\textquotesingle{}interaction cree, appele lors du click sur le bouton 
+
+Définition à la ligne 82 du fichier Ajout\+Interaction\+Window.\+cpp.
+
+\mbox{\Hypertarget{class_ajout_interaction_window_a06645cef302be3861dfd398516da1ee1}\label{class_ajout_interaction_window_a06645cef302be3861dfd398516da1ee1}} 
+\index{AjoutInteractionWindow@{AjoutInteractionWindow}!ajoutInteraction@{ajoutInteraction}}
+\index{ajoutInteraction@{ajoutInteraction}!AjoutInteractionWindow@{AjoutInteractionWindow}}
+\doxysubsubsection{\texorpdfstring{ajoutInteraction}{ajoutInteraction}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Ajout\+Interaction\+Window\+::ajout\+Interaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{,  }\item[{\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_ajout_interaction_window_aadb32c9137ebb7b21154bea5ee8204fc}\label{class_ajout_interaction_window_aadb32c9137ebb7b21154bea5ee8204fc}} 
+\index{AjoutInteractionWindow@{AjoutInteractionWindow}!ajoutInteraction@{ajoutInteraction}}
+\index{ajoutInteraction@{ajoutInteraction}!AjoutInteractionWindow@{AjoutInteractionWindow}}
+\doxysubsubsection{\texorpdfstring{ajoutInteraction}{ajoutInteraction}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Ajout\+Interaction\+Window\+::ajout\+Interaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{,  }\item[{Q\+String}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_ajout_interaction_window_a1912dd58cc509073f7e05a1840aeb17d}\label{class_ajout_interaction_window_a1912dd58cc509073f7e05a1840aeb17d}} 
+\index{AjoutInteractionWindow@{AjoutInteractionWindow}!listContactsUpdated@{listContactsUpdated}}
+\index{listContactsUpdated@{listContactsUpdated}!AjoutInteractionWindow@{AjoutInteractionWindow}}
+\doxysubsubsection{\texorpdfstring{listContactsUpdated}{listContactsUpdated}}
+{\footnotesize\ttfamily void Ajout\+Interaction\+Window\+::list\+Contacts\+Updated (\begin{DoxyParamCaption}\item[{std\+::list$<$ \mbox{\hyperlink{class_contact}{Contact}} $\ast$ $>$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_ajout_interaction_window_a2dad0c67d2cf9ba7829b1ede111cfd11}\label{class_ajout_interaction_window_a2dad0c67d2cf9ba7829b1ede111cfd11}} 
+\index{AjoutInteractionWindow@{AjoutInteractionWindow}!onEndModifContact@{onEndModifContact}}
+\index{onEndModifContact@{onEndModifContact}!AjoutInteractionWindow@{AjoutInteractionWindow}}
+\doxysubsubsection{\texorpdfstring{onEndModifContact}{onEndModifContact}}
+{\footnotesize\ttfamily void Ajout\+Interaction\+Window\+::on\+End\+Modif\+Contact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_ajout_interaction_window_a1683db303ce88df566c3a6daeda97a7b}\label{class_ajout_interaction_window_a1683db303ce88df566c3a6daeda97a7b}} 
+\index{AjoutInteractionWindow@{AjoutInteractionWindow}!selectContact@{selectContact}}
+\index{selectContact@{selectContact}!AjoutInteractionWindow@{AjoutInteractionWindow}}
+\doxysubsubsection{\texorpdfstring{selectContact}{selectContact}}
+{\footnotesize\ttfamily void Ajout\+Interaction\+Window\+::select\+Contact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Charge le contact selectionne. 
+
+Slot appele lors du changement du contact selectionne, le stocke dans le contact courant 
+\begin{DoxyParams}{Paramètres}
+{\em c} & \+: le contact selectionne \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 56 du fichier Ajout\+Interaction\+Window.\+cpp.
+
+\mbox{\Hypertarget{class_ajout_interaction_window_a8a8e1004ad475bb2152e309f44293155}\label{class_ajout_interaction_window_a8a8e1004ad475bb2152e309f44293155}} 
+\index{AjoutInteractionWindow@{AjoutInteractionWindow}!selectInteraction@{selectInteraction}}
+\index{selectInteraction@{selectInteraction}!AjoutInteractionWindow@{AjoutInteractionWindow}}
+\doxysubsubsection{\texorpdfstring{selectInteraction}{selectInteraction}}
+{\footnotesize\ttfamily void Ajout\+Interaction\+Window\+::select\+Interaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Charge l\textquotesingle{}interaction selectionne. 
+
+Slot appele lors de la selection de l\textquotesingle{}interaction que l\textquotesingle{}on veut ajouter au contact courant 
+\begin{DoxyParams}{Paramètres}
+{\em i} & \+: l\textquotesingle{}interaction selectionne \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 72 du fichier Ajout\+Interaction\+Window.\+cpp.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_ajout_interaction_window_8h}{Ajout\+Interaction\+Window.\+h}}\item 
+\mbox{\hyperlink{_ajout_interaction_window_8cpp}{Ajout\+Interaction\+Window.\+cpp}}\end{DoxyCompactItemize}

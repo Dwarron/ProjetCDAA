@@ -1,3 +1,11 @@
+/**
+ * \file Verificator.cpp
+ * \class Verificator Verificator.h
+ * \brief Permet d'effectuer des verifications sur des donnees entrees par l'utilisateur.
+ * \author Perion Maxence, Pinon Alexandre
+ * \version 0.1
+ */
+
 #include <stdexcept>
 #include "Verificator.h"
 

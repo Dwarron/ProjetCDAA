@@ -1,3 +1,11 @@
+/**
+ * \file DatabaseManager.cpp
+ * \class DatabaseManager DatabaseManager.h
+ * \brief Gestionnaire de la base de donnees: lis, modifie et insere des donnees persistentes
+ * \author Perion Maxence, Pinon Alexandre
+ * \version 0.1
+ */
+
 #ifndef GESTIONNAIREQOBJECT_H
 #define GESTIONNAIREQOBJECT_H
 

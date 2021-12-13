@@ -1,0 +1,233 @@
+\hypertarget{class_gestionnaire_q_object}{}\doxysection{Référence de la classe Gestionnaire\+Q\+Object}
+\label{class_gestionnaire_q_object}\index{GestionnaireQObject@{GestionnaireQObject}}
+
+
+Q\+Object permettant le lien entre le cote affichage et le cote gestion interne.  
+
+
+
+
+{\ttfamily \#include $<$Gestionnaire\+Q\+Object.\+h$>$}
+
+Graphe d\textquotesingle{}héritage de Gestionnaire\+Q\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_gestionnaire_q_object}
+\end{center}
+\end{figure}
+\doxysubsection*{Signaux}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_gestionnaire_q_object_a7f12d0a35d1f2e4319b9c81e15c9b122}{list\+Contacts\+Updated}} (std\+::list$<$ \mbox{\hyperlink{class_contact}{Contact}} $\ast$ $>$)
+\item 
+void \mbox{\hyperlink{class_gestionnaire_q_object_a5f6f081ec6759d4d36642d93c60af9eb}{on\+Contact\+Created}} (\mbox{\hyperlink{class_contact}{Contact}} $\ast$, std\+::string, std\+::string)
+\item 
+void \mbox{\hyperlink{class_gestionnaire_q_object_abcc9bfa89db207b6333eb67a501afab1}{on\+Interaction\+Edited}} ()
+\item 
+void \mbox{\hyperlink{class_gestionnaire_q_object_ac49901b336934c4f979a819b7fdd0c48}{on\+End\+Modif\+Contact}} (\mbox{\hyperlink{class_contact}{Contact}} $\ast$, std\+::string)
+\item 
+void \mbox{\hyperlink{class_gestionnaire_q_object_a97ab66ef789dc928a46d834b87657d20}{contact\+Deleted}} (std\+::string)
+\item 
+void \mbox{\hyperlink{class_gestionnaire_q_object_a3c2b0bae88db82fa6385e23f77eadbae}{contact\+Loaded}} (int, \mbox{\hyperlink{class_contact}{Contact}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_gestionnaire_q_object_a973d71ee6d24c57ea671519b47e012cc}{contact\+Created}} (std\+::string, std\+::string, std\+::string, std\+::string, std\+::string, std\+::string)
+\item 
+void \mbox{\hyperlink{class_gestionnaire_q_object_ab72159555ba64095526282de9ac50e8a}{contact\+Created}} (std\+::string, std\+::string, std\+::string, std\+::string, std\+::string, std\+::string, \mbox{\hyperlink{class_date}{Date}}, \mbox{\hyperlink{class_date}{Date}})
+\item 
+void \mbox{\hyperlink{class_gestionnaire_q_object_afb1036ecbbdb81ece284632189bda512}{interaction\+Loaded}} (int, \mbox{\hyperlink{class_interaction}{Interaction}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_gestionnaire_q_object_aa4f418110218001ca5654d8925675fb1}{todo\+Loaded}} (int, \mbox{\hyperlink{class_todo}{Todo}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_gestionnaire_q_object_a7c2ef2d68ad741384d0228437a3932a0}{on\+Todo\+Edited}} ()
+\item 
+void \mbox{\hyperlink{class_gestionnaire_q_object_a58c8ccb9ce9b70f86410ca53b4439284}{on\+Interaction\+Modif\+Date}} (\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$, std\+::string)
+\item 
+void \mbox{\hyperlink{class_gestionnaire_q_object_a29d97bf26b662419f60b1d437117ee56}{on\+Interaction\+Modif\+Resume}} (\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$, std\+::string)
+\item 
+void \mbox{\hyperlink{class_gestionnaire_q_object_a4fd72b912d0ba5c3d216e54d4abe19ed}{on\+Create\+Interaction}} (\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$, \mbox{\hyperlink{class_contact}{Contact}} $\ast$, std\+::string)
+\item 
+void \mbox{\hyperlink{class_gestionnaire_q_object_a2290208030ece90c0cc1502cc237cbef}{on\+Add\+Existing\+Interaction}} (\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$, \mbox{\hyperlink{class_contact}{Contact}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_gestionnaire_q_object_a3ab0dd3938c9cb51597143e7bd040331}{on\+Create\+Todos}} (\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$, std\+::list$<$ \mbox{\hyperlink{class_todo}{Todo}} $\ast$ $>$)
+\item 
+void \mbox{\hyperlink{class_gestionnaire_q_object_a098695e25f00046074cfa5fb37af3461}{on\+Delete\+Todos}} (\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$)
+\item 
+void \mbox{\hyperlink{class_gestionnaire_q_object_a39768198d956449ada7d3c0a2956e43e}{on\+Load\+J\+S\+ON}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gestionnaire_q_object_aca5bdc90f85033c7b18128c6dec0c20d}{Gestionnaire\+Q\+Object}} (Q\+Object $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructeur standard. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_gestionnaire_q_object_ac94d53496339fe408920553bd7f721f0}{$\sim$\+Gestionnaire\+Q\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de \mbox{\hyperlink{class_gestionnaire_q_object}{Gestionnaire\+Q\+Object}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Q\+Object permettant le lien entre le cote affichage et le cote gestion interne. 
+
+\begin{DoxyAuthor}{Auteur}
+Perion Maxence, Pinon Alexandre 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+
+
+Définition à la ligne 25 du fichier Gestionnaire\+Q\+Object.\+h.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_gestionnaire_q_object_aca5bdc90f85033c7b18128c6dec0c20d}\label{class_gestionnaire_q_object_aca5bdc90f85033c7b18128c6dec0c20d}} 
+\index{GestionnaireQObject@{GestionnaireQObject}!GestionnaireQObject@{GestionnaireQObject}}
+\index{GestionnaireQObject@{GestionnaireQObject}!GestionnaireQObject@{GestionnaireQObject}}
+\doxysubsubsection{\texorpdfstring{GestionnaireQObject()}{GestionnaireQObject()}}
+{\footnotesize\ttfamily Gestionnaire\+Q\+Object\+::\+Gestionnaire\+Q\+Object (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructeur standard. 
+
+Constructeur standard de la classe \mbox{\hyperlink{class_gestionnaire_q_object}{Gestionnaire\+Q\+Object}}. Effectue les connexions signaux/slots
+
+
+\begin{DoxyParams}{Paramètres}
+{\em parent} & \+: fenetre parent \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 26 du fichier Gestionnaire\+Q\+Object.\+cpp.
+
+\mbox{\Hypertarget{class_gestionnaire_q_object_ac94d53496339fe408920553bd7f721f0}\label{class_gestionnaire_q_object_ac94d53496339fe408920553bd7f721f0}} 
+\index{GestionnaireQObject@{GestionnaireQObject}!````~GestionnaireQObject@{$\sim$GestionnaireQObject}}
+\index{````~GestionnaireQObject@{$\sim$GestionnaireQObject}!GestionnaireQObject@{GestionnaireQObject}}
+\doxysubsubsection{\texorpdfstring{$\sim$GestionnaireQObject()}{~GestionnaireQObject()}}
+{\footnotesize\ttfamily Gestionnaire\+Q\+Object\+::$\sim$\+Gestionnaire\+Q\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur de \mbox{\hyperlink{class_gestionnaire_q_object}{Gestionnaire\+Q\+Object}}. 
+
+Supprime les donnees en memoire (gestion\+Contact et le manager de la base de donnees) et les fenetres 
+
+Définition à la ligne 603 du fichier Gestionnaire\+Q\+Object.\+cpp.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_gestionnaire_q_object_a973d71ee6d24c57ea671519b47e012cc}\label{class_gestionnaire_q_object_a973d71ee6d24c57ea671519b47e012cc}} 
+\index{GestionnaireQObject@{GestionnaireQObject}!contactCreated@{contactCreated}}
+\index{contactCreated@{contactCreated}!GestionnaireQObject@{GestionnaireQObject}}
+\doxysubsubsection{\texorpdfstring{contactCreated}{contactCreated}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Gestionnaire\+Q\+Object\+::contact\+Created (\begin{DoxyParamCaption}\item[{std\+::string}]{,  }\item[{std\+::string}]{,  }\item[{std\+::string}]{,  }\item[{std\+::string}]{,  }\item[{std\+::string}]{,  }\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_gestionnaire_q_object_ab72159555ba64095526282de9ac50e8a}\label{class_gestionnaire_q_object_ab72159555ba64095526282de9ac50e8a}} 
+\index{GestionnaireQObject@{GestionnaireQObject}!contactCreated@{contactCreated}}
+\index{contactCreated@{contactCreated}!GestionnaireQObject@{GestionnaireQObject}}
+\doxysubsubsection{\texorpdfstring{contactCreated}{contactCreated}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Gestionnaire\+Q\+Object\+::contact\+Created (\begin{DoxyParamCaption}\item[{std\+::string}]{,  }\item[{std\+::string}]{,  }\item[{std\+::string}]{,  }\item[{std\+::string}]{,  }\item[{std\+::string}]{,  }\item[{std\+::string}]{,  }\item[{\mbox{\hyperlink{class_date}{Date}}}]{,  }\item[{\mbox{\hyperlink{class_date}{Date}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_gestionnaire_q_object_a97ab66ef789dc928a46d834b87657d20}\label{class_gestionnaire_q_object_a97ab66ef789dc928a46d834b87657d20}} 
+\index{GestionnaireQObject@{GestionnaireQObject}!contactDeleted@{contactDeleted}}
+\index{contactDeleted@{contactDeleted}!GestionnaireQObject@{GestionnaireQObject}}
+\doxysubsubsection{\texorpdfstring{contactDeleted}{contactDeleted}}
+{\footnotesize\ttfamily void Gestionnaire\+Q\+Object\+::contact\+Deleted (\begin{DoxyParamCaption}\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_gestionnaire_q_object_a3c2b0bae88db82fa6385e23f77eadbae}\label{class_gestionnaire_q_object_a3c2b0bae88db82fa6385e23f77eadbae}} 
+\index{GestionnaireQObject@{GestionnaireQObject}!contactLoaded@{contactLoaded}}
+\index{contactLoaded@{contactLoaded}!GestionnaireQObject@{GestionnaireQObject}}
+\doxysubsubsection{\texorpdfstring{contactLoaded}{contactLoaded}}
+{\footnotesize\ttfamily void Gestionnaire\+Q\+Object\+::contact\+Loaded (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_gestionnaire_q_object_afb1036ecbbdb81ece284632189bda512}\label{class_gestionnaire_q_object_afb1036ecbbdb81ece284632189bda512}} 
+\index{GestionnaireQObject@{GestionnaireQObject}!interactionLoaded@{interactionLoaded}}
+\index{interactionLoaded@{interactionLoaded}!GestionnaireQObject@{GestionnaireQObject}}
+\doxysubsubsection{\texorpdfstring{interactionLoaded}{interactionLoaded}}
+{\footnotesize\ttfamily void Gestionnaire\+Q\+Object\+::interaction\+Loaded (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_gestionnaire_q_object_a7f12d0a35d1f2e4319b9c81e15c9b122}\label{class_gestionnaire_q_object_a7f12d0a35d1f2e4319b9c81e15c9b122}} 
+\index{GestionnaireQObject@{GestionnaireQObject}!listContactsUpdated@{listContactsUpdated}}
+\index{listContactsUpdated@{listContactsUpdated}!GestionnaireQObject@{GestionnaireQObject}}
+\doxysubsubsection{\texorpdfstring{listContactsUpdated}{listContactsUpdated}}
+{\footnotesize\ttfamily void Gestionnaire\+Q\+Object\+::list\+Contacts\+Updated (\begin{DoxyParamCaption}\item[{std\+::list$<$ \mbox{\hyperlink{class_contact}{Contact}} $\ast$ $>$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_gestionnaire_q_object_a2290208030ece90c0cc1502cc237cbef}\label{class_gestionnaire_q_object_a2290208030ece90c0cc1502cc237cbef}} 
+\index{GestionnaireQObject@{GestionnaireQObject}!onAddExistingInteraction@{onAddExistingInteraction}}
+\index{onAddExistingInteraction@{onAddExistingInteraction}!GestionnaireQObject@{GestionnaireQObject}}
+\doxysubsubsection{\texorpdfstring{onAddExistingInteraction}{onAddExistingInteraction}}
+{\footnotesize\ttfamily void Gestionnaire\+Q\+Object\+::on\+Add\+Existing\+Interaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$}]{,  }\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_gestionnaire_q_object_a5f6f081ec6759d4d36642d93c60af9eb}\label{class_gestionnaire_q_object_a5f6f081ec6759d4d36642d93c60af9eb}} 
+\index{GestionnaireQObject@{GestionnaireQObject}!onContactCreated@{onContactCreated}}
+\index{onContactCreated@{onContactCreated}!GestionnaireQObject@{GestionnaireQObject}}
+\doxysubsubsection{\texorpdfstring{onContactCreated}{onContactCreated}}
+{\footnotesize\ttfamily void Gestionnaire\+Q\+Object\+::on\+Contact\+Created (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{,  }\item[{std\+::string}]{,  }\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_gestionnaire_q_object_a4fd72b912d0ba5c3d216e54d4abe19ed}\label{class_gestionnaire_q_object_a4fd72b912d0ba5c3d216e54d4abe19ed}} 
+\index{GestionnaireQObject@{GestionnaireQObject}!onCreateInteraction@{onCreateInteraction}}
+\index{onCreateInteraction@{onCreateInteraction}!GestionnaireQObject@{GestionnaireQObject}}
+\doxysubsubsection{\texorpdfstring{onCreateInteraction}{onCreateInteraction}}
+{\footnotesize\ttfamily void Gestionnaire\+Q\+Object\+::on\+Create\+Interaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$}]{,  }\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{,  }\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_gestionnaire_q_object_a3ab0dd3938c9cb51597143e7bd040331}\label{class_gestionnaire_q_object_a3ab0dd3938c9cb51597143e7bd040331}} 
+\index{GestionnaireQObject@{GestionnaireQObject}!onCreateTodos@{onCreateTodos}}
+\index{onCreateTodos@{onCreateTodos}!GestionnaireQObject@{GestionnaireQObject}}
+\doxysubsubsection{\texorpdfstring{onCreateTodos}{onCreateTodos}}
+{\footnotesize\ttfamily void Gestionnaire\+Q\+Object\+::on\+Create\+Todos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$}]{,  }\item[{std\+::list$<$ \mbox{\hyperlink{class_todo}{Todo}} $\ast$ $>$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_gestionnaire_q_object_a098695e25f00046074cfa5fb37af3461}\label{class_gestionnaire_q_object_a098695e25f00046074cfa5fb37af3461}} 
+\index{GestionnaireQObject@{GestionnaireQObject}!onDeleteTodos@{onDeleteTodos}}
+\index{onDeleteTodos@{onDeleteTodos}!GestionnaireQObject@{GestionnaireQObject}}
+\doxysubsubsection{\texorpdfstring{onDeleteTodos}{onDeleteTodos}}
+{\footnotesize\ttfamily void Gestionnaire\+Q\+Object\+::on\+Delete\+Todos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_gestionnaire_q_object_ac49901b336934c4f979a819b7fdd0c48}\label{class_gestionnaire_q_object_ac49901b336934c4f979a819b7fdd0c48}} 
+\index{GestionnaireQObject@{GestionnaireQObject}!onEndModifContact@{onEndModifContact}}
+\index{onEndModifContact@{onEndModifContact}!GestionnaireQObject@{GestionnaireQObject}}
+\doxysubsubsection{\texorpdfstring{onEndModifContact}{onEndModifContact}}
+{\footnotesize\ttfamily void Gestionnaire\+Q\+Object\+::on\+End\+Modif\+Contact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{,  }\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_gestionnaire_q_object_abcc9bfa89db207b6333eb67a501afab1}\label{class_gestionnaire_q_object_abcc9bfa89db207b6333eb67a501afab1}} 
+\index{GestionnaireQObject@{GestionnaireQObject}!onInteractionEdited@{onInteractionEdited}}
+\index{onInteractionEdited@{onInteractionEdited}!GestionnaireQObject@{GestionnaireQObject}}
+\doxysubsubsection{\texorpdfstring{onInteractionEdited}{onInteractionEdited}}
+{\footnotesize\ttfamily void Gestionnaire\+Q\+Object\+::on\+Interaction\+Edited (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_gestionnaire_q_object_a58c8ccb9ce9b70f86410ca53b4439284}\label{class_gestionnaire_q_object_a58c8ccb9ce9b70f86410ca53b4439284}} 
+\index{GestionnaireQObject@{GestionnaireQObject}!onInteractionModifDate@{onInteractionModifDate}}
+\index{onInteractionModifDate@{onInteractionModifDate}!GestionnaireQObject@{GestionnaireQObject}}
+\doxysubsubsection{\texorpdfstring{onInteractionModifDate}{onInteractionModifDate}}
+{\footnotesize\ttfamily void Gestionnaire\+Q\+Object\+::on\+Interaction\+Modif\+Date (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$}]{,  }\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_gestionnaire_q_object_a29d97bf26b662419f60b1d437117ee56}\label{class_gestionnaire_q_object_a29d97bf26b662419f60b1d437117ee56}} 
+\index{GestionnaireQObject@{GestionnaireQObject}!onInteractionModifResume@{onInteractionModifResume}}
+\index{onInteractionModifResume@{onInteractionModifResume}!GestionnaireQObject@{GestionnaireQObject}}
+\doxysubsubsection{\texorpdfstring{onInteractionModifResume}{onInteractionModifResume}}
+{\footnotesize\ttfamily void Gestionnaire\+Q\+Object\+::on\+Interaction\+Modif\+Resume (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$}]{,  }\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_gestionnaire_q_object_a39768198d956449ada7d3c0a2956e43e}\label{class_gestionnaire_q_object_a39768198d956449ada7d3c0a2956e43e}} 
+\index{GestionnaireQObject@{GestionnaireQObject}!onLoadJSON@{onLoadJSON}}
+\index{onLoadJSON@{onLoadJSON}!GestionnaireQObject@{GestionnaireQObject}}
+\doxysubsubsection{\texorpdfstring{onLoadJSON}{onLoadJSON}}
+{\footnotesize\ttfamily void Gestionnaire\+Q\+Object\+::on\+Load\+J\+S\+ON (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_gestionnaire_q_object_a7c2ef2d68ad741384d0228437a3932a0}\label{class_gestionnaire_q_object_a7c2ef2d68ad741384d0228437a3932a0}} 
+\index{GestionnaireQObject@{GestionnaireQObject}!onTodoEdited@{onTodoEdited}}
+\index{onTodoEdited@{onTodoEdited}!GestionnaireQObject@{GestionnaireQObject}}
+\doxysubsubsection{\texorpdfstring{onTodoEdited}{onTodoEdited}}
+{\footnotesize\ttfamily void Gestionnaire\+Q\+Object\+::on\+Todo\+Edited (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_gestionnaire_q_object_aa4f418110218001ca5654d8925675fb1}\label{class_gestionnaire_q_object_aa4f418110218001ca5654d8925675fb1}} 
+\index{GestionnaireQObject@{GestionnaireQObject}!todoLoaded@{todoLoaded}}
+\index{todoLoaded@{todoLoaded}!GestionnaireQObject@{GestionnaireQObject}}
+\doxysubsubsection{\texorpdfstring{todoLoaded}{todoLoaded}}
+{\footnotesize\ttfamily void Gestionnaire\+Q\+Object\+::todo\+Loaded (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{\mbox{\hyperlink{class_todo}{Todo}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_gestionnaire_q_object_8h}{Gestionnaire\+Q\+Object.\+h}}\item 
+\mbox{\hyperlink{_gestionnaire_q_object_8cpp}{Gestionnaire\+Q\+Object.\+cpp}}\end{DoxyCompactItemize}

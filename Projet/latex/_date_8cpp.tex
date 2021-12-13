@@ -1,49 +1,59 @@
 \hypertarget{_date_8cpp}{}\doxysection{Référence du fichier Date.\+cpp}
 \label{_date_8cpp}\index{Date.cpp@{Date.cpp}}
-{\ttfamily \#include \char`\"{}Date.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$time.\+h$>$}\newline
 {\ttfamily \#include $<$string$>$}\newline
 {\ttfamily \#include $<$stdexcept$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Date.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Verificator.\+h\char`\"{}}\newline
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{_date_8cpp_a1247d4f6e4991b381a3729a58a0783b6}{is\+Number}} (const string s)
-\begin{DoxyCompactList}\small\item\em Renvoie true si le parametre est un nombre, false sinon. \end{DoxyCompactList}\item 
 ostream \& \mbox{\hyperlink{_date_8cpp_a5631b5c8e27784ae48e9d3236439c76d}{operator$<$$<$}} (ostream \&o, const \mbox{\hyperlink{class_date}{Date}} \&d)
 \begin{DoxyCompactList}\small\item\em Fonction amie d\textquotesingle{}affichage via cout. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{_date_8cpp_a900297f0a1d5018e0c30d2e8fa6a99c6}{operator$<$}} (const \mbox{\hyperlink{class_date}{Date}} \&a, const \mbox{\hyperlink{class_date}{Date}} \&b)
 \begin{DoxyCompactList}\small\item\em Comparaison a $<$ b. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_date_8cpp_a0522a0522684cb4206274de78a4f2fce}{operator$>$}} (const \mbox{\hyperlink{class_date}{Date}} \&a, const \mbox{\hyperlink{class_date}{Date}} \&b)
+\begin{DoxyCompactList}\small\item\em Comparaison a $>$ b. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_date_8cpp_a54e8d7e0bf2a62a64edbf0163b916964}{operator$<$=}} (const \mbox{\hyperlink{class_date}{Date}} \&a, const \mbox{\hyperlink{class_date}{Date}} \&b)
+\begin{DoxyCompactList}\small\item\em Comparaison a $<$= b. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{_date_8cpp_aaf43a7dbb802337957895085bef52fec}{operator+}} (const string \&s, const \mbox{\hyperlink{class_date}{Date}} \&d)
 \begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}operateur +. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{_date_8cpp_ae50bde3a2c9b7934b310e90bd58c4a1d}{operator-\/}} (const \mbox{\hyperlink{class_date}{Date}} \&a, const \mbox{\hyperlink{class_date}{Date}} \&b)
 \begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}operateur -\/. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{_date_8cpp_a9cfaaa2dd5867578b32c02fd8bc16339}{operator==}} (const \mbox{\hyperlink{class_date}{Date}} \&a, const \mbox{\hyperlink{class_date}{Date}} \&b)
-\begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}operateur de test d\textquotesingle{}egalite. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}operateur de test d\textquotesingle{}egalite. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_date_8cpp_afd179446ef2a78265104038e26b5174b}{operator!=}} (const \mbox{\hyperlink{class_date}{Date}} \&a, const \mbox{\hyperlink{class_date}{Date}} \&b)
+\begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}operateur de test de difference. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{_date_8cpp_a1247d4f6e4991b381a3729a58a0783b6}\label{_date_8cpp_a1247d4f6e4991b381a3729a58a0783b6}} 
-\index{Date.cpp@{Date.cpp}!isNumber@{isNumber}}
-\index{isNumber@{isNumber}!Date.cpp@{Date.cpp}}
-\doxysubsubsection{\texorpdfstring{isNumber()}{isNumber()}}
-{\footnotesize\ttfamily bool is\+Number (\begin{DoxyParamCaption}\item[{const string}]{s }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{_date_8cpp_afd179446ef2a78265104038e26b5174b}\label{_date_8cpp_afd179446ef2a78265104038e26b5174b}} 
+\index{Date.cpp@{Date.cpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Date.cpp@{Date.cpp}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{b }\end{DoxyParamCaption})}
 
 
 
-Renvoie true si le parametre est un nombre, false sinon. 
+Surcharge de l\textquotesingle{}operateur de test de difference. 
 
-Fonction utilitaire indiquant si une chaine de caracteres est un nombre ou non
+Methode qui surcharge l\textquotesingle{}operateur !=, compare semantiquement deux dates
 
 
 \begin{DoxyParams}{Paramètres}
-{\em s} & \+: chaine de caractere pouvant etre un nombre \\
+{\em a} & \+: operande de gauche \\
+\hline
+{\em b} & \+: operande de droite \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+vrai si les dates sont semantiquement egales, faux sinon 
+\end{DoxyReturn}
 
 
-Définition à la ligne 36 du fichier Date.\+cpp.
+Définition à la ligne 339 du fichier Date.\+cpp.
 
 \mbox{\Hypertarget{_date_8cpp_aaf43a7dbb802337957895085bef52fec}\label{_date_8cpp_aaf43a7dbb802337957895085bef52fec}} 
 \index{Date.cpp@{Date.cpp}!operator+@{operator+}}
@@ -67,7 +77,7 @@ s + d.\+to\+String()
 \end{DoxyReturn}
 
 
-Définition à la ligne 260 du fichier Date.\+cpp.
+Définition à la ligne 296 du fichier Date.\+cpp.
 
 \mbox{\Hypertarget{_date_8cpp_ae50bde3a2c9b7934b310e90bd58c4a1d}\label{_date_8cpp_ae50bde3a2c9b7934b310e90bd58c4a1d}} 
 \index{Date.cpp@{Date.cpp}!operator-\/@{operator-\/}}
@@ -91,7 +101,7 @@ s + d.\+to\+String()
 \end{DoxyReturn}
 
 
-Définition à la ligne 275 du fichier Date.\+cpp.
+Définition à la ligne 311 du fichier Date.\+cpp.
 
 \mbox{\Hypertarget{_date_8cpp_a900297f0a1d5018e0c30d2e8fa6a99c6}\label{_date_8cpp_a900297f0a1d5018e0c30d2e8fa6a99c6}} 
 \index{Date.cpp@{Date.cpp}!operator$<$@{operator$<$}}
@@ -115,7 +125,7 @@ a $<$ b
 \end{DoxyReturn}
 
 
-Définition à la ligne 233 du fichier Date.\+cpp.
+Définition à la ligne 228 du fichier Date.\+cpp.
 
 \mbox{\Hypertarget{_date_8cpp_a5631b5c8e27784ae48e9d3236439c76d}\label{_date_8cpp_a5631b5c8e27784ae48e9d3236439c76d}} 
 \index{Date.cpp@{Date.cpp}!operator$<$$<$@{operator$<$$<$}}
@@ -141,7 +151,31 @@ operateur surchage
 \end{DoxyReturn}
 
 
-Définition à la ligne 218 du fichier Date.\+cpp.
+Définition à la ligne 213 du fichier Date.\+cpp.
+
+\mbox{\Hypertarget{_date_8cpp_a54e8d7e0bf2a62a64edbf0163b916964}\label{_date_8cpp_a54e8d7e0bf2a62a64edbf0163b916964}} 
+\index{Date.cpp@{Date.cpp}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!Date.cpp@{Date.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily bool operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{b }\end{DoxyParamCaption})}
+
+
+
+Comparaison a $<$= b. 
+
+Surdefinition de l\textquotesingle{}operateur \char`\"{}$<$=\char`\"{}, renvoie vraie si semantiquement a $<$= b 
+\begin{DoxyParams}{Paramètres}
+{\em a} & \+: premiere operande \\
+\hline
+{\em b} & \+: deuxieme operande\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+a $<$ b 
+\end{DoxyReturn}
+
+
+Définition à la ligne 282 du fichier Date.\+cpp.
 
 \mbox{\Hypertarget{_date_8cpp_a9cfaaa2dd5867578b32c02fd8bc16339}\label{_date_8cpp_a9cfaaa2dd5867578b32c02fd8bc16339}} 
 \index{Date.cpp@{Date.cpp}!operator==@{operator==}}
@@ -167,5 +201,29 @@ vrai si les dates sont semantiquement egales, faux sinon
 \end{DoxyReturn}
 
 
-Définition à la ligne 289 du fichier Date.\+cpp.
+Définition à la ligne 325 du fichier Date.\+cpp.
+
+\mbox{\Hypertarget{_date_8cpp_a0522a0522684cb4206274de78a4f2fce}\label{_date_8cpp_a0522a0522684cb4206274de78a4f2fce}} 
+\index{Date.cpp@{Date.cpp}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Date.cpp@{Date.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily bool operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{b }\end{DoxyParamCaption})}
+
+
+
+Comparaison a $>$ b. 
+
+Surdefinition de l\textquotesingle{}operateur \char`\"{}$>$\char`\"{}, renvoie vraie si semantiquement a $>$ b 
+\begin{DoxyParams}{Paramètres}
+{\em a} & \+: premiere operande \\
+\hline
+{\em b} & \+: deuxieme operande\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+a $<$ b 
+\end{DoxyReturn}
+
+
+Définition à la ligne 255 du fichier Date.\+cpp.
 

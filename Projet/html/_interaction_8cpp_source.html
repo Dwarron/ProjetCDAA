@@ -24,7 +24,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="ub.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Projet CDAA
    &#160;<span id="projectnumber">0.0.1</span>
@@ -89,114 +88,100 @@ $(document).ready(function(){initNavTree('_interaction_8cpp_source.html',''); in
 </div><!--header-->
 <div class="contents">
 <a href="_interaction_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_interaction_8h.html">Interaction.h</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_date_8h.html">Date.h</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_interaction_8h.html">Interaction.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_date_8h.html">Date.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_interaction.html#a73b7a7b384ba6436d3c73c3435517e5f">   22</a></span>&#160;<a class="code" href="class_interaction.html#a73b7a7b384ba6436d3c73c3435517e5f">Interaction::Interaction</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; r)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    date = <a class="code" href="class_date.html">Date</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    resume = r;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    todos = list&lt;Todo*&gt;();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    creerTodos();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">void</span> Interaction::creerTodos()</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">string</span> delimiter = <span class="stringliteral">&quot;@todo &quot;</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> delimiterLength = delimiter.length();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">size_t</span> position;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">size_t</span> last = 0;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    position = resume.find(delimiter, last);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">while</span>(position != string::npos) <span class="comment">// on recherche tous les @ todo</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        resume = resume.substr(0, position) + resume.substr(position + delimiterLength);    <span class="comment">// suppression du @todo dans le texte</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">size_t</span> positionEndLine = resume.find(<span class="stringliteral">&quot;\n&quot;</span>, position); <span class="comment">// fin de ligne du todo</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span>(positionEndLine == string::npos)</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            positionEndLine = resume.length();  <span class="comment">// fin du todo a la fin du texte si pas de nouvelle ligne</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">string</span> todoText = resume.substr(position, positionEndLine - position); <span class="comment">// on decoupe le texte correspondant au todo</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="class_date.html">Date</a> d = <a class="code" href="class_todo.html#a2102105e171d46523202c8ab34155bc3">Todo::getDateFromTodoLine</a>(&amp;todoText);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="class_todo.html">Todo</a>* t = <span class="keyword">new</span> <a class="code" href="class_todo.html">Todo</a>(todoText, d, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        resume = resume.substr(0, position) +  todoText + resume.substr(positionEndLine);   <span class="comment">// correction de la ligne du todo avec celle analysee et retournee par l&#39;instance</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        todos.push_back(t);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        last = position;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        position = resume.find(delimiter, last);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="class_interaction.html#a6adeb7f999505adc3100a83dac1ee4de">   71</a></span>&#160;<span class="keyword">const</span> <a class="code" href="class_date.html">Date</a> <a class="code" href="class_interaction.html#a6adeb7f999505adc3100a83dac1ee4de">Interaction::getDate</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> date;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="class_interaction.html#af2fc9889b4e9a17c35b3fb6d21c17320">   83</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <a class="code" href="class_interaction.html#af2fc9889b4e9a17c35b3fb6d21c17320">Interaction::getResume</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> resume;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="_interaction_8cpp.html#a3af42df57edfe498e9f2b83bb2133747">   97</a></span>&#160;ostream&amp; <a class="code" href="_interaction_8cpp.html#a3af42df57edfe498e9f2b83bb2133747">operator&lt;&lt; </a>(ostream &amp;o, <span class="keyword">const</span> <a class="code" href="class_interaction.html">Interaction</a>&amp; i)</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    o &lt;&lt; i.<a class="code" href="class_interaction.html#a4fb2d8d19d9e499a0ab76e6996d2f058">toString</a>();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">return</span> o;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="class_interaction.html#a4fb2d8d19d9e499a0ab76e6996d2f058">  110</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="class_interaction.html#a4fb2d8d19d9e499a0ab76e6996d2f058">Interaction::toString</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">return</span> date.toString() + <span class="stringliteral">&quot; : &quot;</span> + resume;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="class_interaction.html#a105548a9f2f3b3b47fe8bcf2382b2a03">  122</a></span>&#160;<span class="keyword">const</span> std::list&lt;Todo *&gt; &amp;<a class="code" href="class_interaction.html#a105548a9f2f3b3b47fe8bcf2382b2a03">Interaction::getTodos</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">return</span> todos;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="class_interaction.html#a7b904695469d24331aa10a7cbd14ea32">  134</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_interaction.html#a7b904695469d24331aa10a7cbd14ea32">Interaction::setResume</a>(<span class="keyword">const</span> std::string &amp;newResume)</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_interaction.html#a2c9aa6cf32e6bf0cb13ca0ec0f807c98">   23</a></span>&#160;<a class="code" href="class_interaction.html#a2c9aa6cf32e6bf0cb13ca0ec0f807c98">Interaction::Interaction</a>(<span class="keyword">const</span> <a class="code" href="class_date.html">Date</a>&amp; d, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; r)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    date = d;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    resume = r;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    todos = list&lt;Todo*&gt;();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_interaction.html#ae30667c22b4c8f0d56d1828f8d247139">   37</a></span>&#160;<a class="code" href="class_date.html">Date</a> <a class="code" href="class_interaction.html#ae30667c22b4c8f0d56d1828f8d247139">Interaction::getDate</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> date;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_interaction.html#a78ab3582f37b88498eab85b71c248bb0">   49</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_interaction.html#a78ab3582f37b88498eab85b71c248bb0">Interaction::setDate</a>(<span class="keyword">const</span> <a class="code" href="class_date.html">Date</a>&amp; d)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    date = d;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_interaction.html#af2fc9889b4e9a17c35b3fb6d21c17320">   61</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <a class="code" href="class_interaction.html#af2fc9889b4e9a17c35b3fb6d21c17320">Interaction::getResume</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> resume;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="_interaction_8cpp.html#a3af42df57edfe498e9f2b83bb2133747">   75</a></span>&#160;ostream&amp; <a class="code" href="_interaction_8cpp.html#a3af42df57edfe498e9f2b83bb2133747">operator&lt;&lt; </a>(ostream &amp;o, <span class="keyword">const</span> <a class="code" href="class_interaction.html">Interaction</a>&amp; i)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    o &lt;&lt; i.<a class="code" href="class_interaction.html#a4fb2d8d19d9e499a0ab76e6996d2f058">toString</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> o;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="class_interaction.html#a4fb2d8d19d9e499a0ab76e6996d2f058">   88</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="class_interaction.html#a4fb2d8d19d9e499a0ab76e6996d2f058">Interaction::toString</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> date.toString() + <span class="stringliteral">&quot; : &quot;</span> + resume;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="class_interaction.html#a8ae8a5a0077990bdc5c8af6c31976617">  100</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_interaction.html#a8ae8a5a0077990bdc5c8af6c31976617">Interaction::ajoutTodo</a>(<a class="code" href="class_todo.html">Todo</a>* t)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;{</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    todos.push_back(t);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="class_interaction.html#a105548a9f2f3b3b47fe8bcf2382b2a03">  112</a></span>&#160;<span class="keyword">const</span> std::list&lt;Todo*&gt; &amp;<a class="code" href="class_interaction.html#a105548a9f2f3b3b47fe8bcf2382b2a03">Interaction::getTodos</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">return</span> todos;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="class_interaction.html#a7b904695469d24331aa10a7cbd14ea32">  124</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_interaction.html#a7b904695469d24331aa10a7cbd14ea32">Interaction::setResume</a>(<span class="keyword">const</span> std::string &amp;newResume)</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;{</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    resume = newResume;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="class_interaction.html#ad688c4677d2ba96c8185624098a4fbe9">  134</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_interaction.html#ad688c4677d2ba96c8185624098a4fbe9">Interaction::viderTodos</a>()</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;{</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    resume = newResume;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    viderTodos();</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    creerTodos();</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="keywordtype">void</span> Interaction::viderTodos()</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;{</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> it = todos.begin(); it != todos.end(); it++)</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keyword">delete</span> *it;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    todos.clear();</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="_interaction_8cpp.html#aa45395267e71c7f48e20fc05f00f66b2">  165</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_interaction_8cpp.html#aa45395267e71c7f48e20fc05f00f66b2">operator&lt;</a>(<span class="keyword">const</span> <a class="code" href="class_interaction.html">Interaction</a>&amp; a, <span class="keyword">const</span> <a class="code" href="class_interaction.html">Interaction</a>&amp; b)</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;{</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">return</span> (a.<a class="code" href="class_interaction.html#a6adeb7f999505adc3100a83dac1ee4de">getDate</a>() &lt; b.<a class="code" href="class_interaction.html#a6adeb7f999505adc3100a83dac1ee4de">getDate</a>());</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;}</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="class_interaction.html#a6610199fedc7fae617003cb2f397c825">  175</a></span>&#160;<a class="code" href="class_interaction.html#a6610199fedc7fae617003cb2f397c825">Interaction::~Interaction</a>()</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;{</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    viderTodos();</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> it = todos.begin(); it != todos.end(); it++)</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keyword">delete</span> *it;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    todos.clear();</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="_interaction_8cpp.html#ad3364f8f70c17d737fbecded0ff238c9">  153</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_interaction_8cpp.html#ad3364f8f70c17d737fbecded0ff238c9">operator&lt;</a>(<a class="code" href="class_interaction.html">Interaction</a>&amp; a, <a class="code" href="class_interaction.html">Interaction</a>&amp; b)</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;{</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">return</span> (a.<a class="code" href="class_interaction.html#ae30667c22b4c8f0d56d1828f8d247139">getDate</a>() &lt; b.<a class="code" href="class_interaction.html#ae30667c22b4c8f0d56d1828f8d247139">getDate</a>());</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;}</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="_interaction_8cpp.html#adcf0633bf6df3d287b6da977b131e42c">  168</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_interaction_8cpp.html#adcf0633bf6df3d287b6da977b131e42c">operator&gt;</a>(<a class="code" href="class_interaction.html">Interaction</a>&amp; a, <a class="code" href="class_interaction.html">Interaction</a>&amp; b)</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;{</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">return</span> (a.<a class="code" href="class_interaction.html#ae30667c22b4c8f0d56d1828f8d247139">getDate</a>() &gt; b.<a class="code" href="class_interaction.html#ae30667c22b4c8f0d56d1828f8d247139">getDate</a>());</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;}</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="class_interaction.html#a6610199fedc7fae617003cb2f397c825">  178</a></span>&#160;<a class="code" href="class_interaction.html#a6610199fedc7fae617003cb2f397c825">Interaction::~Interaction</a>()</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;{</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    viderTodos();</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_todo_html_a2102105e171d46523202c8ab34155bc3"><div class="ttname"><a href="class_todo.html#a2102105e171d46523202c8ab34155bc3">Todo::getDateFromTodoLine</a></div><div class="ttdeci">static const Date getDateFromTodoLine(std::string *)</div><div class="ttdoc">Recupere la date d'une ligne de text de todo.</div><div class="ttdef"><b>Definition:</b> <a href="_todo_8cpp_source.html#l00091">Todo.cpp:91</a></div></div>
-<div class="ttc" id="aclass_interaction_html_a6610199fedc7fae617003cb2f397c825"><div class="ttname"><a href="class_interaction.html#a6610199fedc7fae617003cb2f397c825">Interaction::~Interaction</a></div><div class="ttdeci">~Interaction()</div><div class="ttdoc">Destructeur d'Interaction.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00175">Interaction.cpp:175</a></div></div>
-<div class="ttc" id="aclass_interaction_html_a73b7a7b384ba6436d3c73c3435517e5f"><div class="ttname"><a href="class_interaction.html#a73b7a7b384ba6436d3c73c3435517e5f">Interaction::Interaction</a></div><div class="ttdeci">Interaction(const std::string &amp;)</div><div class="ttdoc">Constructeur de la class Interaction.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00022">Interaction.cpp:22</a></div></div>
-<div class="ttc" id="aclass_interaction_html_a7b904695469d24331aa10a7cbd14ea32"><div class="ttname"><a href="class_interaction.html#a7b904695469d24331aa10a7cbd14ea32">Interaction::setResume</a></div><div class="ttdeci">void setResume(const std::string &amp;newResume)</div><div class="ttdoc">Mutateur de resume.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00134">Interaction.cpp:134</a></div></div>
-<div class="ttc" id="a_interaction_8cpp_html_a3af42df57edfe498e9f2b83bb2133747"><div class="ttname"><a href="_interaction_8cpp.html#a3af42df57edfe498e9f2b83bb2133747">operator&lt;&lt;</a></div><div class="ttdeci">ostream &amp; operator&lt;&lt;(ostream &amp;o, const Interaction &amp;i)</div><div class="ttdoc">Fonction amie d'affichage via cout.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00097">Interaction.cpp:97</a></div></div>
-<div class="ttc" id="aclass_interaction_html_a6adeb7f999505adc3100a83dac1ee4de"><div class="ttname"><a href="class_interaction.html#a6adeb7f999505adc3100a83dac1ee4de">Interaction::getDate</a></div><div class="ttdeci">const Date getDate() const</div><div class="ttdoc">Accesseur de date.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00071">Interaction.cpp:71</a></div></div>
-<div class="ttc" id="aclass_interaction_html_a105548a9f2f3b3b47fe8bcf2382b2a03"><div class="ttname"><a href="class_interaction.html#a105548a9f2f3b3b47fe8bcf2382b2a03">Interaction::getTodos</a></div><div class="ttdeci">const std::list&lt; Todo * &gt; &amp; getTodos() const</div><div class="ttdoc">Accesseur de todos.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00122">Interaction.cpp:122</a></div></div>
+<div class="ttc" id="aclass_interaction_html_a6610199fedc7fae617003cb2f397c825"><div class="ttname"><a href="class_interaction.html#a6610199fedc7fae617003cb2f397c825">Interaction::~Interaction</a></div><div class="ttdeci">~Interaction()</div><div class="ttdoc">Destructeur d'Interaction.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00178">Interaction.cpp:178</a></div></div>
+<div class="ttc" id="aclass_interaction_html_a7b904695469d24331aa10a7cbd14ea32"><div class="ttname"><a href="class_interaction.html#a7b904695469d24331aa10a7cbd14ea32">Interaction::setResume</a></div><div class="ttdeci">void setResume(const std::string &amp;newResume)</div><div class="ttdoc">Mutateur de resume.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00124">Interaction.cpp:124</a></div></div>
+<div class="ttc" id="aclass_interaction_html_a8ae8a5a0077990bdc5c8af6c31976617"><div class="ttname"><a href="class_interaction.html#a8ae8a5a0077990bdc5c8af6c31976617">Interaction::ajoutTodo</a></div><div class="ttdeci">void ajoutTodo(Todo *)</div><div class="ttdoc">Ajout d'un todo.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00100">Interaction.cpp:100</a></div></div>
+<div class="ttc" id="a_interaction_8cpp_html_a3af42df57edfe498e9f2b83bb2133747"><div class="ttname"><a href="_interaction_8cpp.html#a3af42df57edfe498e9f2b83bb2133747">operator&lt;&lt;</a></div><div class="ttdeci">ostream &amp; operator&lt;&lt;(ostream &amp;o, const Interaction &amp;i)</div><div class="ttdoc">Fonction amie d'affichage via cout.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00075">Interaction.cpp:75</a></div></div>
+<div class="ttc" id="a_interaction_8cpp_html_ad3364f8f70c17d737fbecded0ff238c9"><div class="ttname"><a href="_interaction_8cpp.html#ad3364f8f70c17d737fbecded0ff238c9">operator&lt;</a></div><div class="ttdeci">bool operator&lt;(Interaction &amp;a, Interaction &amp;b)</div><div class="ttdoc">Comparaison a &lt; b.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00153">Interaction.cpp:153</a></div></div>
+<div class="ttc" id="aclass_interaction_html_ae30667c22b4c8f0d56d1828f8d247139"><div class="ttname"><a href="class_interaction.html#ae30667c22b4c8f0d56d1828f8d247139">Interaction::getDate</a></div><div class="ttdeci">Date getDate() const</div><div class="ttdoc">Accesseur de date.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00037">Interaction.cpp:37</a></div></div>
+<div class="ttc" id="a_interaction_8cpp_html_adcf0633bf6df3d287b6da977b131e42c"><div class="ttname"><a href="_interaction_8cpp.html#adcf0633bf6df3d287b6da977b131e42c">operator&gt;</a></div><div class="ttdeci">bool operator&gt;(Interaction &amp;a, Interaction &amp;b)</div><div class="ttdoc">Comparaison a &gt; b.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00168">Interaction.cpp:168</a></div></div>
+<div class="ttc" id="aclass_interaction_html_a2c9aa6cf32e6bf0cb13ca0ec0f807c98"><div class="ttname"><a href="class_interaction.html#a2c9aa6cf32e6bf0cb13ca0ec0f807c98">Interaction::Interaction</a></div><div class="ttdeci">Interaction(const Date &amp;, const std::string &amp;)</div><div class="ttdoc">Constructeur de la class Interaction.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00023">Interaction.cpp:23</a></div></div>
+<div class="ttc" id="aclass_interaction_html_a105548a9f2f3b3b47fe8bcf2382b2a03"><div class="ttname"><a href="class_interaction.html#a105548a9f2f3b3b47fe8bcf2382b2a03">Interaction::getTodos</a></div><div class="ttdeci">const std::list&lt; Todo * &gt; &amp; getTodos() const</div><div class="ttdoc">Accesseur de todos.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00112">Interaction.cpp:112</a></div></div>
 <div class="ttc" id="aclass_interaction_html"><div class="ttname"><a href="class_interaction.html">Interaction</a></div><div class="ttdoc">Enregistre une interaction avec un Contact.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8h_source.html#l00019">Interaction.h:20</a></div></div>
-<div class="ttc" id="aclass_interaction_html_a4fb2d8d19d9e499a0ab76e6996d2f058"><div class="ttname"><a href="class_interaction.html#a4fb2d8d19d9e499a0ab76e6996d2f058">Interaction::toString</a></div><div class="ttdeci">const std::string toString() const</div><div class="ttdoc">Representation en string.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00110">Interaction.cpp:110</a></div></div>
+<div class="ttc" id="aclass_interaction_html_a4fb2d8d19d9e499a0ab76e6996d2f058"><div class="ttname"><a href="class_interaction.html#a4fb2d8d19d9e499a0ab76e6996d2f058">Interaction::toString</a></div><div class="ttdeci">const std::string toString() const</div><div class="ttdoc">Representation en string.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00088">Interaction.cpp:88</a></div></div>
 <div class="ttc" id="a_date_8h_html"><div class="ttname"><a href="_date_8h.html">Date.h</a></div></div>
-<div class="ttc" id="a_interaction_8cpp_html_aa45395267e71c7f48e20fc05f00f66b2"><div class="ttname"><a href="_interaction_8cpp.html#aa45395267e71c7f48e20fc05f00f66b2">operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const Interaction &amp;a, const Interaction &amp;b)</div><div class="ttdoc">Comparaison a &lt; b.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00165">Interaction.cpp:165</a></div></div>
-<div class="ttc" id="aclass_interaction_html_af2fc9889b4e9a17c35b3fb6d21c17320"><div class="ttname"><a href="class_interaction.html#af2fc9889b4e9a17c35b3fb6d21c17320">Interaction::getResume</a></div><div class="ttdeci">const std::string &amp; getResume() const</div><div class="ttdoc">Accesseur de resume.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00083">Interaction.cpp:83</a></div></div>
+<div class="ttc" id="aclass_interaction_html_af2fc9889b4e9a17c35b3fb6d21c17320"><div class="ttname"><a href="class_interaction.html#af2fc9889b4e9a17c35b3fb6d21c17320">Interaction::getResume</a></div><div class="ttdeci">const std::string &amp; getResume() const</div><div class="ttdoc">Accesseur de resume.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00061">Interaction.cpp:61</a></div></div>
+<div class="ttc" id="aclass_interaction_html_ad688c4677d2ba96c8185624098a4fbe9"><div class="ttname"><a href="class_interaction.html#ad688c4677d2ba96c8185624098a4fbe9">Interaction::viderTodos</a></div><div class="ttdeci">void viderTodos()</div><div class="ttdoc">Vide la liste des todos stockes dans cette interaction.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00134">Interaction.cpp:134</a></div></div>
+<div class="ttc" id="aclass_interaction_html_a78ab3582f37b88498eab85b71c248bb0"><div class="ttname"><a href="class_interaction.html#a78ab3582f37b88498eab85b71c248bb0">Interaction::setDate</a></div><div class="ttdeci">void setDate(const Date &amp;)</div><div class="ttdoc">Mutateur de date.</div><div class="ttdef"><b>Definition:</b> <a href="_interaction_8cpp_source.html#l00049">Interaction.cpp:49</a></div></div>
 <div class="ttc" id="aclass_todo_html"><div class="ttname"><a href="class_todo.html">Todo</a></div><div class="ttdoc">Permets de décrire les choses à faire (todo), des Interaction pour un Contact.</div><div class="ttdef"><b>Definition:</b> <a href="_todo_8h_source.html#l00017">Todo.h:18</a></div></div>
 <div class="ttc" id="a_interaction_8h_html"><div class="ttname"><a href="_interaction_8h.html">Interaction.h</a></div></div>
 <div class="ttc" id="aclass_date_html"><div class="ttname"><a href="class_date.html">Date</a></div><div class="ttdoc">Stocke une date.</div><div class="ttdef"><b>Definition:</b> <a href="_date_8h_source.html#l00013">Date.h:14</a></div></div>

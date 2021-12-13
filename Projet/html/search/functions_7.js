@@ -1,13 +1,9 @@
 var searchData=
 [
-  ['seteffectue_149',['setEffectue',['../class_todo.html#a75517b48771cddb23fa570bc37c45a35',1,'Todo']]],
-  ['setentreprise_150',['setEntreprise',['../class_contact.html#a1237b826b80e3ead402d0c26cc3c2ace',1,'Contact']]],
-  ['setmail_151',['setMail',['../class_contact.html#aa30355f8ccb75c3c8981e110848c0266',1,'Contact']]],
-  ['setnom_152',['setNom',['../class_contact.html#a0837af372d75a5d85ab296c6104a3232',1,'Contact']]],
-  ['setprenom_153',['setPrenom',['../class_contact.html#ac31195d758df58ee327cc05b6276aace',1,'Contact']]],
-  ['setresume_154',['setResume',['../class_interaction.html#a7b904695469d24331aa10a7cbd14ea32',1,'Interaction']]],
-  ['settelephone_155',['setTelephone',['../class_contact.html#a54c863b3045a9255d75f1ad876ecb7de',1,'Contact']]],
-  ['seturiphoto_156',['setUriPhoto',['../class_contact.html#a1d221a1b28d375d0135d5c52589ec27b',1,'Contact']]],
-  ['suggestionnom_157',['suggestionNom',['../class_contact.html#a77cb96e1aad6119cc085add81bea3ea6',1,'Contact']]],
-  ['supprimecontact_158',['supprimeContact',['../class_gestion_contact.html#a627aeba03d0893e273e482b30418e499',1,'GestionContact']]]
+  ['listcontactsupdated_284',['listContactsUpdated',['../class_ajout_interaction_window.html#a1912dd58cc509073f7e05a1840aeb17d',1,'AjoutInteractionWindow::listContactsUpdated()'],['../class_fiche_contact_window.html#abbf7a903905bf4efba993e821f490f86',1,'FicheContactWindow::listContactsUpdated()'],['../class_gestionnaire_q_object.html#a7f12d0a35d1f2e4319b9c81e15c9b122',1,'GestionnaireQObject::listContactsUpdated()'],['../class_main_window.html#ad39fd9fa1e669172058b486423a1de43',1,'MainWindow::listContactsUpdated()'],['../class_recherche_contact_window.html#a9503a4669c64b6f5a73c5d06274e97d4',1,'RechercheContactWindow::listContactsUpdated()']]],
+  ['loadandcreateinteraction_285',['loadAndCreateInteraction',['../class_database_manager.html#a9e2be7ff69fd5e701b4dd24b0e20874b',1,'DatabaseManager']]],
+  ['loadcontact_286',['loadContact',['../class_database_manager.html#aa8a9ee6ae6f024de52c5159db98e78d6',1,'DatabaseManager::loadContact()'],['../class_fiche_contact_window.html#a052f49d45ba47c9f89f57c28b4325f4c',1,'FicheContactWindow::loadContact()']]],
+  ['loaddatas_287',['loadDatas',['../class_database_manager.html#a396db1ca1ac24e95e41a76d248af15ba',1,'DatabaseManager']]],
+  ['loadinteraction_288',['loadInteraction',['../class_database_manager.html#a4ee4abe480d8e68a2279659b21593371',1,'DatabaseManager']]],
+  ['loadtodo_289',['loadTodo',['../class_database_manager.html#a63bc918e468ed36c7183fe59da151a1d',1,'DatabaseManager']]]
 ];

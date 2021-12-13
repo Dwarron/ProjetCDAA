@@ -9,25 +9,43 @@ Class de gestion des \mbox{\hyperlink{class_contact}{Contact}}\+: ajout, suppres
 
 {\ttfamily \#include $<$Gestion\+Contact.\+h$>$}
 
+\doxysubsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_gestion_contact_a627aeba03d0893e273e482b30418e499}{supprime\+Contact}} (\mbox{\hyperlink{class_contact}{Contact}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Supprime un contact. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_gestion_contact_a0d42db3777c1e15d557979c897acf344}{Gestion\+Contact}} ()
+\mbox{\hyperlink{class_gestion_contact_a8f089fd769cc6a20378321cde356a928}{Gestion\+Contact}} (\mbox{\hyperlink{class_date}{Date}})
 \begin{DoxyCompactList}\small\item\em Constructeur par defaut. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_gestion_contact_a9c0d781c68963dcdc05b6d52019538f9}{$\sim$\+Gestion\+Contact}} ()
 \begin{DoxyCompactList}\small\item\em Destructeur de \mbox{\hyperlink{class_gestion_contact}{Gestion\+Contact}}. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_contact}{Contact}} $\ast$ \mbox{\hyperlink{class_gestion_contact_aae4185c2c5d70dd07dbe29933784e8ee}{cree\+Contact}} (const std\+::string \&, const std\+::string \&, const std\+::string \&, const std\+::string \&, const std\+::string \&, const std\+::string \&)
-\begin{DoxyCompactList}\small\item\em Cree et ajoute un contact. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_gestion_contact_a627aeba03d0893e273e482b30418e499}{supprime\+Contact}} (\mbox{\hyperlink{class_contact}{Contact}} $\ast$)
-\begin{DoxyCompactList}\small\item\em Supprime un contact. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$ \mbox{\hyperlink{class_gestion_contact_a501085a9e8064285d2cbea6d65ff9951}{ajout\+Interaction}} (\mbox{\hyperlink{class_contact}{Contact}} $\ast$, const std\+::string \&)
+\mbox{\hyperlink{class_contact}{Contact}} $\ast$ \mbox{\hyperlink{class_gestion_contact_a4242680d2c479460fa417087624ec3e7}{cree\+Contact}} (const std\+::string \&, const std\+::string \&, const std\+::string \&, const std\+::string \&, const std\+::string \&, const std\+::string \&)
 \item 
-void \mbox{\hyperlink{class_gestion_contact_aebb5873f2365c50bc29f0d6c13d7d8f1}{ajout\+Interaction}} (\mbox{\hyperlink{class_contact}{Contact}} $\ast$, \mbox{\hyperlink{class_interaction}{Interaction}} $\ast$)
-\begin{DoxyCompactList}\small\item\em Ajoute une interaction existante dans un contact. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_contact}{Contact}} $\ast$ \mbox{\hyperlink{class_gestion_contact_a7b0a8df38be441635c2b2cf30206c599}{cree\+Contact}} (const std\+::string \&, const std\+::string \&, const std\+::string \&, const std\+::string \&, const std\+::string \&, const std\+::string \&, const \mbox{\hyperlink{class_date}{Date}} \&, const \mbox{\hyperlink{class_date}{Date}} \&)
+\item 
+void \mbox{\hyperlink{class_gestion_contact_ab899d2d9cecf7aadc41f741ddad2f25d}{set\+Date\+Derniere\+Suppression}} (const \mbox{\hyperlink{class_date}{Date}} \&)
+\begin{DoxyCompactList}\small\item\em Mutateur de date\+Derniere\+Suppression. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{class_date}{Date}} \& \mbox{\hyperlink{class_gestion_contact_a95888c31ed32c1c5c1bf64363119bb58}{get\+Date\+Derniere\+Suppression}} () const
 \begin{DoxyCompactList}\small\item\em Accesseur de date\+Derniere\+Suppression. \end{DoxyCompactList}\item 
-std\+::list$<$ \mbox{\hyperlink{class_interaction}{Interaction}} $\ast$ $>$ \mbox{\hyperlink{class_gestion_contact_a7464f850396871eca442178e30644896}{get\+All\+Interactions}} () const
-\begin{DoxyCompactList}\small\item\em Recupere toutes les interactions de tous les contacts Trie toutes les interactions et supprime les duplicatas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+const std\+::list$<$ \mbox{\hyperlink{class_interaction}{Interaction}} $\ast$ $>$ \mbox{\hyperlink{class_gestion_contact_a76eb2ec4b6fe580465418305bc0cb0df}{get\+All\+Interactions}} () const
+\begin{DoxyCompactList}\small\item\em Recupere toutes les interactions de tous les contacts Trie toutes les interactions et supprime les duplicatas. \end{DoxyCompactList}\item 
+const std\+::list$<$ \mbox{\hyperlink{class_contact}{Contact}} $\ast$ $>$ \& \mbox{\hyperlink{class_gestion_contact_a7c81842c85dc7a6369eea00ec51bb805}{get\+Contacts}} ()
+\begin{DoxyCompactList}\small\item\em Accesseur de Contacts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres publiques statiques}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_interaction}{Interaction}} $\ast$ \mbox{\hyperlink{class_gestion_contact_a244211ece351717d07fe71fa9aef1b13}{ajout\+Interaction}} (\mbox{\hyperlink{class_contact}{Contact}} $\ast$, const \mbox{\hyperlink{class_date}{Date}} \&, const std\+::string \&)
+\item 
+static void \mbox{\hyperlink{class_gestion_contact_aebb5873f2365c50bc29f0d6c13d7d8f1}{ajout\+Interaction}} (\mbox{\hyperlink{class_contact}{Contact}} $\ast$, \mbox{\hyperlink{class_interaction}{Interaction}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Ajoute une interaction existante dans un contact. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_todo}{Todo}} $\ast$ \mbox{\hyperlink{class_gestion_contact_a418f98f248946bd49a8bbf02b438c529}{ajout\+Todo}} (\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$, const \mbox{\hyperlink{class_date}{Date}} \&, const std\+::string \&, const bool)
+\begin{DoxyCompactList}\small\item\em Ajoute un todo a une interaction. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_gestion_contact_a98eaa3ecb272debd17e583c83a57f36c}{creer\+Todos}} (\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Creation de la liste des \mbox{\hyperlink{class_todo}{Todo}} concernant cette \mbox{\hyperlink{class_interaction}{Interaction}}. \end{DoxyCompactList}\item 
+static const \mbox{\hyperlink{class_date}{Date}} \mbox{\hyperlink{class_gestion_contact_a3dcccd0f9178f9f391a41e837abe0db9}{get\+Date\+From\+Line}} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Recupere la date d\textquotesingle{}une ligne de text de todo. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -43,16 +61,16 @@ Perion Maxence
 \end{DoxyVersion}
 
 
-Définition à la ligne 16 du fichier Gestion\+Contact.\+h.
+Définition à la ligne 17 du fichier Gestion\+Contact.\+h.
 
 
 
 \doxysubsection{Documentation des constructeurs et destructeur}
-\mbox{\Hypertarget{class_gestion_contact_a0d42db3777c1e15d557979c897acf344}\label{class_gestion_contact_a0d42db3777c1e15d557979c897acf344}} 
+\mbox{\Hypertarget{class_gestion_contact_a8f089fd769cc6a20378321cde356a928}\label{class_gestion_contact_a8f089fd769cc6a20378321cde356a928}} 
 \index{GestionContact@{GestionContact}!GestionContact@{GestionContact}}
 \index{GestionContact@{GestionContact}!GestionContact@{GestionContact}}
 \doxysubsubsection{\texorpdfstring{GestionContact()}{GestionContact()}}
-{\footnotesize\ttfamily Gestion\+Contact\+::\+Gestion\+Contact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Gestion\+Contact\+::\+Gestion\+Contact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_date}{Date}}}]{derniere\+Suppression }\end{DoxyParamCaption})}
 
 
 
@@ -74,22 +92,22 @@ Destructeur de \mbox{\hyperlink{class_gestion_contact}{Gestion\+Contact}}.
 
 Detruis une instance de \mbox{\hyperlink{class_gestion_contact}{Gestion\+Contact}} precedemment construite et detruits egalement tous les contacts references dans la liste 
 
-Définition à la ligne 123 du fichier Gestion\+Contact.\+cpp.
+Définition à la ligne 273 du fichier Gestion\+Contact.\+cpp.
 
 
 
 \doxysubsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_gestion_contact_a501085a9e8064285d2cbea6d65ff9951}\label{class_gestion_contact_a501085a9e8064285d2cbea6d65ff9951}} 
+\mbox{\Hypertarget{class_gestion_contact_a244211ece351717d07fe71fa9aef1b13}\label{class_gestion_contact_a244211ece351717d07fe71fa9aef1b13}} 
 \index{GestionContact@{GestionContact}!ajoutInteraction@{ajoutInteraction}}
 \index{ajoutInteraction@{ajoutInteraction}!GestionContact@{GestionContact}}
 \doxysubsubsection{\texorpdfstring{ajoutInteraction()}{ajoutInteraction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_interaction}{Interaction}}$\ast$ Gestion\+Contact\+::ajout\+Interaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{,  }\item[{const std\+::string \&}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_interaction}{Interaction}}$\ast$ Gestion\+Contact\+::ajout\+Interaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{,  }\item[{const std\+::string \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 \mbox{\Hypertarget{class_gestion_contact_aebb5873f2365c50bc29f0d6c13d7d8f1}\label{class_gestion_contact_aebb5873f2365c50bc29f0d6c13d7d8f1}} 
 \index{GestionContact@{GestionContact}!ajoutInteraction@{ajoutInteraction}}
 \index{ajoutInteraction@{ajoutInteraction}!GestionContact@{GestionContact}}
 \doxysubsubsection{\texorpdfstring{ajoutInteraction()}{ajoutInteraction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void Gestion\+Contact\+::ajout\+Interaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{c,  }\item[{\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$}]{i }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Gestion\+Contact\+::ajout\+Interaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{c,  }\item[{\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -106,44 +124,76 @@ Ajoute au contact une interaction deja existante. Utile si on decide d\textquote
 \end{DoxyParams}
 
 
-Définition à la ligne 80 du fichier Gestion\+Contact.\+cpp.
+Définition à la ligne 189 du fichier Gestion\+Contact.\+cpp.
 
-\mbox{\Hypertarget{class_gestion_contact_aae4185c2c5d70dd07dbe29933784e8ee}\label{class_gestion_contact_aae4185c2c5d70dd07dbe29933784e8ee}} 
-\index{GestionContact@{GestionContact}!creeContact@{creeContact}}
-\index{creeContact@{creeContact}!GestionContact@{GestionContact}}
-\doxysubsubsection{\texorpdfstring{creeContact()}{creeContact()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_contact}{Contact}} $\ast$ Gestion\+Contact\+::cree\+Contact (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_gestion_contact_a418f98f248946bd49a8bbf02b438c529}\label{class_gestion_contact_a418f98f248946bd49a8bbf02b438c529}} 
+\index{GestionContact@{GestionContact}!ajoutTodo@{ajoutTodo}}
+\index{ajoutTodo@{ajoutTodo}!GestionContact@{GestionContact}}
+\doxysubsubsection{\texorpdfstring{ajoutTodo()}{ajoutTodo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_todo}{Todo}} $\ast$ Gestion\+Contact\+::ajout\+Todo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$}]{,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const bool}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-Cree et ajoute un contact. 
+Ajoute un todo a une interaction. 
 
-Ajoute un nouveau contact a la liste des contacts
+Ajoute a l\textquotesingle{}interaction un nouveau todo cree
 
 
 \begin{DoxyParams}{Paramètres}
-{\em n} & \+: nom du contact \\
+{\em i} & \+: l\textquotesingle{}interaction \\
 \hline
-{\em p} & \+: prenom \\
+{\em date} & \+: la date du todo \\
 \hline
-{\em e} & \+: entreprise \\
+{\em c} & \+: le contenu du todo \\
 \hline
-{\em tel} & \+: telephone \\
+{\em e} & \+: todo deja effectue ou non \\
 \hline
-{\em m} & \+: mail \\
-\hline
-{\em uri} & \+: chemin vers la photo de profil \\
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+le todo cree 
+\end{DoxyReturn}
+
+
+Définition à la ligne 205 du fichier Gestion\+Contact.\+cpp.
+
+\mbox{\Hypertarget{class_gestion_contact_a4242680d2c479460fa417087624ec3e7}\label{class_gestion_contact_a4242680d2c479460fa417087624ec3e7}} 
+\index{GestionContact@{GestionContact}!creeContact@{creeContact}}
+\index{creeContact@{creeContact}!GestionContact@{GestionContact}}
+\doxysubsubsection{\texorpdfstring{creeContact()}{creeContact()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_contact}{Contact}}$\ast$ Gestion\+Contact\+::cree\+Contact (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_gestion_contact_a7b0a8df38be441635c2b2cf30206c599}\label{class_gestion_contact_a7b0a8df38be441635c2b2cf30206c599}} 
+\index{GestionContact@{GestionContact}!creeContact@{creeContact}}
+\index{creeContact@{creeContact}!GestionContact@{GestionContact}}
+\doxysubsubsection{\texorpdfstring{creeContact()}{creeContact()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_contact}{Contact}}$\ast$ Gestion\+Contact\+::cree\+Contact (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_gestion_contact_a98eaa3ecb272debd17e583c83a57f36c}\label{class_gestion_contact_a98eaa3ecb272debd17e583c83a57f36c}} 
+\index{GestionContact@{GestionContact}!creerTodos@{creerTodos}}
+\index{creerTodos@{creerTodos}!GestionContact@{GestionContact}}
+\doxysubsubsection{\texorpdfstring{creerTodos()}{creerTodos()}}
+{\footnotesize\ttfamily void Gestion\+Contact\+::creer\+Todos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_interaction}{Interaction}} $\ast$}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creation de la liste des \mbox{\hyperlink{class_todo}{Todo}} concernant cette \mbox{\hyperlink{class_interaction}{Interaction}}. 
+
+Analyse le resume/contenu de l\textquotesingle{}interaction pour creer tous les \mbox{\hyperlink{class_todo}{Todo}} correspondant et les stocker dans la liste
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i} & \+: l\textquotesingle{}interaction \\
 \hline
 \end{DoxyParams}
 
 
-Définition à la ligne 35 du fichier Gestion\+Contact.\+cpp.
+Définition à la ligne 99 du fichier Gestion\+Contact.\+cpp.
 
-\mbox{\Hypertarget{class_gestion_contact_a7464f850396871eca442178e30644896}\label{class_gestion_contact_a7464f850396871eca442178e30644896}} 
+\mbox{\Hypertarget{class_gestion_contact_a76eb2ec4b6fe580465418305bc0cb0df}\label{class_gestion_contact_a76eb2ec4b6fe580465418305bc0cb0df}} 
 \index{GestionContact@{GestionContact}!getAllInteractions@{getAllInteractions}}
 \index{getAllInteractions@{getAllInteractions}!GestionContact@{GestionContact}}
 \doxysubsubsection{\texorpdfstring{getAllInteractions()}{getAllInteractions()}}
-{\footnotesize\ttfamily list$<$ \mbox{\hyperlink{class_interaction}{Interaction}} $\ast$ $>$ Gestion\+Contact\+::get\+All\+Interactions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const list$<$ \mbox{\hyperlink{class_interaction}{Interaction}} $\ast$ $>$ Gestion\+Contact\+::get\+All\+Interactions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -154,7 +204,26 @@ la liste de toutes les interactions existantes
 \end{DoxyReturn}
 
 
-Définition à la ligne 91 du fichier Gestion\+Contact.\+cpp.
+Définition à la ligne 219 du fichier Gestion\+Contact.\+cpp.
+
+\mbox{\Hypertarget{class_gestion_contact_a7c81842c85dc7a6369eea00ec51bb805}\label{class_gestion_contact_a7c81842c85dc7a6369eea00ec51bb805}} 
+\index{GestionContact@{GestionContact}!getContacts@{getContacts}}
+\index{getContacts@{getContacts}!GestionContact@{GestionContact}}
+\doxysubsubsection{\texorpdfstring{getContacts()}{getContacts()}}
+{\footnotesize\ttfamily const list$<$ \mbox{\hyperlink{class_contact}{Contact}} $\ast$ $>$ \& Gestion\+Contact\+::get\+Contacts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Accesseur de Contacts. 
+
+Methode qui permet d\textquotesingle{}acceder a liste des contacts
+
+\begin{DoxyReturn}{Renvoie}
+contacts 
+\end{DoxyReturn}
+
+
+Définition à la ligne 240 du fichier Gestion\+Contact.\+cpp.
 
 \mbox{\Hypertarget{class_gestion_contact_a95888c31ed32c1c5c1bf64363119bb58}\label{class_gestion_contact_a95888c31ed32c1c5c1bf64363119bb58}} 
 \index{GestionContact@{GestionContact}!getDateDerniereSuppression@{getDateDerniereSuppression}}
@@ -173,13 +242,51 @@ date\+Derniere\+Suppression
 \end{DoxyReturn}
 
 
-Définition à la ligne 112 du fichier Gestion\+Contact.\+cpp.
+Définition à la ligne 252 du fichier Gestion\+Contact.\+cpp.
+
+\mbox{\Hypertarget{class_gestion_contact_a3dcccd0f9178f9f391a41e837abe0db9}\label{class_gestion_contact_a3dcccd0f9178f9f391a41e837abe0db9}} 
+\index{GestionContact@{GestionContact}!getDateFromLine@{getDateFromLine}}
+\index{getDateFromLine@{getDateFromLine}!GestionContact@{GestionContact}}
+\doxysubsubsection{\texorpdfstring{getDateFromLine()}{getDateFromLine()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_date}{Date}} Gestion\+Contact\+::get\+Date\+From\+Line (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Recupere la date d\textquotesingle{}une ligne de text de todo. 
+
+Fonction qui recupere une date valide apres un @ date (ou la date du jour) a partir d\textquotesingle{}un text ayant debute par @ todo
+
+
+\begin{DoxyParams}{Paramètres}
+{\em text} & \+: le text du todo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+une date extraite du text, ou la date du jour le cas echeant 
+\end{DoxyReturn}
+
+
+Définition à la ligne 138 du fichier Gestion\+Contact.\+cpp.
+
+\mbox{\Hypertarget{class_gestion_contact_ab899d2d9cecf7aadc41f741ddad2f25d}\label{class_gestion_contact_ab899d2d9cecf7aadc41f741ddad2f25d}} 
+\index{GestionContact@{GestionContact}!setDateDerniereSuppression@{setDateDerniereSuppression}}
+\index{setDateDerniereSuppression@{setDateDerniereSuppression}!GestionContact@{GestionContact}}
+\doxysubsubsection{\texorpdfstring{setDateDerniereSuppression()}{setDateDerniereSuppression()}}
+{\footnotesize\ttfamily void Gestion\+Contact\+::set\+Date\+Derniere\+Suppression (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{d }\end{DoxyParamCaption})}
+
+
+
+Mutateur de date\+Derniere\+Suppression. 
+
+Methode qui permet de modifier la date de la derniere suppression 
+
+Définition à la ligne 263 du fichier Gestion\+Contact.\+cpp.
 
 \mbox{\Hypertarget{class_gestion_contact_a627aeba03d0893e273e482b30418e499}\label{class_gestion_contact_a627aeba03d0893e273e482b30418e499}} 
 \index{GestionContact@{GestionContact}!supprimeContact@{supprimeContact}}
 \index{supprimeContact@{supprimeContact}!GestionContact@{GestionContact}}
-\doxysubsubsection{\texorpdfstring{supprimeContact()}{supprimeContact()}}
-{\footnotesize\ttfamily void Gestion\+Contact\+::supprime\+Contact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{c }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{supprimeContact}{supprimeContact}}
+{\footnotesize\ttfamily void Gestion\+Contact\+::supprime\+Contact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_contact}{Contact}} $\ast$}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 
 
@@ -194,7 +301,7 @@ Supprime un contact de la liste des contacts
 \end{DoxyParams}
 
 
-Définition à la ligne 49 du fichier Gestion\+Contact.\+cpp.
+Définition à la ligne 69 du fichier Gestion\+Contact.\+cpp.
 
 
 

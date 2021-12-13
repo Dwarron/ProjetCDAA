@@ -14,7 +14,7 @@
 \item 
 \mbox{\hyperlink{class_contact_ae39444f378e6de7fd6c3e60981949af5}{Contact}} ()
 \begin{DoxyCompactList}\small\item\em Constructeur par defaut. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_contact_a793d8e392aacfcd6556b31341a1233d9}{Contact}} (const std\+::string \&, const std\+::string \&, const std\+::string \&, const std\+::string \&, const std\+::string \&, const std\+::string \&)
+\mbox{\hyperlink{class_contact_a14e426d60660ac45fe6bc558d7fb3134}{Contact}} (const std\+::string \&, const std\+::string \&, const std\+::string \&, const std\+::string \&, const std\+::string \&, const std\+::string \&, const \mbox{\hyperlink{class_date}{Date}} \&, const \mbox{\hyperlink{class_date}{Date}} \&)
 \item 
 \mbox{\hyperlink{class_contact_ab68013cc59e3d640735c573e52c35219}{$\sim$\+Contact}} ()
 \begin{DoxyCompactList}\small\item\em Destructeur de \mbox{\hyperlink{class_contact}{Contact}}. \end{DoxyCompactList}\item 
@@ -36,17 +36,17 @@ void \mbox{\hyperlink{class_contact_a54c863b3045a9255d75f1ad876ecb7de}{set\+Tele
 \begin{DoxyCompactList}\small\item\em Mutateur de telephone. \end{DoxyCompactList}\item 
 const std\+::string \& \mbox{\hyperlink{class_contact_a6b9044988b8ec70fbf1c6d620844d707}{get\+Mail}} () const
 \begin{DoxyCompactList}\small\item\em Accesseur de mail. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_contact_aa30355f8ccb75c3c8981e110848c0266}{set\+Mail}} (const std\+::string \&new\+Mail)
+void \mbox{\hyperlink{class_contact_a513b0a2da8a697076f4616ce7b6c445f}{set\+Mail}} (const std\+::string \&)
 \begin{DoxyCompactList}\small\item\em Mutateur de mail. \end{DoxyCompactList}\item 
 const std\+::string \& \mbox{\hyperlink{class_contact_afbf8f3c920221656f59702d0f5a6367b}{get\+Uri\+Photo}} () const
 \begin{DoxyCompactList}\small\item\em Accesseur de uri\+Photo. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_contact_a1d221a1b28d375d0135d5c52589ec27b}{set\+Uri\+Photo}} (const std\+::string \&new\+Uri\+Photo)
+void \mbox{\hyperlink{class_contact_a24d89f71724842a6375db8550495d3e8}{set\+Uri\+Photo}} (const std\+::string \&)
 \begin{DoxyCompactList}\small\item\em Mutateur de uri\+Photo. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{class_date}{Date}} \& \mbox{\hyperlink{class_contact_a793c9bb8d467146f3da824b954b3d414}{get\+Date\+Creation}} () const
+\mbox{\hyperlink{class_date}{Date}} \& \mbox{\hyperlink{class_contact_afde7db06fa36f2fa54139e22feff6adb}{get\+Date\+Creation}} ()
 \begin{DoxyCompactList}\small\item\em Accesseur de date\+Creation. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{class_date}{Date}} \& \mbox{\hyperlink{class_contact_a75dedfa3ee66c6c49bf8123d9ec59f34}{get\+Date\+Derniere\+Modification}} () const
 \begin{DoxyCompactList}\small\item\em Accesseur de date\+Modification. \end{DoxyCompactList}\item 
-const std\+::list$<$ \mbox{\hyperlink{class_interaction}{Interaction}} $\ast$ $>$ \& \mbox{\hyperlink{class_contact_afbce249b53d8dd8b3554efffc09fdbd5}{get\+Interactions}} () const
+const std\+::list$<$ \mbox{\hyperlink{class_interaction}{Interaction}} $\ast$ $>$ \& \mbox{\hyperlink{class_contact_a591d524bb284efc894605b775d741dcc}{get\+Interactions}} ()
 \begin{DoxyCompactList}\small\item\em Accesseur d\textquotesingle{}interactions. \end{DoxyCompactList}\item 
 const std\+::list$<$ \mbox{\hyperlink{class_todo}{Todo}} $\ast$ $>$ \mbox{\hyperlink{class_contact_a5abf6c96ebe67d2fcb8c5d924d647477}{get\+Todos}} () const
 \begin{DoxyCompactList}\small\item\em Accesseur virtuel de todos. \end{DoxyCompactList}\item 
@@ -63,19 +63,15 @@ void \mbox{\hyperlink{class_contact_a49207934b910c6397ecae8cfb77e97fc}{clear\+In
 \doxysubsection*{Fonctions membres publiques statiques}
 \begin{DoxyCompactItemize}
 \item 
-static void \mbox{\hyperlink{class_contact_a204358c2e4b7fcb1e11bc09616a404d6}{check\+Lettres}} (const std\+::string \&)
-\begin{DoxyCompactList}\small\item\em Test si la chaine entree est conforme. \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{class_contact_a0701aa657fa35ab398696650af31ce5f}{check\+Chiffres}} (const std\+::string \&)
-\begin{DoxyCompactList}\small\item\em Test si la chaine entree est conforme. \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{class_contact_a28ceb373a5597ae9fd3c095003982041}{check\+Mail}} (const std\+::string \&)
-\begin{DoxyCompactList}\small\item\em Test si la chaine entree est conforme. \end{DoxyCompactList}\item 
-static const std\+::string \mbox{\hyperlink{class_contact_a77cb96e1aad6119cc085add81bea3ea6}{suggestion\+Nom}} (std\+::string \&)
-\begin{DoxyCompactList}\small\item\em Propose une suggestion de nom pour une chaine entree ne correspondant pas a ce qui est attendu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+static const std\+::string \mbox{\hyperlink{class_contact_a0a91717a88247862ecdc3525a785d793}{suggestion\+Nom}} (std\+::string)
+\end{DoxyCompactItemize}
 \doxysubsection*{Amis}
 \begin{DoxyCompactItemize}
 \item 
 std\+::ostream \& \mbox{\hyperlink{class_contact_a24f9fcd32bd68e5d5af1a6f2a61a1948}{operator$<$$<$}} (std\+::ostream \&, const \mbox{\hyperlink{class_contact}{Contact}} \&)
 \item 
+bool \mbox{\hyperlink{class_contact_a3641731f8d5bada1d299094605e43051}{operator$<$}} (const \mbox{\hyperlink{class_contact}{Contact}} \&, const \mbox{\hyperlink{class_contact}{Contact}} \&)
+\begin{DoxyCompactList}\small\item\em Comparaison a $<$ b. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_contact_a0dc1f88cb1e8070f3d66c1064d1c9c6b}{operator==}} (const \mbox{\hyperlink{class_contact}{Contact}} \&, const \mbox{\hyperlink{class_contact}{Contact}} \&)
 \begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}operateur de test d\textquotesingle{}egalite. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -110,11 +106,11 @@ Constructeur par defaut de la classe \mbox{\hyperlink{class_contact}{Contact}}
 
 Définition à la ligne 20 du fichier Contact.\+cpp.
 
-\mbox{\Hypertarget{class_contact_a793d8e392aacfcd6556b31341a1233d9}\label{class_contact_a793d8e392aacfcd6556b31341a1233d9}} 
+\mbox{\Hypertarget{class_contact_a14e426d60660ac45fe6bc558d7fb3134}\label{class_contact_a14e426d60660ac45fe6bc558d7fb3134}} 
 \index{Contact@{Contact}!Contact@{Contact}}
 \index{Contact@{Contact}!Contact@{Contact}}
 \doxysubsubsection{\texorpdfstring{Contact()}{Contact()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Contact\+::\+Contact (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Contact\+::\+Contact (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const std\+::string \&}]{,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{,  }\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{ }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_contact_ab68013cc59e3d640735c573e52c35219}\label{class_contact_ab68013cc59e3d640735c573e52c35219}} 
 \index{Contact@{Contact}!````~Contact@{$\sim$Contact}}
@@ -128,7 +124,7 @@ Destructeur de \mbox{\hyperlink{class_contact}{Contact}}.
 
 Detruis en memoire tout ce qui etait utilise par une instance de contact qui va etre supprimee (les instances d\textquotesingle{}interactions pointees par la liste) 
 
-Définition à la ligne 522 du fichier Contact.\+cpp.
+Définition à la ligne 423 du fichier Contact.\+cpp.
 
 
 
@@ -152,70 +148,7 @@ Methode qui permet d\textquotesingle{}ajouter une interaction a la liste d\textq
 \end{DoxyParams}
 
 
-Définition à la ligne 333 du fichier Contact.\+cpp.
-
-\mbox{\Hypertarget{class_contact_a0701aa657fa35ab398696650af31ce5f}\label{class_contact_a0701aa657fa35ab398696650af31ce5f}} 
-\index{Contact@{Contact}!checkChiffres@{checkChiffres}}
-\index{checkChiffres@{checkChiffres}!Contact@{Contact}}
-\doxysubsubsection{\texorpdfstring{checkChiffres()}{checkChiffres()}}
-{\footnotesize\ttfamily void Contact\+::check\+Chiffres (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{chaine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Test si la chaine entree est conforme. 
-
-Methode qui renvoie une exception si la chaine contient autre chose que des chiffres
-
-
-\begin{DoxyParams}{Paramètres}
-{\em chaine} & \+: la chaine a tester \\
-\hline
-\end{DoxyParams}
-
-
-Définition à la ligne 95 du fichier Contact.\+cpp.
-
-\mbox{\Hypertarget{class_contact_a204358c2e4b7fcb1e11bc09616a404d6}\label{class_contact_a204358c2e4b7fcb1e11bc09616a404d6}} 
-\index{Contact@{Contact}!checkLettres@{checkLettres}}
-\index{checkLettres@{checkLettres}!Contact@{Contact}}
-\doxysubsubsection{\texorpdfstring{checkLettres()}{checkLettres()}}
-{\footnotesize\ttfamily void Contact\+::check\+Lettres (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{chaine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Test si la chaine entree est conforme. 
-
-Methode qui renvoie une exception si la chaine contient autre chose que des lettres, un espace ou un tiret
-
-
-\begin{DoxyParams}{Paramètres}
-{\em chaine} & \+: la chaine a tester \\
-\hline
-\end{DoxyParams}
-
-
-Définition à la ligne 79 du fichier Contact.\+cpp.
-
-\mbox{\Hypertarget{class_contact_a28ceb373a5597ae9fd3c095003982041}\label{class_contact_a28ceb373a5597ae9fd3c095003982041}} 
-\index{Contact@{Contact}!checkMail@{checkMail}}
-\index{checkMail@{checkMail}!Contact@{Contact}}
-\doxysubsubsection{\texorpdfstring{checkMail()}{checkMail()}}
-{\footnotesize\ttfamily void Contact\+::check\+Mail (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{chaine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Test si la chaine entree est conforme. 
-
-Methode qui renvoie une exception si la chaine ne decrit pas un mail
-
-
-\begin{DoxyParams}{Paramètres}
-{\em chaine} & \+: la chaine a tester \\
-\hline
-\end{DoxyParams}
-
-
-Définition à la ligne 111 du fichier Contact.\+cpp.
+Définition à la ligne 259 du fichier Contact.\+cpp.
 
 \mbox{\Hypertarget{class_contact_a49207934b910c6397ecae8cfb77e97fc}\label{class_contact_a49207934b910c6397ecae8cfb77e97fc}} 
 \index{Contact@{Contact}!clearInteractions@{clearInteractions}}
@@ -229,13 +162,13 @@ vide la liste des interactions /!\textbackslash{} ne detruis pas les instances p
 
 
 
-Définition à la ligne 512 du fichier Contact.\+cpp.
+Définition à la ligne 413 du fichier Contact.\+cpp.
 
-\mbox{\Hypertarget{class_contact_a793c9bb8d467146f3da824b954b3d414}\label{class_contact_a793c9bb8d467146f3da824b954b3d414}} 
+\mbox{\Hypertarget{class_contact_afde7db06fa36f2fa54139e22feff6adb}\label{class_contact_afde7db06fa36f2fa54139e22feff6adb}} 
 \index{Contact@{Contact}!getDateCreation@{getDateCreation}}
 \index{getDateCreation@{getDateCreation}!Contact@{Contact}}
 \doxysubsubsection{\texorpdfstring{getDateCreation()}{getDateCreation()}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{class_date}{Date}} \& Contact\+::get\+Date\+Creation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_date}{Date}} \& Contact\+::get\+Date\+Creation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -248,7 +181,7 @@ date\+Creation
 \end{DoxyReturn}
 
 
-Définition à la ligne 309 du fichier Contact.\+cpp.
+Définition à la ligne 235 du fichier Contact.\+cpp.
 
 \mbox{\Hypertarget{class_contact_a75dedfa3ee66c6c49bf8123d9ec59f34}\label{class_contact_a75dedfa3ee66c6c49bf8123d9ec59f34}} 
 \index{Contact@{Contact}!getDateDerniereModification@{getDateDerniereModification}}
@@ -267,7 +200,7 @@ telephone
 \end{DoxyReturn}
 
 
-Définition à la ligne 321 du fichier Contact.\+cpp.
+Définition à la ligne 247 du fichier Contact.\+cpp.
 
 \mbox{\Hypertarget{class_contact_a2074cf9b55c1066344f9068d2f7064d1}\label{class_contact_a2074cf9b55c1066344f9068d2f7064d1}} 
 \index{Contact@{Contact}!getEntreprise@{getEntreprise}}
@@ -286,13 +219,13 @@ entreprise
 \end{DoxyReturn}
 
 
-Définition à la ligne 196 du fichier Contact.\+cpp.
+Définition à la ligne 129 du fichier Contact.\+cpp.
 
-\mbox{\Hypertarget{class_contact_afbce249b53d8dd8b3554efffc09fdbd5}\label{class_contact_afbce249b53d8dd8b3554efffc09fdbd5}} 
+\mbox{\Hypertarget{class_contact_a591d524bb284efc894605b775d741dcc}\label{class_contact_a591d524bb284efc894605b775d741dcc}} 
 \index{Contact@{Contact}!getInteractions@{getInteractions}}
 \index{getInteractions@{getInteractions}!Contact@{Contact}}
 \doxysubsubsection{\texorpdfstring{getInteractions()}{getInteractions()}}
-{\footnotesize\ttfamily const list$<$ \mbox{\hyperlink{class_interaction}{Interaction}} $\ast$ $>$ \& Contact\+::get\+Interactions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const list$<$ \mbox{\hyperlink{class_interaction}{Interaction}} $\ast$ $>$ \& Contact\+::get\+Interactions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -305,7 +238,7 @@ interactions
 \end{DoxyReturn}
 
 
-Définition à la ligne 364 du fichier Contact.\+cpp.
+Définition à la ligne 271 du fichier Contact.\+cpp.
 
 \mbox{\Hypertarget{class_contact_a6b9044988b8ec70fbf1c6d620844d707}\label{class_contact_a6b9044988b8ec70fbf1c6d620844d707}} 
 \index{Contact@{Contact}!getMail@{getMail}}
@@ -324,7 +257,7 @@ mail
 \end{DoxyReturn}
 
 
-Définition à la ligne 253 du fichier Contact.\+cpp.
+Définition à la ligne 181 du fichier Contact.\+cpp.
 
 \mbox{\Hypertarget{class_contact_afae52eacfbe597c6dfcc226654a75819}\label{class_contact_afae52eacfbe597c6dfcc226654a75819}} 
 \index{Contact@{Contact}!getNom@{getNom}}
@@ -343,7 +276,7 @@ nom
 \end{DoxyReturn}
 
 
-Définition à la ligne 142 du fichier Contact.\+cpp.
+Définition à la ligne 75 du fichier Contact.\+cpp.
 
 \mbox{\Hypertarget{class_contact_a62980364c568e7f38b8f2e0892672416}\label{class_contact_a62980364c568e7f38b8f2e0892672416}} 
 \index{Contact@{Contact}!getPrenom@{getPrenom}}
@@ -362,7 +295,7 @@ prenom
 \end{DoxyReturn}
 
 
-Définition à la ligne 169 du fichier Contact.\+cpp.
+Définition à la ligne 102 du fichier Contact.\+cpp.
 
 \mbox{\Hypertarget{class_contact_a98aa91a89fd83578686227826c2eea6b}\label{class_contact_a98aa91a89fd83578686227826c2eea6b}} 
 \index{Contact@{Contact}!getTelephone@{getTelephone}}
@@ -381,7 +314,7 @@ telephone
 \end{DoxyReturn}
 
 
-Définition à la ligne 222 du fichier Contact.\+cpp.
+Définition à la ligne 154 du fichier Contact.\+cpp.
 
 \mbox{\Hypertarget{class_contact_a5abf6c96ebe67d2fcb8c5d924d647477}\label{class_contact_a5abf6c96ebe67d2fcb8c5d924d647477}} 
 \index{Contact@{Contact}!getTodos@{getTodos}}
@@ -400,7 +333,7 @@ liste de tous les todos
 \end{DoxyReturn}
 
 
-Définition à la ligne 376 du fichier Contact.\+cpp.
+Définition à la ligne 284 du fichier Contact.\+cpp.
 
 \mbox{\Hypertarget{class_contact_afbf8f3c920221656f59702d0f5a6367b}\label{class_contact_afbf8f3c920221656f59702d0f5a6367b}} 
 \index{Contact@{Contact}!getUriPhoto@{getUriPhoto}}
@@ -419,7 +352,7 @@ uri\+Photo
 \end{DoxyReturn}
 
 
-Définition à la ligne 282 du fichier Contact.\+cpp.
+Définition à la ligne 209 du fichier Contact.\+cpp.
 
 \mbox{\Hypertarget{class_contact_a3f9a0ea233dc69ff944fc5aba075d92b}\label{class_contact_a3f9a0ea233dc69ff944fc5aba075d92b}} 
 \index{Contact@{Contact}!interactionsToString@{interactionsToString}}
@@ -438,7 +371,7 @@ concatenation de representations textuelles de chaque interaction
 \end{DoxyReturn}
 
 
-Définition à la ligne 449 du fichier Contact.\+cpp.
+Définition à la ligne 350 du fichier Contact.\+cpp.
 
 \mbox{\Hypertarget{class_contact_a1237b826b80e3ead402d0c26cc3c2ace}\label{class_contact_a1237b826b80e3ead402d0c26cc3c2ace}} 
 \index{Contact@{Contact}!setEntreprise@{setEntreprise}}
@@ -459,13 +392,13 @@ Methode qui permet de modifier l\textquotesingle{}entreprise du contact
 \end{DoxyParams}
 
 
-Définition à la ligne 208 du fichier Contact.\+cpp.
+Définition à la ligne 141 du fichier Contact.\+cpp.
 
-\mbox{\Hypertarget{class_contact_aa30355f8ccb75c3c8981e110848c0266}\label{class_contact_aa30355f8ccb75c3c8981e110848c0266}} 
+\mbox{\Hypertarget{class_contact_a513b0a2da8a697076f4616ce7b6c445f}\label{class_contact_a513b0a2da8a697076f4616ce7b6c445f}} 
 \index{Contact@{Contact}!setMail@{setMail}}
 \index{setMail@{setMail}!Contact@{Contact}}
 \doxysubsubsection{\texorpdfstring{setMail()}{setMail()}}
-{\footnotesize\ttfamily void Contact\+::set\+Mail (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{new\+Mail }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Contact\+::set\+Mail (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ }\end{DoxyParamCaption})}
 
 
 
@@ -480,7 +413,7 @@ Methode qui permet de modifier le mail du contact
 \end{DoxyParams}
 
 
-Définition à la ligne 265 du fichier Contact.\+cpp.
+Définition à la ligne 193 du fichier Contact.\+cpp.
 
 \mbox{\Hypertarget{class_contact_a0837af372d75a5d85ab296c6104a3232}\label{class_contact_a0837af372d75a5d85ab296c6104a3232}} 
 \index{Contact@{Contact}!setNom@{setNom}}
@@ -501,7 +434,7 @@ Methode qui permet de modifier le nom du contact
 \end{DoxyParams}
 
 
-Définition à la ligne 154 du fichier Contact.\+cpp.
+Définition à la ligne 87 du fichier Contact.\+cpp.
 
 \mbox{\Hypertarget{class_contact_ac31195d758df58ee327cc05b6276aace}\label{class_contact_ac31195d758df58ee327cc05b6276aace}} 
 \index{Contact@{Contact}!setPrenom@{setPrenom}}
@@ -522,7 +455,7 @@ Methode qui permet de modifier le prenom du contact
 \end{DoxyParams}
 
 
-Définition à la ligne 181 du fichier Contact.\+cpp.
+Définition à la ligne 114 du fichier Contact.\+cpp.
 
 \mbox{\Hypertarget{class_contact_a54c863b3045a9255d75f1ad876ecb7de}\label{class_contact_a54c863b3045a9255d75f1ad876ecb7de}} 
 \index{Contact@{Contact}!setTelephone@{setTelephone}}
@@ -543,13 +476,13 @@ Methode qui permet de modifier le telephone du contact
 \end{DoxyParams}
 
 
-Définition à la ligne 234 du fichier Contact.\+cpp.
+Définition à la ligne 166 du fichier Contact.\+cpp.
 
-\mbox{\Hypertarget{class_contact_a1d221a1b28d375d0135d5c52589ec27b}\label{class_contact_a1d221a1b28d375d0135d5c52589ec27b}} 
+\mbox{\Hypertarget{class_contact_a24d89f71724842a6375db8550495d3e8}\label{class_contact_a24d89f71724842a6375db8550495d3e8}} 
 \index{Contact@{Contact}!setUriPhoto@{setUriPhoto}}
 \index{setUriPhoto@{setUriPhoto}!Contact@{Contact}}
 \doxysubsubsection{\texorpdfstring{setUriPhoto()}{setUriPhoto()}}
-{\footnotesize\ttfamily void Contact\+::set\+Uri\+Photo (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{new\+Uri\+Photo }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Contact\+::set\+Uri\+Photo (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ }\end{DoxyParamCaption})}
 
 
 
@@ -564,28 +497,13 @@ Methode qui permet de modifier l\textquotesingle{}adresse de la photo du contact
 \end{DoxyParams}
 
 
-Définition à la ligne 294 du fichier Contact.\+cpp.
+Définition à la ligne 221 du fichier Contact.\+cpp.
 
-\mbox{\Hypertarget{class_contact_a77cb96e1aad6119cc085add81bea3ea6}\label{class_contact_a77cb96e1aad6119cc085add81bea3ea6}} 
+\mbox{\Hypertarget{class_contact_a0a91717a88247862ecdc3525a785d793}\label{class_contact_a0a91717a88247862ecdc3525a785d793}} 
 \index{Contact@{Contact}!suggestionNom@{suggestionNom}}
 \index{suggestionNom@{suggestionNom}!Contact@{Contact}}
 \doxysubsubsection{\texorpdfstring{suggestionNom()}{suggestionNom()}}
-{\footnotesize\ttfamily const std\+::string Contact\+::suggestion\+Nom (\begin{DoxyParamCaption}\item[{std\+::string \&}]{chaine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Propose une suggestion de nom pour une chaine entree ne correspondant pas a ce qui est attendu. 
-
-Methode qui retire tous les chiffres et caracteres speciaux
-
-
-\begin{DoxyParams}{Paramètres}
-{\em chaine} & \+: la chaine a verifier \\
-\hline
-\end{DoxyParams}
-
-
-Définition à la ligne 345 du fichier Contact.\+cpp.
+{\footnotesize\ttfamily static const std\+::string Contact\+::suggestion\+Nom (\begin{DoxyParamCaption}\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 \mbox{\Hypertarget{class_contact_aba2053b48fbf5e978be695eec3ee879f}\label{class_contact_aba2053b48fbf5e978be695eec3ee879f}} 
 \index{Contact@{Contact}!todosToString@{todosToString}}
@@ -604,7 +522,7 @@ concatenation de representations textuelles de chaque todo
 \end{DoxyReturn}
 
 
-Définition à la ligne 473 du fichier Contact.\+cpp.
+Définition à la ligne 374 du fichier Contact.\+cpp.
 
 \mbox{\Hypertarget{class_contact_a8c548da2f7375842f44df45c38132add}\label{class_contact_a8c548da2f7375842f44df45c38132add}} 
 \index{Contact@{Contact}!toString@{toString}}
@@ -623,11 +541,35 @@ prenom nom de (entreprise) telephone ou mail
 \end{DoxyReturn}
 
 
-Définition à la ligne 413 du fichier Contact.\+cpp.
+Définition à la ligne 338 du fichier Contact.\+cpp.
 
 
 
 \doxysubsection{Documentation des fonctions amies et associées}
+\mbox{\Hypertarget{class_contact_a3641731f8d5bada1d299094605e43051}\label{class_contact_a3641731f8d5bada1d299094605e43051}} 
+\index{Contact@{Contact}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Contact@{Contact}}
+\doxysubsubsection{\texorpdfstring{operator$<$}{operator<}}
+{\footnotesize\ttfamily bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_contact}{Contact}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_contact}{Contact}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Comparaison a $<$ b. 
+
+Surdefinition de l\textquotesingle{}operateur \char`\"{}$<$\char`\"{}, renvoie vraie si semantiquement a $<$ b 
+\begin{DoxyParams}{Paramètres}
+{\em a} & \+: premiere operande \\
+\hline
+{\em b} & \+: deuxieme operande\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+a $<$ b 
+\end{DoxyReturn}
+
+
+Définition à la ligne 323 du fichier Contact.\+cpp.
+
 \mbox{\Hypertarget{class_contact_a24f9fcd32bd68e5d5af1a6f2a61a1948}\label{class_contact_a24f9fcd32bd68e5d5af1a6f2a61a1948}} 
 \index{Contact@{Contact}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!Contact@{Contact}}
@@ -658,7 +600,7 @@ vrai si les contacts sont semantiquement egales, faux sinon
 \end{DoxyReturn}
 
 
-Définition à la ligne 499 du fichier Contact.\+cpp.
+Définition à la ligne 400 du fichier Contact.\+cpp.
 
 
 

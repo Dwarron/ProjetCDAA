@@ -1,0 +1,129 @@
+\hypertarget{class_creation_fiche_window}{}\doxysection{Référence de la classe Creation\+Fiche\+Window}
+\label{class_creation_fiche_window}\index{CreationFicheWindow@{CreationFicheWindow}}
+
+
+Fenetre qui permet de creer la fiche d\textquotesingle{}un contact.  
+
+
+
+
+{\ttfamily \#include $<$Creation\+Fiche\+Window.\+h$>$}
+
+Graphe d\textquotesingle{}héritage de Creation\+Fiche\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_creation_fiche_window}
+\end{center}
+\end{figure}
+\doxysubsection*{Signaux}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_creation_fiche_window_abae1ea4240a3309fec759436984677e9}{image\+Selected}} (Q\+String)
+\item 
+void \mbox{\hyperlink{class_creation_fiche_window_ae24ba5c87a5b4f4170114db7b4bf7ffa}{contact\+Created}} (std\+::string, std\+::string, std\+::string, std\+::string, std\+::string, std\+::string)
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_creation_fiche_window_aa7123b8a4b9227c022567a1adfa39524}{Creation\+Fiche\+Window}} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructeur standard. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_creation_fiche_window_a6e166bd7eefa255810143e647d627c17}{$\sim$\+Creation\+Fiche\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de \mbox{\hyperlink{class_creation_fiche_window}{Creation\+Fiche\+Window}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres protégées}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_creation_fiche_window_a13377b022eec4279de0193920be10618}{resize\+Event}} (Q\+Resize\+Event $\ast$) override
+\begin{DoxyCompactList}\small\item\em Evenement de modification de la taille de la fenetre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Fenetre qui permet de creer la fiche d\textquotesingle{}un contact. 
+
+\begin{DoxyAuthor}{Auteur}
+Perion Maxence, Pinon Alexandre 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+
+
+Définition à la ligne 16 du fichier Creation\+Fiche\+Window.\+h.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_creation_fiche_window_aa7123b8a4b9227c022567a1adfa39524}\label{class_creation_fiche_window_aa7123b8a4b9227c022567a1adfa39524}} 
+\index{CreationFicheWindow@{CreationFicheWindow}!CreationFicheWindow@{CreationFicheWindow}}
+\index{CreationFicheWindow@{CreationFicheWindow}!CreationFicheWindow@{CreationFicheWindow}}
+\doxysubsubsection{\texorpdfstring{CreationFicheWindow()}{CreationFicheWindow()}}
+{\footnotesize\ttfamily Creation\+Fiche\+Window\+::\+Creation\+Fiche\+Window (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructeur standard. 
+
+Constructeur standard de la classe \mbox{\hyperlink{class_creation_fiche_window}{Creation\+Fiche\+Window}} Effectue les connexions signaux/slots
+
+
+\begin{DoxyParams}{Paramètres}
+{\em parent} & \+: fenetre parent \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 28 du fichier Creation\+Fiche\+Window.\+cpp.
+
+\mbox{\Hypertarget{class_creation_fiche_window_a6e166bd7eefa255810143e647d627c17}\label{class_creation_fiche_window_a6e166bd7eefa255810143e647d627c17}} 
+\index{CreationFicheWindow@{CreationFicheWindow}!````~CreationFicheWindow@{$\sim$CreationFicheWindow}}
+\index{````~CreationFicheWindow@{$\sim$CreationFicheWindow}!CreationFicheWindow@{CreationFicheWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$CreationFicheWindow()}{~CreationFicheWindow()}}
+{\footnotesize\ttfamily Creation\+Fiche\+Window\+::$\sim$\+Creation\+Fiche\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur de \mbox{\hyperlink{class_creation_fiche_window}{Creation\+Fiche\+Window}}. 
+
+Detruis en memoire la fenetre 
+
+Définition à la ligne 203 du fichier Creation\+Fiche\+Window.\+cpp.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_creation_fiche_window_ae24ba5c87a5b4f4170114db7b4bf7ffa}\label{class_creation_fiche_window_ae24ba5c87a5b4f4170114db7b4bf7ffa}} 
+\index{CreationFicheWindow@{CreationFicheWindow}!contactCreated@{contactCreated}}
+\index{contactCreated@{contactCreated}!CreationFicheWindow@{CreationFicheWindow}}
+\doxysubsubsection{\texorpdfstring{contactCreated}{contactCreated}}
+{\footnotesize\ttfamily void Creation\+Fiche\+Window\+::contact\+Created (\begin{DoxyParamCaption}\item[{std\+::string}]{,  }\item[{std\+::string}]{,  }\item[{std\+::string}]{,  }\item[{std\+::string}]{,  }\item[{std\+::string}]{,  }\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_creation_fiche_window_abae1ea4240a3309fec759436984677e9}\label{class_creation_fiche_window_abae1ea4240a3309fec759436984677e9}} 
+\index{CreationFicheWindow@{CreationFicheWindow}!imageSelected@{imageSelected}}
+\index{imageSelected@{imageSelected}!CreationFicheWindow@{CreationFicheWindow}}
+\doxysubsubsection{\texorpdfstring{imageSelected}{imageSelected}}
+{\footnotesize\ttfamily void Creation\+Fiche\+Window\+::image\+Selected (\begin{DoxyParamCaption}\item[{Q\+String}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_creation_fiche_window_a13377b022eec4279de0193920be10618}\label{class_creation_fiche_window_a13377b022eec4279de0193920be10618}} 
+\index{CreationFicheWindow@{CreationFicheWindow}!resizeEvent@{resizeEvent}}
+\index{resizeEvent@{resizeEvent}!CreationFicheWindow@{CreationFicheWindow}}
+\doxysubsubsection{\texorpdfstring{resizeEvent()}{resizeEvent()}}
+{\footnotesize\ttfamily void Creation\+Fiche\+Window\+::resize\+Event (\begin{DoxyParamCaption}\item[{Q\+Resize\+Event $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Evenement de modification de la taille de la fenetre. 
+
+Surcharge de l\textquotesingle{}evenement de modification de la taille de la fenetre, reaffiche l\textquotesingle{}image (photo du contact) 
+\begin{DoxyParams}{Paramètres}
+{\em e} & \+: l\textquotesingle{}evenement \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 192 du fichier Creation\+Fiche\+Window.\+cpp.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_creation_fiche_window_8h}{Creation\+Fiche\+Window.\+h}}\item 
+\mbox{\hyperlink{_creation_fiche_window_8cpp}{Creation\+Fiche\+Window.\+cpp}}\end{DoxyCompactItemize}
