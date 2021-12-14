@@ -157,7 +157,7 @@ void MainWindow::slot_aPropos()
     messageAbout.about(this, "À-propos",
     "Le but de cette application est la gestion de relations clients "
     "prenant en compte des interactions et des tâches à faire, extraites automatiquement de ces interactions. "
-    "L'application tilise également une base de données SQLite afin de stocker les contacts et les interactions; et les données sont exportables en JSON.");
+    "L'application utilise également une base de données SQLite afin de stocker les contacts et les interactions; et les données sont exportables en JSON.");
 }
 
 /**

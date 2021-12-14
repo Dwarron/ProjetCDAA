@@ -17,7 +17,7 @@ using namespace std;
  *  Constructeur standard de la classe RequeteWindow.
  *  Effectue les connexions signaux/slots
  *
- *  \param g : gestion des contacts
+ *  \param c : la liste des contact lors de la creation de la fenetre
  *  \param parent : fenetre parent
  */
 RequeteWindow::RequeteWindow(list<Contact*> c, QWidget *parent)

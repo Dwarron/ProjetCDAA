@@ -77,7 +77,7 @@ void Verificator::checkMail(const string& chaine)
 /**
   *  \brief Test si la chaine entree est conforme
   *
-  *  Methode qui renvoie une exception si la chaine ne decrit pas un mail
+  *  Methode qui renvoie une exception si la chaine ne decrit pas un telephone
   *
   *  \param chaine : la chaine a tester
   */
